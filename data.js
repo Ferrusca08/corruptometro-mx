@@ -1301,3 +1301,69 @@ officials.push(
     timeline:[{year:'2021',event:'SEDENA lo señala entre 29 alcaldes'},{year:'2022',event:'Hija detenida en Texas con $250K USD'}],
     sources:[{label:'La Razón',url:'https://www.razon.com.mx/mexico/2026/02/07/caen-35-alcaldes-en-seis-anos-por-vinculos-con-la-actividad-criminal/'}]}
 );
+
+
+// =====================================================
+// FUNCIONARIOS ACTIVOS — JULIO 2026
+// =====================================================
+officials.push(
+    {id:305,name:'Adán Augusto López Hernández',role:'Senador de la República / Exgobernador de Tabasco (2019-2021)',party:'MORENA',state:'Tabasco',level:'federal',active:true,status:'en_funciones',
+    scores:{sentencias:10,fiscalizacion:15,funcionarios:15,deuda:12,denuncias:10,evasion:6,nepotismo:5},
+    breakdown:{sentencias:'Sin sentencia ni orden de aprehensión directa. FGR no lo ha citado formalmente, según la Fiscalía de Tabasco. Denunciado por Alito Moreno (PRI) ante la FGR.',
+    fiscalizacion:'Animal Político documentó ingresos no reportados de $79-80M entre 2023-2024, con inconsistencias patrimoniales y fiscales. Parte del dinero vinculado a empresas fantasma.',
+    funcionarios:'Su secretario de Seguridad en Tabasco, Hernán Bermúdez Requena ("Comandante H"), es señalado como presunto líder de "La Barredora", célula del CJNG. Detenido en Paraguay, procesado por asociación delictuosa, secuestro agravado, extorsión y desaparición forzada.',
+    deuda:'5 notarías vinculadas a él (incluida la propia, notaría 27) constituyeron 13 empresas en lista negra del SAT por lavado de dinero y evasión fiscal. Contratos por $11,000M en obras de Dos Bocas, renta de maquinaria a Pemex y venta de equipo al IMSS-Bienestar.',
+    denuncias:'PRI presentó denuncias formales ante la FGR. Oposición ha exigido debate en el Senado en 3 ocasiones, bloqueado por mayoría morenista. NYT reportó que funcionarios de Morena buscan colaborar con EE.UU. ante posibles investigaciones.',
+    evasion:'Dejó la coordinación de Morena en el Senado en medio del escándalo (movimiento leído como distanciamiento estratégico). Bermúdez permanece sin declarar, lo que ha impedido avanzar la investigación contra él.',
+    nepotismo:'Red de notarías y empresarios cercanos beneficiados con contratos públicos en gobiernos de Morena. Impulsó leyes cuestionadas como gobernador ("ley garrote", "ley compadre", "ley dedazo"), algunas declaradas inconstitucionales.'},
+    timeline:[{year:'2019',event:'Gobernador de Tabasco. Nombra a Hernán Bermúdez secretario de Seguridad.'},{year:'2021',event:'Deja gubernatura. Asume como Secretario de Gobernación federal.'},{year:'2024',event:'Coordinador de la campaña de Sheinbaum. Coordinador de Morena en el Senado.'},{year:'2025',event:'Orden de aprehensión contra Bermúdez por nexos con La Barredora/CJNG. Bermúdez huye del país.'},{year:'2026',event:'Bermúdez detenido en Paraguay. Animal Político revela inconsistencias patrimoniales de $79-80M. López deja coordinación del Senado.'}],
+    sources:[{label:'Infobae — 7 polémicas',url:'https://www.infobae.com/mexico/2026/02/02/las-7-polemicas-que-rodean-a-adan-augusto-lopez-tras-dejar-la-coordinacion-de-morena-en-el-senado/'},{label:'El Independiente — Testigo protegido',url:'https://elindependiente.mx/opinion/2026/04/07/tabasco-hernan-bermudez-testigo-protegido/'},{label:'SinEmbargo — Anuario 2025',url:'https://www.sinembargo.mx/4737478/anuario2025-gobernadores-en-la-mira-adan-los-duarte-cabeza-alfaro-evelyn/'}]},
+
+    {id:306,name:'Francisco Javier García Cabeza de Vaca',role:'Exgobernador de Tamaulipas (2016-2022) / Funcionario en América del Norte',party:'PAN',state:'Tamaulipas',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:12,fiscalizacion:16,funcionarios:8,deuda:14,denuncias:10,evasion:9,nepotismo:4},
+    breakdown:{sentencias:'Investigado por la FGR por delincuencia organizada, operaciones con recursos de procedencia ilícita y huachicol. Sin sentencia por residir en EE.UU. y gozar de protección política.',
+    fiscalizacion:'Presidente del Congreso de Tamaulipas presentó denuncia ante FGR por operaciones con recursos de procedencia ilícita, uso indebido de facultades, encubrimiento de delitos fiscales y contrabando de hidrocarburos.',
+    funcionarios:'Red de exfuncionarios tamaulipecos bajo investigación junto con él.',
+    deuda:'Señalado por contrabando de hidrocarburos (huachicol) a gran escala desde el gobierno estatal.',
+    denuncias:'Documentado extensamente por SinEmbargo en su Anuario 2025 de gobernadores señalados. Denuncia formal del Congreso de Tamaulipas.',
+    evasion:'Reside en Estados Unidos con un cargo en América del Norte. Se solicitó alerta migratoria en 2021 ante autoridades de EE.UU.',
+    nepotismo:'Red de protección política que le ha permitido evadir la justicia mexicana operando desde el extranjero.'},
+    timeline:[{year:'2016',event:'Asume gubernatura de Tamaulipas por el PAN'},{year:'2021',event:'Se solicita alerta migratoria en EE.UU.'},{year:'2022',event:'Termina mandato. Se establece en Estados Unidos.'},{year:'2025',event:'Congreso de Tamaulipas presenta denuncia formal ante la FGR.'}],
+    sources:[{label:'SinEmbargo — Anuario 2025',url:'https://www.sinembargo.mx/4737478/anuario2025-gobernadores-en-la-mira-adan-los-duarte-cabeza-alfaro-evelyn/'}]},
+
+    {id:307,name:'Marina del Pilar Ávila Olmeda',role:'Gobernadora de Baja California (2021-presente)',party:'MORENA',state:'Baja California',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:5,fiscalizacion:6,funcionarios:4,deuda:4,denuncias:8,evasion:5,nepotismo:5},
+    breakdown:{sentencias:'Sin proceso penal formal. Sin sentencias.',
+    fiscalizacion:'Sin hallazgos formales publicados de auditorías hasta el momento.',
+    funcionarios:'Sin red de funcionarios detenidos documentada.',
+    deuda:'Sin daño patrimonial directo documentado.',
+    denuncias:'Visa estadounidense revocada, hecho que medios vincularon con una investigación sobre su exesposo, de quien se divorció meses después. Documentado por SinEmbargo.',
+    evasion:'Se divorció de su esposo tras la revocación de la visa, interpretado por analistas como distanciamiento estratégico.',
+    nepotismo:'Vínculos con su entonces esposo bajo escrutinio de autoridades estadounidenses.'},
+    timeline:[{year:'2021',event:'Asume gubernatura de Baja California'},{year:'2025',event:'Visa estadounidense revocada'},{year:'2025',event:'Se divorcia de su esposo meses después'}],
+    sources:[{label:'SinEmbargo — Anuario 2025',url:'https://www.sinembargo.mx/4737478/anuario2025-gobernadores-en-la-mira-adan-los-duarte-cabeza-alfaro-evelyn/'}]},
+
+    {id:308,name:'Américo Villarreal Anaya',role:'Gobernador de Tamaulipas (2022-presente)',party:'MORENA',state:'Tamaulipas',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:5,fiscalizacion:5,funcionarios:4,deuda:3,denuncias:9,evasion:4,nepotismo:4},
+    breakdown:{sentencias:'Sin proceso penal formal contra él directamente.',
+    fiscalizacion:'Sin hallazgos formales de fiscalización publicados.',
+    funcionarios:'Personas cercanas a él señaladas por el PRI ante la FGR (mayo 2026).',
+    deuda:'Sin daño patrimonial directo documentado.',
+    denuncias:'Alejandro Moreno (PRI) anunció denuncias formales ante la FGR contra personas cercanas al gobernador, acusándolo de estar protegido por "narcogobierno" de Morena.',
+    evasion:'Sin evasión documentada.',
+    nepotismo:'Señalamientos de red cercana bajo escrutinio.'},
+    timeline:[{year:'2022',event:'Asume gubernatura de Tamaulipas'},{year:'2026',event:'PRI anuncia denuncias contra personas cercanas a él ante la FGR'}],
+    sources:[{label:'Infobae — PRI denuncias',url:'https://www.infobae.com/mexico/2026/05/27/pri-va-contra-hijos-de-amlo-y-gobernadores-de-morena-alito-moreno-prepara-denuncias-ante-la-fgr/'}]},
+
+    {id:309,name:'Red de nómina fantasma — Gobierno del Estado de México',role:'Exsubsecretarios y funcionarios de la administración 2017-2023',party:'PRI/Grupo Atlacomulco',state:'Estado de México',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:10,fiscalizacion:20,funcionarios:15,deuda:15,denuncias:8,evasion:5,nepotismo:5},
+    breakdown:{sentencias:'Investigación penal en curso desde febrero 2026, iniciada desde el interior del propio gobierno estatal. Sin sentencias aún.',
+    fiscalizacion:'459 movimientos de alta de personal docente detectados como fantasma. 3 denuncias penales presentadas por la Secretaría de Educación (SECTI) en 2026.',
+    funcionarios:'2 exsubsecretarios de la administración 2017-2023, además de coordinadores, delegados administrativos, directores generales, directores de área, subdirectores, jefes de departamento y capturistas implicados.',
+    deuda:'Más de $96M obtenidos solo entre enero 2025 y febrero 2026 por concepto de salarios, aguinaldos y primas vacacionales de docentes fantasma. Daño patrimonial podría ser mayor si se acredita operación continua desde 2021.',
+    denuncias:'Fiscalía del Estado de México documentó el esquema como el caso más importante de nómina pública en la historia reciente del estado. Investigación no surgió por denuncia externa sino desde adentro del propio gobierno.',
+    evasion:'Estructura diseñada para que cuando un operador dejaba el cargo, su sustituto fuera incorporado al mismo mecanismo, garantizando continuidad e impunidad.',
+    nepotismo:'Relaciones familiares y vínculos de confianza personal entre los investigados fue el mecanismo que permitió la continuidad del esquema por más de 5 años, infiltrando Finanzas, Educación, Seguridad, Oficialía Mayor y SECTI.'},
+    timeline:[{year:'2021',event:'Fiscalía estima que el esquema de nómina fantasma comenzó a operar'},{year:'2026',event:'Febrero: comienza investigación interna. Se detectan 459 altas fantasma y se presentan 3 denuncias penales (11 y 26 feb, 4 mayo).'}],
+    sources:[{label:'AD Noticias — Golpe histórico',url:'https://adnoticias.mx/golpe-historico-corrupcion-edomex/'}]}
+);
