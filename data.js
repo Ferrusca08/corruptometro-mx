@@ -1724,3 +1724,30 @@ officials.push(
     timeline:[{year:'2011',event:'Como alcalde, construye basurero municipal declarando $10M de gasto'},{year:'2026',event:'Juez ordena clausura por incumplimiento ambiental. El actual Oficial Mayor se niega a acatar.'}],
     sources:[{label:'Sol Yucatán',url:'https://solyucatan.mx/alcaldes-en-el-ano-de-hidalgo/'}]}
 );
+
+
+officials.push(
+    {id:338,name:'Ismael Burgueño Ruiz',role:'Presidente Municipal de Tijuana, Baja California',party:'MORENA',state:'Baja California',level:'municipal',active:true,status:'en_funciones',
+    scores:{sentencias:12,fiscalizacion:8,funcionarios:5,deuda:8,denuncias:9,evasion:7,nepotismo:3},
+    breakdown:{sentencias:'Investigado por la FEMDO de la FGR por operaciones con recursos de procedencia ilícita (carpeta FED/FEMDO/FIEDMHDARV/BC/0000556/2025). Fue citado a comparecer como imputado en noviembre 2025 y no se presentó.',
+    fiscalizacion:'Denuncia anónima presentada en octubre de 2025 relacionada con presunto lavado de dinero.',
+    funcionarios:'Dado de baja un agente de movilidad captado en presunto acto de corrupción durante su gestión.',
+    deuda:'Sin monto específico documentado más allá de la investigación por lavado de dinero.',
+    denuncias:'Se negó a comparecer ante la FGR en la fecha citada (noviembre 2025). Posteriormente presentó documento asegurando el "no ejercicio de acción penal" (mayo 2026), aunque el proceso generó amplia cobertura mediática y cuestionamientos.',
+    evasion:'No acudió a la cita de comparecencia programada por la FGR en Paseo de la Reforma. Amagó con demandar a medios que publicaron los citatorios en su contra.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2024',event:'Asume presidencia municipal de Tijuana'},{year:'2025',event:'Octubre: denuncia anónima por lavado de dinero. Noviembre: citado por FEMDO/FGR, no comparece.'},{year:'2026',event:'Mayo: presenta documento de no ejercicio de acción penal. Anuncia licencia para buscar candidatura de Morena rumbo a 2027.'}],
+    sources:[{label:'La Prensa — Se niega a comparecer',url:'https://oem.com.mx/la-prensa/mexico/alcalde-de-tijuana-se-niega-a-comparecer-acusado-de-presunta-corrupcion-y-delincuencia-organizada-26861056'},{label:'Proceso — Ya no lo investiga',url:'https://www.proceso.com.mx/nacional/estados/2026/6/19/alcalde-de-tijuana-asegura-que-ya-no-lo-investiga-la-femdo-de-la-fgr-374339.html'},{label:'Reporte Naranja',url:'https://reportenaranja.com.mx/contra-alcalde/'}]},
+
+    {id:339,name:'Montserrat Caballero Ramírez',role:'Exalcaldesa de Tijuana, Baja California',party:'MORENA',state:'Baja California',level:'municipal',active:true,status:'en_funciones',
+    scores:{sentencias:8,fiscalizacion:15,funcionarios:5,deuda:12,denuncias:8,evasion:4,nepotismo:3},
+    breakdown:{sentencias:'Investigada por la Fiscalía Especializada en Delitos de Corrupción de Baja California, sin sentencia formal.',
+    fiscalizacion:'Investigada por presunto uso ilegal de recursos públicos por $37M y desvío de recursos mediante contratos de adjudicación directa.',
+    funcionarios:'Sin red de funcionarios específicamente documentada.',
+    deuda:'$37M en presunto uso ilegal de recursos públicos durante su gestión como alcaldesa.',
+    denuncias:'Investigación formal de la Fiscalía Especializada en Delitos de Corrupción del estado de Baja California.',
+    evasion:'Sin evasión documentada.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2021',event:'Asume alcaldía de Tijuana'},{year:'2024',event:'Termina gestión. Bajo investigación por $37M en adjudicaciones directas irregulares.'}],
+    sources:[{label:'Reporte Naranja',url:'https://reportenaranja.com.mx/contra-alcalde/'}]}
+);
