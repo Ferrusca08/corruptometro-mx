@@ -1448,3 +1448,54 @@ officials.push(
     timeline:[{year:'2021',event:'Ayuda a su tía a llegar a la gubernatura operando como agente doble en el equipo de Alito Moreno'},{year:'2023',event:'Chats filtrados revelan su rol y el dinero obtenido'},{year:'2026',event:'Registra candidatura para suceder a su tía. Audios de "moches" de $80M salen a luz por rivales internos.'}],
     sources:[{label:'TV Azteca — Perfil',url:'https://www.tvazteca.com/aztecanoticias/elecciones-2027-quien-es-gerardo-sanchez-sansores-sobrino-layda-sansores-que-busca-candidatura-gobernador/'}]}
 );
+
+
+officials.push(
+    {id:316,name:'Clara Brugada Molina',role:'Jefa de Gobierno de la Ciudad de México (2024-presente)',party:'MORENA',state:'Ciudad de México',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:5,fiscalizacion:14,funcionarios:8,deuda:10,denuncias:8,evasion:3,nepotismo:6},
+    breakdown:{sentencias:'Sin proceso penal formal. Denuncia formal del PAN CDMX presentada en 2026 por violaciones a la Ley de Responsabilidades de Servidores Públicos.',
+    fiscalizacion:'Denuncia formal del PAN por contratación directa y preferente a la empresa "Impacto en Imagen", que recibió 57 contratos desde que Brugada era alcaldesa en Iztapalapa (2018-2023), eludiendo licitación pública.',
+    funcionarios:'Denunciada junto con su secretario de Obras y Servicios, Raúl Basulto Luviano, señalado como cómplice directo en el patrón de contrataciones.',
+    deuda:'54 contratos por $137.4M otorgados a la misma empresa durante su gestión en Iztapalapa, incluidos 2 contratos de $4M y $11M por "materiales de pintura" para intervenir puentes y vialidades.',
+    denuncias:'MC también denunció presunto desvío de recursos en obras rumbo al Mundial 2026. Empresa señalada también habría financiado su campaña a la Jefatura de Gobierno.',
+    evasion:'Sin evasión documentada.',
+    nepotismo:'Patrón sostenido de favorecer a la misma empresa contratista a través de dos administraciones distintas (Iztapalapa y CDMX).'},
+    timeline:[{year:'2018',event:'Alcaldesa de Iztapalapa. Empresa "Impacto en Imagen" recibe primeros contratos.'},{year:'2023',event:'Termina segundo periodo en Iztapalapa con 54 contratos a la misma empresa ($137.4M)'},{year:'2024',event:'Asume Jefatura de Gobierno de CDMX'},{year:'2026',event:'PAN presenta denuncia formal. MC denuncia desvíos en obras del Mundial 2026.'}],
+    sources:[{label:'La Querella Digital',url:'https://www.laquerelladigital.com/pan-formaliza-denuncia-vs-desvio-de-recursos-en-cdmx/'}]},
+
+    {id:317,name:'Ana Laura González Ábrego',role:'Presidenta Municipal de Guadalupe y Calvo, Chihuahua',party:'Sin dato',state:'Chihuahua',level:'municipal',active:true,status:'en_funciones',
+    scores:{sentencias:6,fiscalizacion:10,funcionarios:3,deuda:8,denuncias:7,evasion:3,nepotismo:6},
+    breakdown:{sentencias:'Denuncia penal del PRI presentada el 22 de junio de 2026 ante la Fiscalía Anticorrupción de Chihuahua.',
+    fiscalizacion:'Investigada por utilización indebida de recursos públicos municipales para promoción de imagen personal.',
+    funcionarios:'Sin red de funcionarios documentada.',
+    deuda:'Uso del programa alimentario "Raíces que Alimentan" para autopromoción, con cajas de despensa etiquetadas con su nombre e imagen.',
+    denuncias:'Material gráfico institucional y despensas con su nombre, imagen y cargo documentados como evidencia en la denuncia formal.',
+    evasion:'Sin evasión documentada.',
+    nepotismo:'Uso de programas sociales como vehículo de promoción personal con fondos públicos municipales.'},
+    timeline:[{year:'2026',event:'PRI presenta denuncia penal por peculado y uso indebido de recursos ante Fiscalía Anticorrupción de Chihuahua (22 de junio)'}],
+    sources:[{label:'El Diario de Chihuahua',url:'https://www.eldiariodechihuahua.mx/estado/2026/jun/23/el-pri-denuncia-por-peculado-a-la-alcaldesa-de-guadalupe-y-calvo-810665.html'}]},
+
+    {id:318,name:'Alessandra Rojo de la Vega',role:'Alcaldesa de Cuauhtémoc, CDMX',party:'PVEM',state:'Ciudad de México',level:'municipal',active:true,status:'en_funciones',
+    scores:{sentencias:3,fiscalizacion:6,funcionarios:2,deuda:3,denuncias:7,evasion:3,nepotismo:2},
+    breakdown:{sentencias:'Sin proceso penal.',fiscalizacion:'Sin hallazgos de fiscalización formal documentados.',funcionarios:'Sin red documentada.',deuda:'Sin daño patrimonial documentado.',
+    denuncias:'Una de las funcionarias más señaladas ante el IECM por actos anticipados de campaña, promoción personalizada y uso indebido de recursos públicos con miras al proceso electoral (2026).',
+    evasion:'Sin evasión documentada.',nepotismo:'Sin datos.'},
+    timeline:[{year:'2026',event:'IECM la señala entre los funcionarios más denunciados por actos anticipados de campaña'}],
+    sources:[{label:'El Universal — IECM',url:'https://www.eluniversal.com.mx/metropoli/denuncian-actos-anticipados-de-campana-en-cdmx-iecm-reporta-39-quejas/'}]},
+
+    {id:319,name:'Janecarlo Lozano',role:'Alcalde de Gustavo A. Madero, CDMX',party:'MORENA',state:'Ciudad de México',level:'municipal',active:true,status:'en_funciones',
+    scores:{sentencias:3,fiscalizacion:5,funcionarios:2,deuda:3,denuncias:6,evasion:2,nepotismo:2},
+    breakdown:{sentencias:'Sin proceso penal.',fiscalizacion:'Sin hallazgos formales.',funcionarios:'Sin red documentada.',deuda:'Sin daño patrimonial documentado.',
+    denuncias:'Investigado por el IECM por presuntos actos anticipados de precampaña y promoción personalizada (2026).',
+    evasion:'Sin evasión documentada.',nepotismo:'Sin datos.'},
+    timeline:[{year:'2026',event:'IECM abre investigación por actos anticipados de precampaña'}],
+    sources:[{label:'La Verdad Noticias',url:'https://laverdadnoticias.com/ultimas-noticias/politica/ley-electoral-en-cdmx'}]},
+
+    {id:320,name:'Giovani Gutiérrez',role:'Alcalde de Coyoacán, CDMX',party:'MORENA',state:'Ciudad de México',level:'municipal',active:true,status:'en_funciones',
+    scores:{sentencias:5,fiscalizacion:3,funcionarios:2,deuda:2,denuncias:8,evasion:2,nepotismo:2},
+    breakdown:{sentencias:'Sin proceso penal.',fiscalizacion:'Sin hallazgos de fiscalización.',funcionarios:'Sin red documentada.',deuda:'Sin daño patrimonial documentado.',
+    denuncias:'Investigado por el IECM por posibles actos de violencia política de género, falta considerada grave en el marco electoral.',
+    evasion:'Sin evasión documentada.',nepotismo:'Sin datos.'},
+    timeline:[{year:'2026',event:'IECM abre indagatoria por violencia política de género'}],
+    sources:[{label:'La Verdad Noticias',url:'https://laverdadnoticias.com/ultimas-noticias/politica/ley-electoral-en-cdmx'}]}
+);
