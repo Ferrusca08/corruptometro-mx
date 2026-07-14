@@ -1421,3 +1421,30 @@ officials.push(
     timeline:[{year:'1998',event:'Gobernador de Zacatecas (primer Monreal en el cargo)'},{year:'2018',event:'Coordinador de Morena en el Senado'},{year:'2021',event:'Su hermano David asume gubernatura de Zacatecas'},{year:'2024',event:'Coordinador de Morena en Cámara de Diputados'},{year:'2025',event:'Escándalo por bloquear candidatura de exesposa de su hermano, sacrificando a Saúl'}],
     sources:[{label:'El Financiero — Dinastía Monreal',url:'https://www.elfinanciero.com.mx/nacional/2025/09/10/quienes-son-los-hermanos-de-ricardo-monreal-y-que-cargos-tienen-en-el-gobierno-de-zacatecas-imss-suprema-corte-y-senado/'}]}
 );
+
+
+officials.push(
+    {id:314,name:'Layda Sansores San Román',role:'Gobernadora de Campeche (2021-presente)',party:'MORENA',state:'Campeche',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:8,fiscalizacion:16,funcionarios:12,deuda:13,denuncias:10,evasion:6,nepotismo:5},
+    breakdown:{sentencias:'Sin sentencia penal. Denuncia propia por espionaje sigue sin resolverse tras más de 19 años (caso previo, 1998).',
+    fiscalizacion:'ASF denunció ante la Fiscalía Anticorrupción a su fiscal Renato Sales por adquisición de equipo de espionaje israelí por más de $807M que "nunca llegó a su destino" declarado. Contratos inflados y adjudicaciones directas millonarias documentadas por La Opinión de México.',
+    funcionarios:'Fiscal Renato Sales operó presunto centro de inteligencia con equipo de espionaje. Sobrino Gerardo Sánchez Sansores señalado por "moches" de $80M en extorsión a inmobiliarias, según audios filtrados.',
+    deuda:'Equipo de espionaje de $807M sin destino declarado. Nómina familiar: parientes de su sobrino cobrando simultáneamente del presupuesto estatal.',
+    denuncias:'Video de funcionarios recibiendo fajos de dinero en efectivo en oficina de gobierno (similar al caso "Señor de las Ligas"). Programa "Martes del Jaguar" usó información obtenida ilegalmente mediante espionaje a opositores. Chats propios filtrados revelaron peculado en financiamiento de campaña.',
+    evasion:'Su propio chat filtrado la muestra orquestando "travesuras" contra la prensa y pagando a medios (ofreció $500K a un periódico).',
+    nepotismo:'Sobrino Gerardo Sánchez Sansores es su operador político y busca sucederla como gobernador en 2027. Nombró a su hermano Raúl director del Sistema de TV y Radio de Campeche. Familia extendida en nómina pública.'},
+    timeline:[{year:'2021',event:'Asume gubernatura de Campeche. Nombra a Renato Sales fiscal.'},{year:'2022',event:'ASF denuncia a Sales por equipo de espionaje de $807M sin destino.'},{year:'2023',event:'Sus propios chats son filtrados por Proceso, revelando espionaje y peculado.'},{year:'2026',event:'Su sobrino Gerardo Sánchez Sansores busca sucederla en medio de acusaciones de extorsión por $80M.'}],
+    sources:[{label:'Proceso — Chats de Layda',url:'https://www.proceso.com.mx/nacional/2023/1/24/chats-exhiben-ahora-layda-sansores-revelan-como-se-infiltro-su-sobrino-con-alito-300921.html'},{label:'TV Azteca — Sobrino sucesión',url:'https://www.tvazteca.com/aztecanoticias/elecciones-2027-quien-es-gerardo-sanchez-sansores-sobrino-layda-sansores-que-busca-candidatura-gobernador/'},{label:'La Opinión de México',url:'https://laopiniondemexico.mx/el-poder-sin-control-en-el-gobierno-de-layda-sansores/'}]},
+
+    {id:315,name:'Gerardo Sánchez Sansores',role:'Asesor General de la Gobernación de Campeche / Aspirante a gobernador 2027',party:'MORENA',state:'Campeche',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:10,fiscalizacion:12,funcionarios:5,deuda:14,denuncias:9,evasion:5,nepotismo:10},
+    breakdown:{sentencias:'Sin proceso penal formal. Audios filtrados lo vinculan directamente a extorsión.',
+    fiscalizacion:'Escándalo de "moches" de $80M: audios revelan negociación de comisiones ilegales a cambio de autorizar licencias de construcción de departamentos.',
+    funcionarios:'Operador en las sombras de su tía desde que ella gobernaba en la Ciudad de México. Su esposa América del Carmen Azar Pérez trabajó como "agente doble" en el equipo de Alito Moreno mientras operaba para Sansores.',
+    deuda:'$80M en comisiones ilegales por licencias de construcción. Múltiples familiares políticos cobrando simultáneamente en nómina pública del estado, según denuncias civiles.',
+    denuncias:'Filtración de audios por parte de rivales internos de Morena en la contienda por la candidatura 2027. Morena amenazó con usar UIF y SAT para filtrar candidatos con este perfil.',
+    evasion:'Operó como agente encubierto dentro del equipo del PRI mientras reportaba a su tía, según sus propios chats filtrados.',
+    nepotismo:'CASO DIRECTO: sobrino de la gobernadora, aspira a sucederla en el cargo. Beneficiario directo de la estructura de poder familiar de los Sansores en Campeche.'},
+    timeline:[{year:'2021',event:'Ayuda a su tía a llegar a la gubernatura operando como agente doble en el equipo de Alito Moreno'},{year:'2023',event:'Chats filtrados revelan su rol y el dinero obtenido'},{year:'2026',event:'Registra candidatura para suceder a su tía. Audios de "moches" de $80M salen a luz por rivales internos.'}],
+    sources:[{label:'TV Azteca — Perfil',url:'https://www.tvazteca.com/aztecanoticias/elecciones-2027-quien-es-gerardo-sanchez-sansores-sobrino-layda-sansores-que-busca-candidatura-gobernador/'}]}
+);
