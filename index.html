@@ -537,141 +537,15 @@
 <body>
     <div id="root"></div>
 
+    <script src="data.js"></script>
     <script type="text/babel">
-        // =====================================================
-        // DATA: Officials with corruption scores
-        // All data sourced from OSFEM, SCJN, TEPJF, SESNSP,
-        // SHCP, and verified journalistic sources.
-        // =====================================================
-        const SCORING_CRITERIA = [
-            { id: 'sentencias', label: 'Sentencias o procesos penales', maxPoints: 25, desc: 'Condenas, consignaciones o procesos penales activos contra el servidor público' },
-            { id: 'fiscalizacion', label: 'Observaciones de fiscalización', maxPoints: 20, desc: 'Hallazgos del OSFEM, ASF o auditorías con montos no comprobados' },
-            { id: 'funcionarios', label: 'Funcionarios detenidos', maxPoints: 15, desc: 'Colaboradores directos detenidos por delitos durante su administración' },
-            { id: 'deuda', label: 'Deuda pública irregular', maxPoints: 15, desc: 'Incremento desproporcionado de deuda o pasivos sin justificación' },
-            { id: 'denuncias', label: 'Denuncias documentadas', maxPoints: 10, desc: 'Denuncias ciudadanas, periodísticas o de organismos verificadas' },
-            { id: 'evasion', label: 'Evasión de justicia / desacato', maxPoints: 10, desc: 'Amparos para evadir detención, desacato judicial, obstrucción' },
-            { id: 'nepotismo', label: 'Nepotismo / conflicto de interés', maxPoints: 5, desc: 'Concesiones irregulares, familiares en nómina, contratos dirigidos' },
-        ];
+        // Data loaded from data.js
+        // officials and SCORING_CRITERIA are global
 
-        const officials = [
-            {
-                id: 1,
-                name: 'David Sánchez Isidoro',
-                role: 'Presidente Municipal de Coacalco (4 periodos)',
-                party: 'PRI',
-                state: 'Estado de México',
-                level: 'municipal',
-                active: true,
-                scores: {
-                    sentencias: 22,
-                    fiscalizacion: 18,
-                    funcionarios: 14,
-                    deuda: 13,
-                    denuncias: 9,
-                    evasion: 9,
-                    nepotismo: 4,
-                },
-                breakdown: {
-                    sentencias: 'Condenado a 3 años 4 meses por desacato (2021). SCJN ordenó consignación penal en 2018. Proceso penal por concesión irregular del Deportivo Villa de las Flores.',
-                    fiscalizacion: 'OSFEM detectó 46 observaciones por $95.7M en ejercicio 2023. Obras sin comprobación, adjudicaciones indebidas, traspasos no autorizados.',
-                    funcionarios: 'Secretario particular (Alan Escalante) detenido por cohecho. Coordinador de Licencias detenido. Subdirector de Desarrollo Urbano detenido por extorsión.',
-                    deuda: 'Contrató $303M en deuda en 2013. Deuda total del municipio superó $1,000M. Endeudamiento superior al 104% al cierre de 2012.',
-                    denuncias: 'Corrupción policiaca documentada (extorsión de $40K a automovilista). El Heraldo reportó corrupción generalizada en todas las direcciones (2025).',
-                    evasion: 'Se amparó contra orden de detención de la SCJN. Desacató sentencia de amparo en más de 12 ocasiones. Ayuntamiento simuló amenazas de bomba para evadir embargos.',
-                    nepotismo: 'Concesionó Deportivo Villa de las Flores por 25 años (excediendo sus funciones). Contratos en Tesorería sin pasar por adquisiciones.',
-                },
-                timeline: [
-                    { year: '2009', event: 'Inicia primer periodo como alcalde de Coacalco' },
-                    { year: '2013', event: 'Segundo periodo. Contrata $303M en deuda. Laudo laboral de $4.1M sin pagar' },
-                    { year: '2015', event: 'Concesiona Deportivo Villa de las Flores por 25 años a empresa privada' },
-                    { year: '2018', event: 'SCJN ordena consignación penal por desacato. Se ampara para evitar detención' },
-                    { year: '2021', event: 'Juez lo condena a 3 años 4 meses. TEPJF revoca y luego restituye su triunfo electoral' },
-                    { year: '2023', event: 'OSFEM detecta $95.7M en anomalías. Funcionarios detenidos por cohecho y extorsión' },
-                    { year: '2025', event: 'Toma protesta para cuarto trienio. Operación Enjambre lo pone en radar federal' },
-                ],
-                sources: [
-                    { label: 'SCJN — Consignación', url: 'https://www.proceso.com.mx/nacional/2018/1/16/la-corte-destituye-consigna-alcaldes-cabildos-del-edomex-de-puebla-198309.html' },
-                    { label: 'OSFEM — Auditoría 2023', url: 'https://www.osfem.gob.mx' },
-                    { label: 'TEPJF — Sentencia', url: 'https://www.te.gob.mx/front3/bulletins/detail/4393/0' },
-                    { label: 'El Universal — Deportivo', url: 'https://www.eluniversal.com.mx/metropoli/coacalco-debera-indemnizar-empresa-por-deportivo-villa-de-las-flores/' },
-                    { label: 'Heraldo — Radar federal', url: 'https://heraldodemexico.com.mx/opinion/2026/2/9/coacalco-en-el-radar-del-gobierno-federal-767261.html' },
-                ],
-            },
-            {
-                id: 2,
-                name: 'Roberto Ruiz Moronatti',
-                role: 'Expresidente Municipal de Coacalco / Exdiputado Federal',
-                party: 'PRI',
-                state: 'Estado de México',
-                level: 'municipal',
-                active: false,
-                scores: {
-                    sentencias: 5,
-                    fiscalizacion: 16,
-                    funcionarios: 3,
-                    deuda: 15,
-                    denuncias: 6,
-                    evasion: 7,
-                    nepotismo: 3,
-                },
-                breakdown: {
-                    sentencias: 'No se encontraron sentencias penales directas confirmadas.',
-                    fiscalizacion: 'OSFEM reportó pasivo de $640.7M al cierre de su gestión. Grado de endeudamiento 104.1%. Gastos financieros = 33% de ingresos.',
-                    funcionarios: 'No se documentaron detenciones directas de colaboradores.',
-                    deuda: 'Deuda per cápita pasó de $937 a $3,394. Municipio requería 37.2 veces los recursos del Fefom 2013 para cubrir pasivo.',
-                    denuncias: 'CONADE contradijo su versión sobre devolución de $9.5M para estadio nunca construido.',
-                    evasion: 'Dejó la presidencia municipal antes de terminar para buscar diputación federal con fuero.',
-                    nepotismo: 'No documentado con fuentes verificables.',
-                },
-                timeline: [
-                    { year: '2009', event: 'Asume presidencia municipal de Coacalco' },
-                    { year: '2012', event: 'Deja alcaldía para buscar diputación. OSFEM reporta pasivo de $640.7M' },
-                    { year: '2012', event: 'Electo diputado federal por Distrito VI (LXII Legislatura)' },
-                    { year: '2016', event: 'Delegado especial del PRI en Tamaulipas' },
-                ],
-                sources: [
-                    { label: 'OSFEM — Cuenta Pública 2012', url: 'https://www.osfem.gob.mx' },
-                    { label: 'Milenio — Deuda 50 años', url: 'https://www.milenio.com' },
-                ],
-            },
-            {
-                id: 3,
-                name: 'Erwin Castelán Enríquez',
-                role: 'Expresidente Municipal de Coacalco (2016-2018)',
-                party: 'PRI',
-                state: 'Estado de México',
-                level: 'municipal',
-                active: false,
-                scores: {
-                    sentencias: 20,
-                    fiscalizacion: 12,
-                    funcionarios: 5,
-                    deuda: 10,
-                    denuncias: 6,
-                    evasion: 5,
-                    nepotismo: 2,
-                },
-                breakdown: {
-                    sentencias: 'SCJN ordenó su destitución y consignación penal por desacato a sentencia de amparo (enero 2018). Enfrentó pena de 5-10 años.',
-                    fiscalizacion: 'Heredó y no resolvió deuda de administraciones anteriores. Declaró haber pagado $300M de $800M en laudos heredados.',
-                    funcionarios: 'No se documentaron detenciones específicas de su círculo cercano.',
-                    deuda: 'Administración declaró que el pago de juicios laborales y administrativos superaba los $800M.',
-                    denuncias: 'Empresarios lo señalaron junto con Sánchez Isidoro por adeudos. La empresa Begon denunció maniobras para evadir embargo.',
-                    evasion: 'Desacató sentencia de amparo laboral de forma reiterada junto con su antecesor.',
-                    nepotismo: 'No documentado con fuentes verificables.',
-                },
-                timeline: [
-                    { year: '2016', event: 'Asume la presidencia municipal de Coacalco' },
-                    { year: '2018', event: 'SCJN ordena su destitución y consignación penal. Cabildo completo destituido.' },
-                ],
-                sources: [
-                    { label: 'SCJN — Destitución', url: 'https://www.proceso.com.mx/nacional/2018/1/16/la-corte-destituye-consigna-alcaldes-cabildos-del-edomex-de-puebla-198309.html' },
-                    { label: 'El Universal — Adeudos', url: 'https://www.eluniversal.com.mx/metropoli/edomex/empresarios-acusan-adeudo-de-coacalco/' },
-                ],
-            },
-        ];
+        // All data now comes from data.js (SCORING_CRITERIA and officials)
+        const _unused = {
+        };
 
-        // =====================================================
         // HELPER FUNCTIONS
         // =====================================================
         function getTotalScore(scores) {
@@ -750,8 +624,9 @@
                             <h1>La corrupción tiene nombre, cargo y expediente.</h1>
                             <p>
                                 Dashboard ciudadano que recopila y visualiza datos de fuentes oficiales
-                                (OSFEM, SCJN, TEPJF, ASF, SESNSP, SHCP) sobre servidores públicos
-                                en México. Cada dato es verificable y cada fuente está citada.
+                                sobre servidores públicos en México — desde exgobernadores presos hasta
+                                alcaldes detenidos en la Operación Enjambre. Cada dato es verificable,
+                                cada fuente está citada. De OSFEM a la SCJN, de la ASF a la DEA.
                             </p>
                             <div className="hero-stats">
                                 <div className="hero-stat">
@@ -761,18 +636,28 @@
                                     <div className="hero-stat-label">Funcionarios registrados</div>
                                 </div>
                                 <div className="hero-stat">
-                                    <div className="hero-stat-value">7</div>
-                                    <div className="hero-stat-label">Categorías de evaluación</div>
+                                    <div className="hero-stat-value">
+                                        {new Set(officials.map(o => o.state)).size}
+                                    </div>
+                                    <div className="hero-stat-label">Estados cubiertos</div>
                                 </div>
                                 <div className="hero-stat">
-                                    <div className="hero-stat-value">{maxScore}</div>
-                                    <div className="hero-stat-label">Puntuación máxima</div>
+                                    <div className="hero-stat-value">
+                                        {officials.filter(o => o.active).length}
+                                    </div>
+                                    <div className="hero-stat-label">En funciones actualmente</div>
                                 </div>
                                 <div className="hero-stat">
                                     <div className="hero-stat-value" style={{ color: 'var(--corruption-critical)' }}>
                                         {Math.max(...sorted.map(o => o.total))}
                                     </div>
-                                    <div className="hero-stat-label">Score más alto actual</div>
+                                    <div className="hero-stat-label">Score más alto</div>
+                                </div>
+                                <div className="hero-stat">
+                                    <div className="hero-stat-value" style={{ color: 'var(--corruption-high)' }}>
+                                        {officials.filter(o => getTotalScore(o.scores) >= 75).length}
+                                    </div>
+                                    <div className="hero-stat-label">Nivel crítico (≥75)</div>
                                 </div>
                             </div>
                         </section>
