@@ -1643,3 +1643,30 @@ officials.push(
     timeline:[{year:'2021',event:'Candidatura a gobernador cancelada por autoridades electorales. Su hija Evelyn asume el cargo en su lugar.'},{year:'2026',event:'Insiste públicamente en buscar sucederla en 2027 pese a las reglas antinepotismo de Morena'}],
     sources:[{label:'La Política Online',url:'https://www.lapoliticaonline.com/mexico/politica-mx/felix-rumbo-al-2027-planea-remover-a-evelyn-para-eludir-la-ley-anti-nepotismo-de-sheinbaum/'},{label:'Grupo Animal',url:'https://grupoanimal.mx/estados/felix-salgado-ley-suceder-hija-guerrero-no-rompera-morena'}]}
 );
+
+
+officials.push(
+    {id:332,name:'Rutilio Escandón Cadenas',role:'Cónsul General de México en Miami / Exgobernador de Chiapas (2018-2024)',party:'MORENA',state:'Chiapas',level:'federal',active:true,status:'en_funciones',
+    scores:{sentencias:8,fiscalizacion:18,funcionarios:10,deuda:15,denuncias:10,evasion:6,nepotismo:5},
+    breakdown:{sentencias:'Bajo investigación de EE.UU. (Departamento de Estado) por presuntos vínculos con "La Barredora" y el CJNG durante su gestión como gobernador. Denuncia del exgobernador interino Willy Ochoa ante oficinas del Secretario de Estado Marco Rubio.',
+    fiscalizacion:'ASF y SFP documentaron desvío de $2,576M a través de 10 empresas factureras (Comercializadora TGZ, SAHEC Comercial, Productos Médicos Takahashi, entre otras) durante 2 años de su gestión.',
+    funcionarios:'Exsecretario de Obras Públicas adquirió propiedades de lujo en Tuxtla Gutiérrez y San Cristóbal incompatibles con su declaración patrimonial. Denuncias sin investigación seria por control político del Congreso estatal.',
+    deuda:'$2,576M desviados según ASF. Casa de $26M "desaparecida" de sus declaraciones patrimoniales tras dejar el cargo. 17 inmuebles declarados con ingresos de $3.87M anuales que no justifican el patrimonio.',
+    denuncias:'PRI anunció denuncias formales en EE.UU. Senador del PVEM (Luis Armando Melgar) exigió públicamente su renuncia por "corrupción documentada, empresas fantasma, contratos millonarios". Cuñado de Adán Augusto López, ambos bajo investigación conjunta de EE.UU.',
+    evasion:'Fue nombrado cónsul en Miami tras dejar la gubernatura, obteniendo protección diplomática. Su antecesor en el consulado renunció exhibiendo su desempeño.',
+    nepotismo:'Esposa Rosalinda López Hernández es hermana del senador Adán Augusto López. Parte del "Grupo Tabasco" liderado por su cuñado. Hija exhibida en redes con lujos (bolso de más de $100K).'},
+    timeline:[{year:'2018',event:'Asume gubernatura de Chiapas'},{year:'2020',event:'Inicia periodo de desvío documentado por ASF: $2,576M vía empresas factureras'},{year:'2024',event:'Termina gubernatura. Nombrado cónsul general en Miami.'},{year:'2026',event:'Bajo investigación de EE.UU. PRI y PVEM exigen su renuncia. Denuncia formal ante oficinas de Marco Rubio.'}],
+    sources:[{label:'Excélsior — Opacidad',url:'https://www.excelsior.com.mx/nacional/el-gobernador-de-chiapas-rutilio-escandon-cierra-los-ojos-ante-corrupcion/1680694'},{label:'PolíticoMX — Declaración patrimonial',url:'https://politico.mx/2026/02/04/melgar-exige-salida-de-rutilio-escandon-y-el-senador-pepe-cruz-y-estos-ladrones-para-cuando-renuncian/'},{label:'Sin Fronteras Agencias — Investigación EE.UU.',url:'https://www.sinfronterasagencias.com/?p=72170'}]},
+
+    {id:333,name:'José "Pepe" Cruz',role:'Senador de la República',party:'MORENA',state:'Tabasco',level:'federal',active:true,status:'en_funciones',
+    scores:{sentencias:6,fiscalizacion:12,funcionarios:6,deuda:10,denuncias:8,evasion:3,nepotismo:6},
+    breakdown:{sentencias:'Sin sentencia. Señalado públicamente por corrupción documentada según senador del PVEM.',
+    fiscalizacion:'Señalado por empresas fantasma y contratos millonarios según investigaciones periodísticas citadas en el Senado.',
+    funcionarios:'Parte del "Grupo Tabasco" liderado por el senador Adán Augusto López Hernández.',
+    deuda:'Vinculado a redes de impunidad con contratos millonarios, según denuncia pública de senador opositor.',
+    denuncias:'El senador Luis Armando Melgar (PVEM) exigió públicamente su renuncia, calificando el caso de "corrupción documentada" con "investigaciones periodísticas, datos y expedientes".',
+    evasion:'Sin evasión documentada.',
+    nepotismo:'Pertenencia al mismo grupo político familiar/regional (Grupo Tabasco) que otros funcionarios señalados.'},
+    timeline:[{year:'2026',event:'Senador del PVEM exige públicamente su renuncia por corrupción documentada (febrero)'}],
+    sources:[{label:'PolíticoMX',url:'https://politico.mx/2026/02/04/melgar-exige-salida-de-rutilio-escandon-y-el-senador-pepe-cruz-y-estos-ladrones-para-cuando-renuncian/'}]}
+);
