@@ -227,6 +227,14 @@
             border-color: var(--corruption-critical);
             color: var(--text-primary);
         }
+        .filter-group-label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: var(--font-mono);
+            margin-bottom: 0.25rem;
+        }
         .search-input {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -583,6 +591,7 @@
         function App() {
             const [expandedId, setExpandedId] = React.useState(null);
             const [filter, setFilter] = React.useState('all');
+            const [statusFilter, setStatusFilter] = React.useState('todos');
             const [search, setSearch] = React.useState('');
             const [showMethodology, setShowMethodology] = React.useState(false);
 
@@ -591,16 +600,19 @@
                 .sort((a, b) => b.total - a.total);
 
             const filtered = sorted.filter(o => {
-                const matchesFilter = filter === 'all' ||
+                const matchesLevel = filter === 'all' ||
                     (filter === 'municipal' && o.level === 'municipal') ||
                     (filter === 'estatal' && o.level === 'estatal') ||
-                    (filter === 'federal' && o.level === 'federal') ||
-                    (filter === 'active' && o.active);
+                    (filter === 'federal' && o.level === 'federal');
+                const matchesStatus = statusFilter === 'todos' ||
+                    (statusFilter === 'en_funciones' && o.status === 'en_funciones') ||
+                    (statusFilter === 'candidato' && o.status === 'candidato') ||
+                    (statusFilter === 'ex_funcionario' && o.status === 'ex_funcionario');
                 const matchesSearch = search === '' ||
                     o.name.toLowerCase().includes(search.toLowerCase()) ||
                     o.state.toLowerCase().includes(search.toLowerCase()) ||
                     o.party.toLowerCase().includes(search.toLowerCase());
-                return matchesFilter && matchesSearch;
+                return matchesLevel && matchesStatus && matchesSearch;
             });
 
             const maxScore = getMaxPossible();
@@ -691,15 +703,34 @@
                         </div>
 
                         <div className="filters">
-                            {['all', 'municipal', 'estatal', 'federal', 'active'].map(f => (
-                                <button
-                                    key={f}
-                                    className={`filter-btn ${filter === f ? 'active' : ''}`}
-                                    onClick={() => setFilter(f)}
-                                >
-                                    {{ all: 'Todos', municipal: 'Municipal', estatal: 'Estatal', federal: 'Federal', active: 'En funciones' }[f]}
-                                </button>
-                            ))}
+                            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', flex: 1 }}>
+                                <div style={{ display: 'flex', gap: '0.35rem', background: 'var(--bg-elevated)', borderRadius: '8px', padding: '0.25rem' }}>
+                                    {['todos', 'en_funciones', 'candidato', 'ex_funcionario'].map(s => (
+                                        <button
+                                            key={s}
+                                            className={`filter-btn ${statusFilter === s ? 'active' : ''}`}
+                                            onClick={() => setStatusFilter(s)}
+                                            style={{ border: 'none', borderRadius: '6px', fontSize: '0.78rem' }}
+                                        >
+                                            {{ todos: '👥 Todos', en_funciones: '🔴 En funciones', candidato: '📋 Candidatos', ex_funcionario: '📁 Exfuncionarios' }[s]}
+                                            <span style={{ marginLeft: '0.35rem', fontFamily: 'var(--font-mono)', fontSize: '0.7rem', opacity: 0.7 }}>
+                                                {s === 'todos' ? sorted.length : sorted.filter(o => o.status === s).length}
+                                            </span>
+                                        </button>
+                                    ))}
+                                </div>
+                                <div style={{ display: 'flex', gap: '0.35rem' }}>
+                                    {['all', 'municipal', 'estatal', 'federal'].map(f => (
+                                        <button
+                                            key={f}
+                                            className={`filter-btn ${filter === f ? 'active' : ''}`}
+                                            onClick={() => setFilter(f)}
+                                        >
+                                            {{ all: 'Todos los niveles', municipal: 'Municipal', estatal: 'Estatal', federal: 'Federal' }[f]}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
                             <input
                                 className="search-input"
                                 placeholder="Buscar por nombre, estado o partido..."
@@ -784,7 +815,7 @@
                             <h3>{official.name}</h3>
                             <div className="official-role">
                                 {official.role} · {official.state}
-                                {official.active && (
+                                {official.status === 'en_funciones' && (
                                     <span style={{
                                         marginLeft: '0.5rem',
                                         fontSize: '0.7rem',
@@ -794,6 +825,17 @@
                                         borderRadius: '3px',
                                         fontFamily: 'var(--font-mono)',
                                     }}>EN FUNCIONES</span>
+                                )}
+                                {official.status === 'candidato' && (
+                                    <span style={{
+                                        marginLeft: '0.5rem',
+                                        fontSize: '0.7rem',
+                                        background: 'rgba(209, 154, 34, 0.15)',
+                                        color: 'var(--corruption-medium)',
+                                        padding: '0.1rem 0.4rem',
+                                        borderRadius: '3px',
+                                        fontFamily: 'var(--font-mono)',
+                                    }}>CANDIDATO</span>
                                 )}
                             </div>
                         </div>

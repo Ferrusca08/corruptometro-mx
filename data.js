@@ -26,7 +26,7 @@ const officials = [
         party: 'PRI',
         state: 'Veracruz',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 25, fiscalizacion: 20, funcionarios: 14, deuda: 15, denuncias: 10, evasion: 10, nepotismo: 4 },
         breakdown: {
             sentencias: 'Sentenciado a 9 años por asociación delictuosa y lavado de dinero. Vinculado a nuevo proceso en 2026 por desvío de $5M. Detenido en Guatemala en 2017.',
@@ -57,7 +57,7 @@ const officials = [
         party: 'PRI',
         state: 'Chihuahua',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 23, fiscalizacion: 20, funcionarios: 13, deuda: 15, denuncias: 9, evasion: 8, nepotismo: 4 },
         breakdown: {
             sentencias: 'Preso en el Altiplano. Acusado de lavado de dinero por más de $73M. Ficha roja de Interpol.',
@@ -86,7 +86,7 @@ const officials = [
         party: 'PRI',
         state: 'Quintana Roo',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 21, fiscalizacion: 17, funcionarios: 10, deuda: 13, denuncias: 8, evasion: 8, nepotismo: 4 },
         breakdown: {
             sentencias: 'Detenido en Panamá en 2017. Procesado por lavado de dinero y delincuencia organizada. Absuelto de delincuencia organizada en 2026; continúa proceso bajo prisión domiciliaria.',
@@ -113,7 +113,7 @@ const officials = [
         party: 'PRI',
         state: 'Tamaulipas',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 24, fiscalizacion: 15, funcionarios: 12, deuda: 14, denuncias: 10, evasion: 9, nepotismo: 3 },
         breakdown: {
             sentencias: 'Procesado en EE.UU. por lavado de dinero y vínculos con narcotráfico. Orden de aprehensión desde 2012.',
@@ -140,7 +140,7 @@ const officials = [
         party: 'PRI',
         state: 'Tamaulipas',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 22, fiscalizacion: 14, funcionarios: 10, deuda: 13, denuncias: 8, evasion: 7, nepotismo: 3 },
         breakdown: {
             sentencias: 'Detenido en 2017. Procesado por lavado de dinero y vínculos con narcotráfico.',
@@ -166,7 +166,7 @@ const officials = [
         party: 'PRI',
         state: 'Nayarit',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 23, fiscalizacion: 18, funcionarios: 11, deuda: 14, denuncias: 9, evasion: 5, nepotismo: 4 },
         breakdown: {
             sentencias: 'Sentenciado por falsificación de documentos. Preso en CEFERESO No. 4 desde 2021. Enfrenta cargos adicionales por lavado de dinero, enriquecimiento ilícito y asociación delictuosa.',
@@ -194,7 +194,7 @@ const officials = [
         party: 'PRI',
         state: 'Puebla',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 22, fiscalizacion: 10, funcionarios: 8, deuda: 8, denuncias: 10, evasion: 6, nepotismo: 3 },
         breakdown: {
             sentencias: 'Preso. Regresó al penal del Altiplano en abril 2025 tras revocación de prisión domiciliaria. Procesado por tortura contra la periodista Lydia Cacho.',
@@ -222,7 +222,7 @@ const officials = [
         party: 'Independiente',
         state: 'Nuevo León',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 20, fiscalizacion: 14, funcionarios: 6, deuda: 10, denuncias: 8, evasion: 4, nepotismo: 3 },
         breakdown: {
             sentencias: 'Preso en CERESO de Apodaca. Acusado de desvío de recursos públicos y lavado de dinero durante campaña presidencial 2018.',
@@ -249,7 +249,7 @@ const officials = [
         party: 'PRI',
         state: 'Tabasco',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 18, fiscalizacion: 17, funcionarios: 7, deuda: 14, denuncias: 8, evasion: 4, nepotismo: 4 },
         breakdown: {
             sentencias: 'Condenado a 10 años 10 meses por peculado. Sentencia revocada en 2019 tras 5 años y medio preso. Liberado.',
@@ -276,7 +276,7 @@ const officials = [
         party: 'PRI',
         state: 'Nuevo León',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 14, fiscalizacion: 14, funcionarios: 5, deuda: 11, denuncias: 7, evasion: 5, nepotismo: 3 },
         breakdown: {
             sentencias: 'Vinculado a proceso por ejercicio indebido de funciones públicas. Enfrentó proceso en libertad. Exonerado en 2018.',
@@ -303,7 +303,7 @@ const officials = [
         party: 'PRI',
         state: 'Quintana Roo',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 25, fiscalizacion: 12, funcionarios: 8, deuda: 12, denuncias: 9, evasion: 7, nepotismo: 3 },
         breakdown: {
             sentencias: 'Sentenciado en 2020 por delitos contra la salud. 19 años en prisión. Actualmente en arresto domiciliario desde 2020 por edad y condiciones médicas.',
@@ -330,7 +330,7 @@ const officials = [
         party: 'MORENA',
         state: 'Sinaloa',
         level: 'estatal',
-        active: true,
+        active: true, status: 'en_funciones',
         scores: { sentencias: 10, fiscalizacion: 8, funcionarios: 5, deuda: 5, denuncias: 10, evasion: 3, nepotismo: 3 },
         breakdown: {
             sentencias: 'Acusado por EE.UU. de vínculos con narcotráfico. FGR inició investigación. Sin sentencia ni orden de aprehensión hasta la fecha.',
@@ -357,7 +357,7 @@ const officials = [
         party: 'PVEM',
         state: 'San Luis Potosí',
         level: 'estatal',
-        active: true,
+        active: true, status: 'en_funciones',
         scores: { sentencias: 12, fiscalizacion: 10, funcionarios: 5, deuda: 6, denuncias: 8, evasion: 4, nepotismo: 4 },
         breakdown: {
             sentencias: 'Estuvo preso en 2015. Antecedentes penales previos a la gubernatura. Bajo escrutinio por presuntas irregularidades.',
@@ -383,7 +383,7 @@ const officials = [
         party: 'PAN',
         state: 'Aguascalientes',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 16, fiscalizacion: 14, funcionarios: 4, deuda: 9, denuncias: 6, evasion: 4, nepotismo: 3 },
         breakdown: {
             sentencias: 'Declarado culpable de ejercicio indebido del servicio público y peculado por $13.8M. Sentenciado a 2 años 9 meses (pagó pena en libertad por ser menor a 5 años).',
@@ -409,7 +409,7 @@ const officials = [
         party: 'PRI',
         state: 'Veracruz',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 18, fiscalizacion: 8, funcionarios: 4, deuda: 6, denuncias: 7, evasion: 3, nepotismo: 3 },
         breakdown: {
             sentencias: 'Procesado por encubrimiento. Facilitó la fuga de Javier Duarte al concederle licencia como gobernador.',
@@ -435,7 +435,7 @@ const officials = [
         party: 'PRI',
         state: 'Coahuila',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 20, fiscalizacion: 14, funcionarios: 6, deuda: 12, denuncias: 8, evasion: 10, nepotismo: 3 },
         breakdown: {
             sentencias: 'Acusado por la DEA de conspiración para lavado de dinero. En la lista de "fugitivos más buscados" desde 2016.',
@@ -464,7 +464,7 @@ const officials = [
         party: 'MC/MORENA',
         state: 'Estado de México',
         level: 'municipal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 25, fiscalizacion: 8, funcionarios: 10, deuda: 5, denuncias: 9, evasion: 3, nepotismo: 3 },
         breakdown: {
             sentencias: 'Sentenciada a 70 AÑOS de prisión por homicidio calificado. Ordenó asesinato del síndico municipal y su chofer en enero 2023.',
@@ -493,7 +493,7 @@ const officials = [
         party: 'MC',
         state: 'Jalisco',
         level: 'municipal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 22, fiscalizacion: 12, funcionarios: 14, deuda: 8, denuncias: 9, evasion: 3, nepotismo: 4 },
         breakdown: {
             sentencias: 'Detenido el 5 de febrero 2026. Prisión preventiva oficiosa en Almoloya de Juárez por extorsión y vínculos con CJNG.',
@@ -521,7 +521,7 @@ const officials = [
         party: 'PAN',
         state: 'Morelos',
         level: 'municipal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 18, fiscalizacion: 8, funcionarios: 8, deuda: 6, denuncias: 9, evasion: 4, nepotismo: 3 },
         breakdown: {
             sentencias: 'Detenido el 20 de mayo 2026 por presuntos delitos de extorsión y delincuencia organizada.',
@@ -548,7 +548,7 @@ const officials = [
         party: 'MORENA',
         state: 'Morelos',
         level: 'municipal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 17, fiscalizacion: 7, funcionarios: 6, deuda: 6, denuncias: 8, evasion: 3, nepotismo: 3 },
         breakdown: {
             sentencias: 'Detenido en mayo 2026. Acusado de formar parte de estructura política que permitió financiamiento criminal de campañas.',
@@ -573,7 +573,7 @@ const officials = [
         party: 'MORENA',
         state: 'Morelos',
         level: 'municipal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 19, fiscalizacion: 8, funcionarios: 10, deuda: 7, denuncias: 8, evasion: 8, nepotismo: 3 },
         breakdown: {
             sentencias: 'Detenido el 30 de mayo 2026 por delincuencia organizada y extorsión.',
@@ -599,7 +599,7 @@ const officials = [
         party: 'MORENA',
         state: 'Puebla',
         level: 'municipal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 17, fiscalizacion: 6, funcionarios: 8, deuda: 5, denuncias: 7, evasion: 3, nepotismo: 4 },
         breakdown: {
             sentencias: 'Detenido el 7 de marzo 2025. Procesado por vínculos con organizaciones delictivas.',
@@ -624,7 +624,7 @@ const officials = [
         party: 'Sin dato',
         state: 'Estado de México',
         level: 'municipal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 18, fiscalizacion: 6, funcionarios: 8, deuda: 5, denuncias: 8, evasion: 9, nepotismo: 4 },
         breakdown: {
             sentencias: 'Detenido en febrero 2025 en Valle de Bravo. Procesado por extorsión.',
@@ -651,7 +651,7 @@ const officials = [
         party: 'Sin dato',
         state: 'Estado de México',
         level: 'municipal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 16, fiscalizacion: 7, funcionarios: 5, deuda: 6, denuncias: 7, evasion: 3, nepotismo: 3 },
         breakdown: {
             sentencias: 'Vinculado a proceso por extorsión y acaparamiento de granos.',
@@ -679,7 +679,7 @@ const officials = [
         party: 'PRI',
         state: 'Estado de México',
         level: 'municipal',
-        active: true,
+        active: true, status: 'en_funciones',
         scores: { sentencias: 22, fiscalizacion: 18, funcionarios: 14, deuda: 13, denuncias: 9, evasion: 9, nepotismo: 4 },
         breakdown: {
             sentencias: 'Condenado a 3 años 4 meses por desacato (2021). SCJN ordenó consignación penal en 2018. Proceso penal por concesión irregular del Deportivo Villa de las Flores.',
@@ -713,7 +713,7 @@ const officials = [
         party: 'PRI',
         state: 'Estado de México',
         level: 'municipal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 5, fiscalizacion: 16, funcionarios: 3, deuda: 15, denuncias: 6, evasion: 7, nepotismo: 3 },
         breakdown: {
             sentencias: 'Sin sentencias penales directas confirmadas.',
@@ -739,7 +739,7 @@ const officials = [
         party: 'PRI',
         state: 'Estado de México',
         level: 'municipal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 20, fiscalizacion: 12, funcionarios: 5, deuda: 10, denuncias: 6, evasion: 5, nepotismo: 2 },
         breakdown: {
             sentencias: 'SCJN ordenó destitución y consignación penal (enero 2018). Pena de 5-10 años.',
@@ -773,7 +773,7 @@ officials.push(
         party: 'PAN',
         state: 'Federal',
         level: 'federal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 25, fiscalizacion: 18, funcionarios: 15, deuda: 15, denuncias: 10, evasion: 5, nepotismo: 5 },
         breakdown: {
             sentencias: 'Sentenciado a 38 años y 8 meses de prisión en EE.UU. (octubre 2024). Culpable de empresa criminal continua, conspiración para importar cocaína y declaraciones falsas. Multa de $2M USD.',
@@ -804,7 +804,7 @@ officials.push(
         party: 'PRI',
         state: 'Federal',
         level: 'federal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 20, fiscalizacion: 20, funcionarios: 12, deuda: 15, denuncias: 10, evasion: 7, nepotismo: 5 },
         breakdown: {
             sentencias: 'Vinculado a proceso por lavado de dinero, asociación delictuosa y cohecho (caso Odebrecht). Proceso penal abierto por caso Agronitrogenados. SCJN dejó firme sentencia por daño moral (marzo 2026).',
@@ -837,7 +837,7 @@ officials.push(
         party: 'MORENA',
         state: 'Federal',
         level: 'federal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 8, fiscalizacion: 20, funcionarios: 14, deuda: 15, denuncias: 10, evasion: 8, nepotismo: 5 },
         breakdown: {
             sentencias: 'SIN INVESTIGACIÓN PENAL NI ADMINISTRATIVA a pesar de dirigir Segalmex durante el desfalco. 26 personas vinculadas a proceso pero Ovalle NO ha sido imputado.',
@@ -869,7 +869,7 @@ officials.push(
         party: 'PRI',
         state: 'Federal',
         level: 'federal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 18, fiscalizacion: 19, funcionarios: 10, deuda: 14, denuncias: 9, evasion: 4, nepotismo: 4 },
         breakdown: {
             sentencias: 'Procesada por ejercicio indebido del servicio público (Estafa Maestra). Presa en Santa Martha Acatitla (2019-2022). Criterio de oportunidad como testigo colaborador.',
@@ -900,7 +900,7 @@ officials.push(
         party: 'PAN',
         state: 'Sonora',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 17, fiscalizacion: 15, funcionarios: 7, deuda: 12, denuncias: 8, evasion: 5, nepotismo: 4 },
         breakdown: {
             sentencias: 'Procesado por lavado de dinero y defraudación fiscal. Preso en el Reclusorio Norte.',
@@ -926,7 +926,7 @@ officials.push(
         party: 'PRI',
         state: 'Coahuila',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 14, fiscalizacion: 20, funcionarios: 10, deuda: 15, denuncias: 10, evasion: 8, nepotismo: 4 },
         breakdown: {
             sentencias: 'Detenido brevemente en España en 2016 por lavado de dinero. Liberado. No ha sido procesado en México de forma efectiva.',
@@ -953,7 +953,7 @@ officials.push(
         party: 'PRI',
         state: 'Michoacán',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 18, fiscalizacion: 8, funcionarios: 6, deuda: 6, denuncias: 9, evasion: 4, nepotismo: 3 },
         breakdown: {
             sentencias: 'Detenido en 2014 y arraigado por la PGR. Acusado de proteger al cártel de los Caballeros Templarios. Preso 4 años 8 meses sin juicio. PGR desistió en 2018.',
@@ -980,7 +980,7 @@ officials.push(
         party: 'PRD',
         state: 'Michoacán',
         level: 'estatal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 12, fiscalizacion: 16, funcionarios: 7, deuda: 13, denuncias: 9, evasion: 6, nepotismo: 3 },
         breakdown: {
             sentencias: 'Bajo investigación por desvío de miles de millones. SCJN determinó que peculado prescribe, lo que podría beneficiarlo.',
@@ -1010,7 +1010,7 @@ officials.push(
         party: 'MORENA',
         state: 'Puebla',
         level: 'municipal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 17, fiscalizacion: 6, funcionarios: 8, deuda: 5, denuncias: 7, evasion: 3, nepotismo: 5 },
         breakdown: {
             sentencias: 'Detenido el 7 de marzo 2025 por vínculos con organizaciones delictivas.',
@@ -1035,7 +1035,7 @@ officials.push(
         party: 'MORENA',
         state: 'Puebla',
         level: 'municipal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 16, fiscalizacion: 6, funcionarios: 8, deuda: 5, denuncias: 7, evasion: 3, nepotismo: 5 },
         breakdown: {
             sentencias: 'Detenido el 29 de mayo 2025 por vínculos con organizaciones delictivas.',
@@ -1060,7 +1060,7 @@ officials.push(
         party: 'Sin dato',
         state: 'Jalisco',
         level: 'municipal',
-        active: false,
+        active: false, status: 'ex_funcionario',
         scores: { sentencias: 15, fiscalizacion: 6, funcionarios: 6, deuda: 5, denuncias: 7, evasion: 3, nepotismo: 3 },
         breakdown: {
             sentencias: 'Detenido por presuntos vínculos criminales en el marco de Operación Enjambre.',
@@ -1095,3 +1095,147 @@ const NATIONAL_STATS = {
     enjambreSentenceYears: 878,
     lastUpdate: '2026-07-14',
 };
+
+// =====================================================
+// CANDIDATOS JUDICIALES CON SEÑALAMIENTOS (Elección 2025)
+// =====================================================
+officials.push(
+    {
+        id: 401,
+        name: 'Leopoldo Chávez',
+        role: 'Candidato a Magistrado del Tribunal Colegiado, Durango',
+        party: 'Sin partido',
+        state: 'Durango',
+        level: 'federal',
+        active: true, status: 'en_funciones',
+        status: 'candidato',
+        scores: { sentencias: 20, fiscalizacion: 3, funcionarios: 3, deuda: 3, denuncias: 8, evasion: 3, nepotismo: 2 },
+        breakdown: {
+            sentencias: 'Condenado a más de 5 años de prisión en EE.UU. por intento de venta de más de 4 kg de metanfetaminas.',
+            fiscalizacion: 'Sin señalamientos de fiscalización.',
+            funcionarios: 'Sin red documentada.',
+            deuda: 'Antecedentes penales por narcotráfico.',
+            denuncias: 'Documentado por Reuters, Defensorxs, CNN. Perfil "altamente riesgoso" según ONG.',
+            evasion: 'Cumplió condena en EE.UU.',
+            nepotismo: 'Escasa experiencia judicial (3 años no vinculados al ámbito judicial).',
+        },
+        timeline: [
+            { year: '2020', event: 'Condenado en EE.UU. por delitos de metanfetaminas' },
+            { year: '2025', event: 'Postulado como candidato a magistrado en Durango' },
+        ],
+        sources: [
+            { label: 'Reuters — Antecedentes', url: 'https://www.reuters.com' },
+            { label: 'Defensorxs — Justicia en la Mira', url: 'https://pijamasurf.com/2025/05/justicia_en_riesgo_los_perfiles_mas_cuestionables_rumbo_al_poder_judicial/' },
+        ],
+    },
+    {
+        id: 402,
+        name: 'Silvia Rocío Delgado',
+        role: 'Candidata a Jueza Penal, Chihuahua',
+        party: 'Sin partido',
+        state: 'Chihuahua',
+        level: 'federal',
+        active: true, status: 'en_funciones',
+        status: 'candidato',
+        scores: { sentencias: 5, fiscalizacion: 2, funcionarios: 3, deuda: 2, denuncias: 8, evasion: 2, nepotismo: 4 },
+        breakdown: {
+            sentencias: 'Sin sentencias penales propias.',
+            fiscalizacion: 'Sin señalamientos directos.',
+            funcionarios: 'Formó parte del equipo jurídico del Chapo Guzmán. Enlace directo para amparos.',
+            deuda: 'Sin daño patrimonial documentado.',
+            denuncias: 'Señalada por Defensorxs, Infobae, CNN y El Español. Cuestionamientos éticos graves por defender al líder del Cártel de Sinaloa.',
+            evasion: 'Sin evasión de justicia.',
+            nepotismo: 'Vínculos profesionales directos con el Cártel de Sinaloa a través de defensa legal.',
+        },
+        timeline: [
+            { year: '2016', event: 'Abogada defensora de Joaquín "El Chapo" Guzmán' },
+            { year: '2025', event: 'Candidata a jueza penal en Chihuahua' },
+        ],
+        sources: [
+            { label: 'Infobae — Candidaturas riesgosas', url: 'https://www.infobae.com/mexico/2025/04/17/rumbo-al-poder-judicial-ongs-identifican-al-menos-13-candidaturas-con-antecedentes-turbios/' },
+        ],
+    },
+    {
+        id: 403,
+        name: 'Francisco Hernández Zaragoza',
+        role: 'Candidato a Magistrado Penal, Jalisco',
+        party: 'Sin partido',
+        state: 'Jalisco',
+        level: 'federal',
+        active: true, status: 'en_funciones',
+        status: 'candidato',
+        scores: { sentencias: 12, fiscalizacion: 5, funcionarios: 3, deuda: 3, denuncias: 9, evasion: 3, nepotismo: 3 },
+        breakdown: {
+            sentencias: 'Destituido como juez en 2015 por el Consejo de la Judicatura Federal tras investigación por acoso sexual y corrupción.',
+            fiscalizacion: 'Investigado por presuntos actos de corrupción y lavado de dinero durante gestión como juez penal.',
+            funcionarios: 'Denuncias de personal del juzgado por violencia laboral y sexual.',
+            deuda: 'Señalamientos de corrupción en resoluciones judiciales.',
+            denuncias: 'Denuncia formal de trabajadora del Juzgado Sexto Penal por acoso sexual (2013). Documentado por SinEmbargo, Defensorxs.',
+            evasion: 'Destituido pero sin consecuencias penales efectivas.',
+            nepotismo: 'Reincidencia: postulado para magistratura pese a destitución previa.',
+        },
+        timeline: [
+            { year: '2013', event: 'Denunciado por acoso sexual por trabajadora del juzgado' },
+            { year: '2015', event: 'Destituido como juez por la Judicatura Federal' },
+            { year: '2025', event: 'Candidato a Magistrado. Aprobado por Poder Legislativo.' },
+        ],
+        sources: [
+            { label: 'SinEmbargo — Ganadores cuestionados', url: 'https://www.sinembargo.mx/4660660/varios-ganadores-en-la-eleccion-judicial-tienen-acusaciones-y-hasta-denuncias/' },
+        ],
+    },
+    {
+        id: 404,
+        name: 'Madián Sinaí Menchaca Sierra',
+        role: 'Candidata electa a Jueza, Jalisco',
+        party: 'Sin partido',
+        state: 'Jalisco',
+        level: 'federal',
+        active: true, status: 'en_funciones',
+        status: 'candidato',
+        scores: { sentencias: 8, fiscalizacion: 2, funcionarios: 3, deuda: 2, denuncias: 9, evasion: 2, nepotismo: 5 },
+        breakdown: {
+            sentencias: 'Detenida en Tlaquepaque por lesiones culposas (mayo 2024).',
+            fiscalizacion: 'Sin señalamientos de fiscalización directos.',
+            funcionarios: 'Vínculos con la secta La Luz del Mundo a través de su padre, el obispo Nicolás Menchaca.',
+            deuda: 'Sin daño patrimonial directo.',
+            denuncias: 'Hija del obispo Nicolás Menchaca, defensor legal de Naasón Joaquín García (líder de La Luz del Mundo sentenciado en EE.UU. por delitos sexuales contra menores). Víctimas denuncian que Menchaca ofreció dinero para silenciar denuncias.',
+            evasion: 'Sin evasión documentada.',
+            nepotismo: 'INE la declaró no elegible inicialmente pero TEPJF revocó y recibió constancia de mayoría. Nexos familiares con secta procesada por delitos sexuales.',
+        },
+        timeline: [
+            { year: '2024', event: 'Detenida por lesiones culposas en Jalisco' },
+            { year: '2025', event: 'INE la declara no elegible. TEPJF revoca. Recibe constancia.' },
+        ],
+        sources: [
+            { label: 'Verificado — Candidaturas de alto riesgo', url: 'https://verificado.com.mx/eleccion-judicial-candidaturas-alto-riesgo/' },
+        ],
+    },
+    {
+        id: 405,
+        name: 'Hortencia García Rodríguez',
+        role: 'Candidata a Magistrada Penal, Chihuahua',
+        party: 'Sin partido',
+        state: 'Chihuahua',
+        level: 'estatal',
+        active: true, status: 'en_funciones',
+        status: 'candidato',
+        scores: { sentencias: 5, fiscalizacion: 5, funcionarios: 3, deuda: 3, denuncias: 8, evasion: 3, nepotismo: 5 },
+        breakdown: {
+            sentencias: 'Sin sentencias penales propias.',
+            fiscalizacion: 'Cuestionada por resoluciones judiciales favorables a exgobernador César Duarte.',
+            funcionarios: 'Ordenó la detención del exfiscal que procesaba a Duarte.',
+            deuda: 'Señalamientos de uso del cargo para favorecer intereses políticos.',
+            denuncias: 'Liberó a César Duarte sin audiencia formal para cambio de medida cautelar (2024). Ordenó detención del fiscal que investigaba a Duarte y a María Eugenia Campos.',
+            evasion: 'Sin evasión propia.',
+            nepotismo: 'Patrón de resoluciones judiciales que favorecen a actores políticos y obstaculizan la justicia.',
+        },
+        timeline: [
+            { year: '2021', event: 'Ordena detención del fiscal de Operación Justicia para Chihuahua' },
+            { year: '2024', event: 'Libera a César Duarte sin audiencia formal' },
+            { year: '2025', event: 'Candidata a magistrada penal en Chihuahua' },
+        ],
+        sources: [
+            { label: 'SinEmbargo — Ganadores cuestionados', url: 'https://www.sinembargo.mx/4660660/varios-ganadores-en-la-eleccion-judicial-tienen-acusaciones-y-hasta-denuncias/' },
+        ],
+    }
+);
