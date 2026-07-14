@@ -760,3 +760,338 @@ const officials = [
         ],
     },
 ];
+
+// =====================================================
+// NIVEL FEDERAL — FUNCIONARIOS DE ALTO NIVEL
+// =====================================================
+
+officials.push(
+    {
+        id: 301,
+        name: 'Genaro García Luna',
+        role: 'Exsecretario de Seguridad Pública Federal (2006-2012)',
+        party: 'PAN',
+        state: 'Federal',
+        level: 'federal',
+        active: false,
+        scores: { sentencias: 25, fiscalizacion: 18, funcionarios: 15, deuda: 15, denuncias: 10, evasion: 5, nepotismo: 5 },
+        breakdown: {
+            sentencias: 'Sentenciado a 38 años y 8 meses de prisión en EE.UU. (octubre 2024). Culpable de empresa criminal continua, conspiración para importar cocaína y declaraciones falsas. Multa de $2M USD.',
+            fiscalizacion: 'Aceptó millones de dólares en sobornos del Cártel de Sinaloa. Facilitó importación de más de un millón de kg de estupefacientes a EE.UU.',
+            funcionarios: 'Red de protección policial al Cártel de Sinaloa desde la Policía Federal. Múltiples mandos involucrados.',
+            deuda: 'Sobornos millonarios del Cártel de Sinaloa. Propiedades y cuentas en EE.UU. Mintió en solicitud de naturalización.',
+            denuncias: 'Más de 20 testigos cooperantes (exjefes de cárteles) declararon en su contra. Caso documentado por DOJ, DEA, CNN, Univision.',
+            evasion: 'Intentó naturalizarse estadounidense mintiendo sobre antecedentes. Detenido en Texas en 2019.',
+            nepotismo: 'Filtró información confidencial al Cártel. Utilizó la Policía Federal para atacar rivales del Cártel de Sinaloa.',
+        },
+        timeline: [
+            { year: '2001', event: 'Director de la Agencia Federal de Investigación (AFI)' },
+            { year: '2006', event: 'Secretario de Seguridad Pública bajo Felipe Calderón' },
+            { year: '2012', event: 'Termina cargo. Se muda a EE.UU.' },
+            { year: '2019', event: 'Detenido en Texas por la DEA' },
+            { year: '2023', event: 'Declarado culpable por jurado en Brooklyn' },
+            { year: '2024', event: 'Sentenciado a 38 años y 8 meses de prisión' },
+        ],
+        sources: [
+            { label: 'DOJ — Sentencia oficial', url: 'https://www.justice.gov/es/usao-edny/pr/ex-secretario-de-seguridad-publica-mexicana-genaro-garcia-luna-condenado-mas-de-38' },
+            { label: 'CNN — Condena', url: 'https://cnnespanol.cnn.com/2024/10/16/garcia-luna-sentencia-38-orix/' },
+        ],
+    },
+    {
+        id: 302,
+        name: 'Emilio Lozoya Austin',
+        role: 'Exdirector de Pemex (2012-2016)',
+        party: 'PRI',
+        state: 'Federal',
+        level: 'federal',
+        active: false,
+        scores: { sentencias: 20, fiscalizacion: 20, funcionarios: 12, deuda: 15, denuncias: 10, evasion: 7, nepotismo: 5 },
+        breakdown: {
+            sentencias: 'Vinculado a proceso por lavado de dinero, asociación delictuosa y cohecho (caso Odebrecht). Proceso penal abierto por caso Agronitrogenados. SCJN dejó firme sentencia por daño moral (marzo 2026).',
+            fiscalizacion: 'Caso Odebrecht: recibió $10.5M USD en sobornos de la constructora brasileña. Caso Agronitrogenados: compra de planta de fertilizantes por $275M USD (planta inoperante 14 años, sobreprecio masivo).',
+            funcionarios: 'Su hermana Gilda Lozoya detenida. René Gavira (caso Segalmex) vinculado. Red de operadores financieros.',
+            deuda: 'Daño patrimonial a Pemex por cientos de millones de dólares. Residencia de $51M MXN decomisada por FGR (mayo 2026).',
+            denuncias: 'Caso emblema de corrupción del sexenio Peña Nieto. Documentado por ASF, FGR, TOJIL, medios internacionales.',
+            evasion: 'Prófugo. Detenido en Málaga, España (2020). Extraditado. Buscó criterio de oportunidad como testigo colaborador. Prisión domiciliaria desde 2024.',
+            nepotismo: 'Propiedades familiares adquiridas con recursos ilícitos. Operaciones a través de familiares y prestanombres.',
+        },
+        timeline: [
+            { year: '2012', event: 'Nombrado director de Pemex por Peña Nieto' },
+            { year: '2014', event: 'Compra de Agronitrogenados por $275M USD a sobreprecio' },
+            { year: '2017', event: 'Caso Odebrecht estalla internacionalmente' },
+            { year: '2020', event: 'Detenido en Málaga, España. Extraditado a México.' },
+            { year: '2021', event: 'Ingresado a Reclusorio Norte por riesgo de fuga' },
+            { year: '2024', event: 'Prisión domiciliaria con brazalete electrónico' },
+            { year: '2026', event: 'SCJN ratifica sentencia. FGR decomisa residencia de $51M.' },
+        ],
+        sources: [
+            { label: 'La Jornada — SCJN', url: 'https://www.jornada.com.mx/noticia/2026/03/04/politica/scjn-deja-firme-primera-sentencia-contra-lozoya-por-acusaciones-en-caso-odebrecht' },
+            { label: 'Infobae — Decomiso residencia', url: 'https://www.infobae.com/mexico/2026/05/09/caso-lozoya-fgr-logra-quitarle-residencia-de-51-millones-de-pesos-en-la-cdmx-al-exdirector-de-pemex/' },
+            { label: 'TOJIL — Seguimiento', url: 'https://tojil.org/en/emilio-lozoya-y-el-caso-odebrecht/' },
+        ],
+    },
+    {
+        id: 303,
+        name: 'Ignacio Ovalle Fernández',
+        role: 'Exdirector de Segalmex (2019-2022)',
+        party: 'MORENA',
+        state: 'Federal',
+        level: 'federal',
+        active: false,
+        scores: { sentencias: 8, fiscalizacion: 20, funcionarios: 14, deuda: 15, denuncias: 10, evasion: 8, nepotismo: 5 },
+        breakdown: {
+            sentencias: 'SIN INVESTIGACIÓN PENAL NI ADMINISTRATIVA a pesar de dirigir Segalmex durante el desfalco. 26 personas vinculadas a proceso pero Ovalle NO ha sido imputado.',
+            fiscalizacion: 'ASF detectó desvío de $15,000M. Desfalco más grande del sexenio AMLO. Pagos a empresas fantasma, faltantes de granos, contratos sin entrega de bienes, certificados bursátiles por $700M sin autorización.',
+            funcionarios: '26 personas vinculadas a proceso (9 servidores públicos, 17 particulares). 47 órdenes de aprehensión. René Gavira (director de Finanzas) con 7 imputaciones por más de $2,639M.',
+            deuda: 'Desfalco al erario por entre $9,500M y $15,000M según diferentes cálculos oficiales. AMLO reconoció que fue "lo más doloroso" de su gobierno.',
+            denuncias: 'Documentado por Mexicanos Contra la Corrupción, ASF, Reforma, El Universal. AMLO lo exculpó públicamente.',
+            evasion: 'No fue procesado. Fue PREMIADO con otro cargo (INAFED). SCJN determinó que peculado prescribe, lo que podría blindarlo permanentemente.',
+            nepotismo: 'Recomendó funcionarios "priistas de malas mañas" según AMLO. Denominador común: también dirigió Conasupo en los 90 cuando hubo desfalco de $18,953M.',
+        },
+        timeline: [
+            { year: '1988', event: 'Director de Conasupo. Desfalco de 1.6 billones de viejos pesos.' },
+            { year: '2019', event: 'Nombrado director de Segalmex por AMLO' },
+            { year: '2020', event: 'ASF detecta irregularidades por $15,000M' },
+            { year: '2022', event: 'Relevado de Segalmex. Enviado al INAFED como "premio".' },
+            { year: '2023', event: '22 órdenes de aprehensión. Ovalle NO incluido.' },
+            { year: '2026', event: 'SCJN determina que peculado prescribe. Ovalle deja INAFED.' },
+        ],
+        sources: [
+            { label: 'El Universal — Impunidad', url: 'https://www.eluniversal.com.mx/nacion/ovalle-desaparece-del-gobierno-como-los-15-mil-mdp-de-segalmex/' },
+            { label: 'Grupo Animal — Sin investigación', url: 'https://grupoanimal.mx/politica/segalmex-exdirector-ignacio-ovalle-sin-investigacion-desvios' },
+            { label: 'Meganoticias — Saqueo impune', url: 'https://www.meganoticias.mx/cdmx/noticia/segalmex-el-saqueo-impune/740624' },
+        ],
+    },
+    {
+        id: 304,
+        name: 'Rosario Robles Berlanga',
+        role: 'Exsecretaria de Desarrollo Social y SEDATU (2012-2018)',
+        party: 'PRI',
+        state: 'Federal',
+        level: 'federal',
+        active: false,
+        scores: { sentencias: 18, fiscalizacion: 19, funcionarios: 10, deuda: 14, denuncias: 9, evasion: 4, nepotismo: 4 },
+        breakdown: {
+            sentencias: 'Procesada por ejercicio indebido del servicio público (Estafa Maestra). Presa en Santa Martha Acatitla (2019-2022). Criterio de oportunidad como testigo colaborador.',
+            fiscalizacion: 'Estafa Maestra: $7,670M desviados a través de 11 dependencias y universidades públicas que subcontrataron empresas fantasma para servicios nunca realizados.',
+            funcionarios: 'Red de funcionarios de Sedesol y SEDATU involucrados en la triangulación de recursos.',
+            deuda: 'Daño al erario de $7,670M del esquema Estafa Maestra.',
+            denuncias: 'Investigación periodística de Animal Político y MCCI. Documentado por ASF.',
+            evasion: 'Se entregó voluntariamente. Negoció criterio de oportunidad.',
+            nepotismo: 'Red de universidades como intermediarias para canalizar recursos a empresas fantasma.',
+        },
+        timeline: [
+            { year: '2012', event: 'Secretaria de Desarrollo Social bajo Peña Nieto' },
+            { year: '2015', event: 'Titular de SEDATU' },
+            { year: '2019', event: 'Detenida por Estafa Maestra. Presa en Santa Martha.' },
+            { year: '2022', event: 'Liberada. Criterio de oportunidad como testigo.' },
+        ],
+        sources: [
+            { label: 'Animal Político — Estafa Maestra', url: 'https://www.animalpolitico.com/estafa-maestra/' },
+        ],
+    },
+    // =====================================================
+    // MÁS EXGOBERNADORES
+    // =====================================================
+    {
+        id: 117,
+        name: 'Guillermo Padrés Elías',
+        role: 'Exgobernador de Sonora (2009-2015)',
+        party: 'PAN',
+        state: 'Sonora',
+        level: 'estatal',
+        active: false,
+        scores: { sentencias: 17, fiscalizacion: 15, funcionarios: 7, deuda: 12, denuncias: 8, evasion: 5, nepotismo: 4 },
+        breakdown: {
+            sentencias: 'Procesado por lavado de dinero y defraudación fiscal. Preso en el Reclusorio Norte.',
+            fiscalizacion: 'Señalamientos de desvío de recursos del gobierno de Sonora.',
+            funcionarios: 'Excolaboradores investigados por irregularidades financieras.',
+            deuda: 'Acumulación de propiedades y riqueza inexplicable. Defraudación fiscal documentada.',
+            denuncias: 'Documentado por medios nacionales y la administración sucesora.',
+            evasion: 'Enfrentó proceso pero estuvo preso.',
+            nepotismo: 'Propiedades a nombre de familiares y prestanombres.',
+        },
+        timeline: [
+            { year: '2009', event: 'Asume gubernatura de Sonora' },
+            { year: '2016', event: 'Detenido por lavado de dinero y defraudación fiscal' },
+        ],
+        sources: [
+            { label: 'Proceso', url: 'https://www.proceso.com.mx' },
+        ],
+    },
+    {
+        id: 118,
+        name: 'Humberto Moreira Valdés',
+        role: 'Exgobernador de Coahuila (2005-2011) / Expresidente del PRI',
+        party: 'PRI',
+        state: 'Coahuila',
+        level: 'estatal',
+        active: false,
+        scores: { sentencias: 14, fiscalizacion: 20, funcionarios: 10, deuda: 15, denuncias: 10, evasion: 8, nepotismo: 4 },
+        breakdown: {
+            sentencias: 'Detenido brevemente en España en 2016 por lavado de dinero. Liberado. No ha sido procesado en México de forma efectiva.',
+            fiscalizacion: 'Megadeuda de Coahuila: endeudó al estado en más de $36,000M de pesos de forma irregular, falsificando documentos y sin aprobación del Congreso.',
+            funcionarios: 'Su hermano Rubén Moreira asumió la gubernatura. Jorge Torres López (sustituto) prófugo de la DEA. Red familiar y política.',
+            deuda: 'Megadeuda de $36,000M que hipotecó a Coahuila por décadas. Fondos canalizados a paraísos fiscales y bancos en Texas.',
+            denuncias: 'Caso emblemático documentado por Proceso, NYT, medios internacionales. Investigaciones de la DEA.',
+            evasion: 'Detenido en España y liberado. No ha enfrentado justicia efectiva en México.',
+            nepotismo: 'Presidente nacional del PRI. Su hermano lo sucedió como gobernador. Red familiar de control estatal.',
+        },
+        timeline: [
+            { year: '2005', event: 'Asume gubernatura de Coahuila' },
+            { year: '2011', event: 'Presidente nacional del PRI. Estalla escándalo de megadeuda.' },
+            { year: '2016', event: 'Detenido brevemente en España. Liberado.' },
+        ],
+        sources: [
+            { label: 'Proceso — Megadeuda', url: 'https://www.proceso.com.mx' },
+        ],
+    },
+    {
+        id: 119,
+        name: 'Jesús Reyna García',
+        role: 'Exgobernador interino de Michoacán (2013)',
+        party: 'PRI',
+        state: 'Michoacán',
+        level: 'estatal',
+        active: false,
+        scores: { sentencias: 18, fiscalizacion: 8, funcionarios: 6, deuda: 6, denuncias: 9, evasion: 4, nepotismo: 3 },
+        breakdown: {
+            sentencias: 'Detenido en 2014 y arraigado por la PGR. Acusado de proteger al cártel de los Caballeros Templarios. Preso 4 años 8 meses sin juicio. PGR desistió en 2018.',
+            fiscalizacion: 'Señalamientos de protección estatal al crimen organizado.',
+            funcionarios: 'Red gubernamental de protección a Los Caballeros Templarios.',
+            deuda: 'Corrupción por protección al narcotráfico más que por desvío directo.',
+            denuncias: 'Acusado de reunirse con Nazario Moreno "El Chayo" y Servando Gómez "La Tuta".',
+            evasion: 'Preso sin sentencia durante casi 5 años.',
+            nepotismo: 'Red de protección gubernamental al crimen organizado.',
+        },
+        timeline: [
+            { year: '2013', event: 'Gobernador interino de Michoacán' },
+            { year: '2014', event: 'Detenido por vínculos con Caballeros Templarios' },
+            { year: '2018', event: 'PGR desiste de acusaciones. Liberado.' },
+        ],
+        sources: [
+            { label: 'Semanario ZETA', url: 'https://zetatijuana.com' },
+        ],
+    },
+    {
+        id: 120,
+        name: 'Silvano Aureoles Conejo',
+        role: 'Exgobernador de Michoacán (2015-2021)',
+        party: 'PRD',
+        state: 'Michoacán',
+        level: 'estatal',
+        active: false,
+        scores: { sentencias: 12, fiscalizacion: 16, funcionarios: 7, deuda: 13, denuncias: 9, evasion: 6, nepotismo: 3 },
+        breakdown: {
+            sentencias: 'Bajo investigación por desvío de miles de millones. SCJN determinó que peculado prescribe, lo que podría beneficiarlo.',
+            fiscalizacion: 'Señalamientos de desvío masivo de recursos del gobierno de Michoacán. Deuda pública estatal incrementada.',
+            funcionarios: 'Funcionarios investigados por irregularidades financieras.',
+            deuda: 'Desvío de miles de millones de pesos del erario michoacano.',
+            denuncias: '37 denuncias ante la FGR por irregularidades en manejo de recursos en Tabasco (nota: referencia cruzada con otros políticos señalados).',
+            evasion: 'Ha evitado proceso efectivo hasta ahora.',
+            nepotismo: 'Señalamientos de contratos dirigidos.',
+        },
+        timeline: [
+            { year: '2015', event: 'Asume gubernatura de Michoacán' },
+            { year: '2021', event: 'Termina mandato bajo señalamientos de corrupción' },
+            { year: '2026', event: 'SCJN: peculado prescribe. Podría beneficiarse.' },
+        ],
+        sources: [
+            { label: 'Red Michoacán', url: 'https://www.redmichoacan.com' },
+        ],
+    },
+    // =====================================================
+    // MÁS OPERACIÓN ENJAMBRE
+    // =====================================================
+    {
+        id: 209,
+        name: 'Uruviel González Vieyra',
+        role: 'Alcalde de Quimixtlán, Puebla',
+        party: 'MORENA',
+        state: 'Puebla',
+        level: 'municipal',
+        active: false,
+        scores: { sentencias: 17, fiscalizacion: 6, funcionarios: 8, deuda: 5, denuncias: 7, evasion: 3, nepotismo: 5 },
+        breakdown: {
+            sentencias: 'Detenido el 7 de marzo 2025 por vínculos con organizaciones delictivas.',
+            fiscalizacion: 'Bajo investigación federal por irregularidades.',
+            funcionarios: 'Hermano de Giovanni (Tlachichuca) y Ramiro (San Nicolás). Red familiar de control.',
+            deuda: 'Presunta canalización de recursos hacia actividades ilícitas.',
+            denuncias: 'Investigación federal por delincuencia organizada.',
+            evasion: 'No evadió detención.',
+            nepotismo: 'TRES HERMANOS gobernando municipios simultáneamente en Puebla. Red familiar.',
+        },
+        timeline: [
+            { year: '2025', event: 'Detenido en Operación Enjambre junto con hermanos' },
+        ],
+        sources: [
+            { label: 'Infobae — Enjambre Puebla', url: 'https://www.infobae.com' },
+        ],
+    },
+    {
+        id: 210,
+        name: 'Ramiro González Vieyra',
+        role: 'Alcalde de San Nicolás Buenos Aires, Puebla',
+        party: 'MORENA',
+        state: 'Puebla',
+        level: 'municipal',
+        active: false,
+        scores: { sentencias: 16, fiscalizacion: 6, funcionarios: 8, deuda: 5, denuncias: 7, evasion: 3, nepotismo: 5 },
+        breakdown: {
+            sentencias: 'Detenido el 29 de mayo 2025 por vínculos con organizaciones delictivas.',
+            fiscalizacion: 'Bajo investigación federal.',
+            funcionarios: 'Tercer hermano González Vieyra detenido. Incluido en expedientes de delincuencia organizada.',
+            deuda: 'Red familiar de control municipal con presunta actividad ilícita.',
+            denuncias: 'Investigación federal documentada.',
+            evasion: 'No evadió detención.',
+            nepotismo: 'Hermano de Giovanni y Uruviel. Control familiar de tres municipios poblanos.',
+        },
+        timeline: [
+            { year: '2025', event: 'Detenido como tercer hermano en Operación Enjambre' },
+        ],
+        sources: [
+            { label: 'Infobae — Enjambre', url: 'https://www.infobae.com' },
+        ],
+    },
+    {
+        id: 211,
+        name: 'José Ascención "N"',
+        role: 'Alcalde de Teuchitlán, Jalisco',
+        party: 'Sin dato',
+        state: 'Jalisco',
+        level: 'municipal',
+        active: false,
+        scores: { sentencias: 15, fiscalizacion: 6, funcionarios: 6, deuda: 5, denuncias: 7, evasion: 3, nepotismo: 3 },
+        breakdown: {
+            sentencias: 'Detenido por presuntos vínculos criminales en el marco de Operación Enjambre.',
+            fiscalizacion: 'Bajo investigación federal.',
+            funcionarios: 'Su hermano también fue detenido posteriormente, vinculado a robo de combustible.',
+            deuda: 'Señalamientos de actividades ilícitas desde el gobierno municipal.',
+            denuncias: 'Sheinbaum lo mencionó como ejemplo de la estrategia Enjambre.',
+            evasion: 'No evadió detención.',
+            nepotismo: 'Hermano vinculado a robo de combustible (huachicol).',
+        },
+        timeline: [
+            { year: '2025', event: 'Detenido en Operación Enjambre en Jalisco' },
+        ],
+        sources: [
+            { label: 'Grupo Animal — Enjambre', url: 'https://grupoanimal.mx/seguridad/operativo-enjambre-alcaldes-funcionarios-corrupcion-delincuencia' },
+        ],
+    }
+);
+
+// =====================================================
+// ESTADÍSTICAS NACIONALES (para el hero)
+// =====================================================
+const NATIONAL_STATS = {
+    totalOfficials: officials.length,
+    totalStates: new Set(officials.map(o => o.state)).size,
+    activeOfficials: officials.filter(o => o.active).length,
+    criticalLevel: officials.filter(o => {
+        const total = Object.values(o.scores).reduce((a, b) => a + b, 0);
+        return total >= 75;
+    }).length,
+    enjambreDetentions: 147,
+    enjambreSentenceYears: 878,
+    lastUpdate: '2026-07-14',
+};
