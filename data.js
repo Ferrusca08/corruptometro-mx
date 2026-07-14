@@ -1604,3 +1604,42 @@ officials.push(
     timeline:[{year:'2026',event:'Denunciada junto con su esposo por triangulación de $1,400M (mayo) y uso de recursos en el Mundial (julio)'}],
     sources:[{label:'El Informador',url:'https://www.informador.mx/mexico/morena-en-nuevo-leon-denuncia-a-samuel-garcia-ante-la-fgr-por-corrupcion-lo-acusan-de-desvio-millonario-20260526-0176.html'}]}
 );
+
+
+officials.push(
+    {id:329,name:'Evelyn Salgado Pineda',role:'Gobernadora de Guerrero (2021-presente)',party:'MORENA',state:'Guerrero',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:3,fiscalizacion:8,funcionarios:10,deuda:9,denuncias:9,evasion:4,nepotismo:15},
+    breakdown:{sentencias:'Sin proceso penal formal.',
+    fiscalizacion:'Sin hallazgos formales de fiscalización publicados, pero señalamientos de asignación de obras dirigida a empresas ligadas a su entorno familiar.',
+    funcionarios:'Su esposo Rubén Hernández Fuentes fungió como jefe de gabinete cobrando $58,000 mensuales mientras sostenía relación con ella (confirmada por acta de matrimonio vía transparencia). Su hermano Óscar Omar Hernández Fuentes es director de Costos, Presupuestos, Licitaciones y Contratos en la Secretaría de Desarrollo Urbano y Obras Públicas del estado.',
+    deuda:'Según Reforma, ambos hermanos Hernández Fuentes controlarían la asignación de obras del Gobierno de Guerrero con empresas constructoras a través de esa Secretaría.',
+    denuncias:'Caso confirmado por solicitud de transparencia (no rumor): existe registro oficial de matrimonio con su entonces subordinado. Su padre, el senador Félix Salgado Macedonio, busca sucederla en 2027 pese a las reglas antinepotismo de Morena.',
+    evasion:'Negó reiteradamente la boda en público antes de reconocerla en su informe de gobierno de 2025.',
+    nepotismo:'CASO EXTREMO documentado con evidencia oficial: se casó con su propio subordinado (jefe de gabinete) mientras él seguía en la nómina del gobierno estatal. El hermano del esposo controla licitaciones de obra pública. Su padre, senador, busca sucederla en la gubernatura.'},
+    timeline:[{year:'2021',event:'Asume gubernatura de Guerrero'},{year:'2023',event:'Inicia relación con su jefe de gabinete, Rubén Hernández Fuentes, mientras él sigue en nómina'},{year:'2024',event:'Se casan en diciembre. Solicitud de transparencia confirma el matrimonio en agosto 2025.'},{year:'2025',event:'Reconoce públicamente la relación en su informe de gobierno'},{year:'2026',event:'Su padre Félix Salgado busca sucederla pese a reglas antinepotismo de Morena'}],
+    sources:[{label:'Etcétera — Confirmación oficial',url:'https://etcetera.com.mx/nacional/nepotismo-evelyn-salgado-pineda-ruben-hernandez-fuentes-fue-funcionario/'},{label:'PolíticoMX — Familiares en el gobierno',url:'https://politico.mx/2025/01/17/fotos-nepotismo-ellos-son-los-familiares-de-evelyn-y-felix-salgado-macedonio-en-el-gobierno-de-guerrero/'}]},
+
+    {id:330,name:'Rubén Hernández Fuentes',role:'Esposo de la Gobernadora de Guerrero / Coordinador Operativo del Gobierno',party:'MORENA',state:'Guerrero',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:3,fiscalizacion:8,funcionarios:5,deuda:8,denuncias:8,evasion:3,nepotismo:15},
+    breakdown:{sentencias:'Sin proceso penal.',
+    fiscalizacion:'Cobraba $58,000 mensuales como "subsecretario de despacho" mientras sostenía relación sentimental no declarada con la gobernadora.',
+    funcionarios:'Su hermano Óscar Omar Hernández Fuentes es director de Costos, Presupuestos, Licitaciones y Contratos en la Secretaría de Desarrollo Urbano y Obras Públicas.',
+    deuda:'Según Reforma, controla junto con su hermano la asignación de obras públicas del estado con empresas constructoras.',
+    denuncias:'Empresarios guerrerenses han señalado que "hay que estar bien con ellos" para obtener contratos de obra pública, según testimonios recabados desde 2023.',
+    evasion:'La relación se mantuvo oculta durante el periodo en que él era subordinado directo de ella en el gobierno.',
+    nepotismo:'CASO DIRECTO: ascendió de subsecretario a jefe de gabinete y luego a coordinador operativo mientras sostenía relación con su superiora jerárquica, con quien finalmente se casó.'},
+    timeline:[{year:'2021',event:'Se incorpora al gobierno de Guerrero'},{year:'2023',event:'Inicia relación con la gobernadora mientras es su subordinado'},{year:'2024',event:'Contrae matrimonio con Evelyn Salgado (diciembre)'}],
+    sources:[{label:'Periódico Enfoque',url:'https://www.periodicoenfoque.com.mx/estados/quien-es-ruben-hernandez-el-futuro-esposo-de-evelyn-salgado'}]},
+
+    {id:331,name:'Félix Salgado Macedonio',role:'Senador de la República / Padre de la gobernadora de Guerrero',party:'MORENA',state:'Guerrero',level:'federal',active:true,status:'en_funciones',
+    scores:{sentencias:6,fiscalizacion:4,funcionarios:3,deuda:3,denuncias:9,evasion:5,nepotismo:15},
+    breakdown:{sentencias:'Múltiples denuncias por presunto acoso sexual documentadas por medios, sin condena hasta el momento. Su candidatura a gobernador fue cancelada en 2021 por autoridades electorales.',
+    fiscalizacion:'Sin hallazgos de fiscalización directos contra él.',
+    funcionarios:'Red familiar extensa colocada en el gobierno de Guerrero durante la gestión de su hija.',
+    deuda:'Sin daño patrimonial directo documentado.',
+    denuncias:'Acusaciones de acoso sexual ampliamente documentadas. Militantes de su propio partido en Guerrero piden que se le investiguen "vínculos con la delincuencia o antecedentes de corrupción" antes de permitir su candidatura 2027.',
+    evasion:'Insiste en buscar la gubernatura pese a las reglas antinepotismo internas de Morena, argumentando que constitucionalmente tiene el derecho.',
+    nepotismo:'CASO MÁXIMO: busca suceder directamente a su propia hija como gobernador de Guerrero, en abierto desafío a las reglas antinepotismo que su propio partido estableció. Otros familiares (sobrina Carvajal Salgado) también han buscado cargos de elección popular en el estado.'},
+    timeline:[{year:'2021',event:'Candidatura a gobernador cancelada por autoridades electorales. Su hija Evelyn asume el cargo en su lugar.'},{year:'2026',event:'Insiste públicamente en buscar sucederla en 2027 pese a las reglas antinepotismo de Morena'}],
+    sources:[{label:'La Política Online',url:'https://www.lapoliticaonline.com/mexico/politica-mx/felix-rumbo-al-2027-planea-remover-a-evelyn-para-eludir-la-ley-anti-nepotismo-de-sheinbaum/'},{label:'Grupo Animal',url:'https://grupoanimal.mx/estados/felix-salgado-ley-suceder-hija-guerrero-no-rompera-morena'}]}
+);
