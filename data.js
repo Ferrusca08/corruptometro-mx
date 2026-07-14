@@ -1499,3 +1499,81 @@ officials.push(
     timeline:[{year:'2026',event:'IECM abre indagatoria por violencia política de género'}],
     sources:[{label:'La Verdad Noticias',url:'https://laverdadnoticias.com/ultimas-noticias/politica/ley-electoral-en-cdmx'}]}
 );
+
+
+// =====================================================
+// RED "HUACHICOL FISCAL" — FUNCIONARIOS FEDERALES ACTIVOS
+// =====================================================
+officials.push(
+    {id:321,name:'Daniel Asaf',role:'Diputado Federal',party:'MORENA',state:'Federal',level:'federal',active:true,status:'en_funciones',
+    scores:{sentencias:10,fiscalizacion:15,funcionarios:12,deuda:14,denuncias:9,evasion:4,nepotismo:5},
+    breakdown:{sentencias:'Sin sentencia formal. Señalado en la red de huachicol fiscal por versiones periodísticas.',
+    fiscalizacion:'Señalado como la figura que articulaba acuerdos y daba órdenes desde Palacio Nacional en la red de huachicol fiscal, controlando contratos, licitaciones y asignaciones directas en Pemex.',
+    funcionarios:'Operaba junto con Marcos Herrería Alamina (director corporativo de Pemex, cuñado de Pedro López Obrador). Su primo Antonio Martínez Dagnino Asaf es titular del SAT.',
+    deuda:'Vinculado al esquema de huachicol fiscal que representó pérdidas de aproximadamente $123,000M anuales según el Observatorio Ciudadano de Energía (2025).',
+    denuncias:'Documentado por PolíticoMX entre "los personajes de la 4T en la mira por huachicol fiscal".',
+    evasion:'Sin evasión documentada.',
+    nepotismo:'Primo (titular del SAT) y red de parentescos con funcionarios de Pemex dentro del mismo esquema.'},
+    timeline:[{year:'2026',event:'Señalado en investigaciones periodísticas sobre la red de huachicol fiscal desde Palacio Nacional'}],
+    sources:[{label:'PolíticoMX',url:'https://politico.mx/2026/05/13/los-personajes-de-la-4t-en-la-mira-por-huachicol-fiscal/'}]},
+
+    {id:322,name:'Antonio Martínez Dagnino Asaf',role:'Titular del Servicio de Administración Tributaria (SAT)',party:'MORENA',state:'Federal',level:'federal',active:true,status:'en_funciones',
+    scores:{sentencias:8,fiscalizacion:15,funcionarios:10,deuda:14,denuncias:8,evasion:4,nepotismo:8},
+    breakdown:{sentencias:'Sin sentencia formal.',
+    fiscalizacion:'Como titular del SAT, la institución encargada de combatir el contrabando fiscal, es señalado dentro de la propia red de huachicol fiscal que debía combatir.',
+    funcionarios:'Primo de Daniel Asaf, diputado señalado como operador central del esquema.',
+    deuda:'Vinculado al esquema que generó pérdidas fiscales estimadas en $123,000M anuales.',
+    denuncias:'Documentado por PolíticoMX entre los funcionarios señalados en el huachicol fiscal.',
+    evasion:'Sin evasión documentada.',
+    nepotismo:'Parentesco directo (primo) con el diputado señalado como articulador del esquema, mientras dirige la institución que debería fiscalizarlo.'},
+    timeline:[{year:'2026',event:'Señalado en la red de huachicol fiscal pese a dirigir la institución fiscal del Estado'}],
+    sources:[{label:'PolíticoMX',url:'https://politico.mx/2026/05/13/los-personajes-de-la-4t-en-la-mira-por-huachicol-fiscal/'}]},
+
+    {id:323,name:'José Ramón Gómez Leal',role:'Senador de la República',party:'MORENA',state:'Tamaulipas',level:'federal',active:true,status:'en_funciones',
+    scores:{sentencias:10,fiscalizacion:14,funcionarios:8,deuda:12,denuncias:8,evasion:3,nepotismo:3},
+    breakdown:{sentencias:'Sin sentencia. Un informe de la SSPC incorporado a investigaciones de la FGR lo vincula directamente con la red (julio 2026).',
+    fiscalizacion:'Vinculado a la red de corrupción y contrabando de hidrocarburos que operaba en la Aduana de Matamoros.',
+    funcionarios:'Parte de la red de huachicol fiscal en Tamaulipas junto con otros operadores señalados.',
+    deuda:'Contrabando de hidrocarburos en una de las aduanas más activas del país.',
+    denuncias:'Informe oficial de la SSPC, no solo señalamiento periodístico, lo relaciona con la red.',
+    evasion:'Sin evasión documentada.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2026',event:'Informe de la SSPC lo vincula con la red de huachicol fiscal en la Aduana de Matamoros (julio)'}],
+    sources:[{label:'Reforma',url:'https://www.reforma.com/salpican-a-senador-en-red-de-huachicol/ar3236442'}]},
+
+    {id:324,name:'Erasmo González',role:'Diputado Federal',party:'MORENA',state:'Tamaulipas',level:'federal',active:true,status:'en_funciones',
+    scores:{sentencias:8,fiscalizacion:12,funcionarios:6,deuda:12,denuncias:8,evasion:3,nepotismo:2},
+    breakdown:{sentencias:'Sin sentencia formal. Señalado en denuncia formal de senadores del PAN ante la FGR.',
+    fiscalizacion:'Nombrado en denuncia por presunto financiamiento ilegal de campañas con recursos del huachicol fiscal.',
+    funcionarios:'Vinculado con operadores financieros de Morena en Tamaulipas cercanos al gobernador Villarreal.',
+    deuda:'Señalado dentro del esquema de financiamiento de $500M documentado en grabaciones de operadores morenistas.',
+    denuncias:'Nombrado expresamente en la denuncia formal presentada por senadores del PAN ante la FGR (abril 2024, ampliada en 2026).',
+    evasion:'Sin evasión documentada.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2024',event:'Senadores del PAN lo señalan en denuncia formal ante la FGR por financiamiento ilegal con huachicol'}],
+    sources:[{label:'PAN Senado',url:'https://www.pan.senado.gob.mx/2024/04/denuncian-senadores-ante-fgr-presunto-financiamiento-ilegal-a-morena/'}]},
+
+    {id:325,name:'Andrés Manuel "Andy" López Beltrán',role:'Hijo del expresidente AMLO / Figura política de Morena',party:'MORENA',state:'Federal',level:'federal',active:true,status:'en_funciones',
+    scores:{sentencias:8,fiscalizacion:14,funcionarios:6,deuda:13,denuncias:10,evasion:5,nepotismo:8},
+    breakdown:{sentencias:'Denunciado por diputados del PAN (Federico Döring y Marcelo Torres Cofiño) ante la FGR en septiembre 2025 por conspiración, delincuencia organizada, tráfico de hidrocarburos, contrabando, encubrimiento, operaciones con recursos ilícitos, asociación delictuosa, tráfico de influencia y enriquecimiento ilícito bajo el nombre "Cártel del Palenque".',
+    fiscalizacion:'Investigaciones del FBI y el IRS en Texas sobre la empresa Icon Midstream señalan presuntos vínculos con esquema de importación irregular de combustible.',
+    funcionarios:'Vinculado con la red de huachicol fiscal que involucra a exmandos militares, empresarios y funcionarios del gobierno federal.',
+    deuda:'Señalado dentro del entramado que la ASF y organizaciones ciudadanas estiman en pérdidas de $123,000M anuales para el erario.',
+    denuncias:'Denuncia formal de diputados federales del PAN. Investigación de agencias estadounidenses (FBI, IRS) en curso.',
+    evasion:'Sin evasión documentada hasta el momento.',
+    nepotismo:'Hijo del expresidente López Obrador, mencionado como uno de los nombres "más mediáticos" del escándalo, junto con su hermano Gonzalo Alfonso.'},
+    timeline:[{year:'2025',event:'Diputados del PAN lo denuncian formalmente ante la FGR (septiembre)'},{year:'2026',event:'Persisten investigaciones del FBI/IRS sobre Icon Midstream en Texas'}],
+    sources:[{label:'PolíticoMX — Huachicol fiscal',url:'https://politico.mx/2026/05/13/los-personajes-de-la-4t-en-la-mira-por-huachicol-fiscal/'}]},
+
+    {id:326,name:'Gonzalo Alfonso López Beltrán',role:'Hijo del expresidente AMLO / Figura política de Morena',party:'MORENA',state:'Federal',level:'federal',active:true,status:'en_funciones',
+    scores:{sentencias:8,fiscalizacion:12,funcionarios:5,deuda:11,denuncias:9,evasion:4,nepotismo:8},
+    breakdown:{sentencias:'Denunciado junto con su hermano ante la FGR por diputados del PAN en septiembre 2025 bajo los mismos cargos del caso "Cártel del Palenque".',
+    fiscalizacion:'Investigado dentro del mismo entramado señalado contra su hermano Andy.',
+    funcionarios:'Vinculado a la misma red de huachicol fiscal.',
+    deuda:'Parte del entramado que representa pérdidas estimadas en $123,000M anuales para el erario.',
+    denuncias:'Denuncia formal de diputados federales del PAN.',
+    evasion:'Sin evasión documentada.',
+    nepotismo:'Hijo del expresidente López Obrador, señalado junto con su hermano en el mismo caso.'},
+    timeline:[{year:'2025',event:'Denunciado junto con su hermano ante la FGR (septiembre)'}],
+    sources:[{label:'PolíticoMX',url:'https://politico.mx/2026/05/13/los-personajes-de-la-4t-en-la-mira-por-huachicol-fiscal/'}]}
+);
