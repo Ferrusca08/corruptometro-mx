@@ -1577,3 +1577,30 @@ officials.push(
     timeline:[{year:'2025',event:'Denunciado junto con su hermano ante la FGR (septiembre)'}],
     sources:[{label:'PolíticoMX',url:'https://politico.mx/2026/05/13/los-personajes-de-la-4t-en-la-mira-por-huachicol-fiscal/'}]}
 );
+
+
+officials.push(
+    {id:327,name:'Samuel García Sepúlveda',role:'Gobernador de Nuevo León (2021-presente)',party:'MC',state:'Nuevo León',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:8,fiscalizacion:17,funcionarios:6,deuda:15,denuncias:10,evasion:4,nepotismo:8},
+    breakdown:{sentencias:'Sin sentencia. Congreso de Nuevo León aprobó iniciar juicio político en su contra (junio 2026) por presunta triangulación de recursos.',
+    fiscalizacion:'Denunciado ante la FGR por Morena Nuevo León por triangulación de $1,400M. Contratos estatales otorgados a proveedores (como "Suministro MYR") que transfirieron fondos a intermediarias, terminando en un despacho jurídico donde su propio padre, Samuel Orlando García Mascorro, es socio principal y beneficiario directo.',
+    funcionarios:'Funcionarios señalados en denuncias: Emmanuel Loo (subsecretario), Marco Antonio González Valdez (secretario de Desarrollo Regional), Bernardo Bichara Assad (Parque Fundidora), Javier Luis Navarro Velasco (coordinador de Gabinete).',
+    deuda:'Triangulación denunciada por $1,400M según Morena NL. Uso de un helicóptero Black Hawk asignado a Fuerza Civil para fines recreativos (trasladarse a ver un partido). Parte de los recursos habría sido enviada a Estados Unidos para dificultar rastreo, según la denuncia.',
+    denuncias:'Denunciado simultáneamente por Morena (peculado, triangulación) y por PAN/PRI (uso indebido de recursos durante el Mundial 2026: playeras, cervezas, promoción personalizada). Oposición exige que solicite licencia para enfrentar el proceso sin fuero.',
+    evasion:'Mantiene el cargo con protección de fuero constitucional pese a las denuncias y el juicio político en curso.',
+    nepotismo:'CASO DIRECTO: su propio padre es socio principal del despacho jurídico que recibió los fondos triangulados, según la denuncia. Su esposa Mariana Rodríguez también denunciada por beneficiarse de recursos para promoción personal.'},
+    timeline:[{year:'2021',event:'Asume gubernatura de Nuevo León'},{year:'2026',event:'Mayo: Morena denuncia triangulación de $1,400M ante la FGR. Junio: Congreso NL aprueba juicio político. Julio: PAN/PRI denuncian uso de recursos durante el Mundial.'}],
+    sources:[{label:'La Jornada — Denuncia Morena',url:'https://www.jornada.com.mx/noticia/2026/05/26/politica/morena-nl-denuncia-a-samuel-garcia-ante-fgr-lo-senalan-de-corrupcion'},{label:'Infobae — Juicio político',url:'https://www.infobae.com/mexico/2026/06/12/aprueban-juicio-politico-contra-samuel-garcia-por-presunta-triangulacion-de-recursos-publicos/'},{label:'Proceso — Mundial 2026',url:'https://www.proceso.com.mx/nacional/estados/2026/7/2/acusan-a-samuel-garcia-y-mariana-por-usar-fondos-publicos-en-mundial-para-promover-a-mc-375245.html'}]},
+
+    {id:328,name:'Mariana Rodríguez Cantú',role:'Esposa del Gobernador de Nuevo León / Figura pública con recursos públicos asignados',party:'MC',state:'Nuevo León',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:5,fiscalizacion:12,funcionarios:2,deuda:10,denuncias:9,evasion:3,nepotismo:9},
+    breakdown:{sentencias:'Sin sentencia. Incluida en la denuncia penal de Morena ante la FGR junto con su esposo (mayo 2026).',
+    fiscalizacion:'Señalada de beneficiarse directamente de recursos triangulados para financiar "promoción personalizada y costosas campañas digitales".',
+    funcionarios:'Sin red propia; opera dentro del entorno del gobernador.',
+    deuda:'Parte de los $1,400M denunciados por triangulación de recursos públicos estatales.',
+    denuncias:'Denunciada también por PAN/PRI por uso de recursos públicos durante el Mundial 2026 para promoción personal y del partido MC.',
+    evasion:'Sin cargo público formal, lo que ha sido señalado como una forma de operar sin las restricciones de transparencia que aplican a servidores públicos.',
+    nepotismo:'CASO DIRECTO: beneficiaria de recursos públicos pese a no ocupar cargo formal, únicamente por su relación conyugal con el gobernador.'},
+    timeline:[{year:'2026',event:'Denunciada junto con su esposo por triangulación de $1,400M (mayo) y uso de recursos en el Mundial (julio)'}],
+    sources:[{label:'El Informador',url:'https://www.informador.mx/mexico/morena-en-nuevo-leon-denuncia-a-samuel-garcia-ante-la-fgr-por-corrupcion-lo-acusan-de-desvio-millonario-20260526-0176.html'}]}
+);
