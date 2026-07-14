@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corruptómetro MX — Transparencia Ciudadana</title>
+    <meta name="description" content="Dashboard ciudadano de transparencia gubernamental en México. Datos públicos, verificables y sin opiniones.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg-primary: #06090F;
+            --bg-card: #0D1117;
+            --bg-card-hover: #151B23;
+            --bg-elevated: #1C2333;
+            --border: #21262D;
+            --border-highlight: #30363D;
+            --text-primary: #E6EDF3;
+            --text-secondary: #8B949E;
+            --text-muted: #484F58;
+            --corruption-critical: #F85149;
+            --corruption-high: #F0883E;
+            --corruption-medium: #D29922;
+            --corruption-low: #3FB950;
+            --corruption-clean: #58A6FF;
+            --accent-glow: rgba(248, 81, 73, 0.12);
+            --font-display: 'Space Grotesk', system-ui, sans-serif;
+            --font-body: 'Inter', system-ui, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+        #root { min-height: 100vh; }
+
+        /* Header */
+        .site-header {
+            border-bottom: 1px solid var(--border);
+            padding: 1.25rem 2rem;
+            position: sticky;
+            top: 0;
+            background: rgba(6, 9, 15, 0.85);
+            backdrop-filter: blur(16px);
+            z-index: 100;
+        }
+        .header-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+            background: var(--corruption-critical);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+        }
+        .logo span { color: var(--corruption-critical); }
+        .header-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+        }
+
+        /* Main content */
+        .main-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 3rem 0 2.5rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 640px;
+            line-height: 1.7;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .hero-stat {
+            display: flex;
+            flex-direction: column;
+        }
+        .hero-stat-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+        .hero-stat-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 0.15rem;
+        }
+
+        /* Methodology */
+        .methodology {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.75rem;
+            margin-bottom: 2rem;
+        }
+        .methodology-toggle {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+            text-align: left;
+        }
+        .methodology-toggle svg {
+            transition: transform 0.2s;
+        }
+        .methodology-content {
+            margin-top: 1.25rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+        .methodology-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: var(--bg-elevated);
+            border-radius: 8px;
+        }
+        .methodology-weight {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--corruption-critical);
+            min-width: 40px;
+            text-align: right;
+        }
+        .methodology-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Filters */
+        .filters {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .filter-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-family: var(--font-body);
+            font-size: 0.82rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .filter-btn:hover {
+            border-color: var(--border-highlight);
+            color: var(--text-primary);
+        }
+        .filter-btn.active {
+            background: var(--bg-elevated);
+            border-color: var(--corruption-critical);
+            color: var(--text-primary);
+        }
+        .search-input {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            min-width: 240px;
+            outline: none;
+            transition: border-color 0.15s;
+        }
+        .search-input::placeholder { color: var(--text-muted); }
+        .search-input:focus { border-color: var(--corruption-critical); }
+
+        /* Leaderboard */
+        .leaderboard {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .leaderboard-header {
+            display: grid;
+            grid-template-columns: 48px 1fr 140px 100px 120px;
+            padding: 0.5rem 1.25rem;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: var(--font-mono);
+        }
+        .official-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .official-card:hover {
+            border-color: var(--border-highlight);
+            background: var(--bg-card-hover);
+        }
+        .official-card.expanded {
+            border-color: var(--corruption-critical);
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+        .official-summary {
+            display: grid;
+            grid-template-columns: 48px 1fr 140px 100px 120px;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            gap: 0.5rem;
+        }
+        .rank {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+        .rank.top-3 { color: var(--corruption-critical); }
+        .official-info h3 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        .official-role {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            margin-top: 0.15rem;
+        }
+        .official-party {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+            text-align: center;
+        }
+        .party-pri { background: rgba(220, 38, 38, 0.15); color: #F87171; }
+        .party-morena { background: rgba(139, 69, 19, 0.2); color: #D97706; }
+        .party-pan { background: rgba(59, 130, 246, 0.15); color: #60A5FA; }
+        .party-pvem { background: rgba(34, 197, 94, 0.15); color: #4ADE80; }
+        .party-mc { background: rgba(249, 115, 22, 0.15); color: #FB923C; }
+
+        .score-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .score-bar-bg {
+            flex: 1;
+            height: 6px;
+            background: var(--bg-elevated);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .score-bar-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.6s ease;
+        }
+        .score-value {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            font-weight: 700;
+            min-width: 38px;
+            text-align: right;
+        }
+
+        /* Detail Panel */
+        .official-detail {
+            border-top: 1px solid var(--border);
+            padding: 1.5rem 1.25rem;
+            animation: slideDown 0.25s ease;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.25rem;
+        }
+        .detail-section h4 {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.75rem;
+        }
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(33, 38, 45, 0.5);
+            font-size: 0.85rem;
+        }
+        .detail-item:last-child { border-bottom: none; }
+        .detail-item-label { color: var(--text-secondary); }
+        .detail-item-value {
+            font-family: var(--font-mono);
+            font-weight: 500;
+        }
+
+        /* Score breakdown bars */
+        .breakdown-item {
+            margin-bottom: 0.6rem;
+        }
+        .breakdown-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.78rem;
+            margin-bottom: 0.25rem;
+        }
+        .breakdown-label span:first-child { color: var(--text-secondary); }
+        .breakdown-label span:last-child { font-family: var(--font-mono); }
+        .breakdown-bar {
+            height: 4px;
+            background: var(--bg-elevated);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .breakdown-fill {
+            height: 100%;
+            border-radius: 2px;
+        }
+
+        /* Timeline */
+        .timeline {
+            margin-top: 1.25rem;
+        }
+        .timeline-event {
+            display: flex;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(33, 38, 45, 0.5);
+            font-size: 0.82rem;
+        }
+        .timeline-event:last-child { border-bottom: none; }
+        .timeline-year {
+            font-family: var(--font-mono);
+            color: var(--corruption-critical);
+            min-width: 48px;
+            font-weight: 500;
+        }
+        .timeline-desc { color: var(--text-secondary); }
+
+        /* Sources */
+        .sources {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        .sources h4 {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
+        }
+        .source-link {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: var(--corruption-critical);
+            text-decoration: none;
+            margin-right: 1rem;
+            margin-bottom: 0.25rem;
+            font-family: var(--font-mono);
+        }
+        .source-link:hover { text-decoration: underline; }
+
+        /* Footer */
+        .site-footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .footer-text {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        .footer-disclaimer {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-content { padding: 1rem; }
+            .site-header { padding: 1rem; }
+            .leaderboard-header { display: none; }
+            .official-summary {
+                grid-template-columns: 36px 1fr;
+                grid-template-rows: auto auto;
+                gap: 0.5rem;
+            }
+            .official-party, .score-badge {
+                grid-column: 2;
+            }
+            .hero-stats { gap: 1.5rem; }
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+            .filters {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-input { min-width: auto; }
+        }
+
+        /* Contribution CTA */
+        .contribute-banner {
+            background: linear-gradient(135deg, rgba(248, 81, 73, 0.08), rgba(248, 81, 73, 0.02));
+            border: 1px solid rgba(248, 81, 73, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem 1.75rem;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .contribute-text h3 {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        .contribute-text p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+        .contribute-btn {
+            background: var(--corruption-critical);
+            color: white;
+            border: none;
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.6rem 1.25rem;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: opacity 0.15s;
+        }
+        .contribute-btn:hover { opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // =====================================================
+        // DATA: Officials with corruption scores
+        // All data sourced from OSFEM, SCJN, TEPJF, SESNSP,
+        // SHCP, and verified journalistic sources.
+        // =====================================================
+        const SCORING_CRITERIA = [
+            { id: 'sentencias', label: 'Sentencias o procesos penales', maxPoints: 25, desc: 'Condenas, consignaciones o procesos penales activos contra el servidor público' },
+            { id: 'fiscalizacion', label: 'Observaciones de fiscalización', maxPoints: 20, desc: 'Hallazgos del OSFEM, ASF o auditorías con montos no comprobados' },
+            { id: 'funcionarios', label: 'Funcionarios detenidos', maxPoints: 15, desc: 'Colaboradores directos detenidos por delitos durante su administración' },
+            { id: 'deuda', label: 'Deuda pública irregular', maxPoints: 15, desc: 'Incremento desproporcionado de deuda o pasivos sin justificación' },
+            { id: 'denuncias', label: 'Denuncias documentadas', maxPoints: 10, desc: 'Denuncias ciudadanas, periodísticas o de organismos verificadas' },
+            { id: 'evasion', label: 'Evasión de justicia / desacato', maxPoints: 10, desc: 'Amparos para evadir detención, desacato judicial, obstrucción' },
+            { id: 'nepotismo', label: 'Nepotismo / conflicto de interés', maxPoints: 5, desc: 'Concesiones irregulares, familiares en nómina, contratos dirigidos' },
+        ];
+
+        const officials = [
+            {
+                id: 1,
+                name: 'David Sánchez Isidoro',
+                role: 'Presidente Municipal de Coacalco (4 periodos)',
+                party: 'PRI',
+                state: 'Estado de México',
+                level: 'municipal',
+                active: true,
+                scores: {
+                    sentencias: 22,
+                    fiscalizacion: 18,
+                    funcionarios: 14,
+                    deuda: 13,
+                    denuncias: 9,
+                    evasion: 9,
+                    nepotismo: 4,
+                },
+                breakdown: {
+                    sentencias: 'Condenado a 3 años 4 meses por desacato (2021). SCJN ordenó consignación penal en 2018. Proceso penal por concesión irregular del Deportivo Villa de las Flores.',
+                    fiscalizacion: 'OSFEM detectó 46 observaciones por $95.7M en ejercicio 2023. Obras sin comprobación, adjudicaciones indebidas, traspasos no autorizados.',
+                    funcionarios: 'Secretario particular (Alan Escalante) detenido por cohecho. Coordinador de Licencias detenido. Subdirector de Desarrollo Urbano detenido por extorsión.',
+                    deuda: 'Contrató $303M en deuda en 2013. Deuda total del municipio superó $1,000M. Endeudamiento superior al 104% al cierre de 2012.',
+                    denuncias: 'Corrupción policiaca documentada (extorsión de $40K a automovilista). El Heraldo reportó corrupción generalizada en todas las direcciones (2025).',
+                    evasion: 'Se amparó contra orden de detención de la SCJN. Desacató sentencia de amparo en más de 12 ocasiones. Ayuntamiento simuló amenazas de bomba para evadir embargos.',
+                    nepotismo: 'Concesionó Deportivo Villa de las Flores por 25 años (excediendo sus funciones). Contratos en Tesorería sin pasar por adquisiciones.',
+                },
+                timeline: [
+                    { year: '2009', event: 'Inicia primer periodo como alcalde de Coacalco' },
+                    { year: '2013', event: 'Segundo periodo. Contrata $303M en deuda. Laudo laboral de $4.1M sin pagar' },
+                    { year: '2015', event: 'Concesiona Deportivo Villa de las Flores por 25 años a empresa privada' },
+                    { year: '2018', event: 'SCJN ordena consignación penal por desacato. Se ampara para evitar detención' },
+                    { year: '2021', event: 'Juez lo condena a 3 años 4 meses. TEPJF revoca y luego restituye su triunfo electoral' },
+                    { year: '2023', event: 'OSFEM detecta $95.7M en anomalías. Funcionarios detenidos por cohecho y extorsión' },
+                    { year: '2025', event: 'Toma protesta para cuarto trienio. Operación Enjambre lo pone en radar federal' },
+                ],
+                sources: [
+                    { label: 'SCJN — Consignación', url: 'https://www.proceso.com.mx/nacional/2018/1/16/la-corte-destituye-consigna-alcaldes-cabildos-del-edomex-de-puebla-198309.html' },
+                    { label: 'OSFEM — Auditoría 2023', url: 'https://www.osfem.gob.mx' },
+                    { label: 'TEPJF — Sentencia', url: 'https://www.te.gob.mx/front3/bulletins/detail/4393/0' },
+                    { label: 'El Universal — Deportivo', url: 'https://www.eluniversal.com.mx/metropoli/coacalco-debera-indemnizar-empresa-por-deportivo-villa-de-las-flores/' },
+                    { label: 'Heraldo — Radar federal', url: 'https://heraldodemexico.com.mx/opinion/2026/2/9/coacalco-en-el-radar-del-gobierno-federal-767261.html' },
+                ],
+            },
+            {
+                id: 2,
+                name: 'Roberto Ruiz Moronatti',
+                role: 'Expresidente Municipal de Coacalco / Exdiputado Federal',
+                party: 'PRI',
+                state: 'Estado de México',
+                level: 'municipal',
+                active: false,
+                scores: {
+                    sentencias: 5,
+                    fiscalizacion: 16,
+                    funcionarios: 3,
+                    deuda: 15,
+                    denuncias: 6,
+                    evasion: 7,
+                    nepotismo: 3,
+                },
+                breakdown: {
+                    sentencias: 'No se encontraron sentencias penales directas confirmadas.',
+                    fiscalizacion: 'OSFEM reportó pasivo de $640.7M al cierre de su gestión. Grado de endeudamiento 104.1%. Gastos financieros = 33% de ingresos.',
+                    funcionarios: 'No se documentaron detenciones directas de colaboradores.',
+                    deuda: 'Deuda per cápita pasó de $937 a $3,394. Municipio requería 37.2 veces los recursos del Fefom 2013 para cubrir pasivo.',
+                    denuncias: 'CONADE contradijo su versión sobre devolución de $9.5M para estadio nunca construido.',
+                    evasion: 'Dejó la presidencia municipal antes de terminar para buscar diputación federal con fuero.',
+                    nepotismo: 'No documentado con fuentes verificables.',
+                },
+                timeline: [
+                    { year: '2009', event: 'Asume presidencia municipal de Coacalco' },
+                    { year: '2012', event: 'Deja alcaldía para buscar diputación. OSFEM reporta pasivo de $640.7M' },
+                    { year: '2012', event: 'Electo diputado federal por Distrito VI (LXII Legislatura)' },
+                    { year: '2016', event: 'Delegado especial del PRI en Tamaulipas' },
+                ],
+                sources: [
+                    { label: 'OSFEM — Cuenta Pública 2012', url: 'https://www.osfem.gob.mx' },
+                    { label: 'Milenio — Deuda 50 años', url: 'https://www.milenio.com' },
+                ],
+            },
+            {
+                id: 3,
+                name: 'Erwin Castelán Enríquez',
+                role: 'Expresidente Municipal de Coacalco (2016-2018)',
+                party: 'PRI',
+                state: 'Estado de México',
+                level: 'municipal',
+                active: false,
+                scores: {
+                    sentencias: 20,
+                    fiscalizacion: 12,
+                    funcionarios: 5,
+                    deuda: 10,
+                    denuncias: 6,
+                    evasion: 5,
+                    nepotismo: 2,
+                },
+                breakdown: {
+                    sentencias: 'SCJN ordenó su destitución y consignación penal por desacato a sentencia de amparo (enero 2018). Enfrentó pena de 5-10 años.',
+                    fiscalizacion: 'Heredó y no resolvió deuda de administraciones anteriores. Declaró haber pagado $300M de $800M en laudos heredados.',
+                    funcionarios: 'No se documentaron detenciones específicas de su círculo cercano.',
+                    deuda: 'Administración declaró que el pago de juicios laborales y administrativos superaba los $800M.',
+                    denuncias: 'Empresarios lo señalaron junto con Sánchez Isidoro por adeudos. La empresa Begon denunció maniobras para evadir embargo.',
+                    evasion: 'Desacató sentencia de amparo laboral de forma reiterada junto con su antecesor.',
+                    nepotismo: 'No documentado con fuentes verificables.',
+                },
+                timeline: [
+                    { year: '2016', event: 'Asume la presidencia municipal de Coacalco' },
+                    { year: '2018', event: 'SCJN ordena su destitución y consignación penal. Cabildo completo destituido.' },
+                ],
+                sources: [
+                    { label: 'SCJN — Destitución', url: 'https://www.proceso.com.mx/nacional/2018/1/16/la-corte-destituye-consigna-alcaldes-cabildos-del-edomex-de-puebla-198309.html' },
+                    { label: 'El Universal — Adeudos', url: 'https://www.eluniversal.com.mx/metropoli/edomex/empresarios-acusan-adeudo-de-coacalco/' },
+                ],
+            },
+        ];
+
+        // =====================================================
+        // HELPER FUNCTIONS
+        // =====================================================
+        function getTotalScore(scores) {
+            return Object.values(scores).reduce((a, b) => a + b, 0);
+        }
+
+        function getMaxPossible() {
+            return SCORING_CRITERIA.reduce((a, c) => a + c.maxPoints, 0);
+        }
+
+        function getScoreColor(score) {
+            if (score >= 75) return 'var(--corruption-critical)';
+            if (score >= 55) return 'var(--corruption-high)';
+            if (score >= 35) return 'var(--corruption-medium)';
+            if (score >= 15) return 'var(--corruption-low)';
+            return 'var(--corruption-clean)';
+        }
+
+        function getScoreLabel(score) {
+            if (score >= 75) return 'CRÍTICO';
+            if (score >= 55) return 'ALTO';
+            if (score >= 35) return 'MEDIO';
+            if (score >= 15) return 'BAJO';
+            return 'SIN ALERTAS';
+        }
+
+        function getPartyClass(party) {
+            const map = { 'PRI': 'party-pri', 'MORENA': 'party-morena', 'PAN': 'party-pan', 'PVEM': 'party-pvem', 'MC': 'party-mc' };
+            return map[party] || 'party-pri';
+        }
+
+        // =====================================================
+        // COMPONENTS
+        // =====================================================
+        function App() {
+            const [expandedId, setExpandedId] = React.useState(null);
+            const [filter, setFilter] = React.useState('all');
+            const [search, setSearch] = React.useState('');
+            const [showMethodology, setShowMethodology] = React.useState(false);
+
+            const sorted = [...officials]
+                .map(o => ({ ...o, total: getTotalScore(o.scores) }))
+                .sort((a, b) => b.total - a.total);
+
+            const filtered = sorted.filter(o => {
+                const matchesFilter = filter === 'all' ||
+                    (filter === 'municipal' && o.level === 'municipal') ||
+                    (filter === 'estatal' && o.level === 'estatal') ||
+                    (filter === 'federal' && o.level === 'federal') ||
+                    (filter === 'active' && o.active);
+                const matchesSearch = search === '' ||
+                    o.name.toLowerCase().includes(search.toLowerCase()) ||
+                    o.state.toLowerCase().includes(search.toLowerCase()) ||
+                    o.party.toLowerCase().includes(search.toLowerCase());
+                return matchesFilter && matchesSearch;
+            });
+
+            const maxScore = getMaxPossible();
+
+            return (
+                <React.Fragment>
+                    <header className="site-header">
+                        <div className="header-inner">
+                            <div className="logo">
+                                <div className="logo-icon">⚖</div>
+                                Corruptómetro<span>MX</span>
+                            </div>
+                            <div className="header-meta">
+                                DATOS PÚBLICOS · FUENTES VERIFICABLES · SIN OPINIONES
+                            </div>
+                        </div>
+                    </header>
+
+                    <main className="main-content">
+                        <section className="hero">
+                            <h1>La corrupción tiene nombre, cargo y expediente.</h1>
+                            <p>
+                                Dashboard ciudadano que recopila y visualiza datos de fuentes oficiales
+                                (OSFEM, SCJN, TEPJF, ASF, SESNSP, SHCP) sobre servidores públicos
+                                en México. Cada dato es verificable y cada fuente está citada.
+                            </p>
+                            <div className="hero-stats">
+                                <div className="hero-stat">
+                                    <div className="hero-stat-value" style={{ color: 'var(--corruption-critical)' }}>
+                                        {officials.length}
+                                    </div>
+                                    <div className="hero-stat-label">Funcionarios registrados</div>
+                                </div>
+                                <div className="hero-stat">
+                                    <div className="hero-stat-value">7</div>
+                                    <div className="hero-stat-label">Categorías de evaluación</div>
+                                </div>
+                                <div className="hero-stat">
+                                    <div className="hero-stat-value">{maxScore}</div>
+                                    <div className="hero-stat-label">Puntuación máxima</div>
+                                </div>
+                                <div className="hero-stat">
+                                    <div className="hero-stat-value" style={{ color: 'var(--corruption-critical)' }}>
+                                        {Math.max(...sorted.map(o => o.total))}
+                                    </div>
+                                    <div className="hero-stat-label">Score más alto actual</div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div className="methodology">
+                            <button
+                                className="methodology-toggle"
+                                onClick={() => setShowMethodology(!showMethodology)}
+                            >
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"
+                                     style={{ transform: showMethodology ? 'rotate(90deg)' : 'none' }}>
+                                    <path d="M4 2l4 4-4 4"/>
+                                </svg>
+                                Metodología de puntuación
+                            </button>
+                            {showMethodology && (
+                                <div className="methodology-content">
+                                    {SCORING_CRITERIA.map(c => (
+                                        <div className="methodology-item" key={c.id}>
+                                            <div className="methodology-weight">{c.maxPoints}pts</div>
+                                            <div>
+                                                <div style={{ fontSize: '0.85rem', fontWeight: 500, marginBottom: '0.2rem' }}>
+                                                    {c.label}
+                                                </div>
+                                                <div className="methodology-label">{c.desc}</div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+
+                        <div className="filters">
+                            {['all', 'municipal', 'estatal', 'federal', 'active'].map(f => (
+                                <button
+                                    key={f}
+                                    className={`filter-btn ${filter === f ? 'active' : ''}`}
+                                    onClick={() => setFilter(f)}
+                                >
+                                    {{ all: 'Todos', municipal: 'Municipal', estatal: 'Estatal', federal: 'Federal', active: 'En funciones' }[f]}
+                                </button>
+                            ))}
+                            <input
+                                className="search-input"
+                                placeholder="Buscar por nombre, estado o partido..."
+                                value={search}
+                                onChange={e => setSearch(e.target.value)}
+                            />
+                        </div>
+
+                        <div className="leaderboard-header">
+                            <span>#</span>
+                            <span>SERVIDOR PÚBLICO</span>
+                            <span>PARTIDO</span>
+                            <span>NIVEL</span>
+                            <span style={{ textAlign: 'right' }}>SCORE</span>
+                        </div>
+
+                        <div className="leaderboard">
+                            {filtered.map((official, idx) => (
+                                <OfficialCard
+                                    key={official.id}
+                                    official={official}
+                                    rank={idx + 1}
+                                    maxScore={maxScore}
+                                    expanded={expandedId === official.id}
+                                    onToggle={() => setExpandedId(expandedId === official.id ? null : official.id)}
+                                />
+                            ))}
+                        </div>
+
+                        {filtered.length === 0 && (
+                            <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>
+                                No se encontraron resultados para "{search}"
+                            </div>
+                        )}
+
+                        <div className="contribute-banner">
+                            <div className="contribute-text">
+                                <h3>¿Conoces datos verificables sobre un servidor público?</h3>
+                                <p>
+                                    Este proyecto es abierto. Puedes contribuir con datos respaldados por fuentes
+                                    oficiales (auditorías, sentencias, solicitudes de transparencia).
+                                </p>
+                            </div>
+                            <a href="https://github.com/ferrusca08/corruptometro-mx/issues"
+                               className="contribute-btn"
+                               target="_blank" rel="noopener">
+                                Contribuir en GitHub
+                            </a>
+                        </div>
+                    </main>
+
+                    <footer className="site-footer">
+                        <div className="footer-text">
+                            Proyecto de código abierto para la transparencia ciudadana en México.
+                            Los datos provienen exclusivamente de fuentes oficiales públicas.
+                        </div>
+                        <div className="footer-disclaimer">
+                            <strong>Aviso legal:</strong> Este dashboard presenta exclusivamente datos
+                            de fuentes oficiales públicas (OSFEM, SCJN, TEPJF, ASF, SESNSP, SHCP)
+                            y fuentes periodísticas verificables. No emite juicios de valor ni
+                            conclusiones. Los ciudadanos pueden verificar cada dato en la fuente
+                            original citada. El sistema de puntuación es una métrica cuantitativa
+                            basada en hechos documentados, no una opinión editorial.
+                        </div>
+                    </footer>
+                </React.Fragment>
+            );
+        }
+
+        function OfficialCard({ official, rank, maxScore, expanded, onToggle }) {
+            const total = official.total;
+            const pct = (total / maxScore) * 100;
+            const color = getScoreColor(total);
+
+            return (
+                <div className={`official-card ${expanded ? 'expanded' : ''}`}>
+                    <div className="official-summary" onClick={onToggle}>
+                        <div className={`rank ${rank <= 3 ? 'top-3' : ''}`}>
+                            {String(rank).padStart(2, '0')}
+                        </div>
+                        <div className="official-info">
+                            <h3>{official.name}</h3>
+                            <div className="official-role">
+                                {official.role} · {official.state}
+                                {official.active && (
+                                    <span style={{
+                                        marginLeft: '0.5rem',
+                                        fontSize: '0.7rem',
+                                        background: 'rgba(248, 81, 73, 0.15)',
+                                        color: 'var(--corruption-critical)',
+                                        padding: '0.1rem 0.4rem',
+                                        borderRadius: '3px',
+                                        fontFamily: 'var(--font-mono)',
+                                    }}>EN FUNCIONES</span>
+                                )}
+                            </div>
+                        </div>
+                        <div>
+                            <span className={`official-party ${getPartyClass(official.party)}`}>
+                                {official.party}
+                            </span>
+                        </div>
+                        <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
+                            {official.level.charAt(0).toUpperCase() + official.level.slice(1)}
+                        </div>
+                        <div className="score-badge">
+                            <div className="score-bar-bg">
+                                <div className="score-bar-fill" style={{ width: `${pct}%`, background: color }} />
+                            </div>
+                            <div className="score-value" style={{ color }}>{total}</div>
+                        </div>
+                    </div>
+
+                    {expanded && (
+                        <div className="official-detail">
+                            <div style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+                                <span style={{
+                                    fontFamily: 'var(--font-mono)',
+                                    fontSize: '2rem',
+                                    fontWeight: 700,
+                                    color
+                                }}>{total}/{maxScore}</span>
+                                <span style={{
+                                    fontFamily: 'var(--font-mono)',
+                                    fontSize: '0.8rem',
+                                    padding: '0.25rem 0.6rem',
+                                    borderRadius: '4px',
+                                    background: `${color}22`,
+                                    color
+                                }}>{getScoreLabel(total)}</span>
+                            </div>
+
+                            <div className="detail-grid">
+                                <div className="detail-section">
+                                    <h4>Desglose de puntuación</h4>
+                                    {SCORING_CRITERIA.map(c => {
+                                        const val = official.scores[c.id];
+                                        const critPct = (val / c.maxPoints) * 100;
+                                        return (
+                                            <div className="breakdown-item" key={c.id}>
+                                                <div className="breakdown-label">
+                                                    <span>{c.label}</span>
+                                                    <span style={{ color: getScoreColor(val * (100/c.maxPoints)) }}>
+                                                        {val}/{c.maxPoints}
+                                                    </span>
+                                                </div>
+                                                <div className="breakdown-bar">
+                                                    <div
+                                                        className="breakdown-fill"
+                                                        style={{
+                                                            width: `${critPct}%`,
+                                                            background: getScoreColor(val * (100/c.maxPoints))
+                                                        }}
+                                                    />
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+
+                                <div className="detail-section">
+                                    <h4>Evidencia por categoría</h4>
+                                    {SCORING_CRITERIA.map(c => {
+                                        const detail = official.breakdown[c.id];
+                                        if (!detail) return null;
+                                        return (
+                                            <div className="detail-item" key={c.id} style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '0.2rem' }}>
+                                                <div className="detail-item-label" style={{ fontWeight: 500, color: 'var(--text-primary)', fontSize: '0.8rem' }}>
+                                                    {c.label}
+                                                </div>
+                                                <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                                                    {detail}
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+
+                            {official.timeline && official.timeline.length > 0 && (
+                                <div className="timeline">
+                                    <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.5rem' }}>
+                                        Línea de tiempo
+                                    </h4>
+                                    {official.timeline.map((evt, i) => (
+                                        <div className="timeline-event" key={i}>
+                                            <div className="timeline-year">{evt.year}</div>
+                                            <div className="timeline-desc">{evt.event}</div>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+
+                            {official.sources && official.sources.length > 0 && (
+                                <div className="sources">
+                                    <h4>Fuentes verificables</h4>
+                                    {official.sources.map((src, i) => (
+                                        <a key={i} href={src.url} className="source-link" target="_blank" rel="noopener">
+                                            [{i + 1}] {src.label} ↗
+                                        </a>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        // =====================================================
+        // RENDER
+        // =====================================================
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
+</html>
