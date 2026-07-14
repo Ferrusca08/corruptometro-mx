@@ -1670,3 +1670,57 @@ officials.push(
     timeline:[{year:'2026',event:'Senador del PVEM exige públicamente su renuncia por corrupción documentada (febrero)'}],
     sources:[{label:'PolíticoMX',url:'https://politico.mx/2026/02/04/melgar-exige-salida-de-rutilio-escandon-y-el-senador-pepe-cruz-y-estos-ladrones-para-cuando-renuncian/'}]}
 );
+
+
+// =====================================================
+// ALCALDES MUNICIPALES — YUCATÁN Y OTROS ESTADOS
+// =====================================================
+officials.push(
+    {id:334,name:'Linda Pérez Quijano',role:'Alcaldesa de Conkal, Yucatán',party:'PAN',state:'Yucatán',level:'municipal',active:true,status:'en_funciones',
+    scores:{sentencias:5,fiscalizacion:16,funcionarios:3,deuda:12,denuncias:8,evasion:3,nepotismo:3},
+    breakdown:{sentencias:'Sin proceso penal formal, aunque señalada en investigación de Sol Yucatán.',
+    fiscalizacion:'Sobrecosto documentado: repavimentación de una sola calle (200m x 5m) facturada en $1.6M, cinco veces el costo real de mercado.',
+    funcionarios:'Sin red de funcionarios documentada.',
+    deuda:'No pudo comprobar el paradero de $6,930,274.51 pesos de recursos públicos, según revisión de cuenta pública.',
+    denuncias:'Documentada en investigación periodística "Tres alcaldes desviaron 34 MDP" de Sol Yucatán, con cifras específicas de la Auditoría Superior del Estado.',
+    evasion:'Sin evasión documentada.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2024',event:'Asume alcaldía de Conkal'},{year:'2026',event:'Investigación periodística documenta sobrecostos y $6.9M sin comprobar'}],
+    sources:[{label:'Sol Yucatán — Investigación',url:'https://solyucatan.mx/tres-alcaldes-desviaron-34-mdp/'},{label:'Sol Yucatán — Año de Hidalgo',url:'https://solyucatan.mx/alcaldes-en-el-ano-de-hidalgo/'}]},
+
+    {id:335,name:'Francisco Medina Martín',role:'Alcalde de Chichimilá, Yucatán',party:'Sin dato',state:'Yucatán',level:'municipal',active:true,status:'en_funciones',
+    scores:{sentencias:5,fiscalizacion:14,funcionarios:5,deuda:12,denuncias:8,evasion:5,nepotismo:5},
+    breakdown:{sentencias:'Sin proceso penal formal.',
+    fiscalizacion:'Acumulación de patrimonio incompatible con su salario público durante su gestión.',
+    funcionarios:'Busca dejar a su tesorero como sucesor para mantener protección política, según denuncias ciudadanas.',
+    deuda:'Más de $23M en tierras y propiedades repartidas por todo Yucatán, acumuladas durante su gestión como alcalde.',
+    denuncias:'Ciudadanos de Chichimilá documentan públicamente el caso, calificándolo de "cacique" que se enriquece mientras el municipio permanece en pobreza.',
+    evasion:'Pacta con sucesor (su tesorero) para mantener protección política y continuidad del esquema.',
+    nepotismo:'Designación de tesorero de su confianza como sucesor para blindar el esquema.'},
+    timeline:[{year:'2026',event:'Ciudadanos documentan acumulación de más de $23M en propiedades'}],
+    sources:[{label:'Sol Yucatán',url:'https://solyucatan.mx/tres-alcaldes-desviaron-34-mdp/'}]},
+
+    {id:336,name:'Pablo Alejandro Cutz Domínguez',role:'Alcalde de Mocochá, Yucatán',party:'Sin dato',state:'Yucatán',level:'municipal',active:true,status:'en_funciones',
+    scores:{sentencias:5,fiscalizacion:14,funcionarios:3,deuda:11,denuncias:6,evasion:3,nepotismo:3},
+    breakdown:{sentencias:'Sin proceso penal formal.',
+    fiscalizacion:'Revisión de cuenta pública por la Auditoría Superior del Estado de Yucatán detectó irregularidades.',
+    funcionarios:'Sin red documentada.',
+    deuda:'No pudo comprobar el paradero de más de $4M, muchos de ellos emitidos en cheques a su propio nombre.',
+    denuncias:'Parte de la investigación conjunta de Sol Yucatán sobre 3 municipios con $34M en irregularidades combinadas.',
+    evasion:'Sin evasión documentada.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2026',event:'Auditoría revela más de $4M sin comprobar, varios en cheques a su nombre'}],
+    sources:[{label:'Sol Yucatán',url:'https://solyucatan.mx/tres-alcaldes-desviaron-34-mdp/'}]},
+
+    {id:337,name:'Leonor Chan Uicab',role:'Oficial Mayor de Kanasín, Yucatán / Exalcalde',party:'PAN',state:'Yucatán',level:'municipal',active:true,status:'en_funciones',
+    scores:{sentencias:6,fiscalizacion:14,funcionarios:3,deuda:8,denuncias:7,evasion:8,nepotismo:2},
+    breakdown:{sentencias:'Sin proceso penal formal, pero incumplimiento activo de mandato judicial (queja 1/2026).',
+    fiscalizacion:'Como alcalde, construyó un basurero municipal en 2011 declarando un gasto de $10M sin las medidas ambientales requeridas por PROFEPA.',
+    funcionarios:'Continúa en el gobierno municipal como Oficial Mayor en la administración actual.',
+    deuda:'$10M declarados en construcción de basurero que se convirtió en foco de contaminación de aire y agua.',
+    denuncias:'PROFEPA y un juez evidenciaron la falta de medidas ambientales, calificándolo como fuente de graves daños patrimoniales.',
+    evasion:'Se niega a cumplir el mandato judicial de clausura del basurero pese a suspensión provisional concedida en la queja 1/2026.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2011',event:'Como alcalde, construye basurero municipal declarando $10M de gasto'},{year:'2026',event:'Juez ordena clausura por incumplimiento ambiental. El actual Oficial Mayor se niega a acatar.'}],
+    sources:[{label:'Sol Yucatán',url:'https://solyucatan.mx/alcaldes-en-el-ano-de-hidalgo/'}]}
+);
