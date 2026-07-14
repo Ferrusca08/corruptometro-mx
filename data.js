@@ -1367,3 +1367,57 @@ officials.push(
     timeline:[{year:'2021',event:'Fiscalía estima que el esquema de nómina fantasma comenzó a operar'},{year:'2026',event:'Febrero: comienza investigación interna. Se detectan 459 altas fantasma y se presentan 3 denuncias penales (11 y 26 feb, 4 mayo).'}],
     sources:[{label:'AD Noticias — Golpe histórico',url:'https://adnoticias.mx/golpe-historico-corrupcion-edomex/'}]}
 );
+
+
+// =====================================================
+// GOBERNADORES EN FUNCIONES — SEÑALAMIENTOS ACTIVOS 2026
+// =====================================================
+officials.push(
+    {id:310,name:'David Monreal Ávila',role:'Gobernador de Zacatecas (2021-presente)',party:'MORENA',state:'Zacatecas',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:5,fiscalizacion:8,funcionarios:5,deuda:4,denuncias:9,evasion:3,nepotismo:5},
+    breakdown:{sentencias:'Sin proceso penal formal. Video de 2021 donde toca inapropiadamente a una candidata durante campaña.',
+    fiscalizacion:'Denuncias de corrupción en centros de acopio de frijol señaladas por productores directamente frente a Sheinbaum (marzo 2026). Su propio hermano Saúl denunció irregularidades en distribución de programas de Bienestar: beneficiarios que desaparecen de registros pero siguen cobrando.',
+    funcionarios:'Represión policial documentada contra manifestantes: campesinos detenidos arbitrariamente, colectivo de madres buscadoras "Sangre de mi Sangre" agredido por la Fuerza de Reacción Inmediata durante su informe de gobierno (2025).',
+    deuda:'Sin cifra específica de daño patrimonial documentada, pero denuncias de desvío en programas sociales.',
+    denuncias:'Es el gobernador peor evaluado de México (7.2% de aprobación en algunas encuestas, último lugar de los 32 estados). Zacatecas registra crisis de violencia con asesinato de un cuñado y un sobrino del gobernador.',
+    evasion:'Sin evasión de justicia documentada.',
+    nepotismo:'Dinastía familiar: hermano Ricardo (coordinador de Morena en Diputados, exgobernador), hermano Saúl (senador, busca sucederlo pese a reglas anti-nepotismo de Morena), Rodolfo (funcionario en Sinaloa), Eulogio (exdirector de Pasaportes). 9 de 14 hermanos en política.'},
+    timeline:[{year:'2021',event:'Asume gubernatura de Zacatecas'},{year:'2025',event:'Madres buscadoras agredidas por policía estatal durante informe de gobierno'},{year:'2026',event:'Productores de frijol lo abuchean por corrupción en centros de acopio. Hermano Saúl denuncia irregularidades en Bienestar.'}],
+    sources:[{label:'SinEmbargo — Era Monreal',url:'https://www.sinembargo.mx/4477289/close-up%c2%ac-la-era-monreal-ha-sido-la-pesadilla-de-zacatecas-david-cosecha-criticas/'},{label:'Heraldo de México',url:'https://heraldodemexico.com.mx/opinion/2026/7/8/monreal-viola-reglas-para-quedarse-con-zacatecas-845732.html'},{label:'El Congresista — Denuncia de Saúl',url:'https://elcongresista.mx/politica/zacatecas/saul-monreal-denuncia-corrupcion-gobierno-hermano-zacatecas/'}]},
+
+    {id:311,name:'Alfonso Durazo Montaño',role:'Gobernador de Sonora (2021-presente)',party:'MORENA',state:'Sonora',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:8,fiscalizacion:5,funcionarios:5,deuda:3,denuncias:9,evasion:3,nepotismo:3},
+    breakdown:{sentencias:'Sin proceso penal formal. Investigado por autoridades de EE.UU. según fuentes citadas por el New York Times y Los Angeles Times.',
+    fiscalizacion:'Sin hallazgos formales de fiscalización publicados hasta el momento.',
+    funcionarios:'Sin red de funcionarios detenidos documentada públicamente.',
+    deuda:'Sin daño patrimonial directo documentado.',
+    denuncias:'Señalado por autoridades de EE.UU., junto con Américo Villarreal, por presuntos vínculos con narcotráfico según reportaje que citó a 5 fuentes no autorizadas a hablar públicamente. Fue secretario de Seguridad de AMLO, quien lo respalda públicamente.',
+    evasion:'Ha negado las acusaciones públicamente.',
+    nepotismo:'Cercanía política con AMLO como protección documentada según análisis periodístico.'},
+    timeline:[{year:'2021',event:'Asume gubernatura de Sonora'},{year:'2026',event:'Reportaje periodístico lo señala junto con Villarreal como objetivo de investigaciones de EE.UU. por narcotráfico'}],
+    sources:[{label:'Impacto — Un país de cínicos',url:'https://impacto.mx/opinion/pulpo-politico/un-pais-de-cinicos-11072026/'}]},
+
+    {id:312,name:'Rubén Rocha Moya',role:'Gobernador de Sinaloa (2021-presente, con licencia)',party:'MORENA',state:'Sinaloa',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:12,fiscalizacion:8,funcionarios:6,deuda:5,denuncias:10,evasion:8,nepotismo:3},
+    breakdown:{sentencias:'Acusado por EE.UU. de vínculos con narcotráfico junto con Enrique Inzunza Cázarez y otros. FGR investiga. Sin sentencia ni orden de aprehensión formal en México.',
+    fiscalizacion:'Bajo investigación, sin hallazgos formales de fiscalización publicados.',
+    funcionarios:'Crisis de seguridad en Sinaloa desde la captura de "El Mayo" Zambada, con enfrentamientos entre facciones del Cártel de Sinaloa.',
+    deuda:'Sin documentación de daño patrimonial directo hasta ahora.',
+    denuncias:'77.1% de los sinaloenses estarían de acuerdo con que se le revoque el mandato por pérdida de confianza (encuesta CRIPESO). En julio de 2026 llevaba 69 días sin aparecer en público tras tomar una licencia envuelta en polémica.',
+    evasion:'Solicitó licencia del cargo en medio del escándalo. El gobierno negó estar protegiéndolo, asegurando que está en su casa sin escoltas federales, pero su ausencia pública prolongada genera sospechas.',
+    nepotismo:'Sin datos específicos adicionales a los ya documentados sobre su gestión.'},
+    timeline:[{year:'2021',event:'Asume gubernatura de Sinaloa'},{year:'2024',event:'Crisis de seguridad en Culiacán tras captura de Zambada'},{year:'2026',event:'EE.UU. lo acusa de vínculos con narcotráfico. Toma licencia. 69 días sin aparecer en público (julio 2026).'}],
+    sources:[{label:'El Siglo de Torreón',url:'https://www.elsiglodetorreon.com.mx'},{label:'TV Azteca — Mapa político',url:'https://www.tvazteca.com/aztecanoticias/cuantos-estados-gobierna-morena-en-2026-el-mapa-politico-rumbo-a-elecciones-2027/'}]},
+
+    {id:313,name:'Ricardo Monreal Ávila',role:'Coordinador de Morena en la Cámara de Diputados / Exalcalde de Cuauhtémoc, CDMX',party:'MORENA',state:'Federal',level:'federal',active:true,status:'en_funciones',
+    scores:{sentencias:3,fiscalizacion:5,funcionarios:3,deuda:3,denuncias:7,evasion:2,nepotismo:10},
+    breakdown:{sentencias:'Sin proceso penal.',
+    fiscalizacion:'Sin hallazgos formales de fiscalización.',
+    funcionarios:'Sin red de funcionarios procesados.',
+    deuda:'Sin daño patrimonial documentado.',
+    denuncias:'Caso emblemático de nepotismo en México: 13 hermanos, 9 en política. Colocó a su hermano David como gobernador de Zacatecas, a su hermano Saúl como senador, sobrinos y otros hermanos en cargos en Sinaloa, Aguascalientes y el propio Poder Judicial.',
+    evasion:'Sin evasión documentada.',
+    nepotismo:'CASO MÁXIMO: dinastía familiar con control de la gubernatura de Zacatecas (desde 1998 con solo interrupciones), presidencias municipales de Fresnillo por décadas, un asiento en el Senado, y presencia hasta en el Poder Judicial. Declaró públicamente "somos muchos, me disculpo con todos, pero eso lo decidió mi papá y mi mamá".'},
+    timeline:[{year:'1998',event:'Gobernador de Zacatecas (primer Monreal en el cargo)'},{year:'2018',event:'Coordinador de Morena en el Senado'},{year:'2021',event:'Su hermano David asume gubernatura de Zacatecas'},{year:'2024',event:'Coordinador de Morena en Cámara de Diputados'},{year:'2025',event:'Escándalo por bloquear candidatura de exesposa de su hermano, sacrificando a Saúl'}],
+    sources:[{label:'El Financiero — Dinastía Monreal',url:'https://www.elfinanciero.com.mx/nacional/2025/09/10/quienes-son-los-hermanos-de-ricardo-monreal-y-que-cargos-tienen-en-el-gobierno-de-zacatecas-imss-suprema-corte-y-senado/'}]}
+);
