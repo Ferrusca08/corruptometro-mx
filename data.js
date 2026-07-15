@@ -1751,3 +1751,33 @@ officials.push(
     timeline:[{year:'2021',event:'Asume alcaldía de Tijuana'},{year:'2024',event:'Termina gestión. Bajo investigación por $37M en adjudicaciones directas irregulares.'}],
     sources:[{label:'Reporte Naranja',url:'https://reportenaranja.com.mx/contra-alcalde/'}]}
 );
+
+
+// =====================================================
+// CASO ASF — 21 DENUNCIAS PENALES POR $600M (JUNIO 2026)
+// =====================================================
+officials.push(
+    {id:340,name:'Carmen Albarrán',role:'Presidenta Municipal de Donato Guerra, Estado de México',party:'MORENA/PT/PVEM',state:'Estado de México',level:'municipal',active:true,status:'en_funciones',
+    scores:{sentencias:10,fiscalizacion:16,funcionarios:5,deuda:14,denuncias:7,evasion:3,nepotismo:3},
+    breakdown:{sentencias:'La Auditoría Superior de la Federación presentó 3 denuncias penales ante la FGR en su contra (junio 2026), correspondientes a la Cuenta Pública 2024.',
+    fiscalizacion:'Su municipio concentra 3 de las 21 denuncias penales del paquete de la ASF, el segundo mayor número después de Alvarado y Nayarit.',
+    funcionarios:'Parte del conjunto de 30-31 servidores públicos denunciados en el mismo paquete de irregularidades.',
+    deuda:'Parte del daño patrimonial conjunto de $600M documentado por la ASF en el paquete de 21 denuncias.',
+    denuncias:'ASF también presentó 30 expedientes de responsabilidad administrativa grave por colusión y contratación indebida en el mismo informe.',
+    evasion:'Sin evasión documentada.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2021',event:'Asume presidencia municipal de Donato Guerra por la coalición Morena-PT-PVEM'},{year:'2026',event:'ASF presenta 3 denuncias penales por irregularidades en Cuenta Pública 2024 (junio)'}],
+    sources:[{label:'La Jornada — ASF 21 denuncias',url:'https://www.jornada.com.mx/noticia/2026/07/01/politica/asf-interpone-21-denuncias-penales-por-el-presunto-desvio-de-600-mdp'},{label:'La Razón — Detalle municipios',url:'https://www.razon.com.mx/mexico/2026/06/30/auditoria-superior-presenta-21-denuncias-por-dano-de-mas-de-600-mdp/'}]},
+
+    {id:341,name:'Javier Lamarque Cano',role:'Presidente Municipal de Cajeme, Sonora (con licencia)',party:'MORENA',state:'Sonora',level:'municipal',active:true,status:'en_funciones',
+    scores:{sentencias:5,fiscalizacion:8,funcionarios:8,deuda:5,denuncias:10,evasion:6,nepotismo:6},
+    breakdown:{sentencias:'Sin sentencia penal formal.',
+    fiscalizacion:'Denuncias ciudadanas documentadas en redes sociales sobre presuntos actos de corrupción en su administración municipal.',
+    funcionarios:'Señalado por proteger a policías municipales con presuntos vínculos al crimen organizado, según denuncias ciudadanas ampliamente difundidas.',
+    deuda:'Sin monto específico documentado, aunque hay señalamientos de irregularidades administrativas con sanciones y despidos reconocidos por su propia administración.',
+    denuncias:'Una página en redes sociales documenta sistemáticamente presuntos actos de corrupción y nexos de la policía municipal con el crimen organizado. El alcalde reconoció que en casos con sustento se han aplicado sanciones administrativas y despidos.',
+    evasion:'Solicitó licencia de 90 días para buscar el proceso interno de Morena rumbo a la gubernatura de Sonora, en medio de los señalamientos. Su hijastro Plutarco Sánchez Patiño ocupa cargos en SADER y busca ser consejero estatal de Morena.',
+    nepotismo:'Su hijastro forma parte de su entorno político cercano con cargos en dependencias federales y aspiraciones dentro de Morena.'},
+    timeline:[{year:'2021',event:'Asume presidencia municipal de Cajeme'},{year:'2026',event:'Enero: denuncias públicas por proteger policías con nexos criminales. Solicita licencia de 90 días para buscar candidatura a gobernador de Sonora.'}],
+    sources:[{label:'Infobae — Denuncias',url:'https://www.infobae.com/mexico/2026/01/29/alcalde-de-cajeme-sonora-denuncia-amenazas-en-medio-de-senalamientos-por-proteger-policias-vinculados-al-crimen-organizado/'},{label:'El Universal — Licencia',url:'https://www.eluniversal.com.mx/estados/javier-lamarque-alcalde-de-cajeme-sonora-solicita-licencia-por-90-dias-apunta-al-proceso-interno-de-morena/'}]}
+);
