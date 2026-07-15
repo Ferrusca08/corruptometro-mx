@@ -1853,3 +1853,18 @@ officials.push(
     timeline:[{year:'2024',event:'Asume presidencia municipal de Culiacán'},{year:'2026',event:'Abril: incluido en acusación del DOJ. Solicita licencia del cargo.'}],
     sources:[{label:'La Voz de Michoacán',url:'https://www.lavozdemichoacan.com.mx/mexico/senado/senador-mexicano-enrique-inzunza-acusado-narcotrafico-eeuu-pide-licencia-2026/'}]}
 );
+
+
+officials.push(
+    {id:347,name:'Dámaso Castro Saavedra',role:'Vicefiscal de la Fiscalía General de Sinaloa (con licencia)',party:'MORENA',state:'Sinaloa',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:18,fiscalizacion:4,funcionarios:6,deuda:5,denuncias:9,evasion:7,nepotismo:2},
+    breakdown:{sentencias:'Uno de los 10 funcionarios y exfuncionarios de Sinaloa acusados formalmente por el Departamento de Justicia de EE.UU. (29 de abril de 2026) en el expediente S9 23 Cr. 180 del Distrito Sur de Nueva York, por conspiración para importar narcóticos y posesión de ametralladoras y dispositivos destructivos.',
+    fiscalizacion:'Sin hallazgos de fiscalización formal en México, más allá de la acusación estadounidense.',
+    funcionarios:'Parte del entramado de funcionarios de la Fiscalía y gobierno de Sinaloa señalados junto con Rocha Moya, Inzunza y Gerardo Mérida por presunta protección a la facción de "Los Chapitos" del Cártel de Sinaloa.',
+    deuda:'Sin monto de daño patrimonial documentado.',
+    denuncias:'Señalado directamente en la acusación del DOJ como parte de la conspiración de importación masiva de fentanilo, heroína, cocaína y metanfetamina hacia EE.UU.',
+    evasion:'Solicitó licencia a su cargo sin goce de sueldo tras conocerse la acusación, evitando así comparecer mientras mantiene el cargo formal.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2026',event:'Abril: incluido en la acusación formal del Departamento de Justicia de EE.UU. Solicita licencia sin goce de sueldo.'}],
+    sources:[{label:'El Financiero — Expediente completo',url:'https://www.elfinanciero.com.mx/estados/2026/05/15/detencion-de-gerardo-merida-como-ayudo-el-exsecretario-de-seguridad-de-sinaloa-a-los-chapitos/'}]}
+);
