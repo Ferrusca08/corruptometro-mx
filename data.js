@@ -1940,3 +1940,42 @@ officials.push(
     timeline:[{year:'2008',event:'Su tío Adalberto Fructuoso Comparán es alcalde de Aguililla, vinculado a organizaciones criminales'},{year:'2021',event:'Gana gubernatura de Michoacán. TEPJF reconoce intervención del crimen organizado en la elección pero valida el triunfo.'},{year:'2021',event:'Marzo: su tío es detenido en Guatemala y extraditado a EE.UU. Su primo detenido en Miami el mismo mes.'},{year:'2025',event:'Sentencias de 11 y 10 años contra su tío y primo en EE.UU.'},{year:'2026',event:'Julio: admite públicamente infiltración del crimen organizado en policías de al menos 6 municipios.'}],
     sources:[{label:'Narcopolíticos — Perfil completo',url:'https://narcopoliticos.com/project/alfredo-ramirez-bedolla/'},{label:'El Financiero — Admite infiltración policial',url:'https://www.elfinanciero.com.mx/estados/2026/07/13/crimen-organizado-esta-infiltrado-en-municipios-de-michoacan-admite-gobernador-alfredo-ramirez-bedolla/'}]}
 );
+
+
+officials.push(
+    {id:353,name:'Mara Lezama Espinosa',role:'Gobernadora de Quintana Roo (2022-presente)',party:'MORENA',state:'Quintana Roo',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:12,fiscalizacion:15,funcionarios:8,deuda:13,denuncias:10,evasion:9,nepotismo:3},
+    breakdown:{sentencias:'Incluida en documento de inteligencia de la DEA y el Departamento de Justicia de EE.UU. (16 de marzo de 2026) entre 8 gobernadores morenistas investigados por narcotráfico, protección a grupos delictivos y lavado de dinero. Sin sentencia en México.',
+    fiscalizacion:'Como entonces alcaldesa de Benito Juárez (Cancún), la UIF y la FGR investigaron transferencias bancarias millonarias, escrituras públicas y declaraciones patrimoniales presuntamente falseadas a través de la empresa "Desarrolladora Cumpal", señalada por actividades financieras atípicas.',
+    funcionarios:'Investigaciones conjuntas FGR-DEA la relacionaron con pactos de no agresión con grupos criminales que operaban en la zona hotelera de Cancún, extendidos a Playa del Carmen, Isla Mujeres, Cozumel y Tulum.',
+    deuda:'Incremento patrimonial "descomunal" y desproporcionado a su salario público como alcaldesa, según las investigaciones de la UIF que fueron canceladas antes de concluir.',
+    denuncias:'Documentado extensamente por SinEmbargo. Las investigaciones por enriquecimiento ilícito, lavado de dinero y vínculos con crimen organizado no prosperaron mientras AMLO era presidente, ya que fue protegida para ser la candidata de Morena a la gubernatura.',
+    evasion:'Las investigaciones en su contra fueron canceladas antes de concluir gracias a protección política de más alto nivel, según reporteo de SinEmbargo.',
+    nepotismo:'Sin datos específicos adicionales.'},
+    timeline:[{year:'2018',event:'Asume alcaldía de Benito Juárez (Cancún). Comienzan pactos con grupos criminales según investigaciones FGR-DEA.'},{year:'2021',event:'UIF y FGR investigan enriquecimiento ilícito y lavado de dinero a través de Desarrolladora Cumpal'},{year:'2022',event:'Investigaciones canceladas. Es electa gobernadora de Quintana Roo con respaldo de AMLO.'},{year:'2026',event:'Marzo: incluida en documento de inteligencia DEA/DOJ entre 8 gobernadores investigados por vínculos criminales.'}],
+    sources:[{label:'SinEmbargo — El auge del narco',url:'https://www.sinembargo.mx/4633242/quintana-roo-mara-lezama-y-el-auge-del-narco/'},{label:'Periodistas Sin Censura — Lista DEA',url:'https://www.periodistassincensura.com.mx/columna/mas-morenistas-investigados-por-la-dea/'}]},
+
+    {id:354,name:'Javier May Rodríguez',role:'Gobernador de Tabasco (2024-presente)',party:'MORENA',state:'Tabasco',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:8,fiscalizacion:6,funcionarios:6,deuda:5,denuncias:9,evasion:5,nepotismo:3},
+    breakdown:{sentencias:'Incluido en el documento de inteligencia de la DEA y el DOJ (marzo 2026) entre 8 gobernadores morenistas bajo investigación por narcotráfico, protección a grupos delictivos y lavado de dinero. Sin sentencia ni proceso formal en México.',
+    fiscalizacion:'Sin hallazgos formales de fiscalización financiera publicados de forma independiente.',
+    funcionarios:'Gobierna un estado donde operó "La Barredora", la organización criminal vinculada a su antecesor Adán Augusto López y al exsecretario de Seguridad Hernán Bermúdez, aunque no hay señalamientos directos de continuidad bajo su gestión.',
+    deuda:'Sin monto de daño patrimonial documentado directamente contra él.',
+    denuncias:'Señalado únicamente por el documento de inteligencia estadounidense compartido en columnas periodísticas; sin denuncia formal documentada en México.',
+    evasion:'Sin evasión documentada.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2024',event:'Asume gubernatura de Tabasco, sucediendo a Carlos Manuel Merino Campos'},{year:'2026',event:'Marzo: incluido en documento de inteligencia DEA/DOJ entre 8 gobernadores investigados'}],
+    sources:[{label:'Periodistas Sin Censura — Lista DEA',url:'https://www.periodistassincensura.com.mx/columna/mas-morenistas-investigados-por-la-dea/'}]},
+
+    {id:355,name:'Lorena Cuéllar Cisneros',role:'Gobernadora de Tlaxcala (2021-presente)',party:'MORENA',state:'Tlaxcala',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:8,fiscalizacion:9,funcionarios:5,deuda:7,denuncias:9,evasion:5,nepotismo:3},
+    breakdown:{sentencias:'Incluida entre los primeros nombres del documento de inteligencia de la DEA y el DOJ (marzo 2026): "encabeza la lista Roberto Sandoval... le sigue María Elena Lezama... y Lorena Cuéllar Cisneros". Sin sentencia en México.',
+    fiscalizacion:'Tlaxcala aparece entre los 9 estados con mayor percepción de corrupción según la ENCIG 2025 del INEGI, en sexto lugar nacional.',
+    funcionarios:'Sin red de funcionarios detenidos documentada específicamente.',
+    deuda:'Sin monto de daño patrimonial documentado directamente contra ella.',
+    denuncias:'Señalada en el documento de inteligencia estadounidense junto con otros 7 gobernadores morenistas.',
+    evasion:'Sin evasión documentada.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2021',event:'Asume gubernatura de Tlaxcala'},{year:'2026',event:'Marzo: incluida en documento de inteligencia DEA/DOJ. Tlaxcala en sexto lugar de percepción de corrupción según INEGI.'}],
+    sources:[{label:'Periodistas Sin Censura — Lista DEA',url:'https://www.periodistassincensura.com.mx/columna/mas-morenistas-investigados-por-la-dea/'},{label:'El Imparcial — ENCIG INEGI',url:'https://www.elimparcial.com/mexico/2026/06/25/morena-gobierna-los-nueve-estados-con-mayor-percepcion-de-corrupcion-rumbo-a-las-elecciones-de-2027/'}]}
+);
