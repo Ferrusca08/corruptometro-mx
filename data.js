@@ -1868,3 +1868,30 @@ officials.push(
     timeline:[{year:'2026',event:'Abril: incluido en la acusación formal del Departamento de Justicia de EE.UU. Solicita licencia sin goce de sueldo.'}],
     sources:[{label:'El Financiero — Expediente completo',url:'https://www.elfinanciero.com.mx/estados/2026/05/15/detencion-de-gerardo-merida-como-ayudo-el-exsecretario-de-seguridad-de-sinaloa-a-los-chapitos/'}]}
 );
+
+
+officials.push(
+    {id:348,name:'Víctor Manuel Castro Cosío',role:'Gobernador de Baja California Sur (2021-presente)',party:'MORENA',state:'Baja California Sur',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:8,fiscalizacion:16,funcionarios:14,deuda:12,denuncias:9,evasion:8,nepotismo:10},
+    breakdown:{sentencias:'No procesado directamente, pero señalado por proteger a su ahijado bajo investigación.',
+    fiscalizacion:'Su Contraloría Estatal detectó, mediante algoritmo de análisis patrimonial, que el patrimonio de un funcionario cercano no coincidía con sus ingresos declarados (carpeta LPZ-2329/2026), por más de $100M en enriquecimiento ilícito.',
+    funcionarios:'Su ahijado y protegido, Juan Ignacio Rivas González, Director General de Informática de la Secretaría de Finanzas, es investigado por enriquecimiento ilícito. Como jefe de área de informática, controlaba el diseño de términos de referencia de licitaciones sin necesidad de firmar contratos directamente.',
+    deuda:'Al ahijado del gobernador se le decomisaron 2 camionetas de lujo (incluida una Mercedes Benz AMG) por $4.1M, con 4 vehículos adicionales pendientes de decomiso ($12.6M más), sumando $16M solo en vehículos, además de múltiples propiedades en zonas de lujo y bienes a nombre de familiares.',
+    denuncias:'Según fuente de la Secretaría de Finanzas citada por Semanario ZETA, la Contraloría ya conocía el caso desde principios de 2025 pero "no tenían luz verde del gobernador, pues es su ahijado y protegido".',
+    evasion:'Bloqueó durante más de un año el avance de la investigación contra su protegido, según fuentes internas de la Secretaría de Finanzas.',
+    nepotismo:'CASO DIRECTO: protegió durante más de un año a su propio ahijado, funcionario clave en el manejo de licitaciones informáticas del gobierno estatal, mientras este acumulaba un patrimonio de más de $100M incompatible con su salario.'},
+    timeline:[{year:'2021',event:'Asume gubernatura de Baja California Sur'},{year:'2025',event:'Contraloría detecta irregularidades patrimoniales de su ahijado pero no avanza la investigación'},{year:'2026',event:'Abril: decomiso de vehículos de lujo al funcionario. Investigación por enriquecimiento ilícito de más de $100M avanza tras presión mediática.'}],
+    sources:[{label:'Semanario ZETA — Investigación completa',url:'https://zetatijuana.com/2026/05/funcionario-investigado-por-corrupcion/'}]},
+
+    {id:349,name:'Indira Vizcaíno Silva',role:'Gobernadora de Colima (2021-2027)',party:'MORENA',state:'Colima',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:5,fiscalizacion:14,funcionarios:6,deuda:11,denuncias:8,evasion:4,nepotismo:3},
+    breakdown:{sentencias:'Sin proceso penal formal.',
+    fiscalizacion:'ASF documentó desvíos multimillonarios en Colima durante el ejercicio fiscal 2024, bajo responsabilidad compartida entre su gestión y la de su antecesor.',
+    funcionarios:'Instruyó al consejero jurídico presentar denuncias ante la Fiscalía Anticorrupción tras hallazgos en el proceso de entrega-recepción, pero los resultados de fiscalización posteriores mostraron nuevas anomalías durante su propia administración.',
+    deuda:'Colima aparece entre los 9 estados con mayor percepción de corrupción de México según la ENCIG 2025 del INEGI, con niveles superiores al promedio nacional de 75%.',
+    denuncias:'Pese a declaraciones públicas comprometiéndose contra la corrupción desde 2023 ("no hay espacio para actos de corrupción"), los hallazgos de la ASF para el ejercicio 2024 (ya bajo su responsabilidad) muestran anomalías persistentes.',
+    evasion:'Sin evasión documentada.',
+    nepotismo:'Sin datos específicos adicionales.'},
+    timeline:[{year:'2021',event:'Asume gubernatura de Colima'},{year:'2023',event:'Declara públicamente cero tolerancia a la corrupción'},{year:'2025',event:'ASF documenta anomalías del ejercicio fiscal 2024, ya bajo su gestión'},{year:'2026',event:'Colima entre los 9 estados con mayor percepción de corrupción según INEGI'}],
+    sources:[{label:'Punto por Punto — Corruptelas',url:'https://www.puntoporpunto.com/secciones/punto-de-encuentro/los-gobiernos-de-colima-morelos-y-baja-california-fueron-el-escenario-de-presuntas-corruptelas/'},{label:'El Imparcial — ENCIG INEGI',url:'https://www.elimparcial.com/mexico/2026/06/25/morena-gobierna-los-nueve-estados-con-mayor-percepcion-de-corrupcion-rumbo-a-las-elecciones-de-2027/'}]}
+);
