@@ -235,6 +235,132 @@
             font-family: var(--font-mono);
             margin-bottom: 0.25rem;
         }
+
+        /* Mexico Map */
+        .map-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.75rem;
+            margin-bottom: 2rem;
+        }
+        .map-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .map-title {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .map-clear-btn {
+            background: var(--bg-elevated);
+            border: 1px solid var(--corruption-critical);
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .map-body {
+            display: grid;
+            grid-template-columns: 1fr 220px;
+            gap: 1.5rem;
+            align-items: start;
+        }
+        .map-svg-wrap {
+            position: relative;
+            width: 100%;
+        }
+        .map-svg-wrap svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .map-svg-wrap svg path.mx-state {
+            stroke: var(--bg-primary);
+            stroke-width: 0.6;
+            cursor: pointer;
+            transition: filter 0.15s, opacity 0.15s;
+        }
+        .map-svg-wrap svg path.mx-state:hover {
+            filter: brightness(1.35);
+        }
+        .map-svg-wrap svg path.mx-state.mx-selected {
+            stroke: #fff;
+            stroke-width: 1.6;
+        }
+        .map-svg-wrap svg path.mx-state.mx-dimmed {
+            opacity: 0.35;
+        }
+        .map-tooltip {
+            position: absolute;
+            pointer-events: none;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-highlight);
+            border-radius: 6px;
+            padding: 0.5rem 0.7rem;
+            font-size: 0.75rem;
+            z-index: 10;
+            white-space: nowrap;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+        }
+        .map-tooltip strong {
+            font-family: var(--font-display);
+            display: block;
+            margin-bottom: 0.15rem;
+        }
+        .map-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .map-legend-title {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-family: var(--font-mono);
+            margin-bottom: 0.25rem;
+        }
+        .map-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+        }
+        .map-legend-swatch {
+            width: 14px;
+            height: 14px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+        .map-top-states {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        .map-top-state-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.78rem;
+            padding: 0.3rem 0;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+        .map-top-state-row:hover { color: var(--text-primary); }
+        .map-top-state-row span:last-child {
+            font-family: var(--font-mono);
+        }
+        @media (max-width: 768px) {
+            .map-body { grid-template-columns: 1fr; }
+        }
         .search-input {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -588,10 +714,197 @@
         // =====================================================
         // COMPONENTS
         // =====================================================
+        // =====================================================
+        // MEXICO MAP COMPONENT
+        // =====================================================
+        // Maps SVG path data-id -> canonical state name used in officials[].state
+        const SVG_ID_TO_STATE = {
+            'Chiapas': 'Chiapas', 'Oaxaca': 'Oaxaca', 'Guerrero': 'Guerrero',
+            'Tabasco': 'Tabasco', 'Puebla': 'Puebla', 'Mexico': 'Estado de México',
+            'Colima': 'Colima', 'CampecheMainland': 'Campeche', 'CampecheIsland': 'Campeche',
+            'Jalisco': 'Jalisco', 'Federal': 'Ciudad de México', 'Hidalgo': 'Hidalgo',
+            'Guanajuato': 'Guanajuato', 'Queretaro': 'Querétaro', 'Zacatecas': 'Zacatecas',
+            'SanLuisPotosi': 'San Luis Potosí', 'VeracruzMainland': 'Veracruz', 'VeracruzIsland': 'Veracruz',
+            'QuintanaRooMainland': 'Quintana Roo', 'QuintanaRooIsland1': 'Quintana Roo',
+            'QuintanaRooIsland2': 'Quintana Roo', 'QuintanaRooIsland3': 'Quintana Roo', 'QuintanaRooIsland4': 'Quintana Roo',
+            'Tamaulipas': 'Tamaulipas', 'Durango': 'Durango', 'NuevoLeon': 'Nuevo León',
+            'Coahuila': 'Coahuila', 'SinaloaMainland': 'Sinaloa', 'SinaloaIsland': 'Sinaloa',
+            'Chihuahua': 'Chihuahua',
+            'BajaSurMainland': 'Baja California Sur', 'BajaSurIsland1': 'Baja California Sur',
+            'BajaSurIsland2': 'Baja California Sur', 'BajaSurIsland3': 'Baja California Sur',
+            'BajaSurIsland4': 'Baja California Sur', 'BajaSurIsland5': 'Baja California Sur',
+            'BajaSurIsland6': 'Baja California Sur', 'BajaSurIsland7': 'Baja California Sur',
+            'BajaSurIsland8': 'Baja California Sur', 'BajaSurIsland7_1': 'Baja California Sur',
+            'BajaSurIsland8_1': 'Baja California Sur', 'BajaSurIsland9': 'Baja California Sur',
+            'BajaSurIsland0': 'Baja California Sur',
+            'Michoacan': 'Michoacán', 'Morelos': 'Morelos', 'Tlaxcala': 'Tlaxcala',
+            'Yucatan': 'Yucatán', 'Aguascalientes': 'Aguascalientes',
+            'NayaritMainland': 'Nayarit', 'NayaritIsland1': 'Nayarit', 'NayaritIsland2': 'Nayarit',
+            'NayaritIsland3': 'Nayarit', 'NayaritIsland4': 'Nayarit',
+            'BajaNorteIsland1': 'Baja California', 'BajaNorteMainland': 'Baja California',
+            'BajaNorteIsland2': 'Baja California', 'BajaNorteIsland3': 'Baja California',
+            'BajaNorteIsland4': 'Baja California',
+            'SonoraIsland1': 'Sonora', 'SonoraIsland2': 'Sonora', 'SonoraMainland': 'Sonora',
+            'SonoraIsland3': 'Sonora',
+        };
+
+        function MexicoMap({ officials, selectedState, onSelectState }) {
+            const wrapRef = React.useRef(null);
+            const [svgText, setSvgText] = React.useState(null);
+            const [tooltip, setTooltip] = React.useState(null); // {x, y, state, count, maxScore}
+            const [loadError, setLoadError] = React.useState(false);
+
+            React.useEffect(() => {
+                fetch('mexico-map.svg')
+                    .then(r => { if (!r.ok) throw new Error('not found'); return r.text(); })
+                    .then(setSvgText)
+                    .catch(() => setLoadError(true));
+            }, []);
+
+            // Compute stats per state
+            const stateStats = React.useMemo(() => {
+                const map = {};
+                officials.forEach(o => {
+                    const total = getTotalScore(o.scores);
+                    if (!map[o.state]) map[o.state] = { count: 0, maxScore: 0, sumScore: 0 };
+                    map[o.state].count += 1;
+                    map[o.state].sumScore += total;
+                    map[o.state].maxScore = Math.max(map[o.state].maxScore, total);
+                });
+                Object.keys(map).forEach(k => { map[k].avgScore = map[k].sumScore / map[k].count; });
+                return map;
+            }, [officials]);
+
+            // Apply colors / listeners once SVG is injected
+            React.useEffect(() => {
+                if (!svgText || !wrapRef.current) return;
+                const container = wrapRef.current;
+                const paths = container.querySelectorAll('path.mx-state');
+                paths.forEach(path => {
+                    const svgId = path.getAttribute('data-id');
+                    const stateName = SVG_ID_TO_STATE[svgId];
+                    const stats = stateName ? stateStats[stateName] : null;
+                    const color = stats ? getScoreColor(stats.maxScore) : 'var(--bg-elevated)';
+                    path.style.fill = stats ? color : '#161B22';
+
+                    path.onclick = () => {
+                        if (!stateName) return;
+                        onSelectState(selectedState === stateName ? null : stateName);
+                    };
+                    path.onmousemove = (e) => {
+                        if (!stateName) return;
+                        const rect = container.getBoundingClientRect();
+                        setTooltip({
+                            x: e.clientX - rect.left,
+                            y: e.clientY - rect.top,
+                            state: stateName,
+                            count: stats ? stats.count : 0,
+                            maxScore: stats ? stats.maxScore : 0,
+                        });
+                    };
+                    path.onmouseleave = () => setTooltip(null);
+                });
+            }, [svgText, stateStats, selectedState, onSelectState]);
+
+            // Update selected/dimmed classes reactively
+            React.useEffect(() => {
+                if (!wrapRef.current) return;
+                const paths = wrapRef.current.querySelectorAll('path.mx-state');
+                paths.forEach(path => {
+                    const svgId = path.getAttribute('data-id');
+                    const stateName = SVG_ID_TO_STATE[svgId];
+                    path.classList.toggle('mx-selected', !!selectedState && stateName === selectedState);
+                    path.classList.toggle('mx-dimmed', !!selectedState && stateName !== selectedState);
+                });
+            }, [selectedState, svgText]);
+
+            const topStates = Object.entries(stateStats)
+                .sort((a, b) => b[1].maxScore - a[1].maxScore)
+                .slice(0, 6);
+
+            return (
+                <div className="map-section">
+                    <div className="map-header">
+                        <div className="map-title">Mapa de corrupción por estado</div>
+                        {selectedState && (
+                            <button className="map-clear-btn" onClick={() => onSelectState(null)}>
+                                ✕ Quitar filtro: {selectedState}
+                            </button>
+                        )}
+                    </div>
+
+                    {loadError ? (
+                        <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
+                            No se pudo cargar el mapa. Usa los filtros de arriba para explorar por estado.
+                        </div>
+                    ) : (
+                        <div className="map-body">
+                            <div className="map-svg-wrap" ref={wrapRef}>
+                                {svgText ? (
+                                    <div dangerouslySetInnerHTML={{ __html: svgText }} />
+                                ) : (
+                                    <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', padding: '2rem 0' }}>
+                                        Cargando mapa...
+                                    </div>
+                                )}
+                                {tooltip && (
+                                    <div className="map-tooltip" style={{ left: tooltip.x + 12, top: tooltip.y + 12 }}>
+                                        <strong>{tooltip.state}</strong>
+                                        {tooltip.count} funcionario{tooltip.count !== 1 ? 's' : ''} · score máx. {tooltip.maxScore}
+                                    </div>
+                                )}
+                            </div>
+
+                            <div>
+                                <div className="map-legend">
+                                    <div className="map-legend-title">Nivel más alto registrado</div>
+                                    <div className="map-legend-item">
+                                        <div className="map-legend-swatch" style={{ background: 'var(--corruption-critical)' }} />
+                                        Crítico (≥75)
+                                    </div>
+                                    <div className="map-legend-item">
+                                        <div className="map-legend-swatch" style={{ background: 'var(--corruption-high)' }} />
+                                        Alto (55-74)
+                                    </div>
+                                    <div className="map-legend-item">
+                                        <div className="map-legend-swatch" style={{ background: 'var(--corruption-medium)' }} />
+                                        Medio (35-54)
+                                    </div>
+                                    <div className="map-legend-item">
+                                        <div className="map-legend-swatch" style={{ background: 'var(--corruption-low)' }} />
+                                        Bajo (15-34)
+                                    </div>
+                                    <div className="map-legend-item">
+                                        <div className="map-legend-swatch" style={{ background: '#161B22', border: '1px solid var(--border)' }} />
+                                        Sin registros
+                                    </div>
+                                </div>
+
+                                <div className="map-top-states">
+                                    <div className="map-legend-title">Estados con más registros</div>
+                                    {topStates.map(([name, stats]) => (
+                                        <div
+                                            key={name}
+                                            className="map-top-state-row"
+                                            onClick={() => onSelectState(selectedState === name ? null : name)}
+                                        >
+                                            <span>{name}</span>
+                                            <span style={{ color: getScoreColor(stats.maxScore) }}>{stats.count}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
         function App() {
             const [expandedId, setExpandedId] = React.useState(null);
             const [filter, setFilter] = React.useState('all');
             const [statusFilter, setStatusFilter] = React.useState('todos');
+            const [stateFilter, setStateFilter] = React.useState(null);
             const [search, setSearch] = React.useState('');
             const [showMethodology, setShowMethodology] = React.useState(false);
 
@@ -608,11 +921,12 @@
                     (statusFilter === 'en_funciones' && o.status === 'en_funciones') ||
                     (statusFilter === 'candidato' && o.status === 'candidato') ||
                     (statusFilter === 'ex_funcionario' && o.status === 'ex_funcionario');
+                const matchesState = !stateFilter || o.state === stateFilter;
                 const matchesSearch = search === '' ||
                     o.name.toLowerCase().includes(search.toLowerCase()) ||
                     o.state.toLowerCase().includes(search.toLowerCase()) ||
                     o.party.toLowerCase().includes(search.toLowerCase());
-                return matchesLevel && matchesStatus && matchesSearch;
+                return matchesLevel && matchesStatus && matchesState && matchesSearch;
             });
 
             const maxScore = getMaxPossible();
@@ -673,6 +987,12 @@
                                 </div>
                             </div>
                         </section>
+
+                        <MexicoMap
+                            officials={officials}
+                            selectedState={stateFilter}
+                            onSelectState={setStateFilter}
+                        />
 
                         <div className="methodology">
                             <button
