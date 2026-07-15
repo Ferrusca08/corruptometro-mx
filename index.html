@@ -283,6 +283,9 @@
             padding: 0.35rem 0.75rem;
             border-radius: 6px;
             cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
         }
         .map-body {
             display: grid;
@@ -453,6 +456,9 @@
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         .view-toggle-btn:hover {
             border-color: var(--border-highlight);
@@ -749,6 +755,9 @@
             border-radius: 6px;
             cursor: pointer;
             transition: opacity 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
         }
         .share-btn:hover:not(:disabled) { opacity: 0.9; }
         .share-btn:disabled { opacity: 0.6; cursor: wait; }
@@ -1017,6 +1026,23 @@
             return 'var(--corruption-clean)';
         }
 
+        // Canvas 2D contexts can't resolve CSS custom properties (var(--x)),
+        // so any drawing on <canvas> must use these resolved hex equivalents.
+        const HEX_COLORS = {
+            critical: '#F85149',
+            high: '#F0883E',
+            medium: '#D29922',
+            low: '#3FB950',
+            clean: '#58A6FF',
+        };
+        function getScoreColorHex(score) {
+            if (score >= 75) return HEX_COLORS.critical;
+            if (score >= 55) return HEX_COLORS.high;
+            if (score >= 35) return HEX_COLORS.medium;
+            if (score >= 15) return HEX_COLORS.low;
+            return HEX_COLORS.clean;
+        }
+
         function getScoreLabel(score) {
             if (score >= 75) return 'CRÍTICO';
             if (score >= 55) return 'ALTO';
@@ -1038,6 +1064,12 @@
             if (count === 2) return { label: 'Respaldo moderado', color: 'var(--corruption-medium)', dots: 2 };
             return { label: 'Fuente única', color: 'var(--corruption-high)', dots: 1 };
         }
+        function getSourceStrengthHex(count) {
+            if (count >= 4) return { label: 'Fuertemente respaldado', color: HEX_COLORS.clean, dots: 4 };
+            if (count === 3) return { label: 'Bien respaldado', color: HEX_COLORS.low, dots: 3 };
+            if (count === 2) return { label: 'Respaldo moderado', color: HEX_COLORS.medium, dots: 2 };
+            return { label: 'Fuente única', color: HEX_COLORS.high, dots: 1 };
+        }
 
         const MONTHS_ES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
         function formatDateEs(isoDate) {
@@ -1050,6 +1082,108 @@
         // =====================================================
         // COMPONENTS
         // =====================================================
+
+        // Lightweight inline SVG icons (stroke-based, currentColor) — used
+        // instead of emoji throughout the UI so rendering doesn't depend on
+        // the OS/browser's emoji font (which varies a lot and can render as
+        // blank boxes) and so the visual style stays consistent everywhere.
+        function Icon({ name, size = 16, style }) {
+            const common = {
+                width: size, height: size, viewBox: '0 0 24 24',
+                fill: 'none', stroke: 'currentColor', strokeWidth: 2,
+                strokeLinecap: 'round', strokeLinejoin: 'round',
+                style: { display: 'inline-block', verticalAlign: 'middle', ...style },
+            };
+            switch (name) {
+                case 'scale':
+                    return (
+                        <svg {...common}>
+                            <path d="M12 3v18M7 21h10" />
+                            <path d="M5 7l-3 6a3 3 0 0 0 6 0l-3-6z" />
+                            <path d="M19 7l-3 6a3 3 0 0 0 6 0l-3-6z" />
+                            <path d="M5 7h14M12 3l-2 4h4l-2-4z" />
+                        </svg>
+                    );
+                case 'bar-chart':
+                    return (
+                        <svg {...common}>
+                            <path d="M4 20V10M12 20V4M20 20v-7" />
+                        </svg>
+                    );
+                case 'clock':
+                    return (
+                        <svg {...common}>
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 7v5l3 3" />
+                        </svg>
+                    );
+                case 'trending-up':
+                    return (
+                        <svg {...common}>
+                            <path d="M3 17l6-6 4 4 8-8" />
+                            <path d="M15 7h6v6" />
+                        </svg>
+                    );
+                case 'users':
+                    return (
+                        <svg {...common}>
+                            <circle cx="9" cy="8" r="3.2" />
+                            <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+                            <circle cx="17.5" cy="9" r="2.5" />
+                            <path d="M15.5 14.2c2.5.4 4.5 2.6 4.5 5.8" />
+                        </svg>
+                    );
+                case 'dot':
+                    return (
+                        <svg {...common} fill="currentColor" stroke="none">
+                            <circle cx="12" cy="12" r="6" />
+                        </svg>
+                    );
+                case 'clipboard':
+                    return (
+                        <svg {...common}>
+                            <rect x="6" y="4" width="12" height="17" rx="2" />
+                            <path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" />
+                            <path d="M9 11h6M9 15h6" />
+                        </svg>
+                    );
+                case 'folder':
+                    return (
+                        <svg {...common}>
+                            <path d="M3 6a1 1 0 0 1 1-1h5l2 2h9a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6z" />
+                        </svg>
+                    );
+                case 'share':
+                    return (
+                        <svg {...common}>
+                            <path d="M12 16V4M8 8l4-4 4 4" />
+                            <path d="M4 14v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5" />
+                        </svg>
+                    );
+                case 'check':
+                    return (
+                        <svg {...common}>
+                            <path d="M4 12l5 5L20 6" />
+                        </svg>
+                    );
+                case 'x':
+                    return (
+                        <svg {...common}>
+                            <path d="M5 5l14 14M19 5L5 19" />
+                        </svg>
+                    );
+                case 'alert-triangle':
+                    return (
+                        <svg {...common}>
+                            <path d="M12 4l9 16H3l9-16z" />
+                            <path d="M12 10v4M12 17.5v.01" />
+                        </svg>
+                    );
+                default:
+                    return null;
+            }
+        }
+
         // =====================================================
         // MEXICO MAP COMPONENT
         // =====================================================
@@ -1164,7 +1298,7 @@
                         <div className="map-title">Mapa de corrupción por estado</div>
                         {selectedState && (
                             <button className="map-clear-btn" onClick={() => onSelectState(null)}>
-                                ✕ Quitar filtro: {selectedState}
+                                <Icon name="x" size={12} /> Quitar filtro: {selectedState}
                             </button>
                         )}
                     </div>
@@ -1622,7 +1756,7 @@
                     <header className="site-header">
                         <div className="header-inner">
                             <div className="logo">
-                                <div className="logo-icon">⚖</div>
+                                <div className="logo-icon"><Icon name="scale" size={16} style={{ color: '#fff' }} /></div>
                                 Corruptómetro<span>MX</span>
                             </div>
                             <div className="header-meta">
@@ -1685,19 +1819,19 @@
                                 className={`view-toggle-btn ${activeView === 'leaderboard' ? 'active' : ''}`}
                                 onClick={() => setActiveView('leaderboard')}
                             >
-                                📊 Leaderboard
+                                <Icon name="bar-chart" size={15} /> Leaderboard
                             </button>
                             <button
                                 className={`view-toggle-btn ${activeView === 'timeline' ? 'active' : ''}`}
                                 onClick={() => setActiveView('timeline')}
                             >
-                                🕒 Línea de tiempo nacional
+                                <Icon name="clock" size={15} /> Línea de tiempo nacional
                             </button>
                             <button
                                 className={`view-toggle-btn ${activeView === 'stats' ? 'active' : ''}`}
                                 onClick={() => setActiveView('stats')}
                             >
-                                📈 Estadísticas nacionales
+                                <Icon name="trending-up" size={15} /> Estadísticas nacionales
                             </button>
                         </div>
 
@@ -1738,19 +1872,24 @@
                         <div className="filters">
                             <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', flex: 1 }}>
                                 <div style={{ display: 'flex', gap: '0.35rem', background: 'var(--bg-elevated)', borderRadius: '8px', padding: '0.25rem' }}>
-                                    {['todos', 'en_funciones', 'candidato', 'ex_funcionario'].map(s => (
+                                    {['todos', 'en_funciones', 'candidato', 'ex_funcionario'].map(s => {
+                                        const iconMap = { todos: 'users', en_funciones: 'dot', candidato: 'clipboard', ex_funcionario: 'folder' };
+                                        const labelMap = { todos: 'Todos', en_funciones: 'En funciones', candidato: 'Candidatos', ex_funcionario: 'Exfuncionarios' };
+                                        return (
                                         <button
                                             key={s}
                                             className={`filter-btn ${statusFilter === s ? 'active' : ''}`}
                                             onClick={() => setStatusFilter(s)}
-                                            style={{ border: 'none', borderRadius: '6px', fontSize: '0.78rem' }}
+                                            style={{ border: 'none', borderRadius: '6px', fontSize: '0.78rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
                                         >
-                                            {{ todos: '👥 Todos', en_funciones: '🔴 En funciones', candidato: '📋 Candidatos', ex_funcionario: '📁 Exfuncionarios' }[s]}
-                                            <span style={{ marginLeft: '0.35rem', fontFamily: 'var(--font-mono)', fontSize: '0.7rem', opacity: 0.7 }}>
+                                            <Icon name={iconMap[s]} size={13} style={s === 'en_funciones' ? { color: 'var(--corruption-critical)' } : {}} />
+                                            {labelMap[s]}
+                                            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', opacity: 0.7 }}>
                                                 {s === 'todos' ? sorted.length : sorted.filter(o => o.status === s).length}
                                             </span>
                                         </button>
-                                    ))}
+                                        );
+                                    })}
                                 </div>
                                 <div style={{ display: 'flex', gap: '0.35rem' }}>
                                     {['all', 'municipal', 'estatal', 'federal'].map(f => (
@@ -1865,8 +2004,29 @@
             return lines;
         }
 
+        // Polyfill for CanvasRenderingContext2D.roundRect — not available in
+        // all browsers (notably older Safari/iOS versions still in use).
+        function canvasRoundRect(ctx, x, y, w, h, r) {
+            if (typeof ctx.roundRect === 'function') {
+                ctx.roundRect(x, y, w, h, r);
+                return;
+            }
+            ctx.moveTo(x + r, y);
+            ctx.arcTo(x + w, y, x + w, y + h, r);
+            ctx.arcTo(x + w, y + h, x, y + h, r);
+            ctx.arcTo(x, y + h, x, y, r);
+            ctx.arcTo(x, y, x + w, y, r);
+            ctx.closePath();
+        }
+
         async function generateOfficialCardImage(official, maxScore) {
-            try { await document.fonts.ready; } catch (e) { /* fonts may still work via fallback */ }
+            // Don't let a slow/never-resolving font load block sharing forever.
+            try {
+                await Promise.race([
+                    document.fonts.ready,
+                    new Promise(resolve => setTimeout(resolve, 1200)),
+                ]);
+            } catch (e) { /* fonts may still work via fallback */ }
 
             const W = 1080, H = 1350;
             const canvas = document.createElement('canvas');
@@ -1876,8 +2036,8 @@
 
             const total = getTotalScore(official.scores);
             const pct = total / maxScore;
-            const color = getScoreColor(total);
-            const strength = getSourceStrength(official.sources.length);
+            const color = getScoreColorHex(total);
+            const strength = getSourceStrengthHex(official.sources.length);
 
             // Background
             ctx.fillStyle = '#06090F';
@@ -1892,18 +2052,26 @@
 
             const M = 64; // margin
 
-            // Logo
+            // Logo — drawn as vector shapes, not an emoji glyph (font/platform
+            // dependent and can render as a blank box on many systems).
             ctx.fillStyle = '#F85149';
             ctx.beginPath();
-            ctx.roundRect(M, 56, 44, 44, 10);
+            canvasRoundRect(ctx, M, 56, 44, 44, 10);
             ctx.fill();
-            ctx.fillStyle = '#ffffff';
-            ctx.font = '24px "Space Grotesk", sans-serif';
-            ctx.textBaseline = 'middle';
-            ctx.textAlign = 'center';
-            ctx.fillText('⚖', M + 22, 56 + 24);
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 2.5;
+            ctx.lineCap = 'round';
+            ctx.beginPath();
+            // simple balance-scale glyph: vertical post + horizontal beam + two pans
+            const lx = M + 22, ly = 68, lw = 20;
+            ctx.moveTo(lx, ly); ctx.lineTo(lx, ly + 18);
+            ctx.moveTo(lx - lw / 2, ly); ctx.lineTo(lx + lw / 2, ly);
+            ctx.moveTo(lx - lw / 2, ly); ctx.lineTo(lx - lw / 2, ly + 8);
+            ctx.moveTo(lx + lw / 2, ly); ctx.lineTo(lx + lw / 2, ly + 8);
+            ctx.stroke();
 
             ctx.textAlign = 'left';
+            ctx.textBaseline = 'middle';
             ctx.fillStyle = '#E6EDF3';
             ctx.font = '700 30px "Space Grotesk", sans-serif';
             ctx.fillText('Corruptómetro', M + 60, 56 + 24);
@@ -1941,7 +2109,7 @@
                 const tw = ctx.measureText(label).width;
                 ctx.fillStyle = badgeColor + '26';
                 ctx.beginPath();
-                ctx.roundRect(M, y - 26, tw + 24, 36, 6);
+                canvasRoundRect(ctx, M, y - 26, tw + 24, 36, 6);
                 ctx.fill();
                 ctx.fillStyle = badgeColor;
                 ctx.fillText(label, M + 12, y);
@@ -1967,11 +2135,11 @@
             const barW = W - M * 2;
             ctx.fillStyle = '#1C2333';
             ctx.beginPath();
-            ctx.roundRect(M, barY, barW, 14, 7);
+            canvasRoundRect(ctx, M, barY, barW, 14, 7);
             ctx.fill();
             ctx.fillStyle = color;
             ctx.beginPath();
-            ctx.roundRect(M, barY, Math.max(barW * pct, 14), 14, 7);
+            canvasRoundRect(ctx, M, barY, Math.max(barW * pct, 14), 14, 7);
             ctx.fill();
 
             // Top categories (up to 3 with highest score)
@@ -1989,7 +2157,7 @@
 
             topCats.forEach(c => {
                 catY += 44;
-                const catColor = getScoreColor(c.val * (100 / c.maxPoints));
+                const catColor = getScoreColorHex(c.val * (100 / c.maxPoints));
                 ctx.fillStyle = catColor;
                 ctx.beginPath();
                 ctx.arc(M + 6, catY - 8, 6, 0, Math.PI * 2);
@@ -2023,36 +2191,69 @@
             ctx.fillText('ferrusca08.github.io/corruptometro-mx', W - M, footY);
             ctx.textAlign = 'left';
 
-            return new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+            return new Promise((resolve, reject) => {
+                canvas.toBlob(blob => {
+                    if (blob) resolve(blob);
+                    else reject(new Error('canvas.toBlob devolvió null'));
+                }, 'image/png');
+            });
         }
 
         async function shareOfficialCard(official, maxScore, setStatus) {
             setStatus && setStatus('generando');
-            try {
-                const blob = await generateOfficialCardImage(official, maxScore);
-                const filename = `corruptometro-${official.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`;
-                const file = new File([blob], filename, { type: 'image/png' });
 
-                if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
-                    await navigator.share({
-                        files: [file],
-                        title: `Corruptómetro MX — ${official.name}`,
-                        text: `${official.name}: ${getTotalScore(official.scores)}/${maxScore} en el Corruptómetro MX`,
-                    });
-                    setStatus && setStatus('listo');
-                } else {
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = filename;
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    URL.revokeObjectURL(url);
-                    setStatus && setStatus('descargado');
-                }
+            const downloadBlob = (blob, filename) => {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            };
+
+            let blob;
+            try {
+                blob = await generateOfficialCardImage(official, maxScore);
             } catch (e) {
-                console.error('Error generando la ficha:', e);
+                console.error('Error generando la imagen de la ficha:', e);
+                setStatus && setStatus('error');
+                return;
+            }
+
+            const filename = `corruptometro-${official.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`;
+
+            // Try native share first (mobile), but never treat a user-cancelled
+            // share as an error — and always fall back to a plain download if
+            // the Share API itself fails for any other reason.
+            if (navigator.share && navigator.canShare) {
+                try {
+                    const file = new File([blob], filename, { type: 'image/png' });
+                    if (navigator.canShare({ files: [file] })) {
+                        await navigator.share({
+                            files: [file],
+                            title: `Corruptómetro MX — ${official.name}`,
+                            text: `${official.name}: ${getTotalScore(official.scores)}/${maxScore} en el Corruptómetro MX`,
+                        });
+                        setStatus && setStatus('listo');
+                        return;
+                    }
+                } catch (e) {
+                    if (e && e.name === 'AbortError') {
+                        // User closed the share sheet — not an error.
+                        setStatus && setStatus('idle');
+                        return;
+                    }
+                    console.warn('navigator.share falló, descargando en su lugar:', e);
+                }
+            }
+
+            try {
+                downloadBlob(blob, filename);
+                setStatus && setStatus('descargado');
+            } catch (e) {
+                console.error('Error al descargar la ficha:', e);
                 setStatus && setStatus('error');
             }
         }
@@ -2117,7 +2318,7 @@
                                 })()}
                                 {official.lastVerified && (
                                     <span className="verified-date">
-                                        ✓ verificado {formatDateEs(official.lastVerified)}
+                                        <Icon name="check" size={11} /> verificado {formatDateEs(official.lastVerified)}
                                     </span>
                                 )}
                             </div>
@@ -2181,10 +2382,10 @@
                                     className="share-btn"
                                 >
                                     {shareStatus === 'generando' ? 'Generando…' :
-                                     shareStatus === 'descargado' ? '✓ Descargado' :
-                                     shareStatus === 'listo' ? '✓ Compartido' :
-                                     shareStatus === 'error' ? '⚠ Reintentar' :
-                                     '📤 Compartir ficha'}
+                                     shareStatus === 'descargado' ? <React.Fragment><Icon name="check" size={14} /> Descargado</React.Fragment> :
+                                     shareStatus === 'listo' ? <React.Fragment><Icon name="check" size={14} /> Compartido</React.Fragment> :
+                                     shareStatus === 'error' ? <React.Fragment><Icon name="alert-triangle" size={14} /> Reintentar</React.Fragment> :
+                                     <React.Fragment><Icon name="share" size={14} /> Compartir ficha</React.Fragment>}
                                 </button>
                             </div>
 
