@@ -1826,3 +1826,30 @@ officials.push(
     timeline:[{year:'2023',event:'Asume gubernatura de Nayarit'},{year:'2024',event:'Febrero: denunciado por desvío de $2,500M del Fondo de Pensiones. Responde anunciando demanda por daño moral contra el denunciante.'},{year:'2025',event:'Octubre: ASF revisa $1,500M en obras públicas tras solicitud de diputada federal.'},{year:'2026',event:'Enero: crisis financiera y protestas de burocracia estatal por incumplimiento de pagos. Uso de crédito de corto plazo.'}],
     sources:[{label:'Excélsior — Denuncia $2,500M',url:'https://www.excelsior.com.mx/nacional/denuncian-gobernador-navarro-quintero-por-robo/1636869'},{label:'Proceso — ASF obras millonarias',url:'https://www.proceso.com.mx/nacional/estados/2025/10/27/alertan-la-asf-por-irregularidades-en-obras-millonarias-en-nayarit-361591.html'},{label:'Proceso — Megaoperativo extorsión',url:'https://www.proceso.com.mx/temas/nayarit-347.html'},{label:'La Jornada — Respuesta del gobernador',url:'https://www.jornada.com.mx/noticia/2024/02/28/estados/pedira-gobernador-de-nayarit-disculpa-tras-acusaciones-por-desfalco-5010'}]}
 );
+
+
+officials.push(
+    {id:345,name:'Enrique Inzunza Cázarez',role:'Senador de la República / Exsecretario General de Gobierno de Sinaloa',party:'MORENA',state:'Sinaloa',level:'federal',active:true,status:'en_funciones',
+    scores:{sentencias:20,fiscalizacion:5,funcionarios:10,deuda:8,denuncias:10,evasion:8,nepotismo:3},
+    breakdown:{sentencias:'Acusado formalmente en el Distrito Sur de Nueva York (29 de abril de 2026) por conspiración para importación de narcóticos y posesión/conspiración para usar ametralladoras y dispositivos destructivos. Incluido en el expediente S9 23 Cr. 180 junto al gobernador con licencia Rubén Rocha Moya y otros 8 funcionarios.',
+    fiscalizacion:'Sin hallazgos de fiscalización formal en México.',
+    funcionarios:'Como secretario general de Gobierno de Sinaloa (2021-2024), según el expediente estadounidense habría acompañado a Rocha Moya en una reunión con "Los Chapitos" tras la elección de junio de 2021, acordando que el Cártel tendría control sobre la Policía Estatal de Sinaloa. Su suplente en el Senado es funcionario del gabinete de Rocha Moya.',
+    deuda:'Sin monto de daño patrimonial documentado; el caso es de protección al crimen organizado, no de desvío directo de recursos.',
+    denuncias:'Departamento de Justicia de EE.UU. presentó cargos formales. Se reportó una posible detención en San Diego, California (mayo 2026), que negó categóricamente. Ficha roja de Interpol.',
+    evasion:'Solicitó licencia temporal del Senado tras la acusación pero luego reapareció y anunció que permanecerá en el cargo hasta 2030. FGR lo citó como testigo, no como imputado. No existe solicitud de desafuero pese a las acusaciones.',
+    nepotismo:'Esposa es magistrada del Poder Judicial de Sinaloa desde noviembre de 2021, mientras él ocupaba cargos de alto nivel en el mismo gobierno estatal.'},
+    timeline:[{year:'2021',event:'Nombrado Secretario General de Gobierno de Sinaloa por Rocha Moya. Presunta reunión con "Los Chapitos".'},{year:'2024',event:'Deja el cargo estatal para postularse como senador. Asume el 1 de septiembre.'},{year:'2026',event:'29 de abril: DOJ de EE.UU. lo acusa formalmente. Mayo: solicita licencia temporal, luego la retira. Reportes de posible detención en San Diego, desmentidos. Ficha roja de Interpol.'}],
+    sources:[{label:'Wikipedia — Perfil y acusación',url:'https://es.wikipedia.org/wiki/Enrique_Inzunza_C%C3%A1zarez'},{label:'Infobae — Sin solicitud de desafuero',url:'https://www.infobae.com/mexico/2026/05/21/pese-a-acusaciones-de-eeuu-no-existe-solicitud-de-desafuero-contra-el-senador-enrique-inzunza/'},{label:'PolíticoMX — Cargos DOJ',url:'https://politico.mx/2026/04/29/quien-es-enrique-inzunza-el-senador-de-morena-acusado-de-narcotrafico-por-eua/'}]},
+
+    {id:346,name:'Juan de Dios Gámez Mendívil',role:'Presidente Municipal de Culiacán, Sinaloa (con licencia)',party:'MORENA',state:'Sinaloa',level:'municipal',active:true,status:'en_funciones',
+    scores:{sentencias:12,fiscalizacion:5,funcionarios:6,deuda:5,denuncias:9,evasion:8,nepotismo:2},
+    breakdown:{sentencias:'Incluido entre los 10 funcionarios de Sinaloa reclamados por el Departamento de Justicia de EE.UU. por presuntos vínculos con el narcotráfico. Sin sentencia ni orden de aprehensión en México.',
+    fiscalizacion:'Sin hallazgos formales de fiscalización publicados.',
+    funcionarios:'Parte del entramado de funcionarios sinaloenses señalados junto con Rocha Moya e Inzunza.',
+    deuda:'Sin monto específico documentado.',
+    denuncias:'Señalado directamente en el expediente S9 23 Cr. 180 del Distrito Sur de Nueva York.',
+    evasion:'Solicitó licencia del cargo de manera similar al gobernador y al senador Inzunza, tras conocerse la acusación de EE.UU.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2024',event:'Asume presidencia municipal de Culiacán'},{year:'2026',event:'Abril: incluido en acusación del DOJ. Solicita licencia del cargo.'}],
+    sources:[{label:'La Voz de Michoacán',url:'https://www.lavozdemichoacan.com.mx/mexico/senado/senador-mexicano-enrique-inzunza-acusado-narcotrafico-eeuu-pide-licencia-2026/'}]}
+);
