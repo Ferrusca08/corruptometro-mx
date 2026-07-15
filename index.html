@@ -361,6 +361,63 @@
         @media (max-width: 768px) {
             .map-body { grid-template-columns: 1fr; }
         }
+
+        /* Pagination */
+        .pagination-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 1.75rem 0;
+        }
+        .pagination-info {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+        }
+        .pagination-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .page-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            min-width: 36px;
+            height: 36px;
+            padding: 0 0.6rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .page-btn:hover:not(:disabled) {
+            border-color: var(--border-highlight);
+            color: var(--text-primary);
+        }
+        .page-btn.active {
+            background: var(--corruption-critical);
+            border-color: var(--corruption-critical);
+            color: white;
+            font-weight: 600;
+        }
+        .page-btn:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+        }
+        .page-btn.page-nav {
+            font-family: var(--font-body);
+            padding: 0 0.9rem;
+        }
+        .page-ellipsis {
+            color: var(--text-muted);
+            padding: 0 0.25rem;
+            font-family: var(--font-mono);
+        }
         .search-input {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -900,6 +957,69 @@
             );
         }
 
+        // =====================================================
+        // PAGINATION COMPONENT
+        // =====================================================
+        function Pagination({ currentPage, totalPages, onPageChange, totalItems, pageSize }) {
+            // Build a compact page list with ellipses: 1 ... p-1 p p+1 ... last
+            const pages = [];
+            const add = (p) => { if (!pages.includes(p)) pages.push(p); };
+            add(1);
+            for (let p = currentPage - 1; p <= currentPage + 1; p++) {
+                if (p >= 1 && p <= totalPages) add(p);
+            }
+            add(totalPages);
+            pages.sort((a, b) => a - b);
+
+            const rangeStart = (currentPage - 1) * pageSize + 1;
+            const rangeEnd = Math.min(currentPage * pageSize, totalItems);
+
+            const items = [];
+            let prev = 0;
+            pages.forEach(p => {
+                if (p - prev > 1) items.push('ellipsis-' + p);
+                items.push(p);
+                prev = p;
+            });
+
+            return (
+                <div className="pagination-wrap">
+                    <div className="pagination-info">
+                        Mostrando {rangeStart}–{rangeEnd} de {totalItems} funcionarios
+                    </div>
+                    <div className="pagination-controls">
+                        <button
+                            className="page-btn page-nav"
+                            disabled={currentPage === 1}
+                            onClick={() => onPageChange(currentPage - 1)}
+                        >
+                            ‹ Anterior
+                        </button>
+                        {items.map(item => (
+                            typeof item === 'number' ? (
+                                <button
+                                    key={item}
+                                    className={`page-btn ${item === currentPage ? 'active' : ''}`}
+                                    onClick={() => onPageChange(item)}
+                                >
+                                    {item}
+                                </button>
+                            ) : (
+                                <span key={item} className="page-ellipsis">…</span>
+                            )
+                        ))}
+                        <button
+                            className="page-btn page-nav"
+                            disabled={currentPage === totalPages}
+                            onClick={() => onPageChange(currentPage + 1)}
+                        >
+                            Siguiente ›
+                        </button>
+                    </div>
+                </div>
+            );
+        }
+
         function App() {
             const [expandedId, setExpandedId] = React.useState(null);
             const [filter, setFilter] = React.useState('all');
@@ -907,6 +1027,8 @@
             const [stateFilter, setStateFilter] = React.useState(null);
             const [search, setSearch] = React.useState('');
             const [showMethodology, setShowMethodology] = React.useState(false);
+            const [currentPage, setCurrentPage] = React.useState(1);
+            const PAGE_SIZE = 20;
 
             const sorted = [...officials]
                 .map(o => ({ ...o, total: getTotalScore(o.scores) }))
@@ -928,6 +1050,20 @@
                     o.party.toLowerCase().includes(search.toLowerCase());
                 return matchesLevel && matchesStatus && matchesState && matchesSearch;
             });
+
+            const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+
+            // Reset to page 1 whenever filters/search change and current page becomes invalid
+            React.useEffect(() => {
+                setCurrentPage(1);
+            }, [filter, statusFilter, stateFilter, search]);
+
+            React.useEffect(() => {
+                if (currentPage > totalPages) setCurrentPage(totalPages);
+            }, [totalPages, currentPage]);
+
+            const pageStart = (currentPage - 1) * PAGE_SIZE;
+            const paginated = filtered.slice(pageStart, pageStart + PAGE_SIZE);
 
             const maxScore = getMaxPossible();
 
@@ -1068,11 +1204,11 @@
                         </div>
 
                         <div className="leaderboard">
-                            {filtered.map((official, idx) => (
+                            {paginated.map((official, idx) => (
                                 <OfficialCard
                                     key={official.id}
                                     official={official}
-                                    rank={idx + 1}
+                                    rank={pageStart + idx + 1}
                                     maxScore={maxScore}
                                     expanded={expandedId === official.id}
                                     onToggle={() => setExpandedId(expandedId === official.id ? null : official.id)}
@@ -1084,6 +1220,16 @@
                             <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>
                                 No se encontraron resultados para "{search}"
                             </div>
+                        )}
+
+                        {filtered.length > 0 && totalPages > 1 && (
+                            <Pagination
+                                currentPage={currentPage}
+                                totalPages={totalPages}
+                                onPageChange={setCurrentPage}
+                                totalItems={filtered.length}
+                                pageSize={PAGE_SIZE}
+                            />
                         )}
 
                         <div className="contribute-banner">
