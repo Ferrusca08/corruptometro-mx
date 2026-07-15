@@ -545,6 +545,76 @@
             .tn-year-group { grid-template-columns: 50px 1fr; }
             .tn-year-label { font-size: 1rem; position: static; }
         }
+
+        /* National Stats Dashboard */
+        .stats-dashboard {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.75rem;
+        }
+        .stats-dashboard-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.75rem;
+        }
+        .stats-panel h4 {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+        .stats-panel-sub {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-bottom: 0.9rem;
+        }
+        .stats-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+        .stat-bar-row {
+            display: grid;
+            grid-template-columns: 100px 1fr 46px;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .stat-party-label {
+            font-size: 0.68rem;
+            text-align: center;
+        }
+        .stat-cat-label {
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .stat-bar-track {
+            height: 8px;
+            background: var(--bg-elevated);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .stat-bar-fill {
+            height: 100%;
+            background: var(--corruption-critical);
+            border-radius: 4px;
+            transition: width 0.4s ease;
+        }
+        .stat-bar-value {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            text-align: right;
+        }
         .search-input {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -1312,6 +1382,151 @@
             );
         }
 
+        // =====================================================
+        // NATIONAL STATS DASHBOARD
+        // =====================================================
+        const SEXENIOS = [
+            { label: 'Fox (2000-2006)', start: 2000, end: 2006 },
+            { label: 'Calderón (2006-2012)', start: 2006, end: 2012 },
+            { label: 'Peña Nieto (2012-2018)', start: 2012, end: 2018 },
+            { label: 'AMLO (2018-2024)', start: 2018, end: 2024 },
+            { label: 'Sheinbaum (2024-2030)', start: 2024, end: 2030 },
+        ];
+        function getSexenio(year) {
+            for (const s of SEXENIOS) {
+                if (year >= s.start && year < s.end) return s.label;
+            }
+            if (year < 2000) return 'Antes de 2000';
+            return 'Sin clasificar';
+        }
+        function earliestYear(official) {
+            const years = (official.timeline || [])
+                .map(t => parseInt(t.year, 10))
+                .filter(y => !isNaN(y));
+            return years.length ? Math.min(...years) : null;
+        }
+
+        function NationalStatsDashboard({ officials }) {
+            const stats = React.useMemo(() => {
+                const scored = officials.map(o => ({ ...o, total: getTotalScore(o.scores) }));
+
+                // 1. Cases by party
+                const byParty = {};
+                scored.forEach(o => {
+                    const p = o.party || 'Sin dato';
+                    byParty[p] = (byParty[p] || 0) + 1;
+                });
+                const partyRanking = Object.entries(byParty)
+                    .sort((a, b) => b[1] - a[1]);
+
+                // 2. Category frequency & average intensity
+                const categoryStats = SCORING_CRITERIA.map(c => {
+                    const withScore = scored.filter(o => o.scores[c.id] > 0);
+                    const avgAmongScored = withScore.length
+                        ? withScore.reduce((sum, o) => sum + o.scores[c.id], 0) / withScore.length
+                        : 0;
+                    return {
+                        id: c.id,
+                        label: c.label,
+                        maxPoints: c.maxPoints,
+                        count: withScore.length,
+                        pctOfCases: (withScore.length / scored.length) * 100,
+                        avgAmongScored,
+                    };
+                }).sort((a, b) => b.count - a.count);
+
+                // 3. Average score by sexenio (based on earliest documented event)
+                const bySexenio = {};
+                scored.forEach(o => {
+                    const y = earliestYear(o);
+                    const label = y ? getSexenio(y) : 'Sin fecha';
+                    if (!bySexenio[label]) bySexenio[label] = { sum: 0, count: 0 };
+                    bySexenio[label].sum += o.total;
+                    bySexenio[label].count += 1;
+                });
+                const sexenioOrder = [...SEXENIOS.map(s => s.label), 'Antes de 2000', 'Sin fecha'];
+                const sexenioRanking = sexenioOrder
+                    .filter(label => bySexenio[label])
+                    .map(label => ({
+                        label,
+                        avg: bySexenio[label].sum / bySexenio[label].count,
+                        count: bySexenio[label].count,
+                    }));
+
+                return { partyRanking, categoryStats, sexenioRanking, total: scored.length };
+            }, [officials]);
+
+            const maxPartyCount = stats.partyRanking[0] ? stats.partyRanking[0][1] : 1;
+            const maxCategoryCount = stats.categoryStats[0] ? stats.categoryStats[0].count : 1;
+            const maxSexenioAvg = Math.max(...stats.sexenioRanking.map(s => s.avg), 1);
+
+            return (
+                <div className="stats-dashboard">
+                    <div className="stats-dashboard-header">
+                        <div className="map-title">Estadísticas nacionales</div>
+                        <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.35rem' }}>
+                            Análisis agregado de los {stats.total} perfiles documentados en la base.
+                        </p>
+                    </div>
+
+                    <div className="stats-grid">
+                        <div className="stats-panel">
+                            <h4>Casos por partido político</h4>
+                            <div className="stats-bars">
+                                {stats.partyRanking.map(([party, count]) => (
+                                    <div className="stat-bar-row" key={party}>
+                                        <span className={`official-party ${getPartyClass(party)} stat-party-label`}>{party}</span>
+                                        <div className="stat-bar-track">
+                                            <div className="stat-bar-fill" style={{ width: `${(count / maxPartyCount) * 100}%` }} />
+                                        </div>
+                                        <span className="stat-bar-value">{count}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="stats-panel">
+                            <h4>Categoría de corrupción más común</h4>
+                            <p className="stats-panel-sub">% de perfiles con puntaje &gt; 0 en esa categoría</p>
+                            <div className="stats-bars">
+                                {stats.categoryStats.map(c => (
+                                    <div className="stat-bar-row" key={c.id}>
+                                        <span className="stat-cat-label">{c.label}</span>
+                                        <div className="stat-bar-track">
+                                            <div className="stat-bar-fill" style={{
+                                                width: `${(c.count / maxCategoryCount) * 100}%`,
+                                                background: 'var(--corruption-medium)'
+                                            }} />
+                                        </div>
+                                        <span className="stat-bar-value">{c.pctOfCases.toFixed(0)}%</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="stats-panel">
+                            <h4>Score promedio por sexenio</h4>
+                            <p className="stats-panel-sub">Según el año más antiguo documentado en cada perfil</p>
+                            <div className="stats-bars">
+                                {stats.sexenioRanking.map(s => (
+                                    <div className="stat-bar-row" key={s.label}>
+                                        <span className="stat-cat-label">{s.label}</span>
+                                        <div className="stat-bar-track">
+                                            <div className="stat-bar-fill" style={{
+                                                width: `${(s.avg / maxSexenioAvg) * 100}%`,
+                                                background: getScoreColor(s.avg)
+                                            }} />
+                                        </div>
+                                        <span className="stat-bar-value">{s.avg.toFixed(0)} <span style={{ opacity: 0.5 }}>({s.count})</span></span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
         function App() {
             const [expandedId, setExpandedId] = React.useState(null);
             const [filter, setFilter] = React.useState('all');
@@ -1446,10 +1661,18 @@
                             >
                                 🕒 Línea de tiempo nacional
                             </button>
+                            <button
+                                className={`view-toggle-btn ${activeView === 'stats' ? 'active' : ''}`}
+                                onClick={() => setActiveView('stats')}
+                            >
+                                📈 Estadísticas nacionales
+                            </button>
                         </div>
 
                         {activeView === 'timeline' ? (
                             <NationalTimeline officials={officials} onJumpToOfficial={handleJumpToOfficial} />
+                        ) : activeView === 'stats' ? (
+                            <NationalStatsDashboard officials={officials} />
                         ) : (
                         <React.Fragment>
                         <div className="methodology">

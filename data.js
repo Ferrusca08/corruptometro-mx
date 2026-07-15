@@ -5369,3 +5369,42 @@ const NATIONAL_STATS = {
   totalStates: new Set(officials.map(o => o.state)).size,
   lastUpdate: '2026-07-14',
 };
+
+
+officials.push(
+    {id:358,name:'Nancy Nápoles',role:'Presidenta Municipal de Tenancingo, Estado de México',party:'Sin dato',state:'Estado de México',level:'municipal',active:true,status:'en_funciones',lastVerified:'2026-07-14',
+    scores:{sentencias:15,fiscalizacion:10,funcionarios:8,deuda:13,denuncias:9,evasion:8,nepotismo:5},
+    breakdown:{sentencias:'Investigada por la Fiscalía General de Justicia del Estado de México tras determinar que su reporte de secuestro (31 de mayo de 2026) habría sido simulado.',
+    fiscalizacion:'La investigación surgió no por denuncia de corrupción sino por la simulación de un secuestro, que las autoridades vincularon a un plan para justificar la desaparición de recursos municipales.',
+    funcionarios:'La carpeta de investigación señala la presunta participación de su esposo, José Roberto "N", y su cuñado, Óscar "N", como coautores del esquema.',
+    deuda:'Los indicios reunidos por la FGJEM apuntan a que el secuestro simulado buscaba justificar la desaparición de aproximadamente $40M del erario municipal.',
+    denuncias:'Caso documentado extensamente por AD Noticias como parte de una lista creciente de alcaldes mexiquenses procesados. Generó amplia movilización institucional cuando se reportó como secuestro real.',
+    evasion:'La hipótesis inicial de secuestro real habría sido usada como cobertura para ocultar el desvío de fondos y evitar escrutinio inmediato.',
+    nepotismo:'Esposo y cuñado señalados como presuntos coautores directos del esquema de desvío de recursos municipales.'},
+    timeline:[{year:'2025',event:'Asume presidencia municipal de Tenancingo'},{year:'2026',event:'31 de mayo: reportada como víctima de secuestro. La investigación posterior de la FGJEM apunta a que fue simulado para ocultar el desvío de $40M, con participación señalada de su esposo y cuñado.'}],
+    sources:[{label:'AD Noticias — Lista de alcaldes procesados',url:'https://adnoticias.mx/alcaldes-procesados-edomex-zinacantepec-tenancingo/'}]},
+
+    {id:359,name:'Gerardo Nava Sánchez',role:'Expresidente Municipal de Zinacantepec, Estado de México',party:'Sin dato',state:'Estado de México',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
+    scores:{sentencias:25,fiscalizacion:3,funcionarios:2,deuda:2,denuncias:8,evasion:5,nepotismo:2},
+    breakdown:{sentencias:'Sentenciado a 42 años y 6 meses de prisión, uno de los fallos más severos dictados contra un alcalde mexiquense, tras ser encontrado penalmente responsable de homicidio calificado en grado de tentativa.',
+    fiscalizacion:'Sin hallazgos de fiscalización financiera documentados; el caso es de naturaleza penal por violencia, no de desvío de recursos.',
+    funcionarios:'Sin red de funcionarios documentada en este caso específico.',
+    deuda:'Sin daño patrimonial documentado.',
+    denuncias:'En enero de 2021, la Fiscalía General de Justicia del Estado de México cumplimentó una orden de aprehensión en su contra.',
+    evasion:'Enfrentó un largo proceso judicial antes de la sentencia final.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2021',event:'Enero: orden de aprehensión cumplimentada por homicidio calificado en grado de tentativa'},{year:'2026',event:'Sentenciado a 42 años y 6 meses de prisión'}],
+    sources:[{label:'AD Noticias — Lista de alcaldes procesados',url:'https://adnoticias.mx/alcaldes-procesados-edomex-zinacantepec-tenancingo/'}]},
+
+    {id:360,name:'Diego Moreno Valle',role:'Expresidente Municipal de Santiago Tianguistenco, Estado de México',party:'Sin dato',state:'Estado de México',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
+    scores:{sentencias:18,fiscalizacion:2,funcionarios:2,deuda:2,denuncias:8,evasion:5,nepotismo:2},
+    breakdown:{sentencias:'Detenido y vinculado a proceso tras una investigación ministerial derivada de una denuncia por violación.',
+    fiscalizacion:'Sin hallazgos de fiscalización financiera documentados; el caso es de naturaleza penal.',
+    funcionarios:'Sin red de funcionarios documentada en este caso.',
+    deuda:'Sin daño patrimonial documentado.',
+    denuncias:'Una denuncia por violación dio origen a la investigación ministerial que concluyó en su detención.',
+    evasion:'El caso provocó una crisis política en el municipio; el Ayuntamiento tuvo que designar autoridades sustitutas.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2025',event:'Denuncia por violación origina investigación ministerial en su contra'},{year:'2026',event:'Detención y vinculación a proceso. El Ayuntamiento designa autoridades sustitutas.'}],
+    sources:[{label:'AD Noticias — Lista de alcaldes procesados',url:'https://adnoticias.mx/alcaldes-procesados-edomex-zinacantepec-tenancingo/'}]}
+);
