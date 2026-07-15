@@ -1,0 +1,75 @@
+name: Verificar contribución
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  verify:
+    if: contains(github.event.issue.labels.*.name, 'contribucion')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Ejecutar verificación automática
+        id: verify
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          REPO_ROOT: ${{ github.workspace }}
+        run: |
+          python3 .github/scripts/verify_contribution.py > result.json
+          cat result.json
+
+      - name: Publicar comentario y etiquetas
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const result = JSON.parse(fs.readFileSync('result.json', 'utf8'));
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: result.comment
+            });
+
+            // Remove previous auto-labels before re-adding (handles re-edits)
+            const autoLabels = [
+              'verificacion-automatica-ok',
+              'requiere-correcciones',
+              'fuente-no-reconocida',
+              'pendiente-revision-humana'
+            ];
+            const current = await github.rest.issues.listLabelsOnIssue({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number
+            });
+            for (const label of current.data) {
+              if (autoLabels.includes(label.name)) {
+                await github.rest.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  name: label.name
+                }).catch(() => {});
+              }
+            }
+
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: result.labels
+            });

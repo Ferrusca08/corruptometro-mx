@@ -22,22 +22,33 @@ Cada servidor público es evaluado en 7 categorías con un máximo de 100 puntos
 
 ## ¿Cómo contribuir?
 
-1. Abre un [Issue](../../issues) con los datos del servidor público
-2. Incluye **fuentes verificables** (URLs de documentos oficiales, sentencias, auditorías)
-3. No se aceptan datos sin fuente oficial o periodística verificable
+Usa nuestro **[formulario estructurado de contribución](../../issues/new?template=nueva-contribucion.yml)** — no necesitas saber programar.
 
-### Formato para contribuciones
+### Qué pasa después de enviar tu contribución
 
-```yaml
-nombre: [Nombre completo]
-cargo: [Cargo actual o último]
-partido: [Partido político]
-estado: [Entidad federativa]
-categoría: [sentencias|fiscalizacion|funcionarios|deuda|denuncias|evasion|nepotismo]
-descripción: [Descripción breve del hecho]
-fuente_url: [URL de la fuente oficial]
-fuente_tipo: [OSFEM|SCJN|TEPJF|ASF|SESNSP|SHCP|Periodística]
-```
+1. **Verificación automática (minutos):** un bot revisa que tu envío esté completo, que las URLs de tus fuentes carguen (no estén rotas o inventadas), y que provengan de dominios reconocidos (instituciones oficiales `.gob.mx`, medios de cobertura nacional). El bot publica un reporte como comentario en tu Issue.
+2. **Revisión humana:** pasar el chequeo automático **no significa que el caso ya esté verificado como cierto** — solo confirma que la estructura y las fuentes son reales y accesibles. Un mantenedor del proyecto revisa después la calidad y veracidad del contenido antes de fusionarlo a `data.js`.
+
+### Qué verifica el bot (y qué no)
+
+✅ Verifica automáticamente:
+- Que todos los campos obligatorios estén completos
+- Que cada categoría puntuada tenga evidencia escrita (mínimo de caracteres)
+- Que los puntajes no excedan el máximo de su categoría
+- Que las URLs de fuentes respondan (no estén rotas)
+- Que las fuentes vengan de dominios reconocidos ([ver lista](.github/scripts/dominios-confiables.txt))
+- Que el nombre no sea ya un duplicado exacto en la base de datos
+
+❌ No puede verificar (por eso la revisión humana sigue siendo obligatoria):
+- Si los hechos descritos en tu texto realmente ocurrieron
+- Si la fuente citada realmente respalda lo que dices que respalda
+- Si el tono es neutral y basado en hechos, no en opinión
+
+### Reglas para que tu contribución se acepte
+
+- **Fuentes reales y verificables** — no rumores, no "se dice que...". Prioriza OSFEM, ASF, SCJN, TEPJF, FGR, sentencias judiciales, y medios de cobertura nacional.
+- **Una fuente por cada categoría puntuada** — si le das 15 puntos a "fiscalización", necesitas evidencia escrita y una URL que lo respalde.
+- **Sin rumores de dominios no verificados** — blogs personales, redes sociales sin verificar, o sitios sin trayectoria editorial no cuentan como fuente sólida.
 
 ## Aviso legal
 

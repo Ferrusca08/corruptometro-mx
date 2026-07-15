@@ -1,0 +1,72 @@
+# Dominios reconocidos como fuentes confiables para el Corruptómetro MX
+# Un dominio en esta lista NO garantiza que el hecho reportado sea cierto,
+# solo indica que la fuente es una institución oficial o medio de cobertura
+# nacional con estándares editoriales conocidos. La verificación final
+# de los hechos siempre requiere revisión humana.
+
+# --- Instituciones oficiales mexicanas ---
+gob.mx
+osfem.gob.mx
+asf.gob.mx
+scjn.gob.mx
+te.gob.mx
+fgr.gob.mx
+gob.mx
+sat.gob.mx
+uif.gob.mx
+diputados.gob.mx
+senado.gob.mx
+inegi.org.mx
+ine.mx
+inai.org.mx
+
+# --- Justicia y transparencia internacional ---
+justice.gov
+state.gov
+interpol.int
+
+# --- Medios nacionales de cobertura general ---
+proceso.com.mx
+eluniversal.com.mx
+milenio.com
+infobae.com
+sinembargo.mx
+jornada.com.mx
+excelsior.com.mx
+elfinanciero.com.mx
+razon.com.mx
+reforma.com
+animalpolitico.com
+politico.mx
+lasillarota.com
+sdpnoticias.com
+elimparcial.com
+heraldodemexico.com
+laopinion.com
+univision.com
+nmas.com.mx
+tvazteca.com
+elpais.com
+nytimes.com
+cnnespanol.cnn.com
+reuters.com
+apnews.com
+
+# --- Medios regionales/estatales reconocidos ---
+zetatijuana.com
+solyucatan.mx
+vanguardia.com.mx
+agoragto.com
+periodicocorreo.com.mx
+eldiariodechihuahua.mx
+elsoldelsoconusco.com
+diariodetabasco.mx
+elheraldoslp.com.mx
+localeando.com
+
+# --- Organizaciones de sociedad civil / periodismo de investigación ---
+contralacorrupcion.mx
+mexicanoscontralacorrupcion.org
+tojil.org
+defensorxs.org
+articulo19.org

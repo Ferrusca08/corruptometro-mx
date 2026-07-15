@@ -1,0 +1,222 @@
+name: "📋 Nueva contribución — Servidor público"
+description: "Propón un caso documentado de corrupción para agregar al Corruptómetro MX"
+title: "[CONTRIBUCIÓN] "
+labels: ["contribucion", "pendiente-verificacion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Antes de continuar
+        Este formulario alimenta un sistema **automático de verificación** que revisa tus fuentes antes de que un humano revise el caso. Entre más completo y verificable sea tu envío, más rápido se procesa.
+
+        **Reglas no negociables:**
+        - Cada categoría que puntúes necesita **al menos una fuente verificable** (URL real).
+        - No se aceptan rumores, "se dice que...", o fuentes sin URL.
+        - Prioriza fuentes oficiales (OSFEM, ASF, SCJN, TEPJF, FGR, sentencias) y medios de cobertura nacional reconocidos.
+        - El sistema revisará automáticamente que tus enlaces **funcionen** y que provengan de **dominios reconocidos**. Fuentes de dominios no reconocidos no se rechazan, pero quedan marcadas para revisión manual extra.
+
+  - type: input
+    id: nombre
+    attributes:
+      label: "Nombre completo del servidor público"
+      placeholder: "Ej. Juan Pérez López"
+    validations:
+      required: true
+
+  - type: input
+    id: cargo
+    attributes:
+      label: "Cargo actual o más reciente"
+      placeholder: "Ej. Presidente Municipal de Ejemplo, Estado"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: nivel
+    attributes:
+      label: "Nivel de gobierno"
+      options:
+        - municipal
+        - estatal
+        - federal
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: "Situación actual"
+      options:
+        - en_funciones (actualmente en el cargo)
+        - candidato (aspirante a un cargo)
+        - ex_funcionario (ya no ocupa el cargo)
+    validations:
+      required: true
+
+  - type: input
+    id: estado
+    attributes:
+      label: "Estado / Entidad federativa"
+      description: "Debe coincidir con el nombre oficial (ej. 'Estado de México', 'Ciudad de México', 'San Luis Potosí')"
+      placeholder: "Ej. Jalisco"
+    validations:
+      required: true
+
+  - type: input
+    id: partido
+    attributes:
+      label: "Partido político"
+      placeholder: "Ej. MORENA, PAN, PRI, MC, PVEM, Sin partido"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## Puntuación por categoría (0 al máximo indicado)
+        Solo llena las categorías donde tengas evidencia real. Dejar en 0 las que no apliquen.
+        **Cada categoría con puntaje > 0 necesita su fuente correspondiente más abajo.**
+
+  - type: input
+    id: score_sentencias
+    attributes:
+      label: "Sentencias o procesos penales (máx. 25)"
+      placeholder: "0-25"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidencia_sentencias
+    attributes:
+      label: "Evidencia — Sentencias o procesos penales"
+      description: "Describe el hecho específico y verificable"
+      placeholder: "Ej. Sentenciado a X años por Y delito según expediente Z..."
+
+  - type: input
+    id: score_fiscalizacion
+    attributes:
+      label: "Observaciones de fiscalización (máx. 20)"
+      placeholder: "0-20"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidencia_fiscalizacion
+    attributes:
+      label: "Evidencia — Fiscalización"
+      placeholder: "Ej. OSFEM/ASF detectó $X millones en observaciones..."
+
+  - type: input
+    id: score_funcionarios
+    attributes:
+      label: "Funcionarios detenidos / red criminal (máx. 15)"
+      placeholder: "0-15"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidencia_funcionarios
+    attributes:
+      label: "Evidencia — Funcionarios/red"
+      placeholder: "Ej. Su secretario particular fue detenido por..."
+
+  - type: input
+    id: score_deuda
+    attributes:
+      label: "Deuda / daño patrimonial (máx. 15)"
+      placeholder: "0-15"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidencia_deuda
+    attributes:
+      label: "Evidencia — Deuda/daño patrimonial"
+      placeholder: "Ej. Desvío documentado de $X millones..."
+
+  - type: input
+    id: score_denuncias
+    attributes:
+      label: "Denuncias documentadas (máx. 10)"
+      placeholder: "0-10"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidencia_denuncias
+    attributes:
+      label: "Evidencia — Denuncias"
+      placeholder: "Ej. Denuncia formal presentada por..."
+
+  - type: input
+    id: score_evasion
+    attributes:
+      label: "Evasión de justicia / desacato (máx. 10)"
+      placeholder: "0-10"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidencia_evasion
+    attributes:
+      label: "Evidencia — Evasión de justicia"
+      placeholder: "Ej. Se amparó contra orden de aprehensión..."
+
+  - type: input
+    id: score_nepotismo
+    attributes:
+      label: "Nepotismo / conflicto de interés (máx. 5)"
+      placeholder: "0-5"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidencia_nepotismo
+    attributes:
+      label: "Evidencia — Nepotismo"
+      placeholder: "Ej. Su hermano fue nombrado director de..."
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## Fuentes (obligatorio)
+        Pega una URL por línea. El sistema verificará automáticamente que cada una cargue y de qué dominio proviene.
+
+  - type: textarea
+    id: fuentes
+    attributes:
+      label: "URLs de fuentes"
+      description: "Una URL completa por línea (https://...). Mínimo 1, idealmente 2-3."
+      placeholder: |
+        https://www.proceso.com.mx/...
+        https://www.osfem.gob.mx/...
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## Línea de tiempo (opcional pero recomendado)
+        Formato: `AÑO: evento breve` — una línea por evento, en orden cronológico.
+
+  - type: textarea
+    id: timeline
+    attributes:
+      label: "Cronología de eventos"
+      placeholder: |
+        2021: Asume el cargo
+        2023: Denuncia presentada por...
+        2025: Detención / sentencia
+
+  - type: checkboxes
+    id: confirmacion
+    attributes:
+      label: "Confirmación"
+      options:
+        - label: "Confirmo que la información proviene de fuentes verificables y no de rumores o especulación personal"
+          required: true
+        - label: "Entiendo que este caso pasará por verificación automática y luego revisión humana antes de publicarse"
+          required: true
