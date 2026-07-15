@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corruptómetro MX — Transparencia Ciudadana</title>
     <meta name="description" content="Dashboard ciudadano de transparencia gubernamental en México. Datos públicos, verificables y sin opiniones.">
+
+    <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ferrusca08.github.io/corruptometro-mx/">
+    <meta property="og:title" content="Corruptómetro MX — La corrupción tiene nombre, cargo y expediente">
+    <meta property="og:description" content="Dashboard ciudadano de transparencia gubernamental en México. 110+ funcionarios documentados con fuentes verificables de OSFEM, SCJN, ASF y medios de cobertura nacional. Sin opiniones, solo hechos.">
+    <meta property="og:image" content="https://ferrusca08.github.io/corruptometro-mx/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="Corruptómetro MX">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Corruptómetro MX — La corrupción tiene nombre, cargo y expediente">
+    <meta name="twitter:description" content="Dashboard ciudadano de transparencia gubernamental en México. Datos públicos, fuentes verificables, sin opiniones.">
+    <meta name="twitter:image" content="https://ferrusca08.github.io/corruptometro-mx/og-image.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
@@ -720,6 +737,21 @@
             align-items: center;
             gap: 0.3rem;
         }
+        .share-btn {
+            margin-left: auto;
+            background: var(--corruption-critical);
+            color: white;
+            border: none;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: opacity 0.15s;
+        }
+        .share-btn:hover:not(:disabled) { opacity: 0.9; }
+        .share-btn:disabled { opacity: 0.6; cursor: wait; }
         .official-party {
             font-family: var(--font-mono);
             font-size: 0.75rem;
@@ -1813,10 +1845,228 @@
             );
         }
 
+        // =====================================================
+        // SHAREABLE CARD IMAGE GENERATOR (Canvas, no dependencies)
+        // =====================================================
+        function wrapCanvasText(ctx, text, maxWidth) {
+            const words = text.split(' ');
+            const lines = [];
+            let current = '';
+            words.forEach(word => {
+                const test = current ? current + ' ' + word : word;
+                if (ctx.measureText(test).width > maxWidth && current) {
+                    lines.push(current);
+                    current = word;
+                } else {
+                    current = test;
+                }
+            });
+            if (current) lines.push(current);
+            return lines;
+        }
+
+        async function generateOfficialCardImage(official, maxScore) {
+            try { await document.fonts.ready; } catch (e) { /* fonts may still work via fallback */ }
+
+            const W = 1080, H = 1350;
+            const canvas = document.createElement('canvas');
+            canvas.width = W;
+            canvas.height = H;
+            const ctx = canvas.getContext('2d');
+
+            const total = getTotalScore(official.scores);
+            const pct = total / maxScore;
+            const color = getScoreColor(total);
+            const strength = getSourceStrength(official.sources.length);
+
+            // Background
+            ctx.fillStyle = '#06090F';
+            ctx.fillRect(0, 0, W, H);
+
+            // Top accent glow bar
+            const grad = ctx.createLinearGradient(0, 0, 0, 8);
+            grad.addColorStop(0, color);
+            grad.addColorStop(1, '#06090F');
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, W, 8);
+
+            const M = 64; // margin
+
+            // Logo
+            ctx.fillStyle = '#F85149';
+            ctx.beginPath();
+            ctx.roundRect(M, 56, 44, 44, 10);
+            ctx.fill();
+            ctx.fillStyle = '#ffffff';
+            ctx.font = '24px "Space Grotesk", sans-serif';
+            ctx.textBaseline = 'middle';
+            ctx.textAlign = 'center';
+            ctx.fillText('⚖', M + 22, 56 + 24);
+
+            ctx.textAlign = 'left';
+            ctx.fillStyle = '#E6EDF3';
+            ctx.font = '700 30px "Space Grotesk", sans-serif';
+            ctx.fillText('Corruptómetro', M + 60, 56 + 24);
+            const w1 = ctx.measureText('Corruptómetro ').width;
+            ctx.fillStyle = '#F85149';
+            ctx.fillText('MX', M + 60 + w1, 56 + 24);
+
+            // Name (wrapped)
+            ctx.textBaseline = 'alphabetic';
+            ctx.fillStyle = '#E6EDF3';
+            ctx.font = '700 56px "Space Grotesk", sans-serif';
+            const nameLines = wrapCanvasText(ctx, official.name, W - M * 2);
+            let y = 220;
+            nameLines.slice(0, 3).forEach(line => {
+                ctx.fillText(line, M, y);
+                y += 64;
+            });
+
+            // Role + state
+            ctx.font = '26px "Inter", sans-serif';
+            ctx.fillStyle = '#8B949E';
+            const roleLines = wrapCanvasText(ctx, `${official.role} · ${official.state}`, W - M * 2);
+            y += 10;
+            roleLines.slice(0, 2).forEach(line => {
+                ctx.fillText(line, M, y);
+                y += 34;
+            });
+
+            // Status badge
+            if (official.status === 'en_funciones' || official.status === 'candidato') {
+                y += 20;
+                const label = official.status === 'en_funciones' ? 'EN FUNCIONES' : 'CANDIDATO';
+                const badgeColor = official.status === 'en_funciones' ? '#F85149' : '#D29922';
+                ctx.font = '600 20px "JetBrains Mono", monospace';
+                const tw = ctx.measureText(label).width;
+                ctx.fillStyle = badgeColor + '26';
+                ctx.beginPath();
+                ctx.roundRect(M, y - 26, tw + 24, 36, 6);
+                ctx.fill();
+                ctx.fillStyle = badgeColor;
+                ctx.fillText(label, M + 12, y);
+                y += 20;
+            }
+
+            // Big score
+            y += 70;
+            ctx.font = '700 140px "Space Grotesk", sans-serif';
+            ctx.fillStyle = color;
+            ctx.fillText(String(total), M, y);
+            const scoreW = ctx.measureText(String(total)).width;
+            ctx.font = '400 44px "Space Grotesk", sans-serif';
+            ctx.fillStyle = '#484F58';
+            ctx.fillText(`/${maxScore}`, M + scoreW + 10, y);
+
+            ctx.font = '600 28px "JetBrains Mono", monospace';
+            ctx.fillStyle = color;
+            ctx.fillText(getScoreLabel(total), M, y + 44);
+
+            // Score bar
+            const barY = y + 80;
+            const barW = W - M * 2;
+            ctx.fillStyle = '#1C2333';
+            ctx.beginPath();
+            ctx.roundRect(M, barY, barW, 14, 7);
+            ctx.fill();
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.roundRect(M, barY, Math.max(barW * pct, 14), 14, 7);
+            ctx.fill();
+
+            // Top categories (up to 3 with highest score)
+            const topCats = SCORING_CRITERIA
+                .map(c => ({ ...c, val: official.scores[c.id] }))
+                .filter(c => c.val > 0)
+                .sort((a, b) => b.val - a.val)
+                .slice(0, 3);
+
+            let catY = barY + 70;
+            ctx.font = '600 22px "Space Grotesk", sans-serif';
+            ctx.fillStyle = '#8B949E';
+            ctx.fillText('PRINCIPALES SEÑALAMIENTOS', M, catY);
+            catY += 20;
+
+            topCats.forEach(c => {
+                catY += 44;
+                const catColor = getScoreColor(c.val * (100 / c.maxPoints));
+                ctx.fillStyle = catColor;
+                ctx.beginPath();
+                ctx.arc(M + 6, catY - 8, 6, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.font = '400 26px "Inter", sans-serif';
+                ctx.fillStyle = '#E6EDF3';
+                ctx.fillText(c.label, M + 26, catY);
+                ctx.font = '600 24px "JetBrains Mono", monospace';
+                ctx.fillStyle = catColor;
+                ctx.textAlign = 'right';
+                ctx.fillText(`${c.val}/${c.maxPoints}`, W - M, catY);
+                ctx.textAlign = 'left';
+            });
+
+            // Footer
+            const footY = H - 90;
+            ctx.strokeStyle = '#21262D';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(M, footY - 30);
+            ctx.lineTo(W - M, footY - 30);
+            ctx.stroke();
+
+            ctx.font = `600 22px "JetBrains Mono", monospace`;
+            ctx.fillStyle = strength.color;
+            ctx.fillText(`${official.sources.length} fuente${official.sources.length !== 1 ? 's' : ''} verificable${official.sources.length !== 1 ? 's' : ''}`, M, footY);
+
+            ctx.font = '20px "JetBrains Mono", monospace';
+            ctx.fillStyle = '#484F58';
+            ctx.textAlign = 'right';
+            ctx.fillText('ferrusca08.github.io/corruptometro-mx', W - M, footY);
+            ctx.textAlign = 'left';
+
+            return new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+        }
+
+        async function shareOfficialCard(official, maxScore, setStatus) {
+            setStatus && setStatus('generando');
+            try {
+                const blob = await generateOfficialCardImage(official, maxScore);
+                const filename = `corruptometro-${official.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`;
+                const file = new File([blob], filename, { type: 'image/png' });
+
+                if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+                    await navigator.share({
+                        files: [file],
+                        title: `Corruptómetro MX — ${official.name}`,
+                        text: `${official.name}: ${getTotalScore(official.scores)}/${maxScore} en el Corruptómetro MX`,
+                    });
+                    setStatus && setStatus('listo');
+                } else {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    setStatus && setStatus('descargado');
+                }
+            } catch (e) {
+                console.error('Error generando la ficha:', e);
+                setStatus && setStatus('error');
+            }
+        }
+
         function OfficialCard({ official, rank, maxScore, expanded, onToggle }) {
             const total = official.total;
             const pct = (total / maxScore) * 100;
             const color = getScoreColor(total);
+            const [shareStatus, setShareStatus] = React.useState('idle');
+
+            const handleShare = (e) => {
+                e.stopPropagation();
+                shareOfficialCard(official, maxScore, setShareStatus);
+            };
 
             return (
                 <div className={`official-card ${expanded ? 'expanded' : ''}`}>
@@ -1925,6 +2175,17 @@
                                         Última verificación: {formatDateEs(official.lastVerified)}
                                     </span>
                                 )}
+                                <button
+                                    onClick={handleShare}
+                                    disabled={shareStatus === 'generando'}
+                                    className="share-btn"
+                                >
+                                    {shareStatus === 'generando' ? 'Generando…' :
+                                     shareStatus === 'descargado' ? '✓ Descargado' :
+                                     shareStatus === 'listo' ? '✓ Compartido' :
+                                     shareStatus === 'error' ? '⚠ Reintentar' :
+                                     '📤 Compartir ficha'}
+                                </button>
                             </div>
 
                             <div className="detail-grid">
