@@ -1781,3 +1781,18 @@ officials.push(
     timeline:[{year:'2021',event:'Asume presidencia municipal de Cajeme'},{year:'2026',event:'Enero: denuncias públicas por proteger policías con nexos criminales. Solicita licencia de 90 días para buscar candidatura a gobernador de Sonora.'}],
     sources:[{label:'Infobae — Denuncias',url:'https://www.infobae.com/mexico/2026/01/29/alcalde-de-cajeme-sonora-denuncia-amenazas-en-medio-de-senalamientos-por-proteger-policias-vinculados-al-crimen-organizado/'},{label:'El Universal — Licencia',url:'https://www.eluniversal.com.mx/estados/javier-lamarque-alcalde-de-cajeme-sonora-solicita-licencia-por-90-dias-apunta-al-proceso-interno-de-morena/'}]}
 );
+
+
+officials.push(
+    {id:342,name:'Alejandra Gutiérrez Campos',role:'Presidenta Municipal de León, Guanajuato',party:'MC (antes PAN)',state:'Guanajuato',level:'municipal',active:true,status:'en_funciones',
+    scores:{sentencias:5,fiscalizacion:14,funcionarios:6,deuda:11,denuncias:9,evasion:4,nepotismo:5},
+    breakdown:{sentencias:'Sin proceso penal formal. Denuncia ante Contraloría Municipal por cobros ilegales de la Dirección de Comercio (julio 2026).',
+    fiscalizacion:'Contratos por $7.3M otorgados a Office and Publicity MDF (12 contratos, 2024-2025) y $11.9M a Centro Publicitario y de Marketing TLGR (35 contratos, 2022-2024), ambas empresas vinculadas a su ex secretario Allan León Aguirre. Síndico panista presentó denuncia formal ante la Fiscalía Anticorrupción de Guanajuato.',
+    funcionarios:'Su ex secretario de Vinculación, Allan León Aguirre, renunció en medio del escándalo de contratos a empresas "fantasma". Filtración masiva de datos de 180,000 pacientes de servicios de emergencia por fallas de seguridad que intentó minimizar públicamente.',
+    deuda:'$19.2M combinados en contratos cuestionados a dos empresas vinculadas a su colaborador cercano.',
+    denuncias:'Denunciada ante el IEEG por promoción personalizada con recursos públicos (mayo 2026). Regidor panista denunció cobros ilegales de la Dirección de Comercio. Calificación ciudadana de desempeño no supera 3 puntos con 75% de repudio, según mediciones de opinión pública.',
+    evasion:'Abandonó el PAN tras 20 años para integrarse a Movimiento Ciudadano en medio de los señalamientos de corrupción (abril 2026), lo que analistas interpretaron como un movimiento estratégico ante la presión política.',
+    nepotismo:'Su esposo, figura clave del PAN local antes de su salida del partido, generó controversia adicional por ataques públicos a exgobernadores panistas.'},
+    timeline:[{year:'2021',event:'Asume presidencia municipal de León'},{year:'2024',event:'Reelecta con amplia ventaja'},{year:'2026',event:'Abril: renuncia al PAN y se une a MC en medio de señalamientos de corrupción por contratos de $19.2M. Mayo: denunciada ante IEEG por promoción personalizada. Junio: filtración de datos de 180,000 pacientes.'}],
+    sources:[{label:'Proceso — Salida del PAN',url:'https://www.proceso.com.mx/nacional/2026/5/25/el-municipio-mas-disputado-de-guanajuato-ya-tiene-pleito-electoral-en-2027-374608.html'},{label:'Diario — Contratos fantasma',url:'https://diario.mx/nacional/2026/jun/23/indagan-contratos-de-alcaldia-de-leon-1124246.html'},{label:'Agora GTO — Denuncia IEEG',url:'https://agoragto.com/estado/denuncian-a-alcaldesa-de-leon-ante-el-ieeg-por-promoverse-con-recursos-publicos/'}]}
+);
