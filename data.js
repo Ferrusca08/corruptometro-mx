@@ -1796,3 +1796,18 @@ officials.push(
     timeline:[{year:'2021',event:'Asume presidencia municipal de León'},{year:'2024',event:'Reelecta con amplia ventaja'},{year:'2026',event:'Abril: renuncia al PAN y se une a MC en medio de señalamientos de corrupción por contratos de $19.2M. Mayo: denunciada ante IEEG por promoción personalizada. Junio: filtración de datos de 180,000 pacientes.'}],
     sources:[{label:'Proceso — Salida del PAN',url:'https://www.proceso.com.mx/nacional/2026/5/25/el-municipio-mas-disputado-de-guanajuato-ya-tiene-pleito-electoral-en-2027-374608.html'},{label:'Diario — Contratos fantasma',url:'https://diario.mx/nacional/2026/jun/23/indagan-contratos-de-alcaldia-de-leon-1124246.html'},{label:'Agora GTO — Denuncia IEEG',url:'https://agoragto.com/estado/denuncian-a-alcaldesa-de-leon-ante-el-ieeg-por-promoverse-con-recursos-publicos/'}]}
 );
+
+
+officials.push(
+    {id:343,name:'Hilda Araceli Brown Figueredo',role:'Diputada Federal / Exalcaldesa de Playas de Rosarito, Baja California',party:'MORENA',state:'Baja California',level:'federal',active:true,status:'en_funciones',
+    scores:{sentencias:10,fiscalizacion:8,funcionarios:6,deuda:8,denuncias:10,evasion:5,nepotismo:3},
+    breakdown:{sentencias:'Señalada por el gobierno de Estados Unidos por presuntamente apoyar a la facción de "Los Mayos" del Cártel de Sinaloa. Sin sentencia formal en México.',
+    fiscalizacion:'Sin hallazgos formales de fiscalización publicados en México, más allá del señalamiento de EE.UU.',
+    funcionarios:'Parte del entramado de funcionarios de Morena de Baja California señalados por vínculos con el crimen organizado.',
+    deuda:'Sin monto específico documentado de daño patrimonial.',
+    denuncias:'Señalamiento directo del gobierno de Estados Unidos como parte de la lista de funcionarios de la administración morenista con vínculos al narcotráfico, mencionada explícitamente en cobertura sobre el primer informe de gobierno de Sheinbaum.',
+    evasion:'Transitó de la alcaldía de Rosarito a una diputación federal, obteniendo fuero.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2021',event:'Asume alcaldía de Playas de Rosarito por Morena'},{year:'2024',event:'Electa diputada federal'},{year:'2025',event:'Señalada por EE.UU. por presunto apoyo a facción "Los Mayos" del Cártel de Sinaloa'}],
+    sources:[{label:'LatinUS — Escándalos previos al informe',url:'https://latinus.us/mexico/2025/10/4/entre-escandalos-de-corrupcion-sheinbaum-se-lanza-contra-los-de-dinero-mal-habido-horas-de-su-primer-informe-153569.html'}]}
+);
