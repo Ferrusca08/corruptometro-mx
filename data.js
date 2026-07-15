@@ -1811,3 +1811,18 @@ officials.push(
     timeline:[{year:'2021',event:'Asume alcaldía de Playas de Rosarito por Morena'},{year:'2024',event:'Electa diputada federal'},{year:'2025',event:'Señalada por EE.UU. por presunto apoyo a facción "Los Mayos" del Cártel de Sinaloa'}],
     sources:[{label:'LatinUS — Escándalos previos al informe',url:'https://latinus.us/mexico/2025/10/4/entre-escandalos-de-corrupcion-sheinbaum-se-lanza-contra-los-de-dinero-mal-habido-horas-de-su-primer-informe-153569.html'}]}
 );
+
+
+officials.push(
+    {id:344,name:'Miguel Ángel Navarro Quintero',role:'Gobernador de Nayarit (2023-presente)',party:'MORENA',state:'Nayarit',level:'estatal',active:true,status:'en_funciones',
+    scores:{sentencias:8,fiscalizacion:17,funcionarios:8,deuda:14,denuncias:9,evasion:5,nepotismo:4},
+    breakdown:{sentencias:'Denunciado penalmente por trabajadores del estado por el robo de $2,500M del Fondo de Pensiones. Sin sentencia ni orden de aprehensión; la Fiscalía estatal no ha dado seguimiento a la denuncia.',
+    fiscalizacion:'ASF tiene 57 acciones pendientes de aclarar o recuperar por $757.3M en el Sistema Público de Consulta de Auditorías, de las cuales 23 ($129.5M) están bajo análisis en la Dirección General de Investigación. Diputada federal de MC solicitó formalmente revisión de $1,500M en obras públicas de origen federal.',
+    funcionarios:'"Megaoperativo Nuevo Nayarit" señalado por Proceso como sistema de extorsión institucional que favorece a nuevos socios inmobiliarios y políticos ligados a un grupo político externo al estado.',
+    deuda:'$2,500M denunciados como desviados del Fondo de Pensiones de los Trabajadores. $1,500M en obras federales bajo revisión de la ASF. Estadio construido con fondos públicos cedido en comodato a personas vinculadas a un diputado federal, quienes lo administran como negocio privado.',
+    denuncias:'Trabajadores estatales (SUTSEM) denunciaron penalmente el desvío del fondo de pensiones. Crisis financiera reconocida por el propio gobierno: no pudo cumplir obligaciones de diciembre 2025, usó línea de crédito con cargo a participaciones de 2026.',
+    evasion:'Respondió a la denuncia del desvío de $2,500M anunciando una demanda por daño moral contra el denunciante en lugar de abrir investigación exhaustiva inmediata.',
+    nepotismo:'Estadio construido con recursos públicos entregado en comodato a personas vinculadas a un diputado federal (Pedro Haces) para explotación privada.'},
+    timeline:[{year:'2023',event:'Asume gubernatura de Nayarit'},{year:'2024',event:'Febrero: denunciado por desvío de $2,500M del Fondo de Pensiones. Responde anunciando demanda por daño moral contra el denunciante.'},{year:'2025',event:'Octubre: ASF revisa $1,500M en obras públicas tras solicitud de diputada federal.'},{year:'2026',event:'Enero: crisis financiera y protestas de burocracia estatal por incumplimiento de pagos. Uso de crédito de corto plazo.'}],
+    sources:[{label:'Excélsior — Denuncia $2,500M',url:'https://www.excelsior.com.mx/nacional/denuncian-gobernador-navarro-quintero-por-robo/1636869'},{label:'Proceso — ASF obras millonarias',url:'https://www.proceso.com.mx/nacional/estados/2025/10/27/alertan-la-asf-por-irregularidades-en-obras-millonarias-en-nayarit-361591.html'},{label:'Proceso — Megaoperativo extorsión',url:'https://www.proceso.com.mx/temas/nayarit-347.html'},{label:'La Jornada — Respuesta del gobernador',url:'https://www.jornada.com.mx/noticia/2024/02/28/estados/pedira-gobernador-de-nayarit-disculpa-tras-acusaciones-por-desfalco-5010'}]}
+);
