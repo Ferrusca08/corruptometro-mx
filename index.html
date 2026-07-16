@@ -162,6 +162,8 @@
             text-transform: uppercase;
             letter-spacing: 0.08em;
             margin-top: 0.15rem;
+            display: inline-flex;
+            align-items: center;
         }
 
         /* Methodology */
@@ -568,6 +570,47 @@
             .tn-year-group { grid-template-columns: 50px 1fr; }
             .tn-year-label { font-size: 1rem; position: static; }
         }
+
+        /* InfoTip — tap-to-explain icon */
+        .infotip {
+            position: relative;
+            display: inline-flex;
+            vertical-align: middle;
+        }
+        .infotip-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0 0 0 0.3rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+        }
+        .infotip-btn:hover, .infotip-btn:active {
+            color: var(--text-secondary);
+        }
+        .infotip-bubble {
+            position: absolute;
+            bottom: calc(100% + 8px);
+            z-index: 50;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-highlight);
+            border-radius: 8px;
+            padding: 0.6rem 0.75rem;
+            font-size: 0.75rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            color: var(--text-primary);
+            line-height: 1.5;
+            width: max-content;
+            max-width: 220px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        }
+        .infotip-left { left: 0; }
+        .infotip-right { right: 0; }
+        .infotip-center { left: 50%; transform: translateX(-50%); }
 
         /* National Stats Dashboard */
         .stats-dashboard {
@@ -1369,6 +1412,44 @@
         // instead of emoji throughout the UI so rendering doesn't depend on
         // the OS/browser's emoji font (which varies a lot and can render as
         // blank boxes) and so the visual style stays consistent everywhere.
+        // Tap-to-explain tooltip. Built for mobile: no hover, just tap the
+        // small (i) icon to see a short explanation, tap anywhere else to close.
+        function InfoTip({ text, align = 'left' }) {
+            const [open, setOpen] = React.useState(false);
+            const ref = React.useRef(null);
+
+            React.useEffect(() => {
+                if (!open) return;
+                const close = (e) => {
+                    if (ref.current && !ref.current.contains(e.target)) setOpen(false);
+                };
+                document.addEventListener('touchstart', close);
+                document.addEventListener('mousedown', close);
+                return () => {
+                    document.removeEventListener('touchstart', close);
+                    document.removeEventListener('mousedown', close);
+                };
+            }, [open]);
+
+            return (
+                <span className="infotip" ref={ref}>
+                    <button
+                        type="button"
+                        className="infotip-btn"
+                        onClick={(e) => { e.stopPropagation(); setOpen(!open); }}
+                        aria-label="Info"
+                    >
+                        <Icon name="info" size={13} />
+                    </button>
+                    {open && (
+                        <span className={`infotip-bubble infotip-${align}`} onClick={(e) => e.stopPropagation()}>
+                            {text}
+                        </span>
+                    )}
+                </span>
+            );
+        }
+
         function Icon({ name, size = 16, style }) {
             const common = {
                 width: size, height: size, viewBox: '0 0 24 24',
@@ -1459,6 +1540,13 @@
                         <svg {...common}>
                             <path d="M12 4l9 16H3l9-16z" />
                             <path d="M12 10v4M12 17.5v.01" />
+                        </svg>
+                    );
+                case 'info':
+                    return (
+                        <svg {...common}>
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 11v5M12 8v.01" />
                         </svg>
                     );
                 default:
@@ -1578,7 +1666,10 @@
             return (
                 <div className="map-section">
                     <div className="map-header">
-                        <div className="map-title">Mapa de corrupción por estado</div>
+                        <div className="map-title">
+                            Mapa por estado
+                            <InfoTip text="Toca un estado para filtrar la lista de abajo. Tócalo de nuevo para quitar el filtro." />
+                        </div>
                         {selectedState && (
                             <button className="map-clear-btn" onClick={() => onSelectState(null)}>
                                 <Icon name="x" size={12} /> Quitar filtro: {selectedState}
@@ -1771,10 +1862,9 @@
                 <div className="timeline-national">
                     <div className="timeline-national-header">
                         <div>
-                            <div className="map-title">Línea de tiempo nacional</div>
+                            <div className="map-title">Línea de tiempo</div>
                             <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.35rem', maxWidth: '620px' }}>
-                                Todos los eventos documentados de todos los perfiles, en una sola vista cronológica.
-                                Agrupados por año — la granularidad de mes depende de qué tan específica sea cada fuente.
+                                Todo lo documentado, ordenado por año.
                             </p>
                         </div>
                         <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
@@ -1912,9 +2002,9 @@
             return (
                 <div className="stats-dashboard">
                     <div className="stats-dashboard-header">
-                        <div className="map-title">Estadísticas nacionales</div>
+                        <div className="map-title">Estadísticas</div>
                         <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.35rem' }}>
-                            Análisis agregado de los {stats.total} perfiles documentados en la base.
+                            {stats.total} perfiles, en números.
                         </p>
                     </div>
 
@@ -1954,7 +2044,7 @@
                         </div>
 
                         <div className="stats-panel">
-                            <h4>Score promedio por sexenio</h4>
+                            <h4>Score promedio por sexenio<InfoTip text="Cada caso se ubica en el sexenio del primer hecho documentado en su expediente, no necesariamente cuándo fue detenido." /></h4>
                             <p className="stats-panel-sub">Según el año más antiguo documentado en cada perfil</p>
                             <div className="stats-bars">
                                 {stats.sexenioRanking.map(s => (
@@ -2032,11 +2122,9 @@
             return (
                 <div className="patterns-view">
                     <div className="stats-dashboard-header">
-                        <div className="map-title">Patrones sistémicos</div>
+                        <div className="map-title">Patrones</div>
                         <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.35rem', maxWidth: '640px' }}>
-                            Casos individuales agrupados por mecanismo compartido. La corrupción rara vez es un
-                            acto aislado, estos patrones muestran cómo se repite la misma lógica entre personas,
-                            partidos y niveles de gobierno distintos.
+                            Casos que se repiten con la misma lógica, no son actos aislados.
                         </p>
                     </div>
 
@@ -2165,7 +2253,7 @@
                     <div className="stats-dashboard-header">
                         <div className="map-title">Comparar funcionarios</div>
                         <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.35rem' }}>
-                            Elige dos perfiles para ver sus puntuaciones lado a lado, categoría por categoría.
+                            Elige a dos y compáralos.
                         </p>
                     </div>
 
@@ -2279,41 +2367,54 @@
                         <section className="hero">
                             <h1>La corrupción tiene nombre, cargo y expediente.</h1>
                             <p>
-                                Dashboard ciudadano que recopila y visualiza datos de fuentes oficiales
-                                sobre servidores públicos en México — desde exgobernadores presos hasta
-                                alcaldes detenidos en la Operación Enjambre. Cada dato es verificable,
-                                cada fuente está citada. De OSFEM a la SCJN, de la ASF a la DEA.
+                                Datos de OSFEM, SCJN, ASF y DEA sobre funcionarios mexicanos.
+                                Sin opiniones, solo hechos con fuente.
                             </p>
                             <div className="hero-stats">
                                 <div className="hero-stat">
                                     <div className="hero-stat-value" style={{ color: 'var(--corruption-critical)' }}>
                                         {officials.length}
                                     </div>
-                                    <div className="hero-stat-label">Funcionarios registrados</div>
+                                    <div className="hero-stat-label">
+                                        Funcionarios
+                                        <InfoTip text="Total de perfiles documentados en la base, entre exfuncionarios, funcionarios activos y candidatos." />
+                                    </div>
                                 </div>
                                 <div className="hero-stat">
                                     <div className="hero-stat-value">
                                         {new Set(officials.map(o => o.state).filter(s => s !== 'Federal')).size}
                                     </div>
-                                    <div className="hero-stat-label">Estados cubiertos</div>
+                                    <div className="hero-stat-label">
+                                        Estados
+                                        <InfoTip text="Cuántos de los 32 estados de México tienen al menos un caso documentado." />
+                                    </div>
                                 </div>
                                 <div className="hero-stat">
                                     <div className="hero-stat-value">
                                         {officials.filter(o => o.status === 'en_funciones').length}
                                     </div>
-                                    <div className="hero-stat-label">En funciones actualmente</div>
+                                    <div className="hero-stat-label">
+                                        En funciones
+                                        <InfoTip text="Funcionarios que ocupan su cargo hoy mismo, no expresidentes ni exalcaldes." />
+                                    </div>
                                 </div>
                                 <div className="hero-stat">
                                     <div className="hero-stat-value" style={{ color: 'var(--corruption-critical)' }}>
                                         {Math.max(...sorted.map(o => o.total))}
                                     </div>
-                                    <div className="hero-stat-label">Score más alto</div>
+                                    <div className="hero-stat-label">
+                                        Score máx.
+                                        <InfoTip text="El puntaje más alto registrado, sobre 100. Entre más alto, más grave y documentado el caso." />
+                                    </div>
                                 </div>
                                 <div className="hero-stat">
                                     <div className="hero-stat-value" style={{ color: 'var(--corruption-high)' }}>
                                         {officials.filter(o => getTotalScore(o.scores) >= 75).length}
                                     </div>
-                                    <div className="hero-stat-label">Nivel crítico (≥75)</div>
+                                    <div className="hero-stat-label">
+                                        Nivel crítico
+                                        <InfoTip text="Casos con score de 75 o más sobre 100 — los más graves de toda la base." align="right" />
+                                    </div>
                                 </div>
                             </div>
                         </section>
@@ -2335,19 +2436,19 @@
                                 className={`view-toggle-btn ${activeView === 'timeline' ? 'active' : ''}`}
                                 onClick={() => setActiveView('timeline')}
                             >
-                                <Icon name="clock" size={15} /> Línea de tiempo nacional
+                                <Icon name="clock" size={15} /> Línea de tiempo
                             </button>
                             <button
                                 className={`view-toggle-btn ${activeView === 'stats' ? 'active' : ''}`}
                                 onClick={() => setActiveView('stats')}
                             >
-                                <Icon name="trending-up" size={15} /> Estadísticas nacionales
+                                <Icon name="trending-up" size={15} /> Estadísticas
                             </button>
                             <button
                                 className={`view-toggle-btn ${activeView === 'patterns' ? 'active' : ''}`}
                                 onClick={() => setActiveView('patterns')}
                             >
-                                <Icon name="share" size={15} style={{ transform: 'rotate(90deg)' }} /> Patrones sistémicos
+                                <Icon name="share" size={15} style={{ transform: 'rotate(90deg)' }} /> Patrones
                             </button>
                             <button
                                 className={`view-toggle-btn ${activeView === 'compare' ? 'active' : ''}`}
@@ -2478,11 +2579,8 @@
 
                         <div className="contribute-banner">
                             <div className="contribute-text">
-                                <h3>¿Conoces datos verificables sobre un servidor público?</h3>
-                                <p>
-                                    Usa nuestro formulario estructurado. Un sistema automático revisa que tus
-                                    fuentes carguen y sean confiables antes de que un editor humano lo publique.
-                                </p>
+                                <h3>¿Conoces un caso?</h3>
+                                <p>Un bot revisa tus fuentes antes de publicarlo.</p>
                             </div>
                             <a href="https://github.com/Ferrusca08/corruptometro-mx/issues/new?template=nueva-contribucion.yml"
                                className="contribute-btn"
@@ -2924,7 +3022,7 @@
                                         return (
                                             <div className="breakdown-item" key={c.id}>
                                                 <div className="breakdown-label">
-                                                    <span>{c.label}</span>
+                                                    <span>{c.label}<InfoTip text={c.desc} /></span>
                                                     <span style={{ color: getScoreColor(val * (100/c.maxPoints)) }}>
                                                         {val}/{c.maxPoints}
                                                     </span>
