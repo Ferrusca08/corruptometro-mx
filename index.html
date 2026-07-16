@@ -1571,6 +1571,7 @@
             }, [selectedState, svgText]);
 
             const topStates = Object.entries(stateStats)
+                .filter(([name]) => name !== 'Federal')
                 .sort((a, b) => b[1].maxScore - a[1].maxScore)
                 .slice(0, 6);
 
@@ -2292,13 +2293,13 @@
                                 </div>
                                 <div className="hero-stat">
                                     <div className="hero-stat-value">
-                                        {new Set(officials.map(o => o.state)).size}
+                                        {new Set(officials.map(o => o.state).filter(s => s !== 'Federal')).size}
                                     </div>
                                     <div className="hero-stat-label">Estados cubiertos</div>
                                 </div>
                                 <div className="hero-stat">
                                     <div className="hero-stat-value">
-                                        {officials.filter(o => o.active).length}
+                                        {officials.filter(o => o.status === 'en_funciones').length}
                                     </div>
                                     <div className="hero-stat-label">En funciones actualmente</div>
                                 </div>
