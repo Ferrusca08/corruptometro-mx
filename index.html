@@ -638,6 +638,288 @@
             color: var(--text-secondary);
             text-align: right;
         }
+
+        /* Patterns View */
+        .patterns-view {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.75rem;
+        }
+        .patterns-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .pattern-card {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: border-color 0.15s;
+        }
+        .pattern-card.expanded {
+            border-color: var(--corruption-critical);
+        }
+        .pattern-summary {
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            cursor: pointer;
+            flex-wrap: wrap;
+        }
+        .pattern-summary:hover {
+            background: var(--bg-elevated);
+        }
+        .pattern-summary h3 {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+        .pattern-desc {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 560px;
+        }
+        .pattern-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.3rem;
+            flex-shrink: 0;
+        }
+        .pattern-count {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .pattern-avg {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .pattern-detail {
+            padding: 0 1.25rem 1.25rem;
+            border-top: 1px solid var(--border);
+        }
+        .pattern-mechanism {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin: 1rem 0;
+        }
+        .pattern-mechanism strong {
+            color: var(--text-primary);
+            font-family: var(--font-display);
+        }
+        .pattern-members {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .pattern-member-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 0.75rem;
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: opacity 0.15s;
+        }
+        .pattern-member-row:hover {
+            opacity: 0.85;
+        }
+        .pattern-member-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .pattern-member-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .pattern-member-name {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        .pattern-member-role {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .pattern-member-score {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* Compare View */
+        .compare-view {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.75rem;
+        }
+        .compare-slots {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1.25rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .compare-vs {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+        .compare-slot {
+            min-height: 180px;
+        }
+        .compare-picker {
+            background: var(--bg-elevated);
+            border: 1px dashed var(--border-highlight);
+            border-radius: 10px;
+            padding: 1.25rem;
+            height: 100%;
+        }
+        .compare-picker-label {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.6rem;
+        }
+        .compare-picker-results {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            max-height: 220px;
+            overflow-y: auto;
+        }
+        .compare-picker-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0.6rem;
+            background: var(--bg-card);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.82rem;
+        }
+        .compare-picker-item:hover {
+            background: var(--bg-primary);
+        }
+        .compare-picker-empty {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            padding: 0.5rem;
+        }
+        .compare-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-highlight);
+            border-radius: 10px;
+            padding: 1.25rem;
+            position: relative;
+            height: 100%;
+        }
+        .compare-remove {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .compare-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding-right: 5rem;
+            margin-bottom: 0.3rem;
+        }
+        .compare-role {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.9rem;
+        }
+        .compare-score {
+            font-family: var(--font-display);
+            font-size: 2.4rem;
+            font-weight: 700;
+        }
+        .compare-badge {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+        }
+        .compare-breakdown {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .compare-row {
+            display: grid;
+            grid-template-columns: 60px 1fr 60px;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(33, 38, 45, 0.5);
+        }
+        .compare-row-total {
+            border-top: 1px solid var(--border);
+            border-bottom: none;
+            padding-top: 0.85rem;
+            margin-top: 0.4rem;
+        }
+        .compare-row-total .compare-row-label {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .compare-row-value {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-align: center;
+        }
+        .compare-row-value.winner {
+            color: var(--corruption-critical);
+            font-size: 1.2rem;
+        }
+        .compare-row-label {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+        .compare-row-max {
+            color: var(--text-muted);
+            margin-left: 0.2rem;
+        }
+        @media (max-width: 640px) {
+            .compare-slots { grid-template-columns: 1fr; }
+            .compare-vs { text-align: center; }
+        }
         .search-input {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -1693,6 +1975,233 @@
             );
         }
 
+        // =====================================================
+        // PATRONES SISTÉMICOS
+        // =====================================================
+        // Curated groupings: cases that share a common mechanism, not just
+        // a coincidence of category. Each entry references officialIds that
+        // already exist in the dataset.
+        const SYSTEMIC_PATTERNS = [
+            {
+                id: 'impunidad-diplomatica',
+                title: 'Impunidad diplomática',
+                summary: 'Exgobernadores señalados por desfalcos multimillonarios que, en vez de enfrentar la justicia, reciben un cargo diplomático que les da inmunidad y los saca de la jurisdicción penal mexicana.',
+                mechanism: 'El patrón se repite independientemente del partido en el poder: un gobernador termina su sexenio con señalamientos serios de corrupción, la investigación se estanca, y semanas o meses después aparece nombrado embajador o cónsul en algún país. El cargo diplomático no borra la acusación, pero en la práctica congela cualquier proceso mientras dure el nombramiento.',
+                officialIds: [361, 362, 332],
+            },
+            {
+                id: 'operacion-enjambre',
+                title: 'Operación Enjambre',
+                summary: 'Estrategia federal de seguridad (2024-presente) que ha detenido a más de 20 alcaldes y exfuncionarios municipales por vínculos directos con el crimen organizado, no solo corrupción administrativa.',
+                mechanism: 'A diferencia de los casos de desvío de recursos "tradicionales", estos funcionarios son señalados de operar como parte de la estructura de un cártel: cobrar piso, dar protección policial, o financiar campañas con dinero del crimen organizado. Jalisco, Morelos, Puebla y el Estado de México concentran la mayoría de los casos.',
+                officialIds: [201, 202, 203, 204, 205, 206, 209, 210, 211],
+            },
+            {
+                id: 'redes-familiares',
+                title: 'Redes familiares y nepotismo',
+                summary: 'Familias que controlan simultáneamente varios cargos de elección popular o busca perpetuarse en el poder pese a las reglas antinepotismo internas de sus propios partidos.',
+                mechanism: 'El patrón va desde cónyuges y padres/hijos ocupando cargos sucesivos en el mismo territorio, hasta hermanos gobernando municipios distintos al mismo tiempo. En varios casos, el familiar sin cargo formal termina beneficiándose de recursos públicos de todas formas.',
+                officialIds: [313, 310, 329, 330, 331, 314, 315, 113, 351, 206, 209, 210],
+            },
+            {
+                id: 'huachicol-fiscal',
+                title: 'Huachicol fiscal',
+                summary: 'Red de contrabando de hidrocarburos operada presuntamente desde Palacio Nacional, con pérdidas fiscales estimadas en $123,000M anuales, que involucra a legisladores, al titular del SAT y a los hijos del expresidente López Obrador.',
+                mechanism: 'El esquema habría usado la propia infraestructura aduanera y fiscal del Estado (que debería combatir el contrabando) para facilitarlo: adjudicaciones directas, protección aduanera y control de licitaciones dentro de Pemex.',
+                officialIds: [321, 322, 323, 324, 325, 326],
+            },
+            {
+                id: 'sinaloa-doj',
+                title: 'Expediente Sinaloa / DOJ',
+                summary: 'Diez funcionarios y exfuncionarios sinaloenses, incluido un gobernador con licencia, acusados formalmente por el Departamento de Justicia de EE.UU. de proteger a la facción de "Los Chapitos" del Cártel de Sinaloa desde el gobierno estatal.',
+                mechanism: 'Según el expediente estadounidense, el control de la Policía Estatal de Sinaloa se habría negociado directamente con el cártel tras la elección de 2021, en una reunión en la que participaron varios de los funcionarios aquí listados.',
+                officialIds: [312, 345, 346, 347],
+            },
+        ];
+
+        function PatternsView({ officials, onJumpToOfficial }) {
+            const [expandedPattern, setExpandedPattern] = React.useState(SYSTEMIC_PATTERNS[0].id);
+
+            const getMembers = (pattern) => pattern.officialIds
+                .map(id => officials.find(o => o.id === id))
+                .filter(Boolean)
+                .map(o => ({ ...o, total: getTotalScore(o.scores) }))
+                .sort((a, b) => b.total - a.total);
+
+            return (
+                <div className="patterns-view">
+                    <div className="stats-dashboard-header">
+                        <div className="map-title">Patrones sistémicos</div>
+                        <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.35rem', maxWidth: '640px' }}>
+                            Casos individuales agrupados por mecanismo compartido. La corrupción rara vez es un
+                            acto aislado, estos patrones muestran cómo se repite la misma lógica entre personas,
+                            partidos y niveles de gobierno distintos.
+                        </p>
+                    </div>
+
+                    <div className="patterns-list">
+                        {SYSTEMIC_PATTERNS.map(pattern => {
+                            const members = getMembers(pattern);
+                            const isOpen = expandedPattern === pattern.id;
+                            const avgScore = members.length
+                                ? Math.round(members.reduce((s, m) => s + m.total, 0) / members.length)
+                                : 0;
+                            return (
+                                <div className={`pattern-card ${isOpen ? 'expanded' : ''}`} key={pattern.id}>
+                                    <div
+                                        className="pattern-summary"
+                                        onClick={() => setExpandedPattern(isOpen ? null : pattern.id)}
+                                    >
+                                        <div>
+                                            <h3>{pattern.title}</h3>
+                                            <p className="pattern-desc">{pattern.summary}</p>
+                                        </div>
+                                        <div className="pattern-meta">
+                                            <span className="pattern-count">{members.length} casos</span>
+                                            <span className="pattern-avg" style={{ color: getScoreColor(avgScore) }}>
+                                                score prom. {avgScore}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    {isOpen && (
+                                        <div className="pattern-detail">
+                                            <p className="pattern-mechanism">
+                                                <strong>Cómo opera: </strong>{pattern.mechanism}
+                                            </p>
+                                            <div className="pattern-members">
+                                                {members.map(m => (
+                                                    <div
+                                                        className="pattern-member-row"
+                                                        key={m.id}
+                                                        onClick={() => onJumpToOfficial(m.id, m.name)}
+                                                    >
+                                                        <div className="pattern-member-dot" style={{ background: getScoreColor(m.total) }} />
+                                                        <div className="pattern-member-info">
+                                                            <div className="pattern-member-name">{m.name}</div>
+                                                            <div className="pattern-member-role">{m.role} · {m.state}</div>
+                                                        </div>
+                                                        <div className="pattern-member-score" style={{ color: getScoreColor(m.total) }}>
+                                                            {m.total}
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            );
+        }
+
+        // =====================================================
+        // COMPARE VIEW
+        // =====================================================
+        function CompareView({ officials, maxScore }) {
+            const [slot1, setSlot1] = React.useState(null);
+            const [slot2, setSlot2] = React.useState(null);
+            const [search1, setSearch1] = React.useState('');
+            const [search2, setSearch2] = React.useState('');
+
+            const sorted = [...officials]
+                .map(o => ({ ...o, total: getTotalScore(o.scores) }))
+                .sort((a, b) => b.total - a.total);
+
+            const filterList = (query) => {
+                if (!query) return [];
+                const q = query.toLowerCase();
+                return sorted.filter(o => o.name.toLowerCase().includes(q)).slice(0, 6);
+            };
+
+            const PickerSlot = ({ slot, setSlot, search, setSearch, label }) => (
+                <div className="compare-slot">
+                    {!slot ? (
+                        <div className="compare-picker">
+                            <div className="compare-picker-label">{label}</div>
+                            <input
+                                className="search-input"
+                                style={{ width: '100%', marginBottom: '0.5rem' }}
+                                placeholder="Buscar funcionario..."
+                                value={search}
+                                onChange={e => setSearch(e.target.value)}
+                            />
+                            <div className="compare-picker-results">
+                                {filterList(search).map(o => (
+                                    <div key={o.id} className="compare-picker-item" onClick={() => { setSlot(o); setSearch(''); }}>
+                                        <span>{o.name}</span>
+                                        <span style={{ color: getScoreColor(o.total), fontFamily: 'var(--font-mono)' }}>{o.total}</span>
+                                    </div>
+                                ))}
+                                {search && filterList(search).length === 0 && (
+                                    <div className="compare-picker-empty">Sin resultados</div>
+                                )}
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="compare-card">
+                            <button className="compare-remove" onClick={() => setSlot(null)}>
+                                <Icon name="x" size={13} /> cambiar
+                            </button>
+                            <h3>{slot.name}</h3>
+                            <p className="compare-role">{slot.role} · {slot.state}</p>
+                            <div className="compare-score" style={{ color: getScoreColor(slot.total) }}>
+                                {slot.total}<span style={{ color: 'var(--text-muted)', fontSize: '1.2rem' }}>/{maxScore}</span>
+                            </div>
+                            <div className="compare-badge" style={{
+                                background: `${getScoreColor(slot.total)}22`,
+                                color: getScoreColor(slot.total),
+                            }}>{getScoreLabel(slot.total)}</div>
+                        </div>
+                    )}
+                </div>
+            );
+
+            return (
+                <div className="compare-view">
+                    <div className="stats-dashboard-header">
+                        <div className="map-title">Comparar funcionarios</div>
+                        <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.35rem' }}>
+                            Elige dos perfiles para ver sus puntuaciones lado a lado, categoría por categoría.
+                        </p>
+                    </div>
+
+                    <div className="compare-slots">
+                        <PickerSlot slot={slot1} setSlot={setSlot1} search={search1} setSearch={setSearch1} label="Funcionario 1" />
+                        <div className="compare-vs">VS</div>
+                        <PickerSlot slot={slot2} setSlot={setSlot2} search={search2} setSearch={setSearch2} label="Funcionario 2" />
+                    </div>
+
+                    {slot1 && slot2 && (
+                        <div className="compare-breakdown">
+                            {SCORING_CRITERIA.map(c => {
+                                const v1 = slot1.scores[c.id];
+                                const v2 = slot2.scores[c.id];
+                                const winner = v1 > v2 ? 1 : v2 > v1 ? 2 : 0;
+                                return (
+                                    <div className="compare-row" key={c.id}>
+                                        <div className={`compare-row-value ${winner === 1 ? 'winner' : ''}`}>{v1}</div>
+                                        <div className="compare-row-label">
+                                            {c.label}
+                                            <span className="compare-row-max">/{c.maxPoints}</span>
+                                        </div>
+                                        <div className={`compare-row-value ${winner === 2 ? 'winner' : ''}`}>{v2}</div>
+                                    </div>
+                                );
+                            })}
+                            <div className="compare-row compare-row-total">
+                                <div className={`compare-row-value ${slot1.total > slot2.total ? 'winner' : ''}`}>{slot1.total}</div>
+                                <div className="compare-row-label">TOTAL</div>
+                                <div className={`compare-row-value ${slot2.total > slot1.total ? 'winner' : ''}`}>{slot2.total}</div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
         function App() {
             const [expandedId, setExpandedId] = React.useState(null);
             const [filter, setFilter] = React.useState('all');
@@ -1833,12 +2342,28 @@
                             >
                                 <Icon name="trending-up" size={15} /> Estadísticas nacionales
                             </button>
+                            <button
+                                className={`view-toggle-btn ${activeView === 'patterns' ? 'active' : ''}`}
+                                onClick={() => setActiveView('patterns')}
+                            >
+                                <Icon name="share" size={15} style={{ transform: 'rotate(90deg)' }} /> Patrones sistémicos
+                            </button>
+                            <button
+                                className={`view-toggle-btn ${activeView === 'compare' ? 'active' : ''}`}
+                                onClick={() => setActiveView('compare')}
+                            >
+                                <Icon name="users" size={15} /> Comparar
+                            </button>
                         </div>
 
                         {activeView === 'timeline' ? (
                             <NationalTimeline officials={officials} onJumpToOfficial={handleJumpToOfficial} />
                         ) : activeView === 'stats' ? (
                             <NationalStatsDashboard officials={officials} />
+                        ) : activeView === 'patterns' ? (
+                            <PatternsView officials={officials} onJumpToOfficial={handleJumpToOfficial} />
+                        ) : activeView === 'compare' ? (
+                            <CompareView officials={officials} maxScore={maxScore} />
                         ) : (
                         <React.Fragment>
                         <div className="methodology">
@@ -2113,11 +2638,11 @@
                 ctx.fill();
                 ctx.fillStyle = badgeColor;
                 ctx.fillText(label, M + 12, y);
-                y += 20;
+                y += 55;
             }
 
             // Big score
-            y += 70;
+            y += 130;
             ctx.font = '700 140px "Space Grotesk", sans-serif';
             ctx.fillStyle = color;
             ctx.fillText(String(total), M, y);
