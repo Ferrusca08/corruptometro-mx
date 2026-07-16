@@ -5423,3 +5423,75 @@ officials.push(
     timeline:[{year:'2006',event:'Asume gubernatura de Chiapas con apoyo de su antecesor Pablo Salazar Mendiguchía'},{year:'2012',event:'Termina gestión dejando deuda de $33,747M (incremento de 704%)'},{year:'2013',event:'PGR admite querella penal por desfalco de $40,000M contra él y 50 excolaboradores'},{year:'2015',event:'Julio: nombrado Cónsul General de México en Orlando, Florida, obteniendo inmunidad diplomática'},{year:'2016',event:'Diciembre: detenido brevemente en el aeropuerto de la CDMX'},{year:'2026',event:'Continúa como cónsul en Orlando bajo el gobierno de Morena, sin que las carpetas de investigación hayan avanzado'}],
     sources:[{label:'SinEmbargo — Nombramiento como cónsul',url:'https://www.sinembargo.mx/1402074/la-sre-premia-a-juan-sabines-con-el-consulado-de-orlando-aun-cuando-no-ha-aclarado-mega-deuda-de-chiapas/'},{label:'eje central — Depredó Chiapas',url:'https://www.ejecentral.com.mx/la-portada-juan-sabines-depredo-chiapas'},{label:'Diario de Chiapas — Detención',url:'https://diariodechiapas.com/metropoli/pgr-detiene-al-ex-gobernador-juan-sabines-guerrero/'},{label:'ChiapasParalelo — Diplomacia de la impunidad',url:'https://www.chiapasparalelo.com/opinion/2015/07/sabines-diplomacia-de-la-impunidad/'},{label:'Proceso — Demanda por daño moral',url:'https://proceso.com.mx/484852/juan-sabines-denuncia-dano-moral-a-activista-lo-acuso-defraudar-al-erario-40-mil-mdp'}]}
 );
+
+
+// =====================================================
+// HIDALGO — CASO "ESTAFA SINIESTRA" ($522M)
+// =====================================================
+officials.push(
+    {id:362,name:'Omar Fayad Meneses',role:'Embajador de México en Noruega / Exgobernador de Hidalgo (2016-2022)',party:'PRI (expulsado, cercano a MORENA)',state:'Hidalgo',level:'federal',active:true,status:'en_funciones',lastVerified:'2026-07-14',
+    scores:{sentencias:10,fiscalizacion:18,funcionarios:15,deuda:14,denuncias:9,evasion:10,nepotismo:3},
+    breakdown:{sentencias:'No ha sido indiciado directamente en ninguna carpeta de investigación pese a que el esquema de desvío operó durante su sexenio y con su círculo íntimo. Su colaborador más cercano por 29 años, Martiniano Vega Orozco, fue sentenciado a 12 años de prisión.',
+    fiscalizacion:'Bajo su gestión (2016-2022) operó la "Estafa Siniestra", un esquema de desvío de recursos por al menos $522M a través de 13 municipios y 2 secretarías estatales, usando empresas fachada para simular obras y servicios durante la pandemia de COVID-19.',
+    funcionarios:'Martiniano Vega Orozco enfrenta 4 causas penales: peculado de $116M por un seguro catastrófico no cobrado tras el huracán Grace, venta ilegal de 3 helicópteros por debajo de su valor, y compras fantasma de software por $23.8M. Ya sentenciado a 12 años por un contrato fantasma de $18.2M para crema quirúrgica antiséptica durante la emergencia de COVID.',
+    deuda:'Su exoperador financiero Pablo Pérez Martínez declaró que durante dos décadas se tejió una red de corrupción con desvíos de hasta $2,700M solo de la Secretaría de Educación Pública de Hidalgo, mediante "pellizcos" sistemáticos al presupuesto.',
+    denuncias:'La senadora priista Carolina Viggiano fue citada a declarar tras afirmar en un podcast que un alcalde en funciones le reveló el mecanismo de desvíos antes de que se judicializara. Exfuncionarios presos han señalado desde la cárcel que Fayad está "protegido por acuerdos políticos".',
+    evasion:'Renunció al PRI en 2023 y fue nombrado embajador en Noruega por AMLO cinco meses después, obteniendo inmunidad diplomática antes de que avanzara cualquier investigación en su contra. Es el quinto exgobernador priista en recibir una embajada de Morena tras perder su estado.',
+    nepotismo:'Designó a su esposa, la actriz Victoria Ruffo, como directora local del Sistema Nacional para el Desarrollo Integral de la Familia durante su gestión como alcalde de Pachuca.'},
+    timeline:[{year:'2016',event:'Asume gubernatura de Hidalgo por el PRI'},{year:'2020',event:'Opera el esquema "Estafa Siniestra" durante la pandemia, desviando al menos $522M'},{year:'2022',event:'Termina gestión. El nuevo gobernador Julio Menchaca destapa la red de corrupción.'},{year:'2023',event:'Junio: renuncia al PRI. Noviembre: AMLO lo nombra embajador en Noruega.'},{year:'2025',event:'Su exsecretario particular Martiniano Vega Orozco es detenido, enfrenta 4 causas penales y una condena de 12 años'},{year:'2026',event:'Continúa como embajador en Noruega sin haber sido indiciado'}],
+    sources:[{label:'La Jornada — Cae otro exalcalde',url:'https://www.jornada.com.mx/2025/10/25/estados/022n3est'},{label:'NotiVer — Excolaborador señala a Fayad',url:'https://www.notiver.com/nacionales/ex-alcaldes-de-hidalgo-senalan-a-ex-contralor-de-fayad-de-recibir-dinero-malversado/'},{label:'Proceso — Se convierte en embajador',url:'https://www.proceso.com.mx/nacional/politica/2023/12/14/omar-fayad-se-convierte-en-embajador-promotor-de-amlo-320441.html'},{label:'Los Ángeles Press — Lavandería de contratos',url:'https://losangelespress.org/investigaciones/2022/nov/30/estafa-siniestra-en-hidalgo-se-fraguo-incluso-sin-la-intermediacion-de-alcaldes-4729.html'}]},
+
+    {id:363,name:'Elías San Juan',role:'Expresidente Municipal de Yahualica, Hidalgo',party:'PRI',state:'Hidalgo',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
+    scores:{sentencias:15,fiscalizacion:8,funcionarios:3,deuda:8,denuncias:6,evasion:3,nepotismo:2},
+    breakdown:{sentencias:'Detenido el 23 de noviembre de 2022 junto con otros 3 alcaldes, preso por peculado agravado y uso ilícito de atribuciones y facultades.',
+    fiscalizacion:'Parte de la red "Estafa Siniestra" que operó a través de empresas fachada durante la pandemia de COVID-19.',
+    funcionarios:'Contactado por funcionarios de nivel Secretario del Gobierno de Hidalgo para simular obras, quedarse con el 30% y regresar el 70% a empresas fachada.',
+    deuda:'Desvió $29,224,727.36 pesos, de los cuales $15M se destinaron supuestamente a una aplicación móvil y desarrollo web, y el resto a fumigación y arcos sanitizantes durante la pandemia.',
+    denuncias:'Parte del maxiproceso de la Estafa Siniestra que involucró a 13 municipios y 2 secretarías estatales.',
+    evasion:'No evadió la detención.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2022',event:'Detenido el 23 de noviembre por peculado agravado, parte de la Estafa Siniestra'}],
+    sources:[{label:'La Voz de Michoacán',url:'https://www.lavozdemichoacan.com.mx/mexico/corrupcion/aprehenden-a-4-alcaldes-de-hidalgo-por-la-estafa-siniestra-hay-otros-9-bajo-investigacion/'},{label:'El Diario de Chihuahua',url:'https://www.eldiariodechihuahua.mx/nacional/que-es-la-estafa-siniestra-de-hidalgo-20230724-2079675.html'}]},
+
+    {id:364,name:'Marcos Miguel Taboada Vargas',role:'Expresidente Municipal de Singuilucan, Hidalgo (2020-2024)',party:'Nueva Alianza',state:'Hidalgo',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
+    scores:{sentencias:14,fiscalizacion:8,funcionarios:3,deuda:9,denuncias:6,evasion:4,nepotismo:2},
+    breakdown:{sentencias:'Capturado en octubre de 2025 por agentes ministeriales de Hidalgo por su participación en la Estafa Siniestra, acusado de uso ilícito de atribuciones y facultades e incumplimiento agravado de un deber legal.',
+    fiscalizacion:'Su municipio fue de los señalados desde el inicio del destape del esquema en 2022.',
+    funcionarios:'Parte de la red de 13 municipios y 2 secretarías estatales que operó el esquema de empresas fachada.',
+    deuda:'Desvió más de $109M según la investigación, con contratos irregulares a favor de 22 personas físicas y morales. Devolvió $26M de los $110M desviados tras ser señalado.',
+    denuncias:'Documentado por La Jornada como parte del maxiproceso que continúa activo en 2025-2026.',
+    evasion:'Terminó su gestión con normalidad en 2024 antes de ser detenido más de un año después.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2020',event:'Asume presidencia municipal de Singuilucan'},{year:'2022',event:'Señalado como parte de la Estafa Siniestra, regresa $26M de los $110M desviados'},{year:'2024',event:'Termina su gestión con normalidad'},{year:'2025',event:'Octubre: detenido por la Estafa Siniestra'}],
+    sources:[{label:'La Jornada — Cae exalcalde',url:'https://www.jornada.com.mx/2025/10/25/estados/022n3est'}]}
+);
+
+
+// =====================================================
+// QUERÉTARO
+// =====================================================
+officials.push(
+    {id:365,name:'Carmelo Mendieta',role:'Expresidente Municipal de Corregidora, Querétaro (2009-2012)',party:'PRI',state:'Querétaro',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
+    scores:{sentencias:14,fiscalizacion:8,funcionarios:2,deuda:9,denuncias:6,evasion:8,nepotismo:2},
+    breakdown:{sentencias:'Detenido en octubre de 2024 por la Fiscalía Especializada en el Combate a la Corrupción de Querétaro, acusado de peculado en agravio del servicio público y del erario municipal. Ya había sido detenido antes por el mismo tipo de delito en 2020, pero fue liberado.',
+    fiscalizacion:'La Fiscalía Anticorrupción de Querétaro cumplimentó una nueva orden de aprehensión en su contra tras reabrir la investigación.',
+    funcionarios:'Sin red de colaboradores documentada en este caso específico.',
+    deuda:'Compra-venta irregular de un terreno valuado en $9.5M cuyo origen de recursos no pudo ser comprobado. Adquirió una vivienda con recursos de procedencia ilícita utilizando a un tercero sin solvencia económica como comprador de fachada.',
+    denuncias:'La denuncia que originó su segunda detención fue presentada por un particular.',
+    evasion:'Fue detenido, liberado en 2020, y detenido nuevamente en 2024 por la misma naturaleza de delito, evidenciando fallas en el seguimiento judicial del caso.',
+    nepotismo:'Sin datos adicionales.'},
+    timeline:[{year:'2009',event:'Asume presidencia municipal de Corregidora'},{year:'2012',event:'Termina su gestión'},{year:'2020',event:'Primera detención por desvío de recursos. Es liberado.'},{year:'2024',event:'Octubre: nueva orden de aprehensión cumplimentada por peculado'}],
+    sources:[{label:'Infobae — Detención',url:'https://www.infobae.com/mexico/2024/10/17/detienen-a-ex-alcalde-de-corregidora-queretaro-por-desvio-de-recursos-al-erario/'},{label:'Milenio — Peculado y desvío',url:'https://www.milenio.com/estados/detienen-a-ex-alcalde-de-corregidora-por-peculado-y-desvio-de-recursos'}]},
+
+    {id:366,name:'Alejandro N.',role:'Expresidente Municipal de Colón, Querétaro',party:'PAN',state:'Querétaro',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
+    scores:{sentencias:12,fiscalizacion:6,funcionarios:3,deuda:8,denuncias:6,evasion:3,nepotismo:3},
+    breakdown:{sentencias:'Detenido por la Policía de Investigación del Delito adscrita a la Fiscalía Especializada en Combate a la Corrupción de Querétaro, acusado de tráfico de influencias y promoción de conductas ilícitas, junto con un empresario.',
+    fiscalizacion:'Investigación de la Fiscalía Anticorrupción de Querétaro por facilitar beneficios irregulares a un particular desde su posición administrativa.',
+    funcionarios:'Detenido junto con el representante legal de una empresa beneficiada, quien también fue arrestado.',
+    deuda:'Facilitó acuerdos económicos por cantidades millonarias para que un desarrollo industrial se asentara en el municipio de Colón cumpliendo irregularmente con el Código Urbano estatal.',
+    denuncias:'Caso documentado por la Fiscalía Especializada en Combate a la Corrupción de Querétaro.',
+    evasion:'No evadió la detención.',
+    nepotismo:'Otorgó y aprobó beneficios administrativos a un particular con quien mantenía acuerdos económicos.'},
+    timeline:[{year:'2023',event:'Septiembre: detenido junto con un empresario por tráfico de influencias'}],
+    sources:[{label:'Milenio — Detención',url:'https://www.milenio.com/estados/detienen-a-ex-alcalde-de-queretaro-y-a-empresario-por-corrupcion'}]}
+);
