@@ -5582,3 +5582,18 @@ officials.push(
     timeline:[{year:'2024',event:'Señalado por "moches" millonarios en contratos de basura mientras buscaba una candidatura plurinominal al Senado'}],
     sources:[{label:'Reforma — Los moches de Vargas',url:'https://www.reforma.com/los-moches-de-vargas-en-huixquilucan-y-los-salpicados/ar2790080'}]}
 );
+
+
+officials.push(
+    {id:373,name:'Marco Antonio Rodríguez Hurtado',role:'Expresidente Municipal de Tlalnepantla de Baz, Estado de México (2022-2024)',party:'Sin dato',state:'Estado de México',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
+    scores:{sentencias:8,fiscalizacion:18,funcionarios:15,deuda:14,denuncias:9,evasion:5,nepotismo:3},
+    breakdown:{sentencias:'Sin sentencia formal contra él directamente, aunque se presentaron 14 denuncias penales por abuso de autoridad, peculado, uso ilícito de facultades y falsificación de firmas contra exfuncionarios de primer nivel de su gobierno ante la Fiscalía Especializada en Combate a la Corrupción.',
+    fiscalizacion:'Un contrato para la instalación de 20,000 luminarias por más de $148M sin evidencia suficiente de su ejecución. Obras fantasma no realizadas con afectación a la hacienda pública de al menos $37.4M, incluyendo rehabilitación de centros comunitarios y pavimentaciones nunca ejecutadas.',
+    funcionarios:'215 exfuncionarios bajo investigación: 187 del gobierno central y 28 del organismo de agua (OPDM). Las áreas señaladas incluyen Administración, Obra Pública, Desarrollo Urbano, Juventud, Educación, Desarrollo Social y Deporte.',
+    deuda:'Desvío de $22M en el programa "Tarjeta Joven" mediante falsificación de firmas de beneficiarios inexistentes. Juicios laborales presuntamente fraudulentos donde funcionarios perdían deliberadamente para obligar al ayuntamiento a pagar más de $5M. Nómina con indicios de aviadores y gratificaciones sin sustento por más de $600,000 anuales.',
+    denuncias:'Documentado extensamente por Aristegui Noticias, Capital Estado de México y 8 Columnas. El alcalde entrante declaró públicamente "no voy a tener piedad contra los que saquearon al Gobierno de Tlalnepantla".',
+    evasion:'Buscó la reelección en el proceso 2024 pese a los señalamientos de corrupción, saqueo e inseguridad que ya pesaban sobre su administración durante la campaña.',
+    nepotismo:'Un exfuncionario del área deportiva fungía simultáneamente como representante legal de una empresa privada a la que su propia área autorizaba el uso de instalaciones deportivas municipales, un conflicto de interés directo.'},
+    timeline:[{year:'2021',event:'Asume la presidencia municipal de Tlalnepantla de Baz para el periodo 2022-2024, su cuarta ocasión en el cargo'},{year:'2024',event:'Busca la reelección en medio de señalamientos de corrupción e inseguridad. Termina su gestión.'},{year:'2025',event:'La nueva administración destapa una red de corrupción: 215 exfuncionarios investigados, 14 denuncias penales presentadas, desfalco documentado en luminarias, Tarjeta Joven y obras fantasma'}],
+    sources:[{label:'Aristegui Noticias — 215 exfuncionarios',url:'https://aristeguinoticias.com/1607/mexico/investigan-a-215-exfuncionarios-por-megadesfalco-en-tlalnepantla/'},{label:'Capital Edomex — 14 denuncias penales',url:'https://www.capitaledomex.com.mx/local/presentan-14-denuncias-penales-contra-exfuncionarios-de-tlalnepantla-por-corrupcion/'},{label:'Eje Central — Desfalco millonario',url:'https://www.ejecentral.com.mx/nuestro-eje/van-contra-desfalco-millonario-en-tlalnepantla-no-voy-a-tener-piedad-asegura-el-alclade-raciel-perez'},{label:'8 Columnas — Red de corrupción',url:'https://8columnas.com.mx/estado-de-mexico/detectan-posible-red-de-corrupcion-en-administracion-2022-2024-de-tlalnepantla/'}]}
+);
