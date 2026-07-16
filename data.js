@@ -5597,3 +5597,30 @@ officials.push(
     timeline:[{year:'2021',event:'Asume la presidencia municipal de Tlalnepantla de Baz para el periodo 2022-2024, su cuarta ocasión en el cargo'},{year:'2024',event:'Busca la reelección en medio de señalamientos de corrupción e inseguridad. Termina su gestión.'},{year:'2025',event:'La nueva administración destapa una red de corrupción: 215 exfuncionarios investigados, 14 denuncias penales presentadas, desfalco documentado en luminarias, Tarjeta Joven y obras fantasma'}],
     sources:[{label:'Aristegui Noticias — 215 exfuncionarios',url:'https://aristeguinoticias.com/1607/mexico/investigan-a-215-exfuncionarios-por-megadesfalco-en-tlalnepantla/'},{label:'Capital Edomex — 14 denuncias penales',url:'https://www.capitaledomex.com.mx/local/presentan-14-denuncias-penales-contra-exfuncionarios-de-tlalnepantla-por-corrupcion/'},{label:'Eje Central — Desfalco millonario',url:'https://www.ejecentral.com.mx/nuestro-eje/van-contra-desfalco-millonario-en-tlalnepantla-no-voy-a-tener-piedad-asegura-el-alclade-raciel-perez'},{label:'8 Columnas — Red de corrupción',url:'https://8columnas.com.mx/estado-de-mexico/detectan-posible-red-de-corrupcion-en-administracion-2022-2024-de-tlalnepantla/'}]}
 );
+
+
+officials.push(
+    {id:374,name:'Ana María Castro Fernández',role:'Presidenta Municipal de Tultitlán, Estado de México',party:'MORENA',state:'Estado de México',level:'municipal',active:true,status:'en_funciones',lastVerified:'2026-07-14',
+    scores:{sentencias:5,fiscalizacion:12,funcionarios:10,deuda:11,denuncias:9,evasion:5,nepotismo:12},
+    breakdown:{sentencias:'Sin sentencia. Investigación formal abierta por la Fiscalía Especializada en Combate a la Corrupción del Estado de México, expediente TOL/CCF/SPO/107/033891/25/02.',
+    fiscalizacion:'Investigada por presuntos contratos irregulares y tráfico de influencias en la compra de 27 hectáreas de terrenos ejidales en San Francisco Chilpan, operación envuelta en opacidad.',
+    funcionarios:'Su cuñada y antecesora en el cargo, Elena García Martínez (hoy diputada local), aparece en el mismo expediente. Erick Isachar Vega Chavarría, coordinador general de la Oficina de Presidencia, es señalado como el operador que ofrecía acuerdos económicos fuera del marco legal a empresarios.',
+    deuda:'Su gobierno transfirió $38.5M a una asociación civil ("Unión de Colonos, Inquilinos Solicitantes de Vivienda y Comerciantes, Lomas del Parque A.C.") por terrenos que no contaban con escrituras públicas que acreditaran su propiedad legal.',
+    denuncias:'La denuncia nació de vecinos que alertaron sobre la operación de compra de tierras. Empresarios locales denunciaron que el gobierno municipal usa inspecciones administrativas como mecanismo de presión: suspenden negocios y luego ofrecen reuniones para negociar su reapertura mediante pagos no oficiales.',
+    evasion:'Sin evasión documentada hasta el momento; permanece en el cargo mientras avanza la investigación.',
+    nepotismo:'CASO DIRECTO: su cuñada Elena García Martínez fue su antecesora inmediata en la alcaldía y ahora es diputada local, ambas militantes de Morena en el mismo expediente. Su esposo, José Alfredo Contreras Suárez, ocupa el cargo de secretario del Ayuntamiento durante su gestión, y otra pariente, Ana María Castro (posible homónima o familiar directa), aparece vinculada a las mismas denuncias.'},
+    timeline:[{year:'2021',event:'Su cuñada Elena García Martínez es alcaldesa de Tultitlán'},{year:'2024',event:'Asume la presidencia municipal de Tultitlán sucediendo a su cuñada'},{year:'2025',event:'Fiscalía Anticorrupción abre investigación formal por compra irregular de terrenos ejidales y extorsión a empresarios'}],
+    sources:[{label:'Cuestión de Polémica — Megafraude inmobiliario',url:'https://www.cuestiondepolemica.com/la-polemica-megafraude-inmobiliario-en-tultitlan/'},{label:'Capital Edomex — Extorsión y desvío',url:'https://www.capitaledomex.com.mx/local/acusan-a-funcionarios-de-tultitlan-de-extorsion-a-empresarios-y-desvio-de-recursos-publicos/'}]},
+
+    {id:375,name:'Manuel Santín Hernández',role:'Expresidente Municipal de Tejupilco, Estado de México (2013-2015)',party:'PRI',state:'Estado de México',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
+    scores:{sentencias:8,fiscalizacion:16,funcionarios:2,deuda:12,denuncias:7,evasion:5,nepotismo:2},
+    breakdown:{sentencias:'Denunciado penalmente ante la Fiscalía General de Justicia del Estado de México por peculado, a solicitud del OSFEM tras concluir sus auditorías. Sin sentencia confirmada.',
+    fiscalizacion:'El Órgano Superior de Fiscalización del Estado de México (OSFEM) detectó irregularidades en la administración municipal 2013-2015 y solicitó formalmente al gobierno sucesor ejercer acciones de resarcimiento.',
+    funcionarios:'Sin red de funcionarios documentada en este caso específico.',
+    deuda:'Desvío de $43.6M en afectación a la hacienda pública municipal de Tejupilco, según las auditorías del OSFEM.',
+    denuncias:'El alcalde sucesor, Anthony Domínguez Vargas (Morena), presentó la denuncia formal en 2021 tras la falta de respuesta del propio Santín Hernández a los requerimientos del OSFEM.',
+    evasion:'No respondió a los requerimientos de resarcimiento del OSFEM antes de que se presentara la denuncia penal formal en su contra.',
+    nepotismo:'Sin datos adicionales documentados.'},
+    timeline:[{year:'2013',event:'Asume presidencia municipal de Tejupilco'},{year:'2015',event:'Termina su gestión. OSFEM detecta irregularidades posteriormente.'},{year:'2021',event:'Marzo: alcalde sucesor presenta denuncia penal por peculado de $43.6M tras falta de respuesta a requerimientos del OSFEM'}],
+    sources:[{label:'Plana Mayor — Denuncia penal',url:'https://www.planamayor.com.mx/denuncian-penalmente-a-exalcalde-de-tejupilco-por-desvio-de-43-6-mdp/'}]}
+);
