@@ -5555,3 +5555,30 @@ officials.push(
     timeline:[{year:'2022',event:'Periodo de gestión bajo revisión (últimos tres años analizados en las auditorías)'},{year:'2024',event:'Termina su gestión como presidente municipal de Ecatepec'},{year:'2025',event:'La nueva administración realiza 11 auditorías externas y presenta 137 denuncias formales por sobreprecios y desfalco de $547M'}],
     sources:[{label:'La Jornada — Desfalco de \$547M',url:'https://www.jornada.com.mx/noticia/2025/12/02/estados/gobierno-de-ecatepec-denuncia-desfalco-por-mas-de-547-mdp-del-gobierno-anterior'},{label:'El Universal — 137 denuncias',url:'https://www.eluniversal.com.mx/metropoli/ecatepec-ha-presentado-137-denuncias-contra-exfuncionarios-por-sobreprecios-de-materiales-para-obras-insumos-y-alimentos-por-mas-de-547-mdp/'}]}
 );
+
+
+officials.push(
+    {id:371,name:'Eruviel Ávila Villegas',role:'Diputado Federal (LXVI Legislatura) / Exgobernador del Estado de México (2011-2017)',party:'PVEM (exPRI)',state:'Estado de México',level:'federal',active:true,status:'en_funciones',lastVerified:'2026-07-14',
+    scores:{sentencias:8,fiscalizacion:12,funcionarios:6,deuda:14,denuncias:9,evasion:8,nepotismo:4},
+    breakdown:{sentencias:'Denunciado penalmente en abril de 2024 por la coalición "Fuerza y Corazón por México" (PRI-PAN-PRD) junto con el exalcalde de Toluca Raymundo "N", por los delitos de peculado y desvío de recursos públicos. Sin sentencia hasta el momento.',
+    fiscalizacion:'La denuncia señala un presunto desvío conjunto de $1,365M de recursos públicos durante su periodo como gobernador y la gestión municipal de Toluca vinculada a su grupo político.',
+    funcionarios:'La coalición denunciante documentó con fotografías la presencia del hijo del exalcalde de Toluca, Raymundo Martínez Zendejas, en eventos de campaña, como evidencia de la red de operación política del grupo.',
+    deuda:'$1,365M de presunto desvío de recursos públicos documentados en la denuncia penal.',
+    denuncias:'La coalición PRI-PAN-PRD acusó que Morena le ofrece impunidad a cambio de que su red opere electoralmente a su favor durante los comicios, en un intercambio de favores políticos.',
+    evasion:'Renunció al PRI en julio de 2023 tras 30+ años de militancia, se integró al Partido Verde y declaró su respaldo a la entonces candidata presidencial de Morena, un movimiento leído como estrategia de protección política ante la posible pérdida de fuero.',
+    nepotismo:'Fue dos veces alcalde de Ecatepec y gobernador del Estado de México; su transición de partido y alianza con el bloque en el poder ha sido señalada como una forma de preservar influencia y protección política para su red cercana, incluyendo al exalcalde de Toluca de su misma corriente.'},
+    timeline:[{year:'2003',event:'Primera vez alcalde de Ecatepec de Morelos'},{year:'2009',event:'Segunda vez alcalde de Ecatepec'},{year:'2011',event:'Asume gubernatura del Estado de México'},{year:'2017',event:'Termina gestión como gobernador'},{year:'2018',event:'Asume como senador plurinominal'},{year:'2023',event:'Julio: renuncia al PRI y se integra al Partido Verde, respalda a la candidata de Morena'},{year:'2024',event:'Abril: denunciado penalmente por desvío de \$1,365M junto con exalcalde de Toluca. Se convierte en diputado federal por el Partido Verde.'}],
+    sources:[{label:'Proceso — Denuncia por \$1,365M',url:'https://www.proceso.com.mx/nacional/2024/4/15/coalicion-pri-pan-prd-denuncia-eruviel-avila-exalcalde-de-toluca-por-supuesto-desvio-de-mil-365-mdp-326049.html'},{label:'Infobae — Transición al Verde',url:'https://www.infobae.com/mexico/2024/03/02/este-es-el-grado-de-estudios-de-eruviel-avila-exgobernador-de-edomex-que-llegara-al-senado-con-el-partido-verde/'}]},
+
+    {id:372,name:'Enrique Vargas del Villar',role:'Expresidente Municipal de Huixquilucan, Estado de México',party:'PAN',state:'Estado de México',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
+    scores:{sentencias:5,fiscalizacion:10,funcionarios:5,deuda:9,denuncias:7,evasion:5,nepotismo:3},
+    breakdown:{sentencias:'Investigado por presunto acto de corrupción millonario, sin sentencia formal documentada hasta el momento.',
+    fiscalizacion:'Señalado por "moches" millonarios obtenidos a través de contratos de recolección de basura durante su gestión municipal en Huixquilucan.',
+    funcionarios:'El caso involucra a varios funcionarios "salpicados" dentro de su estructura de gobierno, según reportó Reforma.',
+    deuda:'Montos millonarios presuntamente obtenidos mediante comisiones ilegales en la adjudicación de contratos de recolección de basura.',
+    denuncias:'Documentado por el periódico Reforma. Coincide con el patrón de denuncias ciudadanas por corrupción en Huixquilucan, municipio que mantiene un canal formal de denuncia anticorrupción en su portal oficial.',
+    evasion:'Buscó una candidatura plurinominal al Senado, lo que le habría dado fuero legislativo en caso de resultar electo, en medio de las investigaciones abiertas en su contra.',
+    nepotismo:'Sin datos adicionales documentados.'},
+    timeline:[{year:'2024',event:'Señalado por "moches" millonarios en contratos de basura mientras buscaba una candidatura plurinominal al Senado'}],
+    sources:[{label:'Reforma — Los moches de Vargas',url:'https://www.reforma.com/los-moches-de-vargas-en-huixquilucan-y-los-salpicados/ar2790080'}]}
+);
