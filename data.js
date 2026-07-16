@@ -5495,3 +5495,33 @@ officials.push(
     timeline:[{year:'2023',event:'Septiembre: detenido junto con un empresario por tráfico de influencias'}],
     sources:[{label:'Milenio — Detención',url:'https://www.milenio.com/estados/detienen-a-ex-alcalde-de-queretaro-y-a-empresario-por-corrupcion'}]}
 );
+
+
+officials.push(
+    {id:367,name:'Fernando Gustavo Flores Fernández',role:'Presidente Municipal de Metepec, Estado de México',party:'Sin dato',state:'Estado de México',level:'municipal',active:true,status:'en_funciones',lastVerified:'2026-07-14',
+    scores:{sentencias:5,fiscalizacion:12,funcionarios:8,deuda:8,denuncias:10,evasion:6,nepotismo:3},
+    breakdown:{sentencias:'Sin sentencia. Denunciado formalmente ante la Fiscalía Especializada en Combate a la Corrupción del Estado de México (FECC), con sede en Toluca, recibida el 16 de junio de 2026.',
+    fiscalizacion:'La denuncia señala presuntas anomalías en procesos de adquisición municipal: sobreprecios en compras de uniformes y equipamiento para la Policía Municipal, sin justificación clara de montos ni procedimientos de contratación transparentes.',
+    funcionarios:'La denuncia involucra formalmente también al director de Seguridad Pública de Metepec, Jesús Alberto Ramírez Manzur, señalado además por presunto contubernio en un caso de abuso sexual cometido por uno de sus elementos, y a Clara Cardozo, colaboradora cercana desde su primera campaña.',
+    deuda:'Se documentan entregas de dinero en efectivo presuntamente vinculadas a recursos obtenidos por el cobro de multas de tránsito, además de sobreprecios no justificados en compras de insumos de seguridad pública.',
+    denuncias:'La denuncia proviene de una exfuncionaria que colaboró en su equipo desde 2021. Enfrenta además una investigación paralela por hechos ocurridos en el Club Deportivo La Asunción, donde llegó con escoltas armadas, incidente que generó controversia pública adicional y una audiencia programada en la Fiscalía General de Justicia del Estado de México.',
+    evasion:'La presidenta de la Mesa Directiva del Congreso mexiquense descartó estar analizando su destitución, argumentando que no existe una solicitud formal ni expediente abierto pese a la denuncia ya presentada.',
+    nepotismo:'Su director de Seguridad Pública ha mantenido continuidad en el cargo a través de administraciones de distintos partidos, lo que ha sido señalado como parte de una estructura de protección interna.'},
+    timeline:[{year:'2021',event:'Inicia su primera campaña política con el equipo que después lo acompañaría al gobierno municipal'},{year:'2026',event:'Junio: exfuncionaria presenta denuncia formal ante la FECC por sobreprecios, entregas de efectivo y contubernio en caso de abuso sexual. Controversia adicional por incidente en club deportivo privado con escoltas armadas.'}],
+    sources:[{label:'Capital Edomex — Investigación',url:'https://www.capitaledomex.com.mx/local/destapan-la-cloaca-del-alcalde-de-metepec/'},{label:'PolíticoMX — Denuncia formal',url:'https://politico.mx/2026/06/19/exfuncionaria-denuncia-por-presunta-corrupcion-a-fernando-flores-alcalde-de-metepec/'},{label:'La Silla Rota — Descartan destitución',url:'https://lasillarota.com/metropoli/2026/6/19/denuncian-al-alcalde-de-metepec-fernando-flores-por-presunta-corrupcion-descartan-destitucion-604662.html'}]}
+);
+
+
+officials.push(
+    {id:368,name:'María del Rosario "N"',role:'Expresidenta Municipal saliente de Santo Tomás de los Plátanos, Estado de México',party:'Sin dato',state:'Estado de México',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
+    scores:{sentencias:14,fiscalizacion:5,funcionarios:6,deuda:3,denuncias:7,evasion:5,nepotismo:8},
+    breakdown:{sentencias:'Detenida el 23 de enero de 2025 en el marco de la Operación Enjambre, derivado de sus presuntos vínculos con el cártel de La Familia Michoacana.',
+    fiscalizacion:'Sin hallazgos de fiscalización financiera documentados; el caso es de naturaleza penal por vínculos criminales, no de desvío de recursos.',
+    funcionarios:'Habría utilizado su vínculo con La Familia Michoacana para obligar a un síndico municipal a firmar diversos documentos bajo coacción.',
+    deuda:'Sin monto de daño patrimonial documentado en este caso específico.',
+    denuncias:'Caso documentado ampliamente por Milenio y otros medios como parte de la cronología oficial de la Operación Enjambre.',
+    evasion:'Fue detenida antes de que su esposo, Pedro Luis "Wicho", asumiera el cargo que ella dejaba, evidenciando un patrón de relevo familiar en el control del municipio.',
+    nepotismo:'CASO DIRECTO: su esposo, Pedro Luis "Wicho" (ya documentado en esta base), fue electo para sucederla como alcalde del mismo municipio. Según las investigaciones, habría ordenado el secuestro de un familiar de una candidata rival para facilitar la llegada de su esposa al Ayuntamiento en el proceso electoral previo.'},
+    timeline:[{year:'2025',event:'23 de enero: detenida por sus presuntos vínculos con La Familia Michoacana, dos semanas antes de que su esposo fuera detenido el 8 de febrero'}],
+    sources:[{label:'Milenio — Cronología Operación Enjambre',url:'https://www.milenio.com/policia/cronologia-operacion-enjambre-quienes-han-sido-detenidos-lista'}]}
+);
