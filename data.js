@@ -6439,3 +6439,18 @@ officials.push(
     timeline:[{year:'2026',event:'21 de mayo: orden de aprehensión ejecutada junto con al menos 5 funcionarios más del ayuntamiento de Ocozocoautla por extorsión agravada'}],
     sources:[{label:'UnoTV — Detención',url:'https://www.unotv.com/estados/chiapas/detienen-a-exalcaldesa-y-funcionaria-de-jiquipilas-chiapas-y-a-funcionaria-de-ocozocoautla/'}]}
 );
+
+
+officials.push(
+    {id:379,name:'Vilma Senorina Reyes Martínez',role:'Expresidenta Municipal de Santa María Huazolotitlán, Oaxaca (2022-2024)',party:'PRI',state:'Oaxaca',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-17',
+    scores:{sentencias:14,fiscalizacion:4,funcionarios:2,deuda:8,denuncias:6,evasion:2,nepotismo:2},
+    breakdown:{sentencias:'Detenida el 16 de marzo de 2025 en Santiago Jamiltepec por la Agencia Estatal de Investigaciones de Oaxaca. Vinculada a proceso el 21 de marzo de 2025 por el delito de tráfico de concesiones y permisos del servicio público de transporte.',
+    fiscalizacion:'La Vicefiscalía Regional de la Costa investigó y confirmó que el Ayuntamiento de Santa María Huazolotitlán, bajo su administración, emitió permisos de circulación para el transporte público sin tener facultades legales para hacerlo.',
+    funcionarios:'Sin red de funcionarios adicional documentada en este caso específico.',
+    deuda:'Según fuentes locales, además del tráfico de permisos, enfrentó señalamientos por desvío de recursos públicos y enriquecimiento ilícito, y presuntamente lideraba el transporte ilegal en el municipio.',
+    denuncias:'La investigación se originó tras una denuncia presentada ante la Fiscalía General del Estado de Oaxaca, que resultó en la obtención de una orden de aprehensión librada por un Juez de Control.',
+    evasion:'No evadió la detención; fue localizada y capturada por agentes de la AEI en un operativo policial.',
+    nepotismo:'Sin datos adicionales documentados.'},
+    timeline:[{year:'2022',event:'Asume la presidencia municipal de Santa María Huazolotitlán'},{year:'2024',event:'Termina su gestión'},{year:'2025',event:'16 de marzo: detenida en Santiago Jamiltepec. 21 de marzo: vinculada a proceso por tráfico de concesiones y permisos de transporte.'}],
+    sources:[{label:'El Universal — Detención',url:'https://www.eluniversal.com.mx/estados/detienen-a-exalcaldesa-de-santa-maria-huazolotitlan-oaxaca-la-acusan-de-trafico-de-permisos-de-transporte-publico/'},{label:'Infobae — Vinculación a proceso',url:'https://www.infobae.com/mexico/2025/03/21/procesan-a-ex-presidenta-municipal-en-oaxaca-por-traficar-permisos-para-transporte-publico/'},{label:'RI Oaxaca — Desvío y enriquecimiento',url:'https://www.rioaxaca.com/2025/03/16/cae-detenida-otra-ex-presidenta-a-municipal-costena/'}]}
+);
