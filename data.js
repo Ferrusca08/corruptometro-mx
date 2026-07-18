@@ -6454,3 +6454,18 @@ officials.push(
     timeline:[{year:'2022',event:'Asume la presidencia municipal de Santa María Huazolotitlán'},{year:'2024',event:'Termina su gestión'},{year:'2025',event:'16 de marzo: detenida en Santiago Jamiltepec. 21 de marzo: vinculada a proceso por tráfico de concesiones y permisos de transporte.'}],
     sources:[{label:'El Universal — Detención',url:'https://www.eluniversal.com.mx/estados/detienen-a-exalcaldesa-de-santa-maria-huazolotitlan-oaxaca-la-acusan-de-trafico-de-permisos-de-transporte-publico/'},{label:'Infobae — Vinculación a proceso',url:'https://www.infobae.com/mexico/2025/03/21/procesan-a-ex-presidenta-municipal-en-oaxaca-por-traficar-permisos-para-transporte-publico/'},{label:'RI Oaxaca — Desvío y enriquecimiento',url:'https://www.rioaxaca.com/2025/03/16/cae-detenida-otra-ex-presidenta-a-municipal-costena/'}]}
 );
+
+
+officials.push(
+    {id:380,name:'Rodolfo Bautista Puc',role:'Expresidente Municipal de Escárcega, Campeche',party:'MORENA',state:'Campeche',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-17',
+    scores:{sentencias:14,fiscalizacion:6,funcionarios:2,deuda:6,denuncias:5,evasion:3,nepotismo:2},
+    breakdown:{sentencias:'Orden de aprehensión cumplimentada el 26 de febrero de 2026 por elementos de la Agencia Estatal de Investigaciones de Campeche. Acusado de uso indebido de atribuciones y facultades, además de peculado.',
+    fiscalizacion:'La Fiscalía General de Campeche investigó malos manejos de recursos públicos y aprovechamiento indebido de bienes que estaban bajo su responsabilidad como presidente municipal.',
+    funcionarios:'Sin red de funcionarios adicional documentada en este caso específico.',
+    deuda:'Peculado y abuso de confianza ligados a presuntos malos manejos de recursos públicos municipales, sin monto específico revelado por la Fiscalía.',
+    denuncias:'Caso documentado por la Fiscalía General de Campeche y difundido a través del Registro Nacional de Detenciones de la SSPC.',
+    evasion:'No evadió la detención; fue localizado y detenido en la colonia Centro de Escárcega, el mismo municipio que gobernó.',
+    nepotismo:'Sin datos adicionales documentados.'},
+    timeline:[{year:'2026',event:'26 de febrero: orden de aprehensión cumplimentada por peculado y uso indebido de facultades. Trasladado al Centro de Reinserción Social San Francisco Kobén.'}],
+    sources:[{label:'El Universal — Detención',url:'https://www.eluniversal.com.mx/estados/detienen-a-exalcalde-de-escarcega-campeche-esta-acusado-de-peculado-y-abuso-de-confianza/'},{label:'LatinUS — Uso indebido de facultades',url:'https://latinus.us/mexico/2026/3/1/aprehenden-por-uso-indebido-de-facultades-peculado-exalcalde-de-escarcega-campeche-165809.html'}]}
+);
