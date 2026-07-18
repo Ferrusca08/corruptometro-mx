@@ -6412,3 +6412,30 @@ const NATIONAL_STATS = {
   totalStates: new Set(officials.map(o => o.state)).size,
   lastUpdate: '2026-07-17',
 };
+
+
+officials.push(
+    {id:377,name:'Blanca Yaneth Chiu López',role:'Expresidenta Municipal de Jiquipilas, Chiapas (desaforada)',party:'Sin dato',state:'Chiapas',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-17',
+    scores:{sentencias:16,fiscalizacion:6,funcionarios:8,deuda:6,denuncias:8,evasion:4,nepotismo:2},
+    breakdown:{sentencias:'El Congreso de Chiapas aprobó su desafuero, y horas después fue detenida por una orden de aprehensión derivada de una carpeta de investigación autorizada por jueces de control de Tuxtla Gutiérrez, Chiapa de Corzo y Cintalapa. Enfrentará prisión preventiva.',
+    fiscalizacion:'Investigada por delitos de corrupción y extorsión agravada durante su gestión municipal.',
+    funcionarios:'Detenida junto con otros integrantes de su ayuntamiento y en conexión con el caso paralelo de la síndica de Ocozocoautla, Elsa Ruiz Hernández, en un operativo coordinado la misma noche.',
+    deuda:'Se documentó que a la empresa Avimarca (representada por Ignacio Jesús Castro) se le habría solicitado un millón de pesos a cambio de permitir su instalación en el municipio de Jiquipilas.',
+    denuncias:'Caso documentado por la Fiscalía General del Estado de Chiapas, encabezada por el fiscal Jorge Luis Llaven Abarca.',
+    evasion:'El Congreso local tuvo que aprobar formalmente su desafuero antes de poder ejecutar la orden de aprehensión, evidenciando el uso del fuero como obstáculo procesal previo.',
+    nepotismo:'Sin datos adicionales documentados.'},
+    timeline:[{year:'2025',event:'Presuntamente solicita un millón de pesos a la empresa Avimarca para permitir su instalación en Jiquipilas'},{year:'2026',event:'21 de mayo: el Congreso de Chiapas aprueba su desafuero. Es detenida la misma noche. El Congreso designa a Benérita Vela Avendaño como presidenta municipal sustituta.'}],
+    sources:[{label:'UnoTV — Detención',url:'https://www.unotv.com/estados/chiapas/detienen-a-exalcaldesa-y-funcionaria-de-jiquipilas-chiapas-y-a-funcionaria-de-ocozocoautla/'}]},
+
+    {id:378,name:'Elsa Ruiz Hernández',role:'Síndica Municipal de Ocozocoautla, Chiapas',party:'Sin dato',state:'Chiapas',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-17',
+    scores:{sentencias:14,fiscalizacion:5,funcionarios:8,deuda:5,denuncias:8,evasion:3,nepotismo:2},
+    breakdown:{sentencias:'Orden de aprehensión ejecutada la misma noche que la de la presidenta municipal de Jiquipilas, por presuntos delitos de corrupción y extorsión agravada.',
+    fiscalizacion:'La Fiscalía General del Estado investiga irregularidades en la autorización de obras públicas municipales a cambio de pagos no oficiales.',
+    funcionarios:'La FGE confirmó órdenes de aprehensión adicionales contra René Alberto Pimentel Mandujano, Sara Cruz Juárez, Amílcar Díaz Sánchez, Juan Fernando Jiménez Alvarado y Olivia Espinosa Mendoza, todos vinculados al mismo esquema en el ayuntamiento de Ocozocoautla.',
+    deuda:'Los servidores públicos presuntamente solicitaban dinero a la denunciante, Nidia de los Santos Sarmiento, para autorizar obras públicas en su beneficio.',
+    denuncias:'Caso documentado por la Fiscalía General del Estado de Chiapas como parte del mismo operativo que involucró a la presidenta municipal de Jiquipilas.',
+    evasion:'Sin evasión documentada; la orden de aprehensión fue ejecutada sin incidentes.',
+    nepotismo:'Sin datos adicionales documentados.'},
+    timeline:[{year:'2026',event:'21 de mayo: orden de aprehensión ejecutada junto con al menos 5 funcionarios más del ayuntamiento de Ocozocoautla por extorsión agravada'}],
+    sources:[{label:'UnoTV — Detención',url:'https://www.unotv.com/estados/chiapas/detienen-a-exalcaldesa-y-funcionaria-de-jiquipilas-chiapas-y-a-funcionaria-de-ocozocoautla/'}]}
+);
