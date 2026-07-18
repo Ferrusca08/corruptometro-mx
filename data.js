@@ -2,7 +2,7 @@
 // CORRUPTÓMETRO MX — BASE DE DATOS NACIONAL
 // Fuentes: OSFEM, SCJN, TEPJF, ASF, SESNSP, SHCP, DOJ, DEA,
 // Proceso, El Universal, Infobae, La Jornada, Milenio, y más
-// Última actualización: 14 de julio de 2026
+// Última actualización: 17 de julio de 2026
 // =====================================================
 
 const SCORING_CRITERIA = [
@@ -3064,19 +3064,19 @@ const officials = [
     "scores": {
       "sentencias": 12,
       "fiscalizacion": 8,
-      "funcionarios": 6,
+      "funcionarios": 9,
       "deuda": 5,
       "denuncias": 10,
-      "evasion": 8,
+      "evasion": 10,
       "nepotismo": 3
     },
     "breakdown": {
       "sentencias": "Acusado por EE.UU. de vínculos con narcotráfico junto con Enrique Inzunza Cázarez y otros. FGR investiga. Sin sentencia ni orden de aprehensión formal en México.",
       "fiscalizacion": "Bajo investigación, sin hallazgos formales de fiscalización publicados.",
-      "funcionarios": "Crisis de seguridad en Sinaloa desde la captura de \"El Mayo\" Zambada, con enfrentamientos entre facciones del Cártel de Sinaloa.",
+      "funcionarios": "Crisis de seguridad en Sinaloa desde la captura de \"El Mayo\" Zambada, con enfrentamientos entre facciones del Cártel de Sinaloa. Una jueza otorgó 2 meses adicionales a la Fiscalía para procesar \"evidencia abundante\" contra Gerardo Mérida, su exsecretario de Seguridad, reforzando el patrón de una red amplia de funcionarios de su gabinete bajo proceso.",
       "deuda": "Sin documentación de daño patrimonial directo hasta ahora.",
       "denuncias": "77.1% de los sinaloenses estarían de acuerdo con que se le revoque el mandato por pérdida de confianza (encuesta CRIPESO). En julio de 2026 llevaba 69 días sin aparecer en público tras tomar una licencia envuelta en polémica.",
-      "evasion": "Solicitó licencia del cargo en medio del escándalo. El gobierno negó estar protegiéndolo, asegurando que está en su casa sin escoltas federales, pero su ausencia pública prolongada genera sospechas.",
+      "evasion": "Permaneció 69 días sin aparecer públicamente tras solicitar licencia, hasta reaparecer en un video el 12 de julio de 2026 sin haber comparecido formalmente ante la FGR. El PAN acusó que el gobierno federal \"prepara el terreno\" para su regreso a la gubernatura pese a que la investigación sigue abierta, alegando protección política de Morena.",
       "nepotismo": "Sin datos específicos adicionales a los ya documentados sobre su gestión."
     },
     "timeline": [
@@ -3091,6 +3091,10 @@ const officials = [
       {
         "year": "2026",
         "event": "EE.UU. lo acusa de vínculos con narcotráfico. Toma licencia. 69 días sin aparecer en público (julio 2026)."
+      },
+      {
+        "year": "2026",
+        "event": "Julio: tras 69 días desaparecido, reaparece en video (12 de julio) sin comparecer ante la FGR. PAN acusa que Morena prepara su regreso a la gubernatura."
       }
     ],
     "sources": [
@@ -3103,7 +3107,7 @@ const officials = [
         "url": "https://www.tvazteca.com/aztecanoticias/cuantos-estados-gobierna-morena-en-2026-el-mapa-politico-rumbo-a-elecciones-2027/"
       }
     ],
-    "lastVerified": "2026-07-14"
+    "lastVerified": "2026-07-17"
   },
   {
     "id": 313,
@@ -3750,20 +3754,20 @@ const officials = [
     "status": "en_funciones",
     "scores": {
       "sentencias": 8,
-      "fiscalizacion": 17,
+      "fiscalizacion": 18,
       "funcionarios": 6,
       "deuda": 15,
       "denuncias": 10,
-      "evasion": 4,
+      "evasion": 8,
       "nepotismo": 8
     },
     "breakdown": {
       "sentencias": "Sin sentencia. Congreso de Nuevo León aprobó iniciar juicio político en su contra (junio 2026) por presunta triangulación de recursos.",
-      "fiscalizacion": "Denunciado ante la FGR por Morena Nuevo León por triangulación de $1,400M. Contratos estatales otorgados a proveedores (como \"Suministro MYR\") que transfirieron fondos a intermediarias, terminando en un despacho jurídico donde su propio padre, Samuel Orlando García Mascorro, es socio principal y beneficiario directo.",
+      "fiscalizacion": "Denunciado ante la FGR por Morena Nuevo León por triangulación de $1,400M. Contratos estatales otorgados a proveedores (como \"Suministro MYR\") que transfirieron fondos a intermediarias, terminando en un despacho jurídico donde su propio padre, Samuel Orlando García Mascorro, es socio principal y beneficiario directo. Actualización julio 2026: la Comisión Anticorrupción del Congreso de NL votó 6-1 avanzar formalmente el juicio político y solicitó información a 69 dependencias sobre contratos con 12 empresas proveedoras.",
       "funcionarios": "Funcionarios señalados en denuncias: Emmanuel Loo (subsecretario), Marco Antonio González Valdez (secretario de Desarrollo Regional), Bernardo Bichara Assad (Parque Fundidora), Javier Luis Navarro Velasco (coordinador de Gabinete).",
       "deuda": "Triangulación denunciada por $1,400M según Morena NL. Uso de un helicóptero Black Hawk asignado a Fuerza Civil para fines recreativos (trasladarse a ver un partido). Parte de los recursos habría sido enviada a Estados Unidos para dificultar rastreo, según la denuncia.",
       "denuncias": "Denunciado simultáneamente por Morena (peculado, triangulación) y por PAN/PRI (uso indebido de recursos durante el Mundial 2026: playeras, cervezas, promoción personalizada). Oposición exige que solicite licencia para enfrentar el proceso sin fuero.",
-      "evasion": "Mantiene el cargo con protección de fuero constitucional pese a las denuncias y el juicio político en curso.",
+      "evasion": "Promovió una controversia constitucional (386/2026) ante la SCJN contra el juicio político. El 13 de julio de 2026, la Corte le otorgó una suspensión que impide al Congreso de Nuevo León destituirlo o inhabilitarlo mientras se resuelve el fondo del asunto, blindándolo políticamente aunque la investigación legislativa puede continuar.",
       "nepotismo": "CASO DIRECTO: su propio padre es socio principal del despacho jurídico que recibió los fondos triangulados, según la denuncia. Su esposa Mariana Rodríguez también denunciada por beneficiarse de recursos para promoción personal."
     },
     "timeline": [
@@ -3774,6 +3778,10 @@ const officials = [
       {
         "year": "2026",
         "event": "Mayo: Morena denuncia triangulación de $1,400M ante la FGR. Junio: Congreso NL aprueba juicio político. Julio: PAN/PRI denuncian uso de recursos durante el Mundial."
+      },
+      {
+        "year": "2026",
+        "event": "Junio: Comisión Anticorrupción vota 6-1 avanzar el juicio político. Julio: promueve controversia constitucional; SCJN le otorga suspensión que bloquea su destitución mientras se resuelve el litigio."
       }
     ],
     "sources": [
@@ -3790,7 +3798,7 @@ const officials = [
         "url": "https://www.proceso.com.mx/nacional/estados/2026/7/2/acusan-a-samuel-garcia-y-mariana-por-usar-fondos-publicos-en-mundial-para-promover-a-mc-375245.html"
       }
     ],
-    "lastVerified": "2026-07-14"
+    "lastVerified": "2026-07-17"
   },
   {
     "id": 328,
@@ -5361,281 +5369,1046 @@ const officials = [
       }
     ],
     "lastVerified": "2026-07-14"
+  },
+  {
+    "id": 358,
+    "name": "Nancy Nápoles",
+    "role": "Presidenta Municipal de Tenancingo, Estado de México",
+    "party": "Sin dato",
+    "state": "Estado de México",
+    "level": "municipal",
+    "active": true,
+    "status": "en_funciones",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 15,
+      "fiscalizacion": 10,
+      "funcionarios": 8,
+      "deuda": 13,
+      "denuncias": 9,
+      "evasion": 8,
+      "nepotismo": 5
+    },
+    "breakdown": {
+      "sentencias": "Investigada por la Fiscalía General de Justicia del Estado de México tras determinar que su reporte de secuestro (31 de mayo de 2026) habría sido simulado.",
+      "fiscalizacion": "La investigación surgió no por denuncia de corrupción sino por la simulación de un secuestro, que las autoridades vincularon a un plan para justificar la desaparición de recursos municipales.",
+      "funcionarios": "La carpeta de investigación señala la presunta participación de su esposo, José Roberto \"N\", y su cuñado, Óscar \"N\", como coautores del esquema.",
+      "deuda": "Los indicios reunidos por la FGJEM apuntan a que el secuestro simulado buscaba justificar la desaparición de aproximadamente $40M del erario municipal.",
+      "denuncias": "Caso documentado extensamente por AD Noticias como parte de una lista creciente de alcaldes mexiquenses procesados. Generó amplia movilización institucional cuando se reportó como secuestro real.",
+      "evasion": "La hipótesis inicial de secuestro real habría sido usada como cobertura para ocultar el desvío de fondos y evitar escrutinio inmediato.",
+      "nepotismo": "Esposo y cuñado señalados como presuntos coautores directos del esquema de desvío de recursos municipales."
+    },
+    "timeline": [
+      {
+        "year": "2025",
+        "event": "Asume presidencia municipal de Tenancingo"
+      },
+      {
+        "year": "2026",
+        "event": "31 de mayo: reportada como víctima de secuestro. La investigación posterior de la FGJEM apunta a que fue simulado para ocultar el desvío de $40M, con participación señalada de su esposo y cuñado."
+      }
+    ],
+    "sources": [
+      {
+        "label": "AD Noticias — Lista de alcaldes procesados",
+        "url": "https://adnoticias.mx/alcaldes-procesados-edomex-zinacantepec-tenancingo/"
+      }
+    ]
+  },
+  {
+    "id": 359,
+    "name": "Gerardo Nava Sánchez",
+    "role": "Expresidente Municipal de Zinacantepec, Estado de México",
+    "party": "Sin dato",
+    "state": "Estado de México",
+    "level": "municipal",
+    "active": false,
+    "status": "ex_funcionario",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 25,
+      "fiscalizacion": 3,
+      "funcionarios": 2,
+      "deuda": 2,
+      "denuncias": 8,
+      "evasion": 5,
+      "nepotismo": 2
+    },
+    "breakdown": {
+      "sentencias": "Sentenciado a 42 años y 6 meses de prisión, uno de los fallos más severos dictados contra un alcalde mexiquense, tras ser encontrado penalmente responsable de homicidio calificado en grado de tentativa.",
+      "fiscalizacion": "Sin hallazgos de fiscalización financiera documentados; el caso es de naturaleza penal por violencia, no de desvío de recursos.",
+      "funcionarios": "Sin red de funcionarios documentada en este caso específico.",
+      "deuda": "Sin daño patrimonial documentado.",
+      "denuncias": "En enero de 2021, la Fiscalía General de Justicia del Estado de México cumplimentó una orden de aprehensión en su contra.",
+      "evasion": "Enfrentó un largo proceso judicial antes de la sentencia final.",
+      "nepotismo": "Sin datos adicionales."
+    },
+    "timeline": [
+      {
+        "year": "2021",
+        "event": "Enero: orden de aprehensión cumplimentada por homicidio calificado en grado de tentativa"
+      },
+      {
+        "year": "2026",
+        "event": "Sentenciado a 42 años y 6 meses de prisión"
+      }
+    ],
+    "sources": [
+      {
+        "label": "AD Noticias — Lista de alcaldes procesados",
+        "url": "https://adnoticias.mx/alcaldes-procesados-edomex-zinacantepec-tenancingo/"
+      }
+    ]
+  },
+  {
+    "id": 360,
+    "name": "Diego Moreno Valle",
+    "role": "Expresidente Municipal de Santiago Tianguistenco, Estado de México",
+    "party": "Sin dato",
+    "state": "Estado de México",
+    "level": "municipal",
+    "active": false,
+    "status": "ex_funcionario",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 18,
+      "fiscalizacion": 2,
+      "funcionarios": 2,
+      "deuda": 2,
+      "denuncias": 8,
+      "evasion": 5,
+      "nepotismo": 2
+    },
+    "breakdown": {
+      "sentencias": "Detenido y vinculado a proceso tras una investigación ministerial derivada de una denuncia por violación.",
+      "fiscalizacion": "Sin hallazgos de fiscalización financiera documentados; el caso es de naturaleza penal.",
+      "funcionarios": "Sin red de funcionarios documentada en este caso.",
+      "deuda": "Sin daño patrimonial documentado.",
+      "denuncias": "Una denuncia por violación dio origen a la investigación ministerial que concluyó en su detención.",
+      "evasion": "El caso provocó una crisis política en el municipio; el Ayuntamiento tuvo que designar autoridades sustitutas.",
+      "nepotismo": "Sin datos adicionales."
+    },
+    "timeline": [
+      {
+        "year": "2025",
+        "event": "Denuncia por violación origina investigación ministerial en su contra"
+      },
+      {
+        "year": "2026",
+        "event": "Detención y vinculación a proceso. El Ayuntamiento designa autoridades sustitutas."
+      }
+    ],
+    "sources": [
+      {
+        "label": "AD Noticias — Lista de alcaldes procesados",
+        "url": "https://adnoticias.mx/alcaldes-procesados-edomex-zinacantepec-tenancingo/"
+      }
+    ]
+  },
+  {
+    "id": 361,
+    "name": "Juan José Sabines Guerrero",
+    "role": "Cónsul General de México en Orlando, Florida / Exgobernador de Chiapas (2006-2012)",
+    "party": "PRI (transitó a MORENA)",
+    "state": "Chiapas",
+    "level": "federal",
+    "active": true,
+    "status": "en_funciones",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 15,
+      "fiscalizacion": 20,
+      "funcionarios": 14,
+      "deuda": 15,
+      "denuncias": 10,
+      "evasion": 10,
+      "nepotismo": 3
+    },
+    "breakdown": {
+      "sentencias": "PGR admitió en abril de 2013 querella contra él y 50 excolaboradores por asociación delictuosa, delincuencia organizada, enriquecimiento ilícito, tortura y otros 13 delitos. Fue detenido en el aeropuerto de la CDMX en diciembre de 2016 al regresar de Orlando, aunque la investigación nunca derivó en sentencia formal.",
+      "fiscalizacion": "Consultora PricewaterhouseCoopers detectó que los libros de la Secretaría de Finanzas fueron alterados para ocultar faltantes. La Secretaría de la Función Pública estatal documentó irregularidades en fondos federales por $1,098M en ejercicios 2008-2011, sin subsanar pese a las observaciones.",
+      "funcionarios": "La querella de 129 hojas y 900 anexos probatorios incluyó a 50 excolaboradores, entre ellos el expresidente municipal Seth Yassir Vázquez Hernández, señalado por irregularidades adicionales de $558M en el sistema municipal de agua potable.",
+      "deuda": "Incrementó la deuda de Chiapas en 704% en 72 meses: de $4.68 millones de pesos a $33,747M. El desfalco total estimado alcanzó los $40,000M según la querella penal, superando incluso la megadeuda de Coahuila de Humberto Moreira. El 95% de los contratos de su gestión se otorgaron por adjudicación directa, usando empresas fantasma y dejando 120 obras inconclusas.",
+      "denuncias": "Demandado penalmente por el activista Horacio Culebro Borrayas, quien pasó casi 2 años preso por cargos que él mismo calificó de fabricados en represalia. Sabines lo contrademandó por daño moral en un intento de silenciar el litigio.",
+      "evasion": "Fue nombrado Cónsul General en Orlando por Peña Nieto en julio de 2015, apenas 2.5 años después de dejar el cargo, obteniendo inmunidad diplomática que lo blindó de la investigación penal en curso. Mantuvo el cargo durante el sexenio de AMLO pese al cambio de partido en el poder.",
+      "nepotismo": "Ascendió políticamente con el respaldo directo de su antecesor, el gobernador Pablo Salazar Mendiguchía, quien lo llevó a la presidencia del Congreso local y después a la gubernatura."
+    },
+    "timeline": [
+      {
+        "year": "2006",
+        "event": "Asume gubernatura de Chiapas con apoyo de su antecesor Pablo Salazar Mendiguchía"
+      },
+      {
+        "year": "2012",
+        "event": "Termina gestión dejando deuda de $33,747M (incremento de 704%)"
+      },
+      {
+        "year": "2013",
+        "event": "PGR admite querella penal por desfalco de $40,000M contra él y 50 excolaboradores"
+      },
+      {
+        "year": "2015",
+        "event": "Julio: nombrado Cónsul General de México en Orlando, Florida, obteniendo inmunidad diplomática"
+      },
+      {
+        "year": "2016",
+        "event": "Diciembre: detenido brevemente en el aeropuerto de la CDMX"
+      },
+      {
+        "year": "2026",
+        "event": "Continúa como cónsul en Orlando bajo el gobierno de Morena, sin que las carpetas de investigación hayan avanzado"
+      }
+    ],
+    "sources": [
+      {
+        "label": "SinEmbargo — Nombramiento como cónsul",
+        "url": "https://www.sinembargo.mx/1402074/la-sre-premia-a-juan-sabines-con-el-consulado-de-orlando-aun-cuando-no-ha-aclarado-mega-deuda-de-chiapas/"
+      },
+      {
+        "label": "eje central — Depredó Chiapas",
+        "url": "https://www.ejecentral.com.mx/la-portada-juan-sabines-depredo-chiapas"
+      },
+      {
+        "label": "Diario de Chiapas — Detención",
+        "url": "https://diariodechiapas.com/metropoli/pgr-detiene-al-ex-gobernador-juan-sabines-guerrero/"
+      },
+      {
+        "label": "ChiapasParalelo — Diplomacia de la impunidad",
+        "url": "https://www.chiapasparalelo.com/opinion/2015/07/sabines-diplomacia-de-la-impunidad/"
+      },
+      {
+        "label": "Proceso — Demanda por daño moral",
+        "url": "https://proceso.com.mx/484852/juan-sabines-denuncia-dano-moral-a-activista-lo-acuso-defraudar-al-erario-40-mil-mdp"
+      }
+    ]
+  },
+  {
+    "id": 362,
+    "name": "Omar Fayad Meneses",
+    "role": "Embajador de México en Noruega / Exgobernador de Hidalgo (2016-2022)",
+    "party": "PRI (expulsado, cercano a MORENA)",
+    "state": "Hidalgo",
+    "level": "federal",
+    "active": true,
+    "status": "en_funciones",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 10,
+      "fiscalizacion": 18,
+      "funcionarios": 15,
+      "deuda": 14,
+      "denuncias": 9,
+      "evasion": 10,
+      "nepotismo": 3
+    },
+    "breakdown": {
+      "sentencias": "No ha sido indiciado directamente en ninguna carpeta de investigación pese a que el esquema de desvío operó durante su sexenio y con su círculo íntimo. Su colaborador más cercano por 29 años, Martiniano Vega Orozco, fue sentenciado a 12 años de prisión.",
+      "fiscalizacion": "Bajo su gestión (2016-2022) operó la \"Estafa Siniestra\", un esquema de desvío de recursos por al menos $522M a través de 13 municipios y 2 secretarías estatales, usando empresas fachada para simular obras y servicios durante la pandemia de COVID-19.",
+      "funcionarios": "Martiniano Vega Orozco enfrenta 4 causas penales: peculado de $116M por un seguro catastrófico no cobrado tras el huracán Grace, venta ilegal de 3 helicópteros por debajo de su valor, y compras fantasma de software por $23.8M. Ya sentenciado a 12 años por un contrato fantasma de $18.2M para crema quirúrgica antiséptica durante la emergencia de COVID.",
+      "deuda": "Su exoperador financiero Pablo Pérez Martínez declaró que durante dos décadas se tejió una red de corrupción con desvíos de hasta $2,700M solo de la Secretaría de Educación Pública de Hidalgo, mediante \"pellizcos\" sistemáticos al presupuesto.",
+      "denuncias": "La senadora priista Carolina Viggiano fue citada a declarar tras afirmar en un podcast que un alcalde en funciones le reveló el mecanismo de desvíos antes de que se judicializara. Exfuncionarios presos han señalado desde la cárcel que Fayad está \"protegido por acuerdos políticos\".",
+      "evasion": "Renunció al PRI en 2023 y fue nombrado embajador en Noruega por AMLO cinco meses después, obteniendo inmunidad diplomática antes de que avanzara cualquier investigación en su contra. Es el quinto exgobernador priista en recibir una embajada de Morena tras perder su estado.",
+      "nepotismo": "Designó a su esposa, la actriz Victoria Ruffo, como directora local del Sistema Nacional para el Desarrollo Integral de la Familia durante su gestión como alcalde de Pachuca."
+    },
+    "timeline": [
+      {
+        "year": "2016",
+        "event": "Asume gubernatura de Hidalgo por el PRI"
+      },
+      {
+        "year": "2020",
+        "event": "Opera el esquema \"Estafa Siniestra\" durante la pandemia, desviando al menos $522M"
+      },
+      {
+        "year": "2022",
+        "event": "Termina gestión. El nuevo gobernador Julio Menchaca destapa la red de corrupción."
+      },
+      {
+        "year": "2023",
+        "event": "Junio: renuncia al PRI. Noviembre: AMLO lo nombra embajador en Noruega."
+      },
+      {
+        "year": "2025",
+        "event": "Su exsecretario particular Martiniano Vega Orozco es detenido, enfrenta 4 causas penales y una condena de 12 años"
+      },
+      {
+        "year": "2026",
+        "event": "Continúa como embajador en Noruega sin haber sido indiciado"
+      }
+    ],
+    "sources": [
+      {
+        "label": "La Jornada — Cae otro exalcalde",
+        "url": "https://www.jornada.com.mx/2025/10/25/estados/022n3est"
+      },
+      {
+        "label": "NotiVer — Excolaborador señala a Fayad",
+        "url": "https://www.notiver.com/nacionales/ex-alcaldes-de-hidalgo-senalan-a-ex-contralor-de-fayad-de-recibir-dinero-malversado/"
+      },
+      {
+        "label": "Proceso — Se convierte en embajador",
+        "url": "https://www.proceso.com.mx/nacional/politica/2023/12/14/omar-fayad-se-convierte-en-embajador-promotor-de-amlo-320441.html"
+      },
+      {
+        "label": "Los Ángeles Press — Lavandería de contratos",
+        "url": "https://losangelespress.org/investigaciones/2022/nov/30/estafa-siniestra-en-hidalgo-se-fraguo-incluso-sin-la-intermediacion-de-alcaldes-4729.html"
+      }
+    ]
+  },
+  {
+    "id": 363,
+    "name": "Elías San Juan",
+    "role": "Expresidente Municipal de Yahualica, Hidalgo",
+    "party": "PRI",
+    "state": "Hidalgo",
+    "level": "municipal",
+    "active": false,
+    "status": "ex_funcionario",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 15,
+      "fiscalizacion": 8,
+      "funcionarios": 3,
+      "deuda": 8,
+      "denuncias": 6,
+      "evasion": 3,
+      "nepotismo": 2
+    },
+    "breakdown": {
+      "sentencias": "Detenido el 23 de noviembre de 2022 junto con otros 3 alcaldes, preso por peculado agravado y uso ilícito de atribuciones y facultades.",
+      "fiscalizacion": "Parte de la red \"Estafa Siniestra\" que operó a través de empresas fachada durante la pandemia de COVID-19.",
+      "funcionarios": "Contactado por funcionarios de nivel Secretario del Gobierno de Hidalgo para simular obras, quedarse con el 30% y regresar el 70% a empresas fachada.",
+      "deuda": "Desvió $29,224,727.36 pesos, de los cuales $15M se destinaron supuestamente a una aplicación móvil y desarrollo web, y el resto a fumigación y arcos sanitizantes durante la pandemia.",
+      "denuncias": "Parte del maxiproceso de la Estafa Siniestra que involucró a 13 municipios y 2 secretarías estatales.",
+      "evasion": "No evadió la detención.",
+      "nepotismo": "Sin datos adicionales."
+    },
+    "timeline": [
+      {
+        "year": "2022",
+        "event": "Detenido el 23 de noviembre por peculado agravado, parte de la Estafa Siniestra"
+      }
+    ],
+    "sources": [
+      {
+        "label": "La Voz de Michoacán",
+        "url": "https://www.lavozdemichoacan.com.mx/mexico/corrupcion/aprehenden-a-4-alcaldes-de-hidalgo-por-la-estafa-siniestra-hay-otros-9-bajo-investigacion/"
+      },
+      {
+        "label": "El Diario de Chihuahua",
+        "url": "https://www.eldiariodechihuahua.mx/nacional/que-es-la-estafa-siniestra-de-hidalgo-20230724-2079675.html"
+      }
+    ]
+  },
+  {
+    "id": 364,
+    "name": "Marcos Miguel Taboada Vargas",
+    "role": "Expresidente Municipal de Singuilucan, Hidalgo (2020-2024)",
+    "party": "Nueva Alianza",
+    "state": "Hidalgo",
+    "level": "municipal",
+    "active": false,
+    "status": "ex_funcionario",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 14,
+      "fiscalizacion": 8,
+      "funcionarios": 3,
+      "deuda": 9,
+      "denuncias": 6,
+      "evasion": 4,
+      "nepotismo": 2
+    },
+    "breakdown": {
+      "sentencias": "Capturado en octubre de 2025 por agentes ministeriales de Hidalgo por su participación en la Estafa Siniestra, acusado de uso ilícito de atribuciones y facultades e incumplimiento agravado de un deber legal.",
+      "fiscalizacion": "Su municipio fue de los señalados desde el inicio del destape del esquema en 2022.",
+      "funcionarios": "Parte de la red de 13 municipios y 2 secretarías estatales que operó el esquema de empresas fachada.",
+      "deuda": "Desvió más de $109M según la investigación, con contratos irregulares a favor de 22 personas físicas y morales. Devolvió $26M de los $110M desviados tras ser señalado.",
+      "denuncias": "Documentado por La Jornada como parte del maxiproceso que continúa activo en 2025-2026.",
+      "evasion": "Terminó su gestión con normalidad en 2024 antes de ser detenido más de un año después.",
+      "nepotismo": "Sin datos adicionales."
+    },
+    "timeline": [
+      {
+        "year": "2020",
+        "event": "Asume presidencia municipal de Singuilucan"
+      },
+      {
+        "year": "2022",
+        "event": "Señalado como parte de la Estafa Siniestra, regresa $26M de los $110M desviados"
+      },
+      {
+        "year": "2024",
+        "event": "Termina su gestión con normalidad"
+      },
+      {
+        "year": "2025",
+        "event": "Octubre: detenido por la Estafa Siniestra"
+      }
+    ],
+    "sources": [
+      {
+        "label": "La Jornada — Cae exalcalde",
+        "url": "https://www.jornada.com.mx/2025/10/25/estados/022n3est"
+      }
+    ]
+  },
+  {
+    "id": 365,
+    "name": "Carmelo Mendieta",
+    "role": "Expresidente Municipal de Corregidora, Querétaro (2009-2012)",
+    "party": "PRI",
+    "state": "Querétaro",
+    "level": "municipal",
+    "active": false,
+    "status": "ex_funcionario",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 14,
+      "fiscalizacion": 8,
+      "funcionarios": 2,
+      "deuda": 9,
+      "denuncias": 6,
+      "evasion": 8,
+      "nepotismo": 2
+    },
+    "breakdown": {
+      "sentencias": "Detenido en octubre de 2024 por la Fiscalía Especializada en el Combate a la Corrupción de Querétaro, acusado de peculado en agravio del servicio público y del erario municipal. Ya había sido detenido antes por el mismo tipo de delito en 2020, pero fue liberado.",
+      "fiscalizacion": "La Fiscalía Anticorrupción de Querétaro cumplimentó una nueva orden de aprehensión en su contra tras reabrir la investigación.",
+      "funcionarios": "Sin red de colaboradores documentada en este caso específico.",
+      "deuda": "Compra-venta irregular de un terreno valuado en $9.5M cuyo origen de recursos no pudo ser comprobado. Adquirió una vivienda con recursos de procedencia ilícita utilizando a un tercero sin solvencia económica como comprador de fachada.",
+      "denuncias": "La denuncia que originó su segunda detención fue presentada por un particular.",
+      "evasion": "Fue detenido, liberado en 2020, y detenido nuevamente en 2024 por la misma naturaleza de delito, evidenciando fallas en el seguimiento judicial del caso.",
+      "nepotismo": "Sin datos adicionales."
+    },
+    "timeline": [
+      {
+        "year": "2009",
+        "event": "Asume presidencia municipal de Corregidora"
+      },
+      {
+        "year": "2012",
+        "event": "Termina su gestión"
+      },
+      {
+        "year": "2020",
+        "event": "Primera detención por desvío de recursos. Es liberado."
+      },
+      {
+        "year": "2024",
+        "event": "Octubre: nueva orden de aprehensión cumplimentada por peculado"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Infobae — Detención",
+        "url": "https://www.infobae.com/mexico/2024/10/17/detienen-a-ex-alcalde-de-corregidora-queretaro-por-desvio-de-recursos-al-erario/"
+      },
+      {
+        "label": "Milenio — Peculado y desvío",
+        "url": "https://www.milenio.com/estados/detienen-a-ex-alcalde-de-corregidora-por-peculado-y-desvio-de-recursos"
+      }
+    ]
+  },
+  {
+    "id": 366,
+    "name": "Alejandro N.",
+    "role": "Expresidente Municipal de Colón, Querétaro",
+    "party": "PAN",
+    "state": "Querétaro",
+    "level": "municipal",
+    "active": false,
+    "status": "ex_funcionario",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 12,
+      "fiscalizacion": 6,
+      "funcionarios": 3,
+      "deuda": 8,
+      "denuncias": 6,
+      "evasion": 3,
+      "nepotismo": 3
+    },
+    "breakdown": {
+      "sentencias": "Detenido por la Policía de Investigación del Delito adscrita a la Fiscalía Especializada en Combate a la Corrupción de Querétaro, acusado de tráfico de influencias y promoción de conductas ilícitas, junto con un empresario.",
+      "fiscalizacion": "Investigación de la Fiscalía Anticorrupción de Querétaro por facilitar beneficios irregulares a un particular desde su posición administrativa.",
+      "funcionarios": "Detenido junto con el representante legal de una empresa beneficiada, quien también fue arrestado.",
+      "deuda": "Facilitó acuerdos económicos por cantidades millonarias para que un desarrollo industrial se asentara en el municipio de Colón cumpliendo irregularmente con el Código Urbano estatal.",
+      "denuncias": "Caso documentado por la Fiscalía Especializada en Combate a la Corrupción de Querétaro.",
+      "evasion": "No evadió la detención.",
+      "nepotismo": "Otorgó y aprobó beneficios administrativos a un particular con quien mantenía acuerdos económicos."
+    },
+    "timeline": [
+      {
+        "year": "2023",
+        "event": "Septiembre: detenido junto con un empresario por tráfico de influencias"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Milenio — Detención",
+        "url": "https://www.milenio.com/estados/detienen-a-ex-alcalde-de-queretaro-y-a-empresario-por-corrupcion"
+      }
+    ]
+  },
+  {
+    "id": 367,
+    "name": "Fernando Gustavo Flores Fernández",
+    "role": "Presidente Municipal de Metepec, Estado de México",
+    "party": "Sin dato",
+    "state": "Estado de México",
+    "level": "municipal",
+    "active": true,
+    "status": "en_funciones",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 5,
+      "fiscalizacion": 12,
+      "funcionarios": 8,
+      "deuda": 8,
+      "denuncias": 10,
+      "evasion": 6,
+      "nepotismo": 3
+    },
+    "breakdown": {
+      "sentencias": "Sin sentencia. Denunciado formalmente ante la Fiscalía Especializada en Combate a la Corrupción del Estado de México (FECC), con sede en Toluca, recibida el 16 de junio de 2026.",
+      "fiscalizacion": "La denuncia señala presuntas anomalías en procesos de adquisición municipal: sobreprecios en compras de uniformes y equipamiento para la Policía Municipal, sin justificación clara de montos ni procedimientos de contratación transparentes.",
+      "funcionarios": "La denuncia involucra formalmente también al director de Seguridad Pública de Metepec, Jesús Alberto Ramírez Manzur, señalado además por presunto contubernio en un caso de abuso sexual cometido por uno de sus elementos, y a Clara Cardozo, colaboradora cercana desde su primera campaña.",
+      "deuda": "Se documentan entregas de dinero en efectivo presuntamente vinculadas a recursos obtenidos por el cobro de multas de tránsito, además de sobreprecios no justificados en compras de insumos de seguridad pública.",
+      "denuncias": "La denuncia proviene de una exfuncionaria que colaboró en su equipo desde 2021. Enfrenta además una investigación paralela por hechos ocurridos en el Club Deportivo La Asunción, donde llegó con escoltas armadas, incidente que generó controversia pública adicional y una audiencia programada en la Fiscalía General de Justicia del Estado de México.",
+      "evasion": "La presidenta de la Mesa Directiva del Congreso mexiquense descartó estar analizando su destitución, argumentando que no existe una solicitud formal ni expediente abierto pese a la denuncia ya presentada.",
+      "nepotismo": "Su director de Seguridad Pública ha mantenido continuidad en el cargo a través de administraciones de distintos partidos, lo que ha sido señalado como parte de una estructura de protección interna."
+    },
+    "timeline": [
+      {
+        "year": "2021",
+        "event": "Inicia su primera campaña política con el equipo que después lo acompañaría al gobierno municipal"
+      },
+      {
+        "year": "2026",
+        "event": "Junio: exfuncionaria presenta denuncia formal ante la FECC por sobreprecios, entregas de efectivo y contubernio en caso de abuso sexual. Controversia adicional por incidente en club deportivo privado con escoltas armadas."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Capital Edomex — Investigación",
+        "url": "https://www.capitaledomex.com.mx/local/destapan-la-cloaca-del-alcalde-de-metepec/"
+      },
+      {
+        "label": "PolíticoMX — Denuncia formal",
+        "url": "https://politico.mx/2026/06/19/exfuncionaria-denuncia-por-presunta-corrupcion-a-fernando-flores-alcalde-de-metepec/"
+      },
+      {
+        "label": "La Silla Rota — Descartan destitución",
+        "url": "https://lasillarota.com/metropoli/2026/6/19/denuncian-al-alcalde-de-metepec-fernando-flores-por-presunta-corrupcion-descartan-destitucion-604662.html"
+      }
+    ]
+  },
+  {
+    "id": 368,
+    "name": "María del Rosario \"N\"",
+    "role": "Expresidenta Municipal saliente de Santo Tomás de los Plátanos, Estado de México",
+    "party": "Sin dato",
+    "state": "Estado de México",
+    "level": "municipal",
+    "active": false,
+    "status": "ex_funcionario",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 14,
+      "fiscalizacion": 5,
+      "funcionarios": 6,
+      "deuda": 3,
+      "denuncias": 7,
+      "evasion": 5,
+      "nepotismo": 8
+    },
+    "breakdown": {
+      "sentencias": "Detenida el 23 de enero de 2025 en el marco de la Operación Enjambre, derivado de sus presuntos vínculos con el cártel de La Familia Michoacana.",
+      "fiscalizacion": "Sin hallazgos de fiscalización financiera documentados; el caso es de naturaleza penal por vínculos criminales, no de desvío de recursos.",
+      "funcionarios": "Habría utilizado su vínculo con La Familia Michoacana para obligar a un síndico municipal a firmar diversos documentos bajo coacción.",
+      "deuda": "Sin monto de daño patrimonial documentado en este caso específico.",
+      "denuncias": "Caso documentado ampliamente por Milenio y otros medios como parte de la cronología oficial de la Operación Enjambre.",
+      "evasion": "Fue detenida antes de que su esposo, Pedro Luis \"Wicho\", asumiera el cargo que ella dejaba, evidenciando un patrón de relevo familiar en el control del municipio.",
+      "nepotismo": "CASO DIRECTO: su esposo, Pedro Luis \"Wicho\" (ya documentado en esta base), fue electo para sucederla como alcalde del mismo municipio. Según las investigaciones, habría ordenado el secuestro de un familiar de una candidata rival para facilitar la llegada de su esposa al Ayuntamiento en el proceso electoral previo."
+    },
+    "timeline": [
+      {
+        "year": "2025",
+        "event": "23 de enero: detenida por sus presuntos vínculos con La Familia Michoacana, dos semanas antes de que su esposo fuera detenido el 8 de febrero"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Milenio — Cronología Operación Enjambre",
+        "url": "https://www.milenio.com/policia/cronologia-operacion-enjambre-quienes-han-sido-detenidos-lista"
+      }
+    ]
+  },
+  {
+    "id": 369,
+    "name": "Adolfo Cerqueda Rebollo",
+    "role": "Presidente Municipal de Nezahualcóyotl, Estado de México (2do periodo)",
+    "party": "MORENA",
+    "state": "Estado de México",
+    "level": "municipal",
+    "active": true,
+    "status": "en_funciones",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 5,
+      "fiscalizacion": 10,
+      "funcionarios": 8,
+      "deuda": 12,
+      "denuncias": 10,
+      "evasion": 6,
+      "nepotismo": 4
+    },
+    "breakdown": {
+      "sentencias": "Sin proceso penal formal contra él directamente. Un empleado municipal de Protección Civil fue detenido en julio de 2025 in fraganti cobrando un soborno de $28,000 a cambio de no sellar una pipa de gas por presuntas irregularidades.",
+      "fiscalizacion": "El exdiputado y catedrático universitario Horacio Jiménez declaró contar con información de que Cerqueda posee alrededor de 46 propiedades valuadas en más de $250M, adquiridas entre 2001 y la actualidad, incluyendo un departamento en Nueva York, una casa con playa privada y un rancho en Zacatecas.",
+      "funcionarios": "Empresarios que proveen servicios al gobierno municipal denunciaron de forma anónima que son obligados a entregar hasta el 25% de lo que facturan a cambio de mantener sus contratos, señalando la participación de funcionarios de primer nivel de su administración.",
+      "deuda": "Patrimonio de $250M+ incompatible con su salario público, según el señalamiento del exdiputado Jiménez. Vecinos de la Unidad Rey Neza denunciaron que se apoderó de un área destinada a servicios públicos, la demolió, y ahora construye una gasolinera de su propiedad en ese predio.",
+      "denuncias": "Múltiples denuncias ciudadanas documentadas por medios locales (Diario Puntual, Quadratín, Diario Basta!, Excélsior) por opulencia inexplicable, corrupción policiaca sistemática (46.9% de encuestados reportó haber sufrido algún acto de corrupción policial), y omisión ante quejas vecinales. Existe una campaña ciudadana activa exigiendo iniciar el proceso de revocación de mandato en su contra.",
+      "evasion": "Ha guardado silencio ante los señalamientos de opulencia y las exigencias de revocación de mandato, sin emitir un posicionamiento directo ni abrir su declaración patrimonial pese a las peticiones públicas.",
+      "nepotismo": "Sin datos de familiares en nómina, pero el patrón de acaparamiento de suelo público para beneficio personal (caso de la gasolinera) constituye un conflicto de interés documentado."
+    },
+    "timeline": [
+      {
+        "year": "2022",
+        "event": "Asume por primera vez la presidencia municipal de Nezahualcóyotl"
+      },
+      {
+        "year": "2024",
+        "event": "Diciembre: rinde tercer informe y toma protesta para un segundo periodo consecutivo (2025-2027)"
+      },
+      {
+        "year": "2025",
+        "event": "Julio: empleado municipal detenido cobrando soborno de $28,000. Octubre: denuncias vecinales por acaparamiento de suelo público para construir gasolinera propia. Noviembre: crece exigencia ciudadana de revocación de mandato."
+      },
+      {
+        "year": "2026",
+        "event": "Persisten denuncias de corrupción policiaca y opacidad patrimonial sin que se abra investigación formal"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Diario Puntual — Escándalo de opulencia",
+        "url": "https://diario-puntual.com.mx/escandalo-de-corrupcion-y-opulencia-revelaciones-sobre-el-alcalde-de-neza/"
+      },
+      {
+        "label": "Reporte Noticias — Acusan corrupción",
+        "url": "https://www.reportenoticias.com.mx/publicacion/acusan-corrupcion-en-nezahualcoyotl-primera-parte"
+      },
+      {
+        "label": "Quadratín — Aumenta su riqueza",
+        "url": "https://edomex.quadratin.com.mx/aumenta-su-riqueza-adolfo-cerqueda-en-nezahualcoyotl/"
+      },
+      {
+        "label": "La Jornada — Soborno detectado",
+        "url": "https://www.jornada.com.mx/noticia/2025/07/29/estados/detienen-a-funcionario-de-nezahualcoyotl-mientras-cobrarba-un-soborno"
+      },
+      {
+        "label": "Nezahualcóyotl Digital — Exigen revocación",
+        "url": "https://nezahualcoyotldigital.com/acusan-a-alcalde-adolfo-cerqueda-de-ignorar-crisis-en-nezahualcoyotl/"
+      }
+    ]
+  },
+  {
+    "id": 370,
+    "name": "Fernando Vilchis Contreras",
+    "role": "Expresidente Municipal de Ecatepec de Morelos, Estado de México",
+    "party": "Sin dato",
+    "state": "Estado de México",
+    "level": "municipal",
+    "active": false,
+    "status": "ex_funcionario",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 8,
+      "fiscalizacion": 20,
+      "funcionarios": 10,
+      "deuda": 15,
+      "denuncias": 9,
+      "evasion": 5,
+      "nepotismo": 2
+    },
+    "breakdown": {
+      "sentencias": "La nueva administración presentó 137 denuncias formales ante la Contraloría del Congreso local y la Fiscalía del Estado de México contra exfuncionarios de su gobierno. Sin sentencia hasta el momento.",
+      "fiscalizacion": "11 auditorías externas realizadas a los últimos tres años de su administración arrojaron múltiples anomalías financieras y sobrecostos por un total de más de $547M, además de recursos adicionales recuperados del DIF municipal, el organismo de agua Sapase y el instituto municipal de deporte, sumando casi $1,000M en ahorros identificados.",
+      "funcionarios": "Las 137 denuncias se presentaron específicamente contra exfuncionarios de su gobierno por sobreprecios en materiales para obras, insumos y alimentos.",
+      "deuda": "Sobreprecios documentados en múltiples partidas: $45.7M en equipo de foto/cine/grabación, $75.4M en espectáculos cívicos y culturales, $107.6M en subcontratación de servicios con terceros, $25.5M en lavandería y limpieza, $375.5M en arrendamiento de vehículos, y $62.7M en arrendamiento de maquinaria. La partida de combustibles también mostró un gasto de $85M superior al del año siguiente bajo la nueva administración.",
+      "denuncias": "Documentado extensamente por La Jornada y El Universal a partir de la conferencia de prensa \"Devolverle al pueblo de Ecatepec lo robado\" de la administración entrante, que detalló partida por partida los sobreprecios identificados.",
+      "evasion": "Sin evasión documentada hasta el momento.",
+      "nepotismo": "Sin datos adicionales."
+    },
+    "timeline": [
+      {
+        "year": "2022",
+        "event": "Periodo de gestión bajo revisión (últimos tres años analizados en las auditorías)"
+      },
+      {
+        "year": "2024",
+        "event": "Termina su gestión como presidente municipal de Ecatepec"
+      },
+      {
+        "year": "2025",
+        "event": "La nueva administración realiza 11 auditorías externas y presenta 137 denuncias formales por sobreprecios y desfalco de $547M"
+      }
+    ],
+    "sources": [
+      {
+        "label": "La Jornada — Desfalco de $547M",
+        "url": "https://www.jornada.com.mx/noticia/2025/12/02/estados/gobierno-de-ecatepec-denuncia-desfalco-por-mas-de-547-mdp-del-gobierno-anterior"
+      },
+      {
+        "label": "El Universal — 137 denuncias",
+        "url": "https://www.eluniversal.com.mx/metropoli/ecatepec-ha-presentado-137-denuncias-contra-exfuncionarios-por-sobreprecios-de-materiales-para-obras-insumos-y-alimentos-por-mas-de-547-mdp/"
+      }
+    ]
+  },
+  {
+    "id": 371,
+    "name": "Eruviel Ávila Villegas",
+    "role": "Diputado Federal (LXVI Legislatura) / Exgobernador del Estado de México (2011-2017)",
+    "party": "PVEM (exPRI)",
+    "state": "Estado de México",
+    "level": "federal",
+    "active": true,
+    "status": "en_funciones",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 8,
+      "fiscalizacion": 12,
+      "funcionarios": 6,
+      "deuda": 14,
+      "denuncias": 9,
+      "evasion": 8,
+      "nepotismo": 4
+    },
+    "breakdown": {
+      "sentencias": "Denunciado penalmente en abril de 2024 por la coalición \"Fuerza y Corazón por México\" (PRI-PAN-PRD) junto con el exalcalde de Toluca Raymundo \"N\", por los delitos de peculado y desvío de recursos públicos. Sin sentencia hasta el momento.",
+      "fiscalizacion": "La denuncia señala un presunto desvío conjunto de $1,365M de recursos públicos durante su periodo como gobernador y la gestión municipal de Toluca vinculada a su grupo político.",
+      "funcionarios": "La coalición denunciante documentó con fotografías la presencia del hijo del exalcalde de Toluca, Raymundo Martínez Zendejas, en eventos de campaña, como evidencia de la red de operación política del grupo.",
+      "deuda": "$1,365M de presunto desvío de recursos públicos documentados en la denuncia penal.",
+      "denuncias": "La coalición PRI-PAN-PRD acusó que Morena le ofrece impunidad a cambio de que su red opere electoralmente a su favor durante los comicios, en un intercambio de favores políticos.",
+      "evasion": "Renunció al PRI en julio de 2023 tras 30+ años de militancia, se integró al Partido Verde y declaró su respaldo a la entonces candidata presidencial de Morena, un movimiento leído como estrategia de protección política ante la posible pérdida de fuero.",
+      "nepotismo": "Fue dos veces alcalde de Ecatepec y gobernador del Estado de México; su transición de partido y alianza con el bloque en el poder ha sido señalada como una forma de preservar influencia y protección política para su red cercana, incluyendo al exalcalde de Toluca de su misma corriente."
+    },
+    "timeline": [
+      {
+        "year": "2003",
+        "event": "Primera vez alcalde de Ecatepec de Morelos"
+      },
+      {
+        "year": "2009",
+        "event": "Segunda vez alcalde de Ecatepec"
+      },
+      {
+        "year": "2011",
+        "event": "Asume gubernatura del Estado de México"
+      },
+      {
+        "year": "2017",
+        "event": "Termina gestión como gobernador"
+      },
+      {
+        "year": "2018",
+        "event": "Asume como senador plurinominal"
+      },
+      {
+        "year": "2023",
+        "event": "Julio: renuncia al PRI y se integra al Partido Verde, respalda a la candidata de Morena"
+      },
+      {
+        "year": "2024",
+        "event": "Abril: denunciado penalmente por desvío de $1,365M junto con exalcalde de Toluca. Se convierte en diputado federal por el Partido Verde."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Proceso — Denuncia por $1,365M",
+        "url": "https://www.proceso.com.mx/nacional/2024/4/15/coalicion-pri-pan-prd-denuncia-eruviel-avila-exalcalde-de-toluca-por-supuesto-desvio-de-mil-365-mdp-326049.html"
+      },
+      {
+        "label": "Infobae — Transición al Verde",
+        "url": "https://www.infobae.com/mexico/2024/03/02/este-es-el-grado-de-estudios-de-eruviel-avila-exgobernador-de-edomex-que-llegara-al-senado-con-el-partido-verde/"
+      }
+    ]
+  },
+  {
+    "id": 372,
+    "name": "Enrique Vargas del Villar",
+    "role": "Expresidente Municipal de Huixquilucan, Estado de México",
+    "party": "PAN",
+    "state": "Estado de México",
+    "level": "municipal",
+    "active": false,
+    "status": "ex_funcionario",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 5,
+      "fiscalizacion": 10,
+      "funcionarios": 5,
+      "deuda": 9,
+      "denuncias": 7,
+      "evasion": 5,
+      "nepotismo": 3
+    },
+    "breakdown": {
+      "sentencias": "Investigado por presunto acto de corrupción millonario, sin sentencia formal documentada hasta el momento.",
+      "fiscalizacion": "Señalado por \"moches\" millonarios obtenidos a través de contratos de recolección de basura durante su gestión municipal en Huixquilucan.",
+      "funcionarios": "El caso involucra a varios funcionarios \"salpicados\" dentro de su estructura de gobierno, según reportó Reforma.",
+      "deuda": "Montos millonarios presuntamente obtenidos mediante comisiones ilegales en la adjudicación de contratos de recolección de basura.",
+      "denuncias": "Documentado por el periódico Reforma. Coincide con el patrón de denuncias ciudadanas por corrupción en Huixquilucan, municipio que mantiene un canal formal de denuncia anticorrupción en su portal oficial.",
+      "evasion": "Buscó una candidatura plurinominal al Senado, lo que le habría dado fuero legislativo en caso de resultar electo, en medio de las investigaciones abiertas en su contra.",
+      "nepotismo": "Sin datos adicionales documentados."
+    },
+    "timeline": [
+      {
+        "year": "2024",
+        "event": "Señalado por \"moches\" millonarios en contratos de basura mientras buscaba una candidatura plurinominal al Senado"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Reforma — Los moches de Vargas",
+        "url": "https://www.reforma.com/los-moches-de-vargas-en-huixquilucan-y-los-salpicados/ar2790080"
+      }
+    ]
+  },
+  {
+    "id": 373,
+    "name": "Marco Antonio Rodríguez Hurtado",
+    "role": "Expresidente Municipal de Tlalnepantla de Baz, Estado de México (2022-2024)",
+    "party": "Sin dato",
+    "state": "Estado de México",
+    "level": "municipal",
+    "active": false,
+    "status": "ex_funcionario",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 8,
+      "fiscalizacion": 18,
+      "funcionarios": 15,
+      "deuda": 14,
+      "denuncias": 9,
+      "evasion": 5,
+      "nepotismo": 3
+    },
+    "breakdown": {
+      "sentencias": "Sin sentencia formal contra él directamente, aunque se presentaron 14 denuncias penales por abuso de autoridad, peculado, uso ilícito de facultades y falsificación de firmas contra exfuncionarios de primer nivel de su gobierno ante la Fiscalía Especializada en Combate a la Corrupción.",
+      "fiscalizacion": "Un contrato para la instalación de 20,000 luminarias por más de $148M sin evidencia suficiente de su ejecución. Obras fantasma no realizadas con afectación a la hacienda pública de al menos $37.4M, incluyendo rehabilitación de centros comunitarios y pavimentaciones nunca ejecutadas.",
+      "funcionarios": "215 exfuncionarios bajo investigación: 187 del gobierno central y 28 del organismo de agua (OPDM). Las áreas señaladas incluyen Administración, Obra Pública, Desarrollo Urbano, Juventud, Educación, Desarrollo Social y Deporte.",
+      "deuda": "Desvío de $22M en el programa \"Tarjeta Joven\" mediante falsificación de firmas de beneficiarios inexistentes. Juicios laborales presuntamente fraudulentos donde funcionarios perdían deliberadamente para obligar al ayuntamiento a pagar más de $5M. Nómina con indicios de aviadores y gratificaciones sin sustento por más de $600,000 anuales.",
+      "denuncias": "Documentado extensamente por Aristegui Noticias, Capital Estado de México y 8 Columnas. El alcalde entrante declaró públicamente \"no voy a tener piedad contra los que saquearon al Gobierno de Tlalnepantla\".",
+      "evasion": "Buscó la reelección en el proceso 2024 pese a los señalamientos de corrupción, saqueo e inseguridad que ya pesaban sobre su administración durante la campaña.",
+      "nepotismo": "Un exfuncionario del área deportiva fungía simultáneamente como representante legal de una empresa privada a la que su propia área autorizaba el uso de instalaciones deportivas municipales, un conflicto de interés directo."
+    },
+    "timeline": [
+      {
+        "year": "2021",
+        "event": "Asume la presidencia municipal de Tlalnepantla de Baz para el periodo 2022-2024, su cuarta ocasión en el cargo"
+      },
+      {
+        "year": "2024",
+        "event": "Busca la reelección en medio de señalamientos de corrupción e inseguridad. Termina su gestión."
+      },
+      {
+        "year": "2025",
+        "event": "La nueva administración destapa una red de corrupción: 215 exfuncionarios investigados, 14 denuncias penales presentadas, desfalco documentado en luminarias, Tarjeta Joven y obras fantasma"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Aristegui Noticias — 215 exfuncionarios",
+        "url": "https://aristeguinoticias.com/1607/mexico/investigan-a-215-exfuncionarios-por-megadesfalco-en-tlalnepantla/"
+      },
+      {
+        "label": "Capital Edomex — 14 denuncias penales",
+        "url": "https://www.capitaledomex.com.mx/local/presentan-14-denuncias-penales-contra-exfuncionarios-de-tlalnepantla-por-corrupcion/"
+      },
+      {
+        "label": "Eje Central — Desfalco millonario",
+        "url": "https://www.ejecentral.com.mx/nuestro-eje/van-contra-desfalco-millonario-en-tlalnepantla-no-voy-a-tener-piedad-asegura-el-alclade-raciel-perez"
+      },
+      {
+        "label": "8 Columnas — Red de corrupción",
+        "url": "https://8columnas.com.mx/estado-de-mexico/detectan-posible-red-de-corrupcion-en-administracion-2022-2024-de-tlalnepantla/"
+      }
+    ]
+  },
+  {
+    "id": 374,
+    "name": "Ana María Castro Fernández",
+    "role": "Presidenta Municipal de Tultitlán, Estado de México",
+    "party": "MORENA",
+    "state": "Estado de México",
+    "level": "municipal",
+    "active": true,
+    "status": "en_funciones",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 5,
+      "fiscalizacion": 12,
+      "funcionarios": 10,
+      "deuda": 11,
+      "denuncias": 9,
+      "evasion": 5,
+      "nepotismo": 12
+    },
+    "breakdown": {
+      "sentencias": "Sin sentencia. Investigación formal abierta por la Fiscalía Especializada en Combate a la Corrupción del Estado de México, expediente TOL/CCF/SPO/107/033891/25/02.",
+      "fiscalizacion": "Investigada por presuntos contratos irregulares y tráfico de influencias en la compra de 27 hectáreas de terrenos ejidales en San Francisco Chilpan, operación envuelta en opacidad.",
+      "funcionarios": "Su cuñada y antecesora en el cargo, Elena García Martínez (hoy diputada local), aparece en el mismo expediente. Erick Isachar Vega Chavarría, coordinador general de la Oficina de Presidencia, es señalado como el operador que ofrecía acuerdos económicos fuera del marco legal a empresarios.",
+      "deuda": "Su gobierno transfirió $38.5M a una asociación civil (\"Unión de Colonos, Inquilinos Solicitantes de Vivienda y Comerciantes, Lomas del Parque A.C.\") por terrenos que no contaban con escrituras públicas que acreditaran su propiedad legal.",
+      "denuncias": "La denuncia nació de vecinos que alertaron sobre la operación de compra de tierras. Empresarios locales denunciaron que el gobierno municipal usa inspecciones administrativas como mecanismo de presión: suspenden negocios y luego ofrecen reuniones para negociar su reapertura mediante pagos no oficiales.",
+      "evasion": "Sin evasión documentada hasta el momento; permanece en el cargo mientras avanza la investigación.",
+      "nepotismo": "CASO DIRECTO: su cuñada Elena García Martínez fue su antecesora inmediata en la alcaldía y ahora es diputada local, ambas militantes de Morena en el mismo expediente. Su esposo, José Alfredo Contreras Suárez, ocupa el cargo de secretario del Ayuntamiento durante su gestión, y otra pariente, Ana María Castro (posible homónima o familiar directa), aparece vinculada a las mismas denuncias."
+    },
+    "timeline": [
+      {
+        "year": "2021",
+        "event": "Su cuñada Elena García Martínez es alcaldesa de Tultitlán"
+      },
+      {
+        "year": "2024",
+        "event": "Asume la presidencia municipal de Tultitlán sucediendo a su cuñada"
+      },
+      {
+        "year": "2025",
+        "event": "Fiscalía Anticorrupción abre investigación formal por compra irregular de terrenos ejidales y extorsión a empresarios"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Cuestión de Polémica — Megafraude inmobiliario",
+        "url": "https://www.cuestiondepolemica.com/la-polemica-megafraude-inmobiliario-en-tultitlan/"
+      },
+      {
+        "label": "Capital Edomex — Extorsión y desvío",
+        "url": "https://www.capitaledomex.com.mx/local/acusan-a-funcionarios-de-tultitlan-de-extorsion-a-empresarios-y-desvio-de-recursos-publicos/"
+      }
+    ]
+  },
+  {
+    "id": 375,
+    "name": "Manuel Santín Hernández",
+    "role": "Expresidente Municipal de Tejupilco, Estado de México (2013-2015)",
+    "party": "PRI",
+    "state": "Estado de México",
+    "level": "municipal",
+    "active": false,
+    "status": "ex_funcionario",
+    "lastVerified": "2026-07-14",
+    "scores": {
+      "sentencias": 8,
+      "fiscalizacion": 16,
+      "funcionarios": 2,
+      "deuda": 12,
+      "denuncias": 7,
+      "evasion": 5,
+      "nepotismo": 2
+    },
+    "breakdown": {
+      "sentencias": "Denunciado penalmente ante la Fiscalía General de Justicia del Estado de México por peculado, a solicitud del OSFEM tras concluir sus auditorías. Sin sentencia confirmada.",
+      "fiscalizacion": "El Órgano Superior de Fiscalización del Estado de México (OSFEM) detectó irregularidades en la administración municipal 2013-2015 y solicitó formalmente al gobierno sucesor ejercer acciones de resarcimiento.",
+      "funcionarios": "Sin red de funcionarios documentada en este caso específico.",
+      "deuda": "Desvío de $43.6M en afectación a la hacienda pública municipal de Tejupilco, según las auditorías del OSFEM.",
+      "denuncias": "El alcalde sucesor, Anthony Domínguez Vargas (Morena), presentó la denuncia formal en 2021 tras la falta de respuesta del propio Santín Hernández a los requerimientos del OSFEM.",
+      "evasion": "No respondió a los requerimientos de resarcimiento del OSFEM antes de que se presentara la denuncia penal formal en su contra.",
+      "nepotismo": "Sin datos adicionales documentados."
+    },
+    "timeline": [
+      {
+        "year": "2013",
+        "event": "Asume presidencia municipal de Tejupilco"
+      },
+      {
+        "year": "2015",
+        "event": "Termina su gestión. OSFEM detecta irregularidades posteriormente."
+      },
+      {
+        "year": "2021",
+        "event": "Marzo: alcalde sucesor presenta denuncia penal por peculado de $43.6M tras falta de respuesta a requerimientos del OSFEM"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Plana Mayor — Denuncia penal",
+        "url": "https://www.planamayor.com.mx/denuncian-penalmente-a-exalcalde-de-tejupilco-por-desvio-de-43-6-mdp/"
+      }
+    ]
+  },
+  {
+    "id": 376,
+    "name": "Ernesto Ruffo Appel",
+    "role": "Exgobernador de Baja California (1989-1995, primer gobernador de oposición en la historia de México)",
+    "party": "PAN",
+    "state": "Baja California",
+    "level": "estatal",
+    "active": false,
+    "status": "ex_funcionario",
+    "lastVerified": "2026-07-17",
+    "scores": {
+      "sentencias": 20,
+      "fiscalizacion": 15,
+      "funcionarios": 12,
+      "deuda": 15,
+      "denuncias": 9,
+      "evasion": 3,
+      "nepotismo": 2
+    },
+    "breakdown": {
+      "sentencias": "Detenido el 16 de julio de 2026 en Ensenada por la FGR, en cumplimiento de una orden de aprehensión por los delitos de delincuencia organizada y contrabando. Compareció el 17 de julio ante una jueza federal de control con sede en el penal del Altiplano, en audiencia por videoconferencia junto con otras 7 personas (causa penal 253/2026).",
+      "fiscalizacion": "La FGR estima que la red generó un perjuicio a la Hacienda Pública superior a $4,000M, derivado de litros de combustible no declarados, evasión del IEPS y el IVA, e importaciones irregulares con documentación alterada para evadir controles aduanales.",
+      "funcionarios": "La red incluye, según la fiscal general Ernestina Godoy, socios de las empresas involucradas, operadores logísticos y servidores públicos: agentes aduanales y personal autorizado que facilitaba el ingreso irregular de hidrocarburo. La FGR obtuvo 25 órdenes de aprehensión vinculadas a esta red específica.",
+      "deuda": "$4,000M de daño estimado al erario federal por esta red. Es fundador y socio mayoritario de Ingemar S.A. de C.V., la empresa portuaria señalada como el vehículo corporativo de las operaciones irregulares de importación de combustible.",
+      "denuncias": "Parte de una estrategia más amplia de la FGR: entre el 1 de diciembre de 2025 y el 15 de julio de 2026 se procesó a 407 personas por redes de contrabando de combustible vía marítima, ferroviaria y terrestre. La fiscal general calificó a esta red como \"la más grande red de contrabando de combustible detectada hasta el momento\", con operación en al menos 8 estados mediante ferrotanques.",
+      "evasion": "Sin evasión documentada; fue detenido directamente en Ensenada al cumplimentarse la orden de aprehensión.",
+      "nepotismo": "Sin datos de familiares directos en la red, aunque entre los señalados aparece Ricardo Thompson Navarro, hijo del empresario portuario Ricardo Thomson Ramírez, también detenido."
+    },
+    "timeline": [
+      {
+        "year": "1989",
+        "event": "Se convierte en el primer gobernador de oposición (PAN) en la historia de México, al ganar la gubernatura de Baja California"
+      },
+      {
+        "year": "1995",
+        "event": "Termina su gestión como gobernador"
+      },
+      {
+        "year": "2025",
+        "event": "Diciembre: inicia la fase más amplia de la investigación federal contra redes de contrabando de combustible (huachicol fiscal)"
+      },
+      {
+        "year": "2026",
+        "event": "16 de julio: detenido en Ensenada por delincuencia organizada y contrabando, señalado como fundador y socio mayoritario de Ingemar S.A. de C.V. 17 de julio: comparece ante jueza federal en audiencia inicial junto con otros 7 detenidos."
+      }
+    ],
+    "sources": [
+      {
+        "label": "UnoTV — Detención",
+        "url": "https://www.unotv.com/nacional/ernesto-ruffo-el-exgobernador-de-bc-detenido-por-presuntos-vinculos-con-el-huachicol-fiscal/"
+      },
+      {
+        "label": "Nación321 — Daño de $4,000M",
+        "url": "https://www.nacion321.com/seguridad/2026/07/16/detencion-de-ernesto-ruffo-ligada-a-red-de-huachicol-fiscal-con-dano-al-erario-por-4-mmdp-fgr/"
+      },
+      {
+        "label": "Infobae — 25 objetivos de la red",
+        "url": "https://www.infobae.com/mexico/2026/07/17/fgr-revela-quienes-integran-la-red-de-huachicol-fiscal-de-ernesto-ruffo-hay-25-objetivos/"
+      },
+      {
+        "label": "La Jornada — Comparecencia",
+        "url": "https://www.jornada.com.mx/noticia/2026/07/17/politica/ernesto-ruffo-appel-ex-gobernador-de-bc-comparece-por-acusaciones-de-huachicol-fiscal-y-delincuencia-organizada"
+      }
+    ]
   }
 ];
 
 const NATIONAL_STATS = {
   totalOfficials: officials.length,
   totalStates: new Set(officials.map(o => o.state)).size,
-  lastUpdate: '2026-07-14',
+  lastUpdate: '2026-07-17',
 };
-
-
-officials.push(
-    {id:358,name:'Nancy Nápoles',role:'Presidenta Municipal de Tenancingo, Estado de México',party:'Sin dato',state:'Estado de México',level:'municipal',active:true,status:'en_funciones',lastVerified:'2026-07-14',
-    scores:{sentencias:15,fiscalizacion:10,funcionarios:8,deuda:13,denuncias:9,evasion:8,nepotismo:5},
-    breakdown:{sentencias:'Investigada por la Fiscalía General de Justicia del Estado de México tras determinar que su reporte de secuestro (31 de mayo de 2026) habría sido simulado.',
-    fiscalizacion:'La investigación surgió no por denuncia de corrupción sino por la simulación de un secuestro, que las autoridades vincularon a un plan para justificar la desaparición de recursos municipales.',
-    funcionarios:'La carpeta de investigación señala la presunta participación de su esposo, José Roberto "N", y su cuñado, Óscar "N", como coautores del esquema.',
-    deuda:'Los indicios reunidos por la FGJEM apuntan a que el secuestro simulado buscaba justificar la desaparición de aproximadamente $40M del erario municipal.',
-    denuncias:'Caso documentado extensamente por AD Noticias como parte de una lista creciente de alcaldes mexiquenses procesados. Generó amplia movilización institucional cuando se reportó como secuestro real.',
-    evasion:'La hipótesis inicial de secuestro real habría sido usada como cobertura para ocultar el desvío de fondos y evitar escrutinio inmediato.',
-    nepotismo:'Esposo y cuñado señalados como presuntos coautores directos del esquema de desvío de recursos municipales.'},
-    timeline:[{year:'2025',event:'Asume presidencia municipal de Tenancingo'},{year:'2026',event:'31 de mayo: reportada como víctima de secuestro. La investigación posterior de la FGJEM apunta a que fue simulado para ocultar el desvío de $40M, con participación señalada de su esposo y cuñado.'}],
-    sources:[{label:'AD Noticias — Lista de alcaldes procesados',url:'https://adnoticias.mx/alcaldes-procesados-edomex-zinacantepec-tenancingo/'}]},
-
-    {id:359,name:'Gerardo Nava Sánchez',role:'Expresidente Municipal de Zinacantepec, Estado de México',party:'Sin dato',state:'Estado de México',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
-    scores:{sentencias:25,fiscalizacion:3,funcionarios:2,deuda:2,denuncias:8,evasion:5,nepotismo:2},
-    breakdown:{sentencias:'Sentenciado a 42 años y 6 meses de prisión, uno de los fallos más severos dictados contra un alcalde mexiquense, tras ser encontrado penalmente responsable de homicidio calificado en grado de tentativa.',
-    fiscalizacion:'Sin hallazgos de fiscalización financiera documentados; el caso es de naturaleza penal por violencia, no de desvío de recursos.',
-    funcionarios:'Sin red de funcionarios documentada en este caso específico.',
-    deuda:'Sin daño patrimonial documentado.',
-    denuncias:'En enero de 2021, la Fiscalía General de Justicia del Estado de México cumplimentó una orden de aprehensión en su contra.',
-    evasion:'Enfrentó un largo proceso judicial antes de la sentencia final.',
-    nepotismo:'Sin datos adicionales.'},
-    timeline:[{year:'2021',event:'Enero: orden de aprehensión cumplimentada por homicidio calificado en grado de tentativa'},{year:'2026',event:'Sentenciado a 42 años y 6 meses de prisión'}],
-    sources:[{label:'AD Noticias — Lista de alcaldes procesados',url:'https://adnoticias.mx/alcaldes-procesados-edomex-zinacantepec-tenancingo/'}]},
-
-    {id:360,name:'Diego Moreno Valle',role:'Expresidente Municipal de Santiago Tianguistenco, Estado de México',party:'Sin dato',state:'Estado de México',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
-    scores:{sentencias:18,fiscalizacion:2,funcionarios:2,deuda:2,denuncias:8,evasion:5,nepotismo:2},
-    breakdown:{sentencias:'Detenido y vinculado a proceso tras una investigación ministerial derivada de una denuncia por violación.',
-    fiscalizacion:'Sin hallazgos de fiscalización financiera documentados; el caso es de naturaleza penal.',
-    funcionarios:'Sin red de funcionarios documentada en este caso.',
-    deuda:'Sin daño patrimonial documentado.',
-    denuncias:'Una denuncia por violación dio origen a la investigación ministerial que concluyó en su detención.',
-    evasion:'El caso provocó una crisis política en el municipio; el Ayuntamiento tuvo que designar autoridades sustitutas.',
-    nepotismo:'Sin datos adicionales.'},
-    timeline:[{year:'2025',event:'Denuncia por violación origina investigación ministerial en su contra'},{year:'2026',event:'Detención y vinculación a proceso. El Ayuntamiento designa autoridades sustitutas.'}],
-    sources:[{label:'AD Noticias — Lista de alcaldes procesados',url:'https://adnoticias.mx/alcaldes-procesados-edomex-zinacantepec-tenancingo/'}]}
-);
-
-
-officials.push(
-    {id:361,name:'Juan José Sabines Guerrero',role:'Cónsul General de México en Orlando, Florida / Exgobernador de Chiapas (2006-2012)',party:'PRI (transitó a MORENA)',state:'Chiapas',level:'federal',active:true,status:'en_funciones',lastVerified:'2026-07-14',
-    scores:{sentencias:15,fiscalizacion:20,funcionarios:14,deuda:15,denuncias:10,evasion:10,nepotismo:3},
-    breakdown:{sentencias:'PGR admitió en abril de 2013 querella contra él y 50 excolaboradores por asociación delictuosa, delincuencia organizada, enriquecimiento ilícito, tortura y otros 13 delitos. Fue detenido en el aeropuerto de la CDMX en diciembre de 2016 al regresar de Orlando, aunque la investigación nunca derivó en sentencia formal.',
-    fiscalizacion:'Consultora PricewaterhouseCoopers detectó que los libros de la Secretaría de Finanzas fueron alterados para ocultar faltantes. La Secretaría de la Función Pública estatal documentó irregularidades en fondos federales por $1,098M en ejercicios 2008-2011, sin subsanar pese a las observaciones.',
-    funcionarios:'La querella de 129 hojas y 900 anexos probatorios incluyó a 50 excolaboradores, entre ellos el expresidente municipal Seth Yassir Vázquez Hernández, señalado por irregularidades adicionales de $558M en el sistema municipal de agua potable.',
-    deuda:'Incrementó la deuda de Chiapas en 704% en 72 meses: de $4.68 millones de pesos a $33,747M. El desfalco total estimado alcanzó los $40,000M según la querella penal, superando incluso la megadeuda de Coahuila de Humberto Moreira. El 95% de los contratos de su gestión se otorgaron por adjudicación directa, usando empresas fantasma y dejando 120 obras inconclusas.',
-    denuncias:'Demandado penalmente por el activista Horacio Culebro Borrayas, quien pasó casi 2 años preso por cargos que él mismo calificó de fabricados en represalia. Sabines lo contrademandó por daño moral en un intento de silenciar el litigio.',
-    evasion:'Fue nombrado Cónsul General en Orlando por Peña Nieto en julio de 2015, apenas 2.5 años después de dejar el cargo, obteniendo inmunidad diplomática que lo blindó de la investigación penal en curso. Mantuvo el cargo durante el sexenio de AMLO pese al cambio de partido en el poder.',
-    nepotismo:'Ascendió políticamente con el respaldo directo de su antecesor, el gobernador Pablo Salazar Mendiguchía, quien lo llevó a la presidencia del Congreso local y después a la gubernatura.'},
-    timeline:[{year:'2006',event:'Asume gubernatura de Chiapas con apoyo de su antecesor Pablo Salazar Mendiguchía'},{year:'2012',event:'Termina gestión dejando deuda de $33,747M (incremento de 704%)'},{year:'2013',event:'PGR admite querella penal por desfalco de $40,000M contra él y 50 excolaboradores'},{year:'2015',event:'Julio: nombrado Cónsul General de México en Orlando, Florida, obteniendo inmunidad diplomática'},{year:'2016',event:'Diciembre: detenido brevemente en el aeropuerto de la CDMX'},{year:'2026',event:'Continúa como cónsul en Orlando bajo el gobierno de Morena, sin que las carpetas de investigación hayan avanzado'}],
-    sources:[{label:'SinEmbargo — Nombramiento como cónsul',url:'https://www.sinembargo.mx/1402074/la-sre-premia-a-juan-sabines-con-el-consulado-de-orlando-aun-cuando-no-ha-aclarado-mega-deuda-de-chiapas/'},{label:'eje central — Depredó Chiapas',url:'https://www.ejecentral.com.mx/la-portada-juan-sabines-depredo-chiapas'},{label:'Diario de Chiapas — Detención',url:'https://diariodechiapas.com/metropoli/pgr-detiene-al-ex-gobernador-juan-sabines-guerrero/'},{label:'ChiapasParalelo — Diplomacia de la impunidad',url:'https://www.chiapasparalelo.com/opinion/2015/07/sabines-diplomacia-de-la-impunidad/'},{label:'Proceso — Demanda por daño moral',url:'https://proceso.com.mx/484852/juan-sabines-denuncia-dano-moral-a-activista-lo-acuso-defraudar-al-erario-40-mil-mdp'}]}
-);
-
-
-// =====================================================
-// HIDALGO — CASO "ESTAFA SINIESTRA" ($522M)
-// =====================================================
-officials.push(
-    {id:362,name:'Omar Fayad Meneses',role:'Embajador de México en Noruega / Exgobernador de Hidalgo (2016-2022)',party:'PRI (expulsado, cercano a MORENA)',state:'Hidalgo',level:'federal',active:true,status:'en_funciones',lastVerified:'2026-07-14',
-    scores:{sentencias:10,fiscalizacion:18,funcionarios:15,deuda:14,denuncias:9,evasion:10,nepotismo:3},
-    breakdown:{sentencias:'No ha sido indiciado directamente en ninguna carpeta de investigación pese a que el esquema de desvío operó durante su sexenio y con su círculo íntimo. Su colaborador más cercano por 29 años, Martiniano Vega Orozco, fue sentenciado a 12 años de prisión.',
-    fiscalizacion:'Bajo su gestión (2016-2022) operó la "Estafa Siniestra", un esquema de desvío de recursos por al menos $522M a través de 13 municipios y 2 secretarías estatales, usando empresas fachada para simular obras y servicios durante la pandemia de COVID-19.',
-    funcionarios:'Martiniano Vega Orozco enfrenta 4 causas penales: peculado de $116M por un seguro catastrófico no cobrado tras el huracán Grace, venta ilegal de 3 helicópteros por debajo de su valor, y compras fantasma de software por $23.8M. Ya sentenciado a 12 años por un contrato fantasma de $18.2M para crema quirúrgica antiséptica durante la emergencia de COVID.',
-    deuda:'Su exoperador financiero Pablo Pérez Martínez declaró que durante dos décadas se tejió una red de corrupción con desvíos de hasta $2,700M solo de la Secretaría de Educación Pública de Hidalgo, mediante "pellizcos" sistemáticos al presupuesto.',
-    denuncias:'La senadora priista Carolina Viggiano fue citada a declarar tras afirmar en un podcast que un alcalde en funciones le reveló el mecanismo de desvíos antes de que se judicializara. Exfuncionarios presos han señalado desde la cárcel que Fayad está "protegido por acuerdos políticos".',
-    evasion:'Renunció al PRI en 2023 y fue nombrado embajador en Noruega por AMLO cinco meses después, obteniendo inmunidad diplomática antes de que avanzara cualquier investigación en su contra. Es el quinto exgobernador priista en recibir una embajada de Morena tras perder su estado.',
-    nepotismo:'Designó a su esposa, la actriz Victoria Ruffo, como directora local del Sistema Nacional para el Desarrollo Integral de la Familia durante su gestión como alcalde de Pachuca.'},
-    timeline:[{year:'2016',event:'Asume gubernatura de Hidalgo por el PRI'},{year:'2020',event:'Opera el esquema "Estafa Siniestra" durante la pandemia, desviando al menos $522M'},{year:'2022',event:'Termina gestión. El nuevo gobernador Julio Menchaca destapa la red de corrupción.'},{year:'2023',event:'Junio: renuncia al PRI. Noviembre: AMLO lo nombra embajador en Noruega.'},{year:'2025',event:'Su exsecretario particular Martiniano Vega Orozco es detenido, enfrenta 4 causas penales y una condena de 12 años'},{year:'2026',event:'Continúa como embajador en Noruega sin haber sido indiciado'}],
-    sources:[{label:'La Jornada — Cae otro exalcalde',url:'https://www.jornada.com.mx/2025/10/25/estados/022n3est'},{label:'NotiVer — Excolaborador señala a Fayad',url:'https://www.notiver.com/nacionales/ex-alcaldes-de-hidalgo-senalan-a-ex-contralor-de-fayad-de-recibir-dinero-malversado/'},{label:'Proceso — Se convierte en embajador',url:'https://www.proceso.com.mx/nacional/politica/2023/12/14/omar-fayad-se-convierte-en-embajador-promotor-de-amlo-320441.html'},{label:'Los Ángeles Press — Lavandería de contratos',url:'https://losangelespress.org/investigaciones/2022/nov/30/estafa-siniestra-en-hidalgo-se-fraguo-incluso-sin-la-intermediacion-de-alcaldes-4729.html'}]},
-
-    {id:363,name:'Elías San Juan',role:'Expresidente Municipal de Yahualica, Hidalgo',party:'PRI',state:'Hidalgo',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
-    scores:{sentencias:15,fiscalizacion:8,funcionarios:3,deuda:8,denuncias:6,evasion:3,nepotismo:2},
-    breakdown:{sentencias:'Detenido el 23 de noviembre de 2022 junto con otros 3 alcaldes, preso por peculado agravado y uso ilícito de atribuciones y facultades.',
-    fiscalizacion:'Parte de la red "Estafa Siniestra" que operó a través de empresas fachada durante la pandemia de COVID-19.',
-    funcionarios:'Contactado por funcionarios de nivel Secretario del Gobierno de Hidalgo para simular obras, quedarse con el 30% y regresar el 70% a empresas fachada.',
-    deuda:'Desvió $29,224,727.36 pesos, de los cuales $15M se destinaron supuestamente a una aplicación móvil y desarrollo web, y el resto a fumigación y arcos sanitizantes durante la pandemia.',
-    denuncias:'Parte del maxiproceso de la Estafa Siniestra que involucró a 13 municipios y 2 secretarías estatales.',
-    evasion:'No evadió la detención.',
-    nepotismo:'Sin datos adicionales.'},
-    timeline:[{year:'2022',event:'Detenido el 23 de noviembre por peculado agravado, parte de la Estafa Siniestra'}],
-    sources:[{label:'La Voz de Michoacán',url:'https://www.lavozdemichoacan.com.mx/mexico/corrupcion/aprehenden-a-4-alcaldes-de-hidalgo-por-la-estafa-siniestra-hay-otros-9-bajo-investigacion/'},{label:'El Diario de Chihuahua',url:'https://www.eldiariodechihuahua.mx/nacional/que-es-la-estafa-siniestra-de-hidalgo-20230724-2079675.html'}]},
-
-    {id:364,name:'Marcos Miguel Taboada Vargas',role:'Expresidente Municipal de Singuilucan, Hidalgo (2020-2024)',party:'Nueva Alianza',state:'Hidalgo',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
-    scores:{sentencias:14,fiscalizacion:8,funcionarios:3,deuda:9,denuncias:6,evasion:4,nepotismo:2},
-    breakdown:{sentencias:'Capturado en octubre de 2025 por agentes ministeriales de Hidalgo por su participación en la Estafa Siniestra, acusado de uso ilícito de atribuciones y facultades e incumplimiento agravado de un deber legal.',
-    fiscalizacion:'Su municipio fue de los señalados desde el inicio del destape del esquema en 2022.',
-    funcionarios:'Parte de la red de 13 municipios y 2 secretarías estatales que operó el esquema de empresas fachada.',
-    deuda:'Desvió más de $109M según la investigación, con contratos irregulares a favor de 22 personas físicas y morales. Devolvió $26M de los $110M desviados tras ser señalado.',
-    denuncias:'Documentado por La Jornada como parte del maxiproceso que continúa activo en 2025-2026.',
-    evasion:'Terminó su gestión con normalidad en 2024 antes de ser detenido más de un año después.',
-    nepotismo:'Sin datos adicionales.'},
-    timeline:[{year:'2020',event:'Asume presidencia municipal de Singuilucan'},{year:'2022',event:'Señalado como parte de la Estafa Siniestra, regresa $26M de los $110M desviados'},{year:'2024',event:'Termina su gestión con normalidad'},{year:'2025',event:'Octubre: detenido por la Estafa Siniestra'}],
-    sources:[{label:'La Jornada — Cae exalcalde',url:'https://www.jornada.com.mx/2025/10/25/estados/022n3est'}]}
-);
-
-
-// =====================================================
-// QUERÉTARO
-// =====================================================
-officials.push(
-    {id:365,name:'Carmelo Mendieta',role:'Expresidente Municipal de Corregidora, Querétaro (2009-2012)',party:'PRI',state:'Querétaro',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
-    scores:{sentencias:14,fiscalizacion:8,funcionarios:2,deuda:9,denuncias:6,evasion:8,nepotismo:2},
-    breakdown:{sentencias:'Detenido en octubre de 2024 por la Fiscalía Especializada en el Combate a la Corrupción de Querétaro, acusado de peculado en agravio del servicio público y del erario municipal. Ya había sido detenido antes por el mismo tipo de delito en 2020, pero fue liberado.',
-    fiscalizacion:'La Fiscalía Anticorrupción de Querétaro cumplimentó una nueva orden de aprehensión en su contra tras reabrir la investigación.',
-    funcionarios:'Sin red de colaboradores documentada en este caso específico.',
-    deuda:'Compra-venta irregular de un terreno valuado en $9.5M cuyo origen de recursos no pudo ser comprobado. Adquirió una vivienda con recursos de procedencia ilícita utilizando a un tercero sin solvencia económica como comprador de fachada.',
-    denuncias:'La denuncia que originó su segunda detención fue presentada por un particular.',
-    evasion:'Fue detenido, liberado en 2020, y detenido nuevamente en 2024 por la misma naturaleza de delito, evidenciando fallas en el seguimiento judicial del caso.',
-    nepotismo:'Sin datos adicionales.'},
-    timeline:[{year:'2009',event:'Asume presidencia municipal de Corregidora'},{year:'2012',event:'Termina su gestión'},{year:'2020',event:'Primera detención por desvío de recursos. Es liberado.'},{year:'2024',event:'Octubre: nueva orden de aprehensión cumplimentada por peculado'}],
-    sources:[{label:'Infobae — Detención',url:'https://www.infobae.com/mexico/2024/10/17/detienen-a-ex-alcalde-de-corregidora-queretaro-por-desvio-de-recursos-al-erario/'},{label:'Milenio — Peculado y desvío',url:'https://www.milenio.com/estados/detienen-a-ex-alcalde-de-corregidora-por-peculado-y-desvio-de-recursos'}]},
-
-    {id:366,name:'Alejandro N.',role:'Expresidente Municipal de Colón, Querétaro',party:'PAN',state:'Querétaro',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
-    scores:{sentencias:12,fiscalizacion:6,funcionarios:3,deuda:8,denuncias:6,evasion:3,nepotismo:3},
-    breakdown:{sentencias:'Detenido por la Policía de Investigación del Delito adscrita a la Fiscalía Especializada en Combate a la Corrupción de Querétaro, acusado de tráfico de influencias y promoción de conductas ilícitas, junto con un empresario.',
-    fiscalizacion:'Investigación de la Fiscalía Anticorrupción de Querétaro por facilitar beneficios irregulares a un particular desde su posición administrativa.',
-    funcionarios:'Detenido junto con el representante legal de una empresa beneficiada, quien también fue arrestado.',
-    deuda:'Facilitó acuerdos económicos por cantidades millonarias para que un desarrollo industrial se asentara en el municipio de Colón cumpliendo irregularmente con el Código Urbano estatal.',
-    denuncias:'Caso documentado por la Fiscalía Especializada en Combate a la Corrupción de Querétaro.',
-    evasion:'No evadió la detención.',
-    nepotismo:'Otorgó y aprobó beneficios administrativos a un particular con quien mantenía acuerdos económicos.'},
-    timeline:[{year:'2023',event:'Septiembre: detenido junto con un empresario por tráfico de influencias'}],
-    sources:[{label:'Milenio — Detención',url:'https://www.milenio.com/estados/detienen-a-ex-alcalde-de-queretaro-y-a-empresario-por-corrupcion'}]}
-);
-
-
-officials.push(
-    {id:367,name:'Fernando Gustavo Flores Fernández',role:'Presidente Municipal de Metepec, Estado de México',party:'Sin dato',state:'Estado de México',level:'municipal',active:true,status:'en_funciones',lastVerified:'2026-07-14',
-    scores:{sentencias:5,fiscalizacion:12,funcionarios:8,deuda:8,denuncias:10,evasion:6,nepotismo:3},
-    breakdown:{sentencias:'Sin sentencia. Denunciado formalmente ante la Fiscalía Especializada en Combate a la Corrupción del Estado de México (FECC), con sede en Toluca, recibida el 16 de junio de 2026.',
-    fiscalizacion:'La denuncia señala presuntas anomalías en procesos de adquisición municipal: sobreprecios en compras de uniformes y equipamiento para la Policía Municipal, sin justificación clara de montos ni procedimientos de contratación transparentes.',
-    funcionarios:'La denuncia involucra formalmente también al director de Seguridad Pública de Metepec, Jesús Alberto Ramírez Manzur, señalado además por presunto contubernio en un caso de abuso sexual cometido por uno de sus elementos, y a Clara Cardozo, colaboradora cercana desde su primera campaña.',
-    deuda:'Se documentan entregas de dinero en efectivo presuntamente vinculadas a recursos obtenidos por el cobro de multas de tránsito, además de sobreprecios no justificados en compras de insumos de seguridad pública.',
-    denuncias:'La denuncia proviene de una exfuncionaria que colaboró en su equipo desde 2021. Enfrenta además una investigación paralela por hechos ocurridos en el Club Deportivo La Asunción, donde llegó con escoltas armadas, incidente que generó controversia pública adicional y una audiencia programada en la Fiscalía General de Justicia del Estado de México.',
-    evasion:'La presidenta de la Mesa Directiva del Congreso mexiquense descartó estar analizando su destitución, argumentando que no existe una solicitud formal ni expediente abierto pese a la denuncia ya presentada.',
-    nepotismo:'Su director de Seguridad Pública ha mantenido continuidad en el cargo a través de administraciones de distintos partidos, lo que ha sido señalado como parte de una estructura de protección interna.'},
-    timeline:[{year:'2021',event:'Inicia su primera campaña política con el equipo que después lo acompañaría al gobierno municipal'},{year:'2026',event:'Junio: exfuncionaria presenta denuncia formal ante la FECC por sobreprecios, entregas de efectivo y contubernio en caso de abuso sexual. Controversia adicional por incidente en club deportivo privado con escoltas armadas.'}],
-    sources:[{label:'Capital Edomex — Investigación',url:'https://www.capitaledomex.com.mx/local/destapan-la-cloaca-del-alcalde-de-metepec/'},{label:'PolíticoMX — Denuncia formal',url:'https://politico.mx/2026/06/19/exfuncionaria-denuncia-por-presunta-corrupcion-a-fernando-flores-alcalde-de-metepec/'},{label:'La Silla Rota — Descartan destitución',url:'https://lasillarota.com/metropoli/2026/6/19/denuncian-al-alcalde-de-metepec-fernando-flores-por-presunta-corrupcion-descartan-destitucion-604662.html'}]}
-);
-
-
-officials.push(
-    {id:368,name:'María del Rosario "N"',role:'Expresidenta Municipal saliente de Santo Tomás de los Plátanos, Estado de México',party:'Sin dato',state:'Estado de México',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
-    scores:{sentencias:14,fiscalizacion:5,funcionarios:6,deuda:3,denuncias:7,evasion:5,nepotismo:8},
-    breakdown:{sentencias:'Detenida el 23 de enero de 2025 en el marco de la Operación Enjambre, derivado de sus presuntos vínculos con el cártel de La Familia Michoacana.',
-    fiscalizacion:'Sin hallazgos de fiscalización financiera documentados; el caso es de naturaleza penal por vínculos criminales, no de desvío de recursos.',
-    funcionarios:'Habría utilizado su vínculo con La Familia Michoacana para obligar a un síndico municipal a firmar diversos documentos bajo coacción.',
-    deuda:'Sin monto de daño patrimonial documentado en este caso específico.',
-    denuncias:'Caso documentado ampliamente por Milenio y otros medios como parte de la cronología oficial de la Operación Enjambre.',
-    evasion:'Fue detenida antes de que su esposo, Pedro Luis "Wicho", asumiera el cargo que ella dejaba, evidenciando un patrón de relevo familiar en el control del municipio.',
-    nepotismo:'CASO DIRECTO: su esposo, Pedro Luis "Wicho" (ya documentado en esta base), fue electo para sucederla como alcalde del mismo municipio. Según las investigaciones, habría ordenado el secuestro de un familiar de una candidata rival para facilitar la llegada de su esposa al Ayuntamiento en el proceso electoral previo.'},
-    timeline:[{year:'2025',event:'23 de enero: detenida por sus presuntos vínculos con La Familia Michoacana, dos semanas antes de que su esposo fuera detenido el 8 de febrero'}],
-    sources:[{label:'Milenio — Cronología Operación Enjambre',url:'https://www.milenio.com/policia/cronologia-operacion-enjambre-quienes-han-sido-detenidos-lista'}]}
-);
-
-
-officials.push(
-    {id:369,name:'Adolfo Cerqueda Rebollo',role:'Presidente Municipal de Nezahualcóyotl, Estado de México (2do periodo)',party:'MORENA',state:'Estado de México',level:'municipal',active:true,status:'en_funciones',lastVerified:'2026-07-14',
-    scores:{sentencias:5,fiscalizacion:10,funcionarios:8,deuda:12,denuncias:10,evasion:6,nepotismo:4},
-    breakdown:{sentencias:'Sin proceso penal formal contra él directamente. Un empleado municipal de Protección Civil fue detenido en julio de 2025 in fraganti cobrando un soborno de $28,000 a cambio de no sellar una pipa de gas por presuntas irregularidades.',
-    fiscalizacion:'El exdiputado y catedrático universitario Horacio Jiménez declaró contar con información de que Cerqueda posee alrededor de 46 propiedades valuadas en más de $250M, adquiridas entre 2001 y la actualidad, incluyendo un departamento en Nueva York, una casa con playa privada y un rancho en Zacatecas.',
-    funcionarios:'Empresarios que proveen servicios al gobierno municipal denunciaron de forma anónima que son obligados a entregar hasta el 25% de lo que facturan a cambio de mantener sus contratos, señalando la participación de funcionarios de primer nivel de su administración.',
-    deuda:'Patrimonio de $250M+ incompatible con su salario público, según el señalamiento del exdiputado Jiménez. Vecinos de la Unidad Rey Neza denunciaron que se apoderó de un área destinada a servicios públicos, la demolió, y ahora construye una gasolinera de su propiedad en ese predio.',
-    denuncias:'Múltiples denuncias ciudadanas documentadas por medios locales (Diario Puntual, Quadratín, Diario Basta!, Excélsior) por opulencia inexplicable, corrupción policiaca sistemática (46.9% de encuestados reportó haber sufrido algún acto de corrupción policial), y omisión ante quejas vecinales. Existe una campaña ciudadana activa exigiendo iniciar el proceso de revocación de mandato en su contra.',
-    evasion:'Ha guardado silencio ante los señalamientos de opulencia y las exigencias de revocación de mandato, sin emitir un posicionamiento directo ni abrir su declaración patrimonial pese a las peticiones públicas.',
-    nepotismo:'Sin datos de familiares en nómina, pero el patrón de acaparamiento de suelo público para beneficio personal (caso de la gasolinera) constituye un conflicto de interés documentado.'},
-    timeline:[{year:'2022',event:'Asume por primera vez la presidencia municipal de Nezahualcóyotl'},{year:'2024',event:'Diciembre: rinde tercer informe y toma protesta para un segundo periodo consecutivo (2025-2027)'},{year:'2025',event:'Julio: empleado municipal detenido cobrando soborno de $28,000. Octubre: denuncias vecinales por acaparamiento de suelo público para construir gasolinera propia. Noviembre: crece exigencia ciudadana de revocación de mandato.'},{year:'2026',event:'Persisten denuncias de corrupción policiaca y opacidad patrimonial sin que se abra investigación formal'}],
-    sources:[{label:'Diario Puntual — Escándalo de opulencia',url:'https://diario-puntual.com.mx/escandalo-de-corrupcion-y-opulencia-revelaciones-sobre-el-alcalde-de-neza/'},{label:'Reporte Noticias — Acusan corrupción',url:'https://www.reportenoticias.com.mx/publicacion/acusan-corrupcion-en-nezahualcoyotl-primera-parte'},{label:'Quadratín — Aumenta su riqueza',url:'https://edomex.quadratin.com.mx/aumenta-su-riqueza-adolfo-cerqueda-en-nezahualcoyotl/'},{label:'La Jornada — Soborno detectado',url:'https://www.jornada.com.mx/noticia/2025/07/29/estados/detienen-a-funcionario-de-nezahualcoyotl-mientras-cobrarba-un-soborno'},{label:'Nezahualcóyotl Digital — Exigen revocación',url:'https://nezahualcoyotldigital.com/acusan-a-alcalde-adolfo-cerqueda-de-ignorar-crisis-en-nezahualcoyotl/'}]}
-);
-
-
-officials.push(
-    {id:370,name:'Fernando Vilchis Contreras',role:'Expresidente Municipal de Ecatepec de Morelos, Estado de México',party:'Sin dato',state:'Estado de México',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
-    scores:{sentencias:8,fiscalizacion:20,funcionarios:10,deuda:15,denuncias:9,evasion:5,nepotismo:2},
-    breakdown:{sentencias:'La nueva administración presentó 137 denuncias formales ante la Contraloría del Congreso local y la Fiscalía del Estado de México contra exfuncionarios de su gobierno. Sin sentencia hasta el momento.',
-    fiscalizacion:'11 auditorías externas realizadas a los últimos tres años de su administración arrojaron múltiples anomalías financieras y sobrecostos por un total de más de $547M, además de recursos adicionales recuperados del DIF municipal, el organismo de agua Sapase y el instituto municipal de deporte, sumando casi $1,000M en ahorros identificados.',
-    funcionarios:'Las 137 denuncias se presentaron específicamente contra exfuncionarios de su gobierno por sobreprecios en materiales para obras, insumos y alimentos.',
-    deuda:'Sobreprecios documentados en múltiples partidas: $45.7M en equipo de foto/cine/grabación, $75.4M en espectáculos cívicos y culturales, $107.6M en subcontratación de servicios con terceros, $25.5M en lavandería y limpieza, $375.5M en arrendamiento de vehículos, y $62.7M en arrendamiento de maquinaria. La partida de combustibles también mostró un gasto de $85M superior al del año siguiente bajo la nueva administración.',
-    denuncias:'Documentado extensamente por La Jornada y El Universal a partir de la conferencia de prensa "Devolverle al pueblo de Ecatepec lo robado" de la administración entrante, que detalló partida por partida los sobreprecios identificados.',
-    evasion:'Sin evasión documentada hasta el momento.',
-    nepotismo:'Sin datos adicionales.'},
-    timeline:[{year:'2022',event:'Periodo de gestión bajo revisión (últimos tres años analizados en las auditorías)'},{year:'2024',event:'Termina su gestión como presidente municipal de Ecatepec'},{year:'2025',event:'La nueva administración realiza 11 auditorías externas y presenta 137 denuncias formales por sobreprecios y desfalco de $547M'}],
-    sources:[{label:'La Jornada — Desfalco de \$547M',url:'https://www.jornada.com.mx/noticia/2025/12/02/estados/gobierno-de-ecatepec-denuncia-desfalco-por-mas-de-547-mdp-del-gobierno-anterior'},{label:'El Universal — 137 denuncias',url:'https://www.eluniversal.com.mx/metropoli/ecatepec-ha-presentado-137-denuncias-contra-exfuncionarios-por-sobreprecios-de-materiales-para-obras-insumos-y-alimentos-por-mas-de-547-mdp/'}]}
-);
-
-
-officials.push(
-    {id:371,name:'Eruviel Ávila Villegas',role:'Diputado Federal (LXVI Legislatura) / Exgobernador del Estado de México (2011-2017)',party:'PVEM (exPRI)',state:'Estado de México',level:'federal',active:true,status:'en_funciones',lastVerified:'2026-07-14',
-    scores:{sentencias:8,fiscalizacion:12,funcionarios:6,deuda:14,denuncias:9,evasion:8,nepotismo:4},
-    breakdown:{sentencias:'Denunciado penalmente en abril de 2024 por la coalición "Fuerza y Corazón por México" (PRI-PAN-PRD) junto con el exalcalde de Toluca Raymundo "N", por los delitos de peculado y desvío de recursos públicos. Sin sentencia hasta el momento.',
-    fiscalizacion:'La denuncia señala un presunto desvío conjunto de $1,365M de recursos públicos durante su periodo como gobernador y la gestión municipal de Toluca vinculada a su grupo político.',
-    funcionarios:'La coalición denunciante documentó con fotografías la presencia del hijo del exalcalde de Toluca, Raymundo Martínez Zendejas, en eventos de campaña, como evidencia de la red de operación política del grupo.',
-    deuda:'$1,365M de presunto desvío de recursos públicos documentados en la denuncia penal.',
-    denuncias:'La coalición PRI-PAN-PRD acusó que Morena le ofrece impunidad a cambio de que su red opere electoralmente a su favor durante los comicios, en un intercambio de favores políticos.',
-    evasion:'Renunció al PRI en julio de 2023 tras 30+ años de militancia, se integró al Partido Verde y declaró su respaldo a la entonces candidata presidencial de Morena, un movimiento leído como estrategia de protección política ante la posible pérdida de fuero.',
-    nepotismo:'Fue dos veces alcalde de Ecatepec y gobernador del Estado de México; su transición de partido y alianza con el bloque en el poder ha sido señalada como una forma de preservar influencia y protección política para su red cercana, incluyendo al exalcalde de Toluca de su misma corriente.'},
-    timeline:[{year:'2003',event:'Primera vez alcalde de Ecatepec de Morelos'},{year:'2009',event:'Segunda vez alcalde de Ecatepec'},{year:'2011',event:'Asume gubernatura del Estado de México'},{year:'2017',event:'Termina gestión como gobernador'},{year:'2018',event:'Asume como senador plurinominal'},{year:'2023',event:'Julio: renuncia al PRI y se integra al Partido Verde, respalda a la candidata de Morena'},{year:'2024',event:'Abril: denunciado penalmente por desvío de \$1,365M junto con exalcalde de Toluca. Se convierte en diputado federal por el Partido Verde.'}],
-    sources:[{label:'Proceso — Denuncia por \$1,365M',url:'https://www.proceso.com.mx/nacional/2024/4/15/coalicion-pri-pan-prd-denuncia-eruviel-avila-exalcalde-de-toluca-por-supuesto-desvio-de-mil-365-mdp-326049.html'},{label:'Infobae — Transición al Verde',url:'https://www.infobae.com/mexico/2024/03/02/este-es-el-grado-de-estudios-de-eruviel-avila-exgobernador-de-edomex-que-llegara-al-senado-con-el-partido-verde/'}]},
-
-    {id:372,name:'Enrique Vargas del Villar',role:'Expresidente Municipal de Huixquilucan, Estado de México',party:'PAN',state:'Estado de México',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
-    scores:{sentencias:5,fiscalizacion:10,funcionarios:5,deuda:9,denuncias:7,evasion:5,nepotismo:3},
-    breakdown:{sentencias:'Investigado por presunto acto de corrupción millonario, sin sentencia formal documentada hasta el momento.',
-    fiscalizacion:'Señalado por "moches" millonarios obtenidos a través de contratos de recolección de basura durante su gestión municipal en Huixquilucan.',
-    funcionarios:'El caso involucra a varios funcionarios "salpicados" dentro de su estructura de gobierno, según reportó Reforma.',
-    deuda:'Montos millonarios presuntamente obtenidos mediante comisiones ilegales en la adjudicación de contratos de recolección de basura.',
-    denuncias:'Documentado por el periódico Reforma. Coincide con el patrón de denuncias ciudadanas por corrupción en Huixquilucan, municipio que mantiene un canal formal de denuncia anticorrupción en su portal oficial.',
-    evasion:'Buscó una candidatura plurinominal al Senado, lo que le habría dado fuero legislativo en caso de resultar electo, en medio de las investigaciones abiertas en su contra.',
-    nepotismo:'Sin datos adicionales documentados.'},
-    timeline:[{year:'2024',event:'Señalado por "moches" millonarios en contratos de basura mientras buscaba una candidatura plurinominal al Senado'}],
-    sources:[{label:'Reforma — Los moches de Vargas',url:'https://www.reforma.com/los-moches-de-vargas-en-huixquilucan-y-los-salpicados/ar2790080'}]}
-);
-
-
-officials.push(
-    {id:373,name:'Marco Antonio Rodríguez Hurtado',role:'Expresidente Municipal de Tlalnepantla de Baz, Estado de México (2022-2024)',party:'Sin dato',state:'Estado de México',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
-    scores:{sentencias:8,fiscalizacion:18,funcionarios:15,deuda:14,denuncias:9,evasion:5,nepotismo:3},
-    breakdown:{sentencias:'Sin sentencia formal contra él directamente, aunque se presentaron 14 denuncias penales por abuso de autoridad, peculado, uso ilícito de facultades y falsificación de firmas contra exfuncionarios de primer nivel de su gobierno ante la Fiscalía Especializada en Combate a la Corrupción.',
-    fiscalizacion:'Un contrato para la instalación de 20,000 luminarias por más de $148M sin evidencia suficiente de su ejecución. Obras fantasma no realizadas con afectación a la hacienda pública de al menos $37.4M, incluyendo rehabilitación de centros comunitarios y pavimentaciones nunca ejecutadas.',
-    funcionarios:'215 exfuncionarios bajo investigación: 187 del gobierno central y 28 del organismo de agua (OPDM). Las áreas señaladas incluyen Administración, Obra Pública, Desarrollo Urbano, Juventud, Educación, Desarrollo Social y Deporte.',
-    deuda:'Desvío de $22M en el programa "Tarjeta Joven" mediante falsificación de firmas de beneficiarios inexistentes. Juicios laborales presuntamente fraudulentos donde funcionarios perdían deliberadamente para obligar al ayuntamiento a pagar más de $5M. Nómina con indicios de aviadores y gratificaciones sin sustento por más de $600,000 anuales.',
-    denuncias:'Documentado extensamente por Aristegui Noticias, Capital Estado de México y 8 Columnas. El alcalde entrante declaró públicamente "no voy a tener piedad contra los que saquearon al Gobierno de Tlalnepantla".',
-    evasion:'Buscó la reelección en el proceso 2024 pese a los señalamientos de corrupción, saqueo e inseguridad que ya pesaban sobre su administración durante la campaña.',
-    nepotismo:'Un exfuncionario del área deportiva fungía simultáneamente como representante legal de una empresa privada a la que su propia área autorizaba el uso de instalaciones deportivas municipales, un conflicto de interés directo.'},
-    timeline:[{year:'2021',event:'Asume la presidencia municipal de Tlalnepantla de Baz para el periodo 2022-2024, su cuarta ocasión en el cargo'},{year:'2024',event:'Busca la reelección en medio de señalamientos de corrupción e inseguridad. Termina su gestión.'},{year:'2025',event:'La nueva administración destapa una red de corrupción: 215 exfuncionarios investigados, 14 denuncias penales presentadas, desfalco documentado en luminarias, Tarjeta Joven y obras fantasma'}],
-    sources:[{label:'Aristegui Noticias — 215 exfuncionarios',url:'https://aristeguinoticias.com/1607/mexico/investigan-a-215-exfuncionarios-por-megadesfalco-en-tlalnepantla/'},{label:'Capital Edomex — 14 denuncias penales',url:'https://www.capitaledomex.com.mx/local/presentan-14-denuncias-penales-contra-exfuncionarios-de-tlalnepantla-por-corrupcion/'},{label:'Eje Central — Desfalco millonario',url:'https://www.ejecentral.com.mx/nuestro-eje/van-contra-desfalco-millonario-en-tlalnepantla-no-voy-a-tener-piedad-asegura-el-alclade-raciel-perez'},{label:'8 Columnas — Red de corrupción',url:'https://8columnas.com.mx/estado-de-mexico/detectan-posible-red-de-corrupcion-en-administracion-2022-2024-de-tlalnepantla/'}]}
-);
-
-
-officials.push(
-    {id:374,name:'Ana María Castro Fernández',role:'Presidenta Municipal de Tultitlán, Estado de México',party:'MORENA',state:'Estado de México',level:'municipal',active:true,status:'en_funciones',lastVerified:'2026-07-14',
-    scores:{sentencias:5,fiscalizacion:12,funcionarios:10,deuda:11,denuncias:9,evasion:5,nepotismo:12},
-    breakdown:{sentencias:'Sin sentencia. Investigación formal abierta por la Fiscalía Especializada en Combate a la Corrupción del Estado de México, expediente TOL/CCF/SPO/107/033891/25/02.',
-    fiscalizacion:'Investigada por presuntos contratos irregulares y tráfico de influencias en la compra de 27 hectáreas de terrenos ejidales en San Francisco Chilpan, operación envuelta en opacidad.',
-    funcionarios:'Su cuñada y antecesora en el cargo, Elena García Martínez (hoy diputada local), aparece en el mismo expediente. Erick Isachar Vega Chavarría, coordinador general de la Oficina de Presidencia, es señalado como el operador que ofrecía acuerdos económicos fuera del marco legal a empresarios.',
-    deuda:'Su gobierno transfirió $38.5M a una asociación civil ("Unión de Colonos, Inquilinos Solicitantes de Vivienda y Comerciantes, Lomas del Parque A.C.") por terrenos que no contaban con escrituras públicas que acreditaran su propiedad legal.',
-    denuncias:'La denuncia nació de vecinos que alertaron sobre la operación de compra de tierras. Empresarios locales denunciaron que el gobierno municipal usa inspecciones administrativas como mecanismo de presión: suspenden negocios y luego ofrecen reuniones para negociar su reapertura mediante pagos no oficiales.',
-    evasion:'Sin evasión documentada hasta el momento; permanece en el cargo mientras avanza la investigación.',
-    nepotismo:'CASO DIRECTO: su cuñada Elena García Martínez fue su antecesora inmediata en la alcaldía y ahora es diputada local, ambas militantes de Morena en el mismo expediente. Su esposo, José Alfredo Contreras Suárez, ocupa el cargo de secretario del Ayuntamiento durante su gestión, y otra pariente, Ana María Castro (posible homónima o familiar directa), aparece vinculada a las mismas denuncias.'},
-    timeline:[{year:'2021',event:'Su cuñada Elena García Martínez es alcaldesa de Tultitlán'},{year:'2024',event:'Asume la presidencia municipal de Tultitlán sucediendo a su cuñada'},{year:'2025',event:'Fiscalía Anticorrupción abre investigación formal por compra irregular de terrenos ejidales y extorsión a empresarios'}],
-    sources:[{label:'Cuestión de Polémica — Megafraude inmobiliario',url:'https://www.cuestiondepolemica.com/la-polemica-megafraude-inmobiliario-en-tultitlan/'},{label:'Capital Edomex — Extorsión y desvío',url:'https://www.capitaledomex.com.mx/local/acusan-a-funcionarios-de-tultitlan-de-extorsion-a-empresarios-y-desvio-de-recursos-publicos/'}]},
-
-    {id:375,name:'Manuel Santín Hernández',role:'Expresidente Municipal de Tejupilco, Estado de México (2013-2015)',party:'PRI',state:'Estado de México',level:'municipal',active:false,status:'ex_funcionario',lastVerified:'2026-07-14',
-    scores:{sentencias:8,fiscalizacion:16,funcionarios:2,deuda:12,denuncias:7,evasion:5,nepotismo:2},
-    breakdown:{sentencias:'Denunciado penalmente ante la Fiscalía General de Justicia del Estado de México por peculado, a solicitud del OSFEM tras concluir sus auditorías. Sin sentencia confirmada.',
-    fiscalizacion:'El Órgano Superior de Fiscalización del Estado de México (OSFEM) detectó irregularidades en la administración municipal 2013-2015 y solicitó formalmente al gobierno sucesor ejercer acciones de resarcimiento.',
-    funcionarios:'Sin red de funcionarios documentada en este caso específico.',
-    deuda:'Desvío de $43.6M en afectación a la hacienda pública municipal de Tejupilco, según las auditorías del OSFEM.',
-    denuncias:'El alcalde sucesor, Anthony Domínguez Vargas (Morena), presentó la denuncia formal en 2021 tras la falta de respuesta del propio Santín Hernández a los requerimientos del OSFEM.',
-    evasion:'No respondió a los requerimientos de resarcimiento del OSFEM antes de que se presentara la denuncia penal formal en su contra.',
-    nepotismo:'Sin datos adicionales documentados.'},
-    timeline:[{year:'2013',event:'Asume presidencia municipal de Tejupilco'},{year:'2015',event:'Termina su gestión. OSFEM detecta irregularidades posteriormente.'},{year:'2021',event:'Marzo: alcalde sucesor presenta denuncia penal por peculado de $43.6M tras falta de respuesta a requerimientos del OSFEM'}],
-    sources:[{label:'Plana Mayor — Denuncia penal',url:'https://www.planamayor.com.mx/denuncian-penalmente-a-exalcalde-de-tejupilco-por-desvio-de-43-6-mdp/'}]}
-);
-
-
-officials.push(
-    {id:376,name:'Ernesto Ruffo Appel',role:'Exgobernador de Baja California (1989-1995, primer gobernador de oposición en la historia de México)',party:'PAN',state:'Baja California',level:'estatal',active:false,status:'ex_funcionario',lastVerified:'2026-07-17',
-    scores:{sentencias:20,fiscalizacion:15,funcionarios:12,deuda:15,denuncias:9,evasion:3,nepotismo:2},
-    breakdown:{sentencias:'Detenido el 16 de julio de 2026 en Ensenada por la FGR, en cumplimiento de una orden de aprehensión por los delitos de delincuencia organizada y contrabando. Compareció el 17 de julio ante una jueza federal de control con sede en el penal del Altiplano, en audiencia por videoconferencia junto con otras 7 personas (causa penal 253/2026).',
-    fiscalizacion:'La FGR estima que la red generó un perjuicio a la Hacienda Pública superior a $4,000M, derivado de litros de combustible no declarados, evasión del IEPS y el IVA, e importaciones irregulares con documentación alterada para evadir controles aduanales.',
-    funcionarios:'La red incluye, según la fiscal general Ernestina Godoy, socios de las empresas involucradas, operadores logísticos y servidores públicos: agentes aduanales y personal autorizado que facilitaba el ingreso irregular de hidrocarburo. La FGR obtuvo 25 órdenes de aprehensión vinculadas a esta red específica.',
-    deuda:'$4,000M de daño estimado al erario federal por esta red. Es fundador y socio mayoritario de Ingemar S.A. de C.V., la empresa portuaria señalada como el vehículo corporativo de las operaciones irregulares de importación de combustible.',
-    denuncias:'Parte de una estrategia más amplia de la FGR: entre el 1 de diciembre de 2025 y el 15 de julio de 2026 se procesó a 407 personas por redes de contrabando de combustible vía marítima, ferroviaria y terrestre. La fiscal general calificó a esta red como "la más grande red de contrabando de combustible detectada hasta el momento", con operación en al menos 8 estados mediante ferrotanques.',
-    evasion:'Sin evasión documentada; fue detenido directamente en Ensenada al cumplimentarse la orden de aprehensión.',
-    nepotismo:'Sin datos de familiares directos en la red, aunque entre los señalados aparece Ricardo Thompson Navarro, hijo del empresario portuario Ricardo Thomson Ramírez, también detenido.'},
-    timeline:[{year:'1989',event:'Se convierte en el primer gobernador de oposición (PAN) en la historia de México, al ganar la gubernatura de Baja California'},{year:'1995',event:'Termina su gestión como gobernador'},{year:'2025',event:'Diciembre: inicia la fase más amplia de la investigación federal contra redes de contrabando de combustible (huachicol fiscal)'},{year:'2026',event:'16 de julio: detenido en Ensenada por delincuencia organizada y contrabando, señalado como fundador y socio mayoritario de Ingemar S.A. de C.V. 17 de julio: comparece ante jueza federal en audiencia inicial junto con otros 7 detenidos.'}],
-    sources:[{label:'UnoTV — Detención',url:'https://www.unotv.com/nacional/ernesto-ruffo-el-exgobernador-de-bc-detenido-por-presuntos-vinculos-con-el-huachicol-fiscal/'},{label:'Nación321 — Daño de \$4,000M',url:'https://www.nacion321.com/seguridad/2026/07/16/detencion-de-ernesto-ruffo-ligada-a-red-de-huachicol-fiscal-con-dano-al-erario-por-4-mmdp-fgr/'},{label:'Infobae — 25 objetivos de la red',url:'https://www.infobae.com/mexico/2026/07/17/fgr-revela-quienes-integran-la-red-de-huachicol-fiscal-de-ernesto-ruffo-hay-25-objetivos/'},{label:'La Jornada — Comparecencia',url:'https://www.jornada.com.mx/noticia/2026/07/17/politica/ernesto-ruffo-appel-ex-gobernador-de-bc-comparece-por-acusaciones-de-huachicol-fiscal-y-delincuencia-organizada'}]}
-);
