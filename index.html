@@ -880,6 +880,70 @@
             .featured-row > div { width: 100%; }
         }
 
+        /* Newsletter */
+        .newsletter-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            max-width: 480px;
+            margin: 0 auto 2rem;
+            text-align: left;
+        }
+        .newsletter-text h3 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .newsletter-text p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .newsletter-input {
+            flex: 1;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            padding: 0.6rem 0.85rem;
+            border-radius: 7px;
+            outline: none;
+        }
+        .newsletter-input:focus { border-color: var(--corruption-critical); }
+        .newsletter-btn {
+            background: var(--corruption-critical);
+            color: white;
+            border: none;
+            font-family: var(--font-display);
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 0 1.1rem;
+            border-radius: 7px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .newsletter-btn:disabled { opacity: 0.6; cursor: wait; }
+        .newsletter-sent {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            color: var(--corruption-low);
+            font-weight: 500;
+        }
+        .newsletter-error {
+            font-size: 0.75rem;
+            color: var(--corruption-high);
+            margin-top: 0.5rem;
+        }
+
         /* National Stats Dashboard */
         .stats-dashboard {
             background: var(--bg-card);
@@ -2742,6 +2806,105 @@
             );
         }
 
+        // =====================================================
+        // NEWSLETTER SIGNUP
+        // =====================================================
+        // Sitio estático sin backend: usamos un Google Form como "base de
+        // datos" gratuita de suscriptores. Configura estos dos valores tras
+        // crear tu Google Form (Formulario en blanco → campo "Correo
+        // electrónico" tipo respuesta corta → menú ⋮ → Obtener enlace
+        // prellenado → llena un correo de prueba → copia la URL generada):
+        //   1. NEWSLETTER_FORM_ACTION: la parte de la URL antes de "?usp=pp_url"
+        //      (cambia /viewform por /formResponse)
+        //   2. NEWSLETTER_EMAIL_ENTRY: el "entry.XXXXXXXXX" que aparece en esa
+        //      URL prellenada, es el ID interno de tu campo de correo
+        const NEWSLETTER_FORM_ACTION = ''; // ej: 'https://docs.google.com/forms/d/e/TU_ID_AQUI/formResponse'
+        const NEWSLETTER_EMAIL_ENTRY = ''; // ej: 'entry.123456789'
+
+        function NewsletterSignup() {
+            const [email, setEmail] = React.useState('');
+            const [honeypot, setHoneypot] = React.useState('');
+            const [status, setStatus] = React.useState('idle'); // idle | sending | sent | error | unconfigured
+
+            const isValidEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                if (honeypot) return; // bot trap, silently ignore
+                if (!isValidEmail(email)) {
+                    setStatus('error');
+                    return;
+                }
+                if (!NEWSLETTER_FORM_ACTION || !NEWSLETTER_EMAIL_ENTRY) {
+                    setStatus('unconfigured');
+                    return;
+                }
+                setStatus('sending');
+
+                // Envío "fire and forget" a Google Forms vía un iframe oculto:
+                // Google Forms no permite leer la respuesta por fetch (CORS),
+                // pero sí acepta el POST normal de un <form target="iframe">,
+                // que es la forma estándar de hacer esto sin backend propio.
+                const form = document.createElement('form');
+                form.action = NEWSLETTER_FORM_ACTION;
+                form.method = 'POST';
+                form.target = 'newsletter-iframe-target';
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = NEWSLETTER_EMAIL_ENTRY;
+                input.value = email;
+                form.appendChild(input);
+                document.body.appendChild(form);
+                form.submit();
+                document.body.removeChild(form);
+
+                setTimeout(() => {
+                    setStatus('sent');
+                    setEmail('');
+                }, 600);
+            };
+
+            return (
+                <div className="newsletter-box">
+                    <iframe name="newsletter-iframe-target" style={{ display: 'none' }} title="newsletter-submit-target" />
+                    <div className="newsletter-text">
+                        <h3>Boletín semanal</h3>
+                        <p>Un correo a la semana con los casos nuevos. Sin spam.</p>
+                    </div>
+                    {status === 'sent' ? (
+                        <div className="newsletter-sent"><Icon name="check" size={16} /> Listo, ya estás suscrito.</div>
+                    ) : (
+                        <form className="newsletter-form" onSubmit={handleSubmit}>
+                            <input
+                                type="text"
+                                name="company"
+                                value={honeypot}
+                                onChange={e => setHoneypot(e.target.value)}
+                                style={{ position: 'absolute', left: '-9999px' }}
+                                tabIndex="-1"
+                                autoComplete="off"
+                            />
+                            <input
+                                type="email"
+                                className="newsletter-input"
+                                placeholder="tu@correo.com"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                                required
+                            />
+                            <button type="submit" className="newsletter-btn" disabled={status === 'sending'}>
+                                {status === 'sending' ? '...' : 'Suscribirme'}
+                            </button>
+                        </form>
+                    )}
+                    {status === 'error' && <div className="newsletter-error">Escribe un correo válido.</div>}
+                    {status === 'unconfigured' && (
+                        <div className="newsletter-error">El boletín aún no está activado (falta conectar el formulario).</div>
+                    )}
+                </div>
+            );
+        }
+
         function App() {
             const [expandedId, setExpandedId] = React.useState(null);
             const [filter, setFilter] = React.useState('all');
@@ -3096,6 +3259,8 @@
                             </a>
                         </div>
                     </main>
+
+                    <NewsletterSignup />
 
                     <footer className="site-footer">
                         <div className="footer-text">
