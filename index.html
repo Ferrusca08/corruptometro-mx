@@ -612,6 +612,274 @@
         .infotip-right { right: 0; }
         .infotip-center { left: 50%; transform: translateX(-50%); }
 
+        /* Semáforo */
+        .semaforo {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 3px;
+            padding: 3px;
+            background: #000;
+            border-radius: 4px;
+            vertical-align: middle;
+        }
+        .semaforo-light {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+        .semaforo-lg .semaforo-light {
+            width: 12px;
+            height: 12px;
+        }
+        .semaforo-lg { gap: 5px; padding: 5px; }
+
+        /* Story View */
+        .story-overlay {
+            position: fixed;
+            inset: 0;
+            background: #06090F;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .story-progress {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            display: flex;
+            gap: 4px;
+            z-index: 10;
+        }
+        .story-progress-seg {
+            flex: 1;
+            height: 3px;
+            border-radius: 2px;
+            background: rgba(255,255,255,0.15);
+        }
+        .story-progress-seg.done { background: rgba(255,255,255,0.5); }
+        .story-progress-seg.active { background: #fff; }
+        .story-close {
+            position: absolute;
+            top: 24px;
+            right: 16px;
+            z-index: 10;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #fff;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .story-tapzone {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 35%;
+            z-index: 5;
+            cursor: pointer;
+        }
+        .story-tapzone-left { left: 0; }
+        .story-tapzone-right { right: 0; }
+        .story-card {
+            width: 100%;
+            max-width: 420px;
+            margin: 0 1.25rem;
+            padding: 2.5rem 1.75rem;
+            border: 1px solid;
+            border-radius: 16px;
+            background: linear-gradient(180deg, var(--bg-card), var(--bg-primary));
+        }
+        .story-top {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .story-badge {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+        .story-name {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+        .story-role {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.75rem;
+        }
+        .story-score {
+            font-family: var(--font-display);
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .story-score-max {
+            font-size: 1.6rem;
+            color: var(--text-muted);
+        }
+        .story-score-label {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.75rem;
+        }
+        .story-cats {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-bottom: 1.75rem;
+        }
+        .story-cat-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .story-cat-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .story-cat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            flex: 1;
+        }
+        .story-cat-val {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-primary);
+        }
+        .story-actions {
+            display: flex;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 8;
+        }
+        .story-action-btn {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-highlight);
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .story-footer {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+        @media (max-width: 480px) {
+            .story-score { font-size: 3.5rem; }
+            .story-name { font-size: 1.4rem; }
+        }
+
+        /* Featured banner (Caso del día / Sorpréndeme) */
+        .featured-row {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .featured-card {
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: border-color 0.15s;
+        }
+        .featured-card:hover { border-color: var(--border-highlight); }
+        .featured-label {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--corruption-critical);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.25rem;
+        }
+        .featured-name {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .featured-role {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .featured-score {
+            font-family: var(--font-mono);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+        .surprise-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            font-size: 0.78rem;
+            font-weight: 600;
+            transition: border-color 0.15s;
+            white-space: nowrap;
+        }
+        .surprise-btn:hover { border-color: var(--border-highlight); }
+        .stories-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            font-size: 0.78rem;
+            font-weight: 600;
+            transition: border-color 0.15s;
+            white-space: nowrap;
+        }
+        .stories-btn:hover { border-color: var(--border-highlight); }
+        @media (max-width: 640px) {
+            .featured-row { grid-template-columns: 1fr; }
+            .featured-row > div { width: 100%; }
+        }
+
         /* National Stats Dashboard */
         .stats-dashboard {
             background: var(--bg-card);
@@ -1086,6 +1354,13 @@
         }
         .share-btn:hover:not(:disabled) { opacity: 0.9; }
         .share-btn:disabled { opacity: 0.6; cursor: wait; }
+        .speak-btn {
+            margin-left: auto;
+            background: var(--bg-elevated);
+            color: var(--text-primary);
+            border: 1px solid var(--border-highlight);
+        }
+        .speak-btn ~ .share-btn { margin-left: 0; }
         .official-party {
             font-family: var(--font-mono);
             font-size: 0.75rem;
@@ -1368,6 +1643,61 @@
             return HEX_COLORS.clean;
         }
 
+        // Semáforo: colapsa los 5 niveles de severidad en las 3 luces que
+        // cualquier mexicano ya entiende sin explicación.
+        function getSemaforoTier(score) {
+            if (score >= 55) return 'rojo';
+            if (score >= 30) return 'amarillo';
+            return 'verde';
+        }
+        function Semaforo({ score, size = 'sm' }) {
+            const tier = getSemaforoTier(score);
+            const lights = [
+                { key: 'rojo', color: '#F85149' },
+                { key: 'amarillo', color: '#D29922' },
+                { key: 'verde', color: '#3FB950' },
+            ];
+            return (
+                <span className={`semaforo semaforo-${size}`} title="Semáforo de corrupción">
+                    {lights.map(l => (
+                        <span
+                            key={l.key}
+                            className="semaforo-light"
+                            style={{
+                                background: l.key === tier ? l.color : 'rgba(255,255,255,0.08)',
+                                boxShadow: l.key === tier ? `0 0 8px ${l.color}` : 'none',
+                            }}
+                        />
+                    ))}
+                </span>
+            );
+        }
+
+        // Lee en voz alta el resumen de una ficha usando la Web Speech API
+        // nativa del navegador (sin librerías, sin costo, sin servidor).
+        function buildSpeechText(official) {
+            const total = getTotalScore(official.scores);
+            const topCat = SCORING_CRITERIA
+                .map(c => ({ ...c, val: official.scores[c.id] }))
+                .filter(c => c.val > 0)
+                .sort((a, b) => b.val - a.val)[0];
+            const evidence = topCat ? official.breakdown[topCat.id] : '';
+            const shortEvidence = evidence && evidence.length > 260 ? evidence.slice(0, 260) + '...' : evidence;
+            return `${official.name}. ${official.role}. ` +
+                `Puntaje: ${total} de 100, nivel ${getScoreLabel(total).toLowerCase()}. ` +
+                (topCat ? `Principal señalamiento, ${topCat.label}: ${shortEvidence}` : '');
+        }
+        function speakOfficial(official, onEnd) {
+            if (!('speechSynthesis' in window)) return false;
+            window.speechSynthesis.cancel();
+            const utter = new SpeechSynthesisUtterance(buildSpeechText(official));
+            utter.lang = 'es-MX';
+            utter.rate = 1.02;
+            if (onEnd) utter.onend = onEnd;
+            window.speechSynthesis.speak(utter);
+            return true;
+        }
+
         function getScoreLabel(score) {
             if (score >= 75) return 'CRÍTICO';
             if (score >= 55) return 'ALTO';
@@ -1547,6 +1877,33 @@
                         <svg {...common}>
                             <circle cx="12" cy="12" r="9" />
                             <path d="M12 11v5M12 8v.01" />
+                        </svg>
+                    );
+                case 'volume':
+                    return (
+                        <svg {...common}>
+                            <path d="M4 9v6h4l5 5V4L8 9H4z" />
+                            <path d="M17 8a5 5 0 0 1 0 8M19.5 5.5a9 9 0 0 1 0 13" />
+                        </svg>
+                    );
+                case 'volume-off':
+                    return (
+                        <svg {...common}>
+                            <path d="M4 9v6h4l5 5V4L8 9H4z" />
+                            <path d="M17 9l5 6M22 9l-5 6" />
+                        </svg>
+                    );
+                case 'shuffle':
+                    return (
+                        <svg {...common}>
+                            <path d="M3 6h3l7 12h5M3 18h3l3.5-6M17 6h3v3M20 6l-5 5" />
+                        </svg>
+                    );
+                case 'film':
+                    return (
+                        <svg {...common}>
+                            <rect x="3" y="4" width="18" height="16" rx="2" />
+                            <path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4" />
                         </svg>
                     );
                 default:
@@ -2291,6 +2648,100 @@
             );
         }
 
+        // =====================================================
+        // STORY VIEW — tarjetas deslizables estilo historias
+        // =====================================================
+        function StoryView({ officials, startIndex, onClose }) {
+            const [index, setIndex] = React.useState(startIndex || 0);
+            const [speaking, setSpeaking] = React.useState(false);
+            const total = officials.length;
+            const official = officials[index];
+            const score = getTotalScore(official.scores);
+            const color = getScoreColorHex(score);
+
+            React.useEffect(() => {
+                return () => window.speechSynthesis && window.speechSynthesis.cancel();
+            }, []);
+
+            React.useEffect(() => {
+                window.speechSynthesis && window.speechSynthesis.cancel();
+                setSpeaking(false);
+            }, [index]);
+
+            const go = (dir) => {
+                setIndex(i => {
+                    const next = i + dir;
+                    if (next < 0) return total - 1;
+                    if (next >= total) return 0;
+                    return next;
+                });
+            };
+
+            const handleSpeak = () => {
+                if (speaking) {
+                    window.speechSynthesis.cancel();
+                    setSpeaking(false);
+                    return;
+                }
+                const ok = speakOfficial(official, () => setSpeaking(false));
+                if (ok) setSpeaking(true);
+            };
+
+            const topCats = SCORING_CRITERIA
+                .map(c => ({ ...c, val: official.scores[c.id] }))
+                .filter(c => c.val > 0)
+                .sort((a, b) => b.val - a.val)
+                .slice(0, 3);
+
+            return (
+                <div className="story-overlay">
+                    <div className="story-progress">
+                        {officials.map((o, i) => (
+                            <div key={o.id} className={`story-progress-seg ${i === index ? 'active' : i < index ? 'done' : ''}`} />
+                        ))}
+                    </div>
+
+                    <button className="story-close" onClick={onClose}><Icon name="x" size={20} /></button>
+
+                    <div className="story-tapzone story-tapzone-left" onClick={() => go(-1)} />
+                    <div className="story-tapzone story-tapzone-right" onClick={() => go(1)} />
+
+                    <div className="story-card" style={{ borderColor: color }}>
+                        <div className="story-top">
+                            <Semaforo score={score} size="lg" />
+                            {official.status === 'en_funciones' && <span className="story-badge" style={{ color: '#F85149' }}>EN FUNCIONES</span>}
+                            {official.status === 'candidato' && <span className="story-badge" style={{ color: '#D29922' }}>CANDIDATO</span>}
+                        </div>
+
+                        <h2 className="story-name">{official.name}</h2>
+                        <p className="story-role">{official.role} · {official.state}</p>
+
+                        <div className="story-score" style={{ color }}>{score}<span className="story-score-max">/100</span></div>
+                        <div className="story-score-label" style={{ color }}>{getScoreLabel(score)}</div>
+
+                        <div className="story-cats">
+                            {topCats.map(c => (
+                                <div className="story-cat-row" key={c.id}>
+                                    <span className="story-cat-dot" style={{ background: getScoreColorHex(c.val * (100 / c.maxPoints)) }} />
+                                    <span className="story-cat-label">{c.label}</span>
+                                    <span className="story-cat-val">{c.val}/{c.maxPoints}</span>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="story-actions">
+                            <button className="story-action-btn" onClick={handleSpeak}>
+                                <Icon name={speaking ? 'volume-off' : 'volume'} size={16} />
+                                {speaking ? 'Detener' : 'Escuchar'}
+                            </button>
+                        </div>
+
+                        <div className="story-footer">{index + 1} / {total} · toca los lados para navegar</div>
+                    </div>
+                </div>
+            );
+        }
+
         function App() {
             const [expandedId, setExpandedId] = React.useState(null);
             const [filter, setFilter] = React.useState('all');
@@ -2300,6 +2751,8 @@
             const [showMethodology, setShowMethodology] = React.useState(false);
             const [currentPage, setCurrentPage] = React.useState(1);
             const [activeView, setActiveView] = React.useState('leaderboard');
+            const [storyOpen, setStoryOpen] = React.useState(false);
+            const [storyStart, setStoryStart] = React.useState(0);
             const PAGE_SIZE = 20;
 
             const sorted = [...officials]
@@ -2349,8 +2802,35 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             };
 
+            // Caso del día: elección determinística basada en la fecha, así
+            // todos ven el mismo caso durante el día y cambia mañana.
+            const featuredOfficial = React.useMemo(() => {
+                const today = new Date().toISOString().slice(0, 10);
+                let hash = 0;
+                for (let i = 0; i < today.length; i++) hash = (hash * 31 + today.charCodeAt(i)) >>> 0;
+                return sorted[hash % sorted.length];
+            }, [sorted]);
+
+            const openStoriesFrom = (id) => {
+                const idx = sorted.findIndex(o => o.id === id);
+                setStoryStart(idx >= 0 ? idx : 0);
+                setStoryOpen(true);
+            };
+
+            const handleSurprise = () => {
+                const randomIdx = Math.floor(Math.random() * sorted.length);
+                openStoriesFrom(sorted[randomIdx].id);
+            };
+
             return (
                 <React.Fragment>
+                    {storyOpen && (
+                        <StoryView
+                            officials={sorted}
+                            startIndex={storyStart}
+                            onClose={() => setStoryOpen(false)}
+                        />
+                    )}
                     <header className="site-header">
                         <div className="header-inner">
                             <div className="logo">
@@ -2418,6 +2898,33 @@
                                 </div>
                             </div>
                         </section>
+
+                        <div className="featured-row">
+                            {featuredOfficial && (
+                                <div
+                                    className="featured-card"
+                                    onClick={() => handleJumpToOfficial(featuredOfficial.id, featuredOfficial.name)}
+                                >
+                                    <Semaforo score={featuredOfficial.total} size="lg" />
+                                    <div>
+                                        <div className="featured-label">Caso del día</div>
+                                        <div className="featured-name">{featuredOfficial.name}</div>
+                                        <div className="featured-role">{featuredOfficial.role}</div>
+                                    </div>
+                                    <div className="featured-score" style={{ color: getScoreColor(featuredOfficial.total) }}>
+                                        {featuredOfficial.total}
+                                    </div>
+                                </div>
+                            )}
+                            <div className="surprise-btn" onClick={handleSurprise}>
+                                <Icon name="shuffle" size={18} />
+                                Sorpréndeme
+                            </div>
+                            <div className="stories-btn" onClick={() => openStoriesFrom(sorted[0].id)}>
+                                <Icon name="film" size={18} />
+                                Ver historias
+                            </div>
+                        </div>
 
                         <MexicoMap
                             officials={officials}
@@ -2887,10 +3394,22 @@
             const pct = (total / maxScore) * 100;
             const color = getScoreColor(total);
             const [shareStatus, setShareStatus] = React.useState('idle');
+            const [speaking, setSpeaking] = React.useState(false);
 
             const handleShare = (e) => {
                 e.stopPropagation();
                 shareOfficialCard(official, maxScore, setShareStatus);
+            };
+
+            const handleSpeak = (e) => {
+                e.stopPropagation();
+                if (speaking) {
+                    window.speechSynthesis.cancel();
+                    setSpeaking(false);
+                    return;
+                }
+                const ok = speakOfficial(official, () => setSpeaking(false));
+                if (ok) setSpeaking(true);
             };
 
             return (
@@ -2956,6 +3475,7 @@
                             {official.level.charAt(0).toUpperCase() + official.level.slice(1)}
                         </div>
                         <div className="score-badge">
+                            <Semaforo score={total} />
                             <div className="score-bar-bg">
                                 <div className="score-bar-fill" style={{ width: `${pct}%`, background: color }} />
                             </div>
@@ -2966,6 +3486,7 @@
                     {expanded && (
                         <div className="official-detail">
                             <div style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+                                <Semaforo score={total} size="lg" />
                                 <span style={{
                                     fontFamily: 'var(--font-mono)',
                                     fontSize: '2rem',
@@ -3000,6 +3521,13 @@
                                         Última verificación: {formatDateEs(official.lastVerified)}
                                     </span>
                                 )}
+                                <button
+                                    onClick={handleSpeak}
+                                    className="share-btn speak-btn"
+                                >
+                                    <Icon name={speaking ? 'volume-off' : 'volume'} size={14} />
+                                    {speaking ? 'Detener' : 'Escuchar'}
+                                </button>
                                 <button
                                     onClick={handleShare}
                                     disabled={shareStatus === 'generando'}
