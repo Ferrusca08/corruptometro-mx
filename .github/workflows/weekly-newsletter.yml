@@ -1,0 +1,31 @@
+name: Boletín semanal
+
+on:
+  schedule:
+    # Todos los lunes a las 14:00 UTC (8:00 a.m. Ciudad de México)
+    - cron: '0 14 * * 1'
+  workflow_dispatch: {} # permite dispararlo manualmente desde la pestaña Actions
+
+jobs:
+  send-newsletter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node (para leer data.js)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Enviar boletín
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          SUBSCRIBERS_CSV_URL: ${{ vars.SUBSCRIBERS_CSV_URL }}
+          REPO_ROOT: ${{ github.workspace }}
+        run: python3 .github/scripts/send_weekly_newsletter.py
