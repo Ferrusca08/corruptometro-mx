@@ -151,25 +151,38 @@ def main():
     repo_root = os.environ.get("REPO_ROOT", ".")
     api_key = os.environ.get("RESEND_API_KEY")
     csv_url = os.environ.get("SUBSCRIBERS_CSV_URL")
+    test_mode = os.environ.get("TEST_MODE", "false").lower() == "true"
+    test_email = os.environ.get("TEST_EMAIL", "")
+    test_limit = int(os.environ.get("TEST_LIMIT", "2"))
 
     if not api_key:
         print("ERROR: falta RESEND_API_KEY")
         sys.exit(1)
-    if not csv_url:
-        print("ERROR: falta SUBSCRIBERS_CSV_URL (publica el Google Sheet como CSV)")
-        sys.exit(1)
 
     officials = load_officials(repo_root)
-    recent = get_recent_officials(officials, days=7)
 
-    if not recent:
-        print("Sin casos nuevos esta semana. No se envía boletín.")
-        return
-
-    subscribers = fetch_subscribers(csv_url)
-    if not subscribers:
-        print("Sin suscriptores. No se envía nada.")
-        return
+    if test_mode:
+        # Modo de prueba: NO toca la lista real de suscriptores. Toma los
+        # primeros N perfiles (ordenados por score) solo para validar que
+        # el envío técnico funciona, y lo manda únicamente a test_email.
+        if not test_email:
+            print("ERROR: TEST_MODE activo pero falta TEST_EMAIL")
+            sys.exit(1)
+        recent = sorted(officials, key=lambda o: get_total_score(o["scores"]), reverse=True)[:test_limit]
+        subscribers = [test_email]
+        print(f"[MODO PRUEBA] Enviando {len(recent)} caso(s) de muestra solo a {test_email}")
+    else:
+        if not csv_url:
+            print("ERROR: falta SUBSCRIBERS_CSV_URL (publica el Google Sheet como CSV)")
+            sys.exit(1)
+        recent = get_recent_officials(officials, days=7)
+        if not recent:
+            print("Sin casos nuevos esta semana. No se envía boletín.")
+            return
+        subscribers = fetch_subscribers(csv_url)
+        if not subscribers:
+            print("Sin suscriptores. No se envía nada.")
+            return
 
     html = build_email_html(recent)
     sent, failed = 0, 0

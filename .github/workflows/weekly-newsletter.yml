@@ -4,7 +4,20 @@ on:
   schedule:
     # Todos los lunes a las 14:00 UTC (8:00 a.m. Ciudad de México)
     - cron: '0 14 * * 1'
-  workflow_dispatch: {} # permite dispararlo manualmente desde la pestaña Actions
+  workflow_dispatch:
+    inputs:
+      test_mode:
+        description: 'Modo de prueba (no toca la lista real de suscriptores)'
+        type: boolean
+        default: false
+      test_email:
+        description: 'Correo al que mandar la prueba (solo si test_mode=true)'
+        type: string
+        default: ''
+      test_limit:
+        description: 'Cuántos casos de muestra incluir en la prueba'
+        type: number
+        default: 2
 
 jobs:
   send-newsletter:
@@ -28,4 +41,7 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           SUBSCRIBERS_CSV_URL: ${{ vars.SUBSCRIBERS_CSV_URL }}
           REPO_ROOT: ${{ github.workspace }}
+          TEST_MODE: ${{ github.event.inputs.test_mode }}
+          TEST_EMAIL: ${{ github.event.inputs.test_email }}
+          TEST_LIMIT: ${{ github.event.inputs.test_limit }}
         run: python3 .github/scripts/send_weekly_newsletter.py
