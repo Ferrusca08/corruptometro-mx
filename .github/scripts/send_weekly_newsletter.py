@@ -137,6 +137,8 @@ def send_via_resend(api_key, to_email, html):
     req = urllib.request.Request(url, data=payload, method="POST", headers={
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
+        "User-Agent": "CorruptometroMX-Newsletter/1.0 (+https://ferrusca08.github.io/corruptometro-mx/)",
+        "Accept": "application/json",
     })
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
