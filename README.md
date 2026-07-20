@@ -4,11 +4,23 @@ Dashboard ciudadano de transparencia gubernamental en México.
 
 ## ¿Qué es?
 
-Un proyecto de código abierto que recopila, estructura y visualiza datos públicos sobre corrupción gubernamental en México. Cada dato proviene de fuentes oficiales verificables: OSFEM, SCJN, TEPJF, ASF, SESNSP, SHCP y fuentes periodísticas de registro.
+Un proyecto de código abierto que recopila, estructura y visualiza datos públicos sobre corrupción gubernamental en México.
+
+## Esto no es un veredicto
+
+El puntaje mide **qué tan documentado y respaldado por fuentes** está un señalamiento, no si la persona es culpable de un delito. Una sentencia firme y una denuncia sin resolver pesan distinto en el puntaje precisamente porque no son equivalentes. Revisa siempre la evidencia y la fuente citada en cada categoría de un perfil, no solo el número final — el sitio incluye un desglose completo con la fuente exacta detrás de cada punto otorgado.
+
+## ¿Qué fuentes se aceptan?
+
+Instituciones oficiales (OSFEM, ASF, SCJN, TEPJF, FGR, UIF, sentencias judiciales), autoridades extranjeras cuando aplica (DOJ, DEA), y medios de cobertura nacional o regional con trayectoria editorial verificable ([lista completa de dominios reconocidos](.github/scripts/dominios-confiables.txt)). No se aceptan rumores, publicaciones de redes sociales sin verificar, ni fuentes sin URL rastreable.
+
+## ¿Cuándo se documenta un caso?
+
+Cuando existe al menos un hecho verificable en una fuente reconocida: una sentencia, una auditoría con hallazgos, una denuncia formal admitida por una autoridad, una detención, o una investigación abierta. La sola sospecha, opinión o crítica política sin respaldo documental no califica para ser incluida.
 
 ## Sistema de puntuación
 
-Cada servidor público es evaluado en 7 categorías con un máximo de 100 puntos:
+Cada servidor público es evaluado en 7 categorías independientes, con un máximo de 100 puntos en total. Cada categoría se puntúa por separado según la evidencia disponible para esa persona específica, no de forma comparativa contra otros casos:
 
 | Categoría | Puntos máx. | Descripción |
 |---|---|---|
@@ -19,6 +31,12 @@ Cada servidor público es evaluado en 7 categorías con un máximo de 100 puntos
 | Denuncias documentadas | 10 | Denuncias ciudadanas o periodísticas verificadas |
 | Evasión de justicia | 10 | Desacato judicial, amparos para evadir detención |
 | Nepotismo / conflicto de interés | 5 | Concesiones irregulares, contratos dirigidos |
+
+Los pesos de cada categoría son una decisión de diseño del proyecto, no están validados por un panel de expertos externo ni tienen pruebas de confiabilidad entre evaluadores — es un área abierta a mejora. Si tienes retroalimentación sobre la metodología, [abre un Issue](../../issues).
+
+## Descarga de datos
+
+Puedes descargar la base completa en JSON o CSV directamente desde el sitio (botón en la sección de Metodología), o consultar el archivo fuente [`data.js`](data.js) en este repositorio.
 
 ## ¿Cómo contribuir?
 

@@ -217,6 +217,64 @@
             font-size: 0.85rem;
             color: var(--text-secondary);
         }
+        .methodology-full {
+            margin-top: 1.25rem;
+        }
+        .methodology-disclaimer {
+            background: rgba(210, 153, 34, 0.08);
+            border: 1px solid rgba(210, 153, 34, 0.3);
+            border-radius: 8px;
+            padding: 0.9rem 1.1rem;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .methodology-disclaimer strong {
+            color: var(--corruption-medium);
+            font-family: var(--font-display);
+        }
+        .methodology-section {
+            margin-bottom: 1.25rem;
+        }
+        .methodology-section h5 {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+        }
+        .methodology-section p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+        .methodology-download {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        .download-btn {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-highlight);
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.45rem 0.85rem;
+            border-radius: 6px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .download-btn:hover { border-color: var(--corruption-critical); }
 
         /* Filters */
         .filters {
@@ -3047,7 +3105,7 @@
                                     </div>
                                     <div className="hero-stat-label">
                                         Score máx.
-                                        <InfoTip text="El puntaje más alto registrado, sobre 100. Entre más alto, más grave y documentado el caso." />
+                                        <InfoTip text="El puntaje más alto de la base, sobre 100. Mide qué tan documentado y respaldado por fuentes está un caso, no es un veredicto legal — revisa siempre la evidencia citada." />
                                     </div>
                                 </div>
                                 <div className="hero-stat">
@@ -3056,7 +3114,7 @@
                                     </div>
                                     <div className="hero-stat-label">
                                         Nivel crítico
-                                        <InfoTip text="Casos con score de 75 o más sobre 100 — los más graves de toda la base." align="right" />
+                                        <InfoTip text="Perfiles con 75 o más puntos: los que tienen mayor cantidad de evidencia documentada, no una declaración de culpabilidad." align="right" />
                                     </div>
                                 </div>
                             </div>
@@ -3147,21 +3205,71 @@
                                      style={{ transform: showMethodology ? 'rotate(90deg)' : 'none' }}>
                                     <path d="M4 2l4 4-4 4"/>
                                 </svg>
-                                Metodología de puntuación
+                                Metodología: qué es esto y qué no es
                             </button>
                             {showMethodology && (
-                                <div className="methodology-content">
-                                    {SCORING_CRITERIA.map(c => (
-                                        <div className="methodology-item" key={c.id}>
-                                            <div className="methodology-weight">{c.maxPoints}pts</div>
-                                            <div>
-                                                <div style={{ fontSize: '0.85rem', fontWeight: 500, marginBottom: '0.2rem' }}>
-                                                    {c.label}
+                                <div className="methodology-full">
+                                    <div className="methodology-disclaimer">
+                                        <strong>Esto no es un veredicto.</strong> El puntaje mide qué tan documentado
+                                        y respaldado por fuentes está un señalamiento, no si la persona es culpable.
+                                        Una sentencia firme y una denuncia sin resolver pesan distinto en el
+                                        puntaje precisamente porque no son lo mismo — revisa siempre la evidencia
+                                        y la fuente citada en cada categoría, no solo el número final.
+                                    </div>
+
+                                    <div className="methodology-section">
+                                        <h5>¿Qué fuentes se aceptan?</h5>
+                                        <p>
+                                            Instituciones oficiales (OSFEM, ASF, SCJN, TEPJF, FGR, UIF, sentencias
+                                            judiciales), autoridades extranjeras cuando aplica (DOJ, DEA), y medios
+                                            de cobertura nacional o regional con trayectoria editorial verificable.
+                                            No se aceptan rumores, redes sociales sin verificar, ni fuentes sin URL
+                                            rastreable. Cada categoría puntuada en cada perfil cita su fuente exacta.
+                                        </p>
+                                    </div>
+
+                                    <div className="methodology-section">
+                                        <h5>¿Cuándo se documenta un caso?</h5>
+                                        <p>
+                                            Cuando existe al menos un hecho verificable en alguna fuente reconocida:
+                                            una sentencia, una auditoría con hallazgos, una denuncia formal admitida,
+                                            una detención, o una investigación abierta por una autoridad. La sola
+                                            sospecha o crítica política sin respaldo documental no califica.
+                                        </p>
+                                    </div>
+
+                                    <div className="methodology-section">
+                                        <h5>¿Cómo se calcula el puntaje?</h5>
+                                        <p style={{ marginBottom: '0.75rem' }}>
+                                            Suma de 7 categorías independientes, hasta 100 puntos. Cada una se
+                                            puntúa por separado según la evidencia disponible para esa persona
+                                            específica, no de forma comparativa contra otros casos.
+                                        </p>
+                                    </div>
+
+                                    <div className="methodology-content">
+                                        {SCORING_CRITERIA.map(c => (
+                                            <div className="methodology-item" key={c.id}>
+                                                <div className="methodology-weight">{c.maxPoints}pts</div>
+                                                <div>
+                                                    <div style={{ fontSize: '0.85rem', fontWeight: 500, marginBottom: '0.2rem' }}>
+                                                        {c.label}
+                                                    </div>
+                                                    <div className="methodology-label">{c.desc}</div>
                                                 </div>
-                                                <div className="methodology-label">{c.desc}</div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        ))}
+                                    </div>
+
+                                    <div className="methodology-download">
+                                        <span>¿Quieres los datos crudos?</span>
+                                        <button className="download-btn" onClick={() => downloadOfficialsAs('json', officials)}>
+                                            <Icon name="folder" size={13} /> Descargar JSON
+                                        </button>
+                                        <button className="download-btn" onClick={() => downloadOfficialsAs('csv', officials)}>
+                                            <Icon name="folder" size={13} /> Descargar CSV
+                                        </button>
+                                    </div>
                                 </div>
                             )}
                         </div>
@@ -3495,6 +3603,51 @@
             });
         }
 
+        // Descarga la base de datos completa como JSON o CSV, generado en
+        // el navegador del usuario, sin pasar por GitHub.
+        function downloadOfficialsAs(format, officials) {
+            const dateStr = new Date().toISOString().slice(0, 10);
+            let blob, filename;
+
+            if (format === 'json') {
+                const payload = officials.map(o => ({
+                    id: o.id, name: o.name, role: o.role, party: o.party,
+                    state: o.state, level: o.level, status: o.status,
+                    scores: o.scores, total: getTotalScore(o.scores),
+                    lastVerified: o.lastVerified,
+                    sources: o.sources.map(s => s.url),
+                }));
+                blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+                filename = `corruptometro-mx_${dateStr}.json`;
+            } else {
+                const cols = ['id', 'name', 'role', 'party', 'state', 'level', 'status', 'total',
+                    'sentencias', 'fiscalizacion', 'funcionarios', 'deuda', 'denuncias', 'evasion', 'nepotismo',
+                    'lastVerified', 'num_sources'];
+                const rows = officials.map(o => [
+                    o.id, o.name, o.role, o.party, o.state, o.level, o.status, getTotalScore(o.scores),
+                    o.scores.sentencias, o.scores.fiscalizacion, o.scores.funcionarios, o.scores.deuda,
+                    o.scores.denuncias, o.scores.evasion, o.scores.nepotismo,
+                    o.lastVerified || '', o.sources.length,
+                ]);
+                const esc = (v) => {
+                    const s = String(v ?? '');
+                    return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+                };
+                const csv = [cols.join(','), ...rows.map(r => r.map(esc).join(','))].join('\n');
+                blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8' });
+                filename = `corruptometro-mx_${dateStr}.csv`;
+            }
+
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
         async function shareOfficialCard(official, maxScore, setStatus) {
             setStatus && setStatus('generando');
 
@@ -3666,6 +3819,7 @@
                                     background: `${color}22`,
                                     color
                                 }}>{getScoreLabel(total)}</span>
+                                <InfoTip text="Este nivel describe cuánta evidencia documentada hay, no un veredicto de culpabilidad. Lee el desglose por categoría y sus fuentes abajo." />
                                 {(() => {
                                     const strength = getSourceStrength(official.sources.length);
                                     return (
