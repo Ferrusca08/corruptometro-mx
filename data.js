@@ -6469,3 +6469,30 @@ officials.push(
     timeline:[{year:'2026',event:'26 de febrero: orden de aprehensión cumplimentada por peculado y uso indebido de facultades. Trasladado al Centro de Reinserción Social San Francisco Kobén.'}],
     sources:[{label:'El Universal — Detención',url:'https://www.eluniversal.com.mx/estados/detienen-a-exalcalde-de-escarcega-campeche-esta-acusado-de-peculado-y-abuso-de-confianza/'},{label:'LatinUS — Uso indebido de facultades',url:'https://latinus.us/mexico/2026/3/1/aprehenden-por-uso-indebido-de-facultades-peculado-exalcalde-de-escarcega-campeche-165809.html'}]}
 );
+
+
+officials.push(
+    {id:381,name:'Gerardo Mérida Sánchez',role:'Exsecretario de Seguridad Pública de Sinaloa',party:'MORENA',state:'Sinaloa',level:'estatal',active:false,status:'ex_funcionario',lastVerified:'2026-07-20',
+    scores:{sentencias:20,fiscalizacion:5,funcionarios:10,deuda:5,denuncias:9,evasion:6,nepotismo:2},
+    breakdown:{sentencias:'Acusado formalmente por el Departamento de Justicia de EE.UU. en el mismo expediente que Rocha Moya e Inzunza (S9 23 Cr. 180, Distrito Sur de Nueva York), por conspiración para importar narcóticos y posesión de ametralladoras y dispositivos destructivos. Se entregó voluntariamente a las autoridades estadounidenses.',
+    fiscalizacion:'Como secretario de Seguridad Pública controlaba directamente a la Policía Estatal de Sinaloa, la corporación que, según el expediente del DOJ, quedó bajo protección de "Los Chapitos" tras la reunión de 2021.',
+    funcionarios:'Ocupó uno de los cargos de más alto perfil en el gabinete de seguridad de Rocha Moya, en paralelo con el vicefiscal Dámaso Castro Saavedra y el entonces alcalde de Culiacán Juan de Dios Gámez, todos señalados en el mismo expediente.',
+    deuda:'Sin monto de daño patrimonial documentado; el caso es de protección al crimen organizado, no de desvío directo de recursos.',
+    denuncias:'Una jueza otorgó a la Fiscalía 2 meses adicionales para procesar "evidencia abundante" en su contra, según reportes de julio de 2026.',
+    evasion:'Se entregó a las autoridades de EE.UU. junto con el entonces secretario de Finanzas, Enrique Díaz, en vez de enfrentar el proceso en México.',
+    nepotismo:'Sin datos adicionales documentados.'},
+    timeline:[{year:'2021',event:'Nombrado secretario de Seguridad Pública de Sinaloa por Rocha Moya. Presunta reunión con "Los Chapitos" el mismo año.'},{year:'2026',event:'Abril: acusado formalmente por el DOJ de EE.UU. Se entrega a las autoridades estadounidenses junto con Enrique Díaz.'}],
+    sources:[{label:'Telemundo — Detenciones Sinaloa',url:'https://www.telemundodelmarva.com/noticias/latino-america/detienen-a-alcalde-y-exfuncionario-por-presuntos-hechos-de-corrupci-n-en-el-centro-de/article_ac8834dc-9bcc-51d1-9053-443c685a1d56.html'},{label:'El Financiero — Cómo ayudó a Los Chapitos',url:'https://www.elfinanciero.com.mx/estados/2026/05/15/detencion-de-gerardo-merida-como-ayudo-el-exsecretario-de-seguridad-de-sinaloa-a-los-chapitos/'}]},
+
+    {id:382,name:'Enrique Díaz',role:'Exsecretario de Finanzas de Sinaloa',party:'MORENA',state:'Sinaloa',level:'estatal',active:false,status:'ex_funcionario',lastVerified:'2026-07-20',
+    scores:{sentencias:20,fiscalizacion:8,funcionarios:8,deuda:6,denuncias:8,evasion:6,nepotismo:2},
+    breakdown:{sentencias:'Acusado formalmente por el Departamento de Justicia de EE.UU. en el mismo expediente que Rocha Moya, Inzunza y Mérida (Distrito Sur de Nueva York). Se entregó voluntariamente a las autoridades estadounidenses en mayo de 2026.',
+    fiscalizacion:'Como secretario de Finanzas tenía control directo sobre el presupuesto estatal de Sinaloa durante el periodo señalado por el DOJ.',
+    funcionarios:'Parte del núcleo del gabinete de Rocha Moya señalado en el expediente estadounidense, junto con el secretario de Seguridad Pública y el vicefiscal.',
+    deuda:'Sin monto de daño patrimonial documentado en el expediente disponible públicamente.',
+    denuncias:'Su entrega a las autoridades estadounidenses, en vez de a la FGR mexicana, fue señalada por analistas como parte de un patrón entre los funcionarios de este expediente.',
+    evasion:'Se entregó directamente a EE.UU. junto con Gerardo Mérida en vez de comparecer ante la justicia mexicana.',
+    nepotismo:'Sin datos adicionales documentados.'},
+    timeline:[{year:'2021',event:'Nombrado secretario de Finanzas de Sinaloa por Rocha Moya'},{year:'2026',event:'Abril: acusado formalmente por el DOJ de EE.UU. Mayo: se entrega a las autoridades estadounidenses junto con Gerardo Mérida.'}],
+    sources:[{label:'Telemundo — Detenciones Sinaloa',url:'https://www.telemundodelmarva.com/noticias/latino-america/detienen-a-alcalde-y-exfuncionario-por-presuntos-hechos-de-corrupci-n-en-el-centro-de/article_ac8834dc-9bcc-51d1-9053-443c685a1d56.html'}]}
+);
