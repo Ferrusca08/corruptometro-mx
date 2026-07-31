@@ -31,28 +31,34 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --bg-primary: #06090F;
-            --bg-card: #0D1117;
-            --bg-card-hover: #151B23;
-            --bg-elevated: #1C2333;
-            --border: #21262D;
-            --border-highlight: #30363D;
-            --text-primary: #E6EDF3;
-            --text-secondary: #8B949E;
-            --text-muted: #484F58;
-            --corruption-critical: #F85149;
-            --corruption-high: #F0883E;
-            --corruption-medium: #D29922;
-            --corruption-low: #3FB950;
-            --corruption-clean: #58A6FF;
-            --accent-glow: rgba(248, 81, 73, 0.12);
+            --bg-primary: #1a1a2e;
+            --bg-card: #222240;
+            --bg-card-hover: #2a2a4a;
+            --bg-elevated: #2d2d52;
+            --border: rgba(255,255,255,0.06);
+            --border-highlight: rgba(255,255,255,0.12);
+            --text-primary: #eaeaff;
+            --text-secondary: #9d9dbd;
+            --text-muted: #6b6b8d;
+            --corruption-critical: #ff6b6b;
+            --corruption-high: #ffa26b;
+            --corruption-medium: #ffd06b;
+            --corruption-low: #6bffb8;
+            --corruption-clean: #6bb3ff;
+            --accent: #6bb3ff;
+            --accent-glow: rgba(255, 107, 107, 0.12);
+            --clay-shadow: 6px 6px 18px rgba(0,0,0,0.35), -3px -3px 12px rgba(255,255,255,0.04), inset 0 1px 0 rgba(255,255,255,0.06);
+            --clay-shadow-sm: 3px 3px 10px rgba(0,0,0,0.3), -2px -2px 8px rgba(255,255,255,0.03), inset 0 1px 0 rgba(255,255,255,0.05);
+            --clay-shadow-inset: inset 3px 3px 8px rgba(0,0,0,0.25), inset -2px -2px 6px rgba(255,255,255,0.04);
+            --clay-radius: 20px;
+            --clay-radius-sm: 14px;
             --font-display: 'Space Grotesk', system-ui, sans-serif;
             --font-body: 'Inter', system-ui, sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
         }
 
         body {
-            background: var(--bg-primary);
+            background: linear-gradient(145deg, #1a1a2e 0%, #16162a 50%, #1e1e3a 100%);
             color: var(--text-primary);
             font-family: var(--font-body);
             line-height: 1.6;
@@ -62,20 +68,21 @@
 
         /* Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--bg-primary); }
-        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+        ::-webkit-scrollbar-track { background: #1a1a2e; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 6px; }
 
         #root { min-height: 100vh; }
 
         /* Header */
         .site-header {
-            border-bottom: 1px solid var(--border);
+            border-bottom: none;
             padding: 1.25rem 2rem;
             position: sticky;
             top: 0;
-            background: rgba(6, 9, 15, 0.85);
-            backdrop-filter: blur(16px);
+            background: rgba(26, 26, 46, 0.82);
+            backdrop-filter: blur(20px);
             z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
         .header-inner {
             max-width: 1280px;
@@ -97,14 +104,15 @@
             gap: 0.6rem;
         }
         .logo-icon {
-            width: 28px;
-            height: 28px;
-            background: var(--corruption-critical);
-            border-radius: 6px;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.85rem;
+            box-shadow: var(--clay-shadow-sm);
         }
         .logo span { color: var(--corruption-critical); }
         .header-meta {
@@ -170,7 +178,8 @@
         .methodology {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 10px;
+            border-radius: var(--clay-radius);
+            box-shadow: var(--clay-shadow);
             padding: 1.75rem;
             margin-bottom: 2rem;
         }
@@ -201,9 +210,10 @@
             display: flex;
             align-items: flex-start;
             gap: 0.75rem;
-            padding: 0.75rem;
+            padding: 0.9rem;
             background: var(--bg-elevated);
-            border-radius: 8px;
+            border-radius: var(--clay-radius-sm);
+            box-shadow: var(--clay-shadow-sm);
         }
         .methodology-weight {
             font-family: var(--font-mono);
@@ -291,9 +301,10 @@
             font-family: var(--font-body);
             font-size: 0.82rem;
             padding: 0.5rem 1rem;
-            border-radius: 6px;
+            border-radius: var(--clay-radius-sm);
             cursor: pointer;
             transition: all 0.15s;
+            box-shadow: var(--clay-shadow-sm);
         }
         .filter-btn:hover {
             border-color: var(--border-highlight);
@@ -317,7 +328,8 @@
         .map-section {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 10px;
+            border-radius: var(--clay-radius);
+            box-shadow: var(--clay-shadow);
             padding: 1.75rem;
             margin-bottom: 2rem;
         }
@@ -383,12 +395,12 @@
             pointer-events: none;
             background: var(--bg-elevated);
             border: 1px solid var(--border-highlight);
-            border-radius: 6px;
-            padding: 0.5rem 0.7rem;
+            border-radius: var(--clay-radius-sm);
+            padding: 0.6rem 0.85rem;
             font-size: 0.75rem;
             z-index: 10;
             white-space: nowrap;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+            box-shadow: var(--clay-shadow);
         }
         .map-tooltip strong {
             font-family: var(--font-display);
@@ -471,9 +483,10 @@
             min-width: 36px;
             height: 36px;
             padding: 0 0.6rem;
-            border-radius: 6px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.15s;
+            box-shadow: var(--clay-shadow-sm);
         }
         .page-btn:hover:not(:disabled) {
             border-color: var(--border-highlight);
@@ -513,12 +526,13 @@
             font-size: 0.85rem;
             font-weight: 600;
             padding: 0.6rem 1.25rem;
-            border-radius: 8px;
+            border-radius: var(--clay-radius-sm);
             cursor: pointer;
             transition: all 0.15s;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            box-shadow: var(--clay-shadow-sm);
         }
         .view-toggle-btn:hover {
             border-color: var(--border-highlight);
@@ -532,7 +546,8 @@
         .timeline-national {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 10px;
+            border-radius: var(--clay-radius);
+            box-shadow: var(--clay-shadow);
             padding: 1.75rem;
         }
         .timeline-national-header {
@@ -655,7 +670,8 @@
             z-index: 50;
             background: var(--bg-elevated);
             border: 1px solid var(--border-highlight);
-            border-radius: 8px;
+            border-radius: var(--clay-radius-sm);
+            box-shadow: var(--clay-shadow);
             padding: 0.6rem 0.75rem;
             font-size: 0.75rem;
             font-family: var(--font-body);
@@ -675,10 +691,11 @@
             display: inline-flex;
             flex-direction: column;
             gap: 3px;
-            padding: 3px;
-            background: #000;
-            border-radius: 4px;
+            padding: 4px;
+            background: #0f0f20;
+            border-radius: 8px;
             vertical-align: middle;
+            box-shadow: var(--clay-shadow-sm);
         }
         .semaforo-light {
             width: 7px;
@@ -750,9 +767,10 @@
             max-width: 420px;
             margin: 0 1.25rem;
             padding: 2.5rem 1.75rem;
-            border: 1px solid;
-            border-radius: 16px;
-            background: linear-gradient(180deg, var(--bg-card), var(--bg-primary));
+            border: 1px solid var(--border);
+            border-radius: var(--clay-radius);
+            background: linear-gradient(180deg, var(--bg-card), #1a1a2e);
+            box-shadow: var(--clay-shadow);
         }
         .story-top {
             display: flex;
@@ -862,7 +880,8 @@
         .featured-card {
             background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
             border: 1px solid var(--border);
-            border-radius: 10px;
+            border-radius: var(--clay-radius);
+            box-shadow: var(--clay-shadow);
             padding: 1rem 1.25rem;
             display: flex;
             align-items: center;
@@ -898,7 +917,8 @@
         .surprise-btn {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 10px;
+            border-radius: var(--clay-radius-sm);
+            box-shadow: var(--clay-shadow-sm);
             padding: 0 1.25rem;
             display: flex;
             flex-direction: column;
@@ -917,7 +937,8 @@
         .stories-btn {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 10px;
+            border-radius: var(--clay-radius-sm);
+            box-shadow: var(--clay-shadow-sm);
             padding: 0 1.25rem;
             display: flex;
             flex-direction: column;
@@ -942,7 +963,8 @@
         .newsletter-box {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 10px;
+            border-radius: var(--clay-radius);
+            box-shadow: var(--clay-shadow);
             padding: 1.5rem;
             max-width: 480px;
             margin: 0 auto 2rem;
@@ -1504,10 +1526,11 @@
         }
         .score-bar-bg {
             flex: 1;
-            height: 6px;
+            height: 8px;
             background: var(--bg-elevated);
-            border-radius: 3px;
+            border-radius: 5px;
             overflow: hidden;
+            box-shadow: var(--clay-shadow-inset);
         }
         .score-bar-fill {
             height: 100%;
@@ -1547,7 +1570,7 @@
         /* Detail Panel */
         .official-detail {
             border-top: 1px solid var(--border);
-            padding: 1.5rem 1.25rem;
+            padding: 1.75rem 1.5rem;
             animation: slideDown 0.25s ease;
         }
         @keyframes slideDown {
@@ -1779,19 +1802,20 @@
         }
         .search-landing-input {
             width: 100%;
-            padding: 1rem 1.25rem 1rem 3rem;
-            font-size: 1.05rem;
+            padding: 1.15rem 1.35rem 1.15rem 3.2rem;
+            font-size: 1.08rem;
             font-family: var(--font-body);
             background: var(--bg-elevated);
             border: 1px solid var(--border);
             border-radius: 28px;
             color: var(--text-primary);
             outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            transition: all 0.25s;
+            box-shadow: var(--clay-shadow);
         }
         .search-landing-input:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
+            border-color: rgba(107, 179, 255, 0.4);
+            box-shadow: 8px 8px 24px rgba(0,0,0,0.4), -4px -4px 14px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.08), 0 0 0 3px rgba(107, 179, 255, 0.1);
         }
         .search-landing-icon {
             position: absolute;
@@ -1803,16 +1827,16 @@
         }
         .search-dropdown {
             position: absolute;
-            top: calc(100% + 6px);
+            top: calc(100% + 8px);
             left: 0;
             right: 0;
             background: var(--bg-elevated);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            border-radius: var(--clay-radius);
             overflow: hidden;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+            box-shadow: var(--clay-shadow), 0 16px 48px rgba(0,0,0,0.4);
             z-index: 100;
-            max-height: 380px;
+            max-height: 400px;
             overflow-y: auto;
         }
         .search-dropdown-item {
@@ -1828,9 +1852,10 @@
         .search-dropdown-item:hover,
         .search-dropdown-item.active { background: rgba(88, 166, 255, 0.08); }
         .search-dropdown-avatar {
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
+            box-shadow: var(--clay-shadow-sm);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1901,9 +1926,10 @@
             margin-bottom: 1.5rem;
         }
         .search-profile-avatar {
-            width: 72px;
-            height: 72px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
+            box-shadow: var(--clay-shadow);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1935,9 +1961,10 @@
         .search-profile-why {
             background: var(--bg-elevated);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.15rem 1.25rem;
-            margin-bottom: 1.25rem;
+            border-radius: var(--clay-radius);
+            padding: 1.35rem 1.4rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--clay-shadow);
         }
         .search-profile-why h4 {
             font-family: var(--font-display);
@@ -1956,8 +1983,8 @@
         .search-profile-chart-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.25rem;
-            margin-bottom: 1.25rem;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
         }
         @media (max-width: 600px) {
             .search-profile-chart-grid {
@@ -1969,8 +1996,9 @@
         .search-profile-panel {
             background: var(--bg-elevated);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.15rem 1.25rem;
+            border-radius: var(--clay-radius);
+            padding: 1.35rem 1.4rem;
+            box-shadow: var(--clay-shadow);
         }
         .search-profile-panel h4 {
             font-family: var(--font-display);
@@ -1998,10 +2026,11 @@
         }
         .sp-bar-track {
             flex: 1;
-            height: 8px;
+            height: 10px;
             background: rgba(255,255,255,0.06);
-            border-radius: 4px;
+            border-radius: 6px;
             overflow: hidden;
+            box-shadow: var(--clay-shadow-inset);
         }
         .sp-bar-fill {
             height: 100%;
@@ -2043,7 +2072,8 @@
         .search-profile-cta button {
             background: var(--bg-elevated);
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: var(--clay-radius-sm);
+            box-shadow: var(--clay-shadow-sm);
             color: var(--text-secondary);
             font-size: 0.82rem;
             padding: 0.6rem 1.2rem;
@@ -2102,11 +2132,11 @@
         // Canvas 2D contexts can't resolve CSS custom properties (var(--x)),
         // so any drawing on <canvas> must use these resolved hex equivalents.
         const HEX_COLORS = {
-            critical: '#F85149',
-            high: '#F0883E',
-            medium: '#D29922',
-            low: '#3FB950',
-            clean: '#58A6FF',
+            critical: '#ff6b6b',
+            high: '#ffa26b',
+            medium: '#ffd06b',
+            low: '#6bffb8',
+            clean: '#6bb3ff',
         };
         function getScoreColorHex(score) {
             if (score >= 75) return HEX_COLORS.critical;
@@ -3493,11 +3523,11 @@
                 return highProfile[Math.floor(Math.random() * highProfile.length)];
             }, [sorted]);
 
-            // Radar chart SVG for 7 categories
+            // Radar chart SVG for 7 categories — LARGE
             const RadarChart = ({ official }) => {
                 const cats = SCORING_CRITERIA;
                 const n = cats.length;
-                const cx = 120, cy = 115, R = 90;
+                const cx = 160, cy = 155, R = 120;
                 const angleOffset = -Math.PI / 2;
                 const getPoint = (i, r) => {
                     const angle = (2 * Math.PI * i / n) + angleOffset;
@@ -3505,30 +3535,129 @@
                 };
                 const rings = [0.25, 0.5, 0.75, 1];
                 const values = cats.map(c => official.scores[c.id] / c.maxPoints);
-                const dataPoints = values.map((v, i) => getPoint(i, R * v));
+                const dataPoints = values.map((v, i) => getPoint(i, R * Math.max(v, 0.03)));
                 const dataPath = dataPoints.map((p, i) => `${i === 0 ? 'M' : 'L'}${p[0]},${p[1]}`).join(' ') + 'Z';
                 const stColor = getLegalStatus(official).color;
 
                 return (
-                    <svg viewBox="0 0 240 240" style={{ width: '100%', maxWidth: '240px', margin: '0 auto', display: 'block' }}>
+                    <svg viewBox="0 0 320 320" style={{ width: '100%', maxWidth: '320px', margin: '0 auto', display: 'block' }}>
+                        <defs>
+                            <radialGradient id="radarGlow">
+                                <stop offset="0%" stopColor={stColor} stopOpacity="0.25" />
+                                <stop offset="100%" stopColor={stColor} stopOpacity="0.02" />
+                            </radialGradient>
+                        </defs>
                         {rings.map((r, i) => {
                             const pts = Array.from({ length: n }, (_, j) => getPoint(j, R * r));
                             return <polygon key={i} points={pts.map(p => p.join(',')).join(' ')} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />;
                         })}
                         {cats.map((_, i) => {
                             const [x, y] = getPoint(i, R);
-                            return <line key={i} x1={cx} y1={cy} x2={x} y2={y} stroke="rgba(255,255,255,0.06)" strokeWidth="1" />;
+                            return <line key={i} x1={cx} y1={cy} x2={x} y2={y} stroke="rgba(255,255,255,0.04)" strokeWidth="1" />;
                         })}
-                        <polygon points={dataPoints.map(p => p.join(',')).join(' ')} fill={`${stColor}22`} stroke={stColor} strokeWidth="2" />
+                        <polygon points={dataPoints.map(p => p.join(',')).join(' ')} fill="url(#radarGlow)" stroke={stColor} strokeWidth="2.5" />
                         {dataPoints.map((p, i) => (
-                            <circle key={i} cx={p[0]} cy={p[1]} r="3.5" fill={stColor} />
+                            <circle key={i} cx={p[0]} cy={p[1]} r="4.5" fill={stColor} style={{ filter: `drop-shadow(0 0 4px ${stColor})` }} />
                         ))}
                         {cats.map((c, i) => {
-                            const [x, y] = getPoint(i, R + 18);
-                            const label = c.label.length > 14 ? c.label.slice(0, 12) + '…' : c.label;
-                            return <text key={i} x={x} y={y} textAnchor="middle" dominantBaseline="middle" fontSize="7" fill="var(--text-muted)" fontFamily="var(--font-body)">{label}</text>;
+                            const [x, y] = getPoint(i, R + 24);
+                            const label = c.label.length > 16 ? c.label.slice(0, 14) + '…' : c.label;
+                            return <text key={i} x={x} y={y} textAnchor="middle" dominantBaseline="middle" fontSize="8.5" fill="var(--text-muted)" fontFamily="var(--font-body)">{label}</text>;
                         })}
                     </svg>
+                );
+            };
+
+            // Donut chart: distribución de score por categoría
+            const DonutChart = ({ official }) => {
+                const cats = SCORING_CRITERIA.map(c => ({ ...c, val: official.scores[c.id] })).filter(c => c.val > 0);
+                const total = cats.reduce((s, c) => s + c.val, 0);
+                if (total === 0) return null;
+                const cx = 110, cy = 110, R = 85, r = 52;
+                const colors = ['#ff6b6b', '#ffa26b', '#ffd06b', '#6bffb8', '#6bb3ff', '#a36bff', '#ff6bb3'];
+                let cumAngle = -Math.PI / 2;
+                const arcs = cats.map((c, i) => {
+                    const frac = c.val / total;
+                    const startAngle = cumAngle;
+                    const endAngle = cumAngle + 2 * Math.PI * frac;
+                    cumAngle = endAngle;
+                    const x1 = cx + R * Math.cos(startAngle), y1 = cy + R * Math.sin(startAngle);
+                    const x2 = cx + R * Math.cos(endAngle), y2 = cy + R * Math.sin(endAngle);
+                    const x3 = cx + r * Math.cos(endAngle), y3 = cy + r * Math.sin(endAngle);
+                    const x4 = cx + r * Math.cos(startAngle), y4 = cy + r * Math.sin(startAngle);
+                    const large = frac > 0.5 ? 1 : 0;
+                    const d = `M${x1},${y1} A${R},${R} 0 ${large} 1 ${x2},${y2} L${x3},${y3} A${r},${r} 0 ${large} 0 ${x4},${y4} Z`;
+                    return { d, color: colors[i % colors.length], label: c.label, pct: Math.round(frac * 100), val: c.val };
+                });
+                return (
+                    <div>
+                        <svg viewBox="0 0 220 220" style={{ width: '100%', maxWidth: '220px', margin: '0 auto', display: 'block' }}>
+                            {arcs.map((a, i) => (
+                                <path key={i} d={a.d} fill={a.color} opacity="0.85" stroke="var(--bg-card)" strokeWidth="2">
+                                    <title>{a.label}: {a.val}pts ({a.pct}%)</title>
+                                </path>
+                            ))}
+                            <text x={cx} y={cy - 6} textAnchor="middle" fontSize="26" fontWeight="700" fill="var(--text-primary)" fontFamily="var(--font-display)">{total}</text>
+                            <text x={cx} y={cy + 14} textAnchor="middle" fontSize="9" fill="var(--text-muted)" fontFamily="var(--font-mono)">puntos</text>
+                        </svg>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem 0.8rem', justifyContent: 'center', marginTop: '0.6rem' }}>
+                            {arcs.map((a, i) => (
+                                <span key={i} style={{ fontSize: '0.68rem', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                                    <span style={{ width: 8, height: 8, borderRadius: '50%', background: a.color, display: 'inline-block' }} />
+                                    {a.pct}%
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                );
+            };
+
+            // Horizontal bars comparison: how this official ranks vs average
+            const ComparisonBars = ({ official, allOfficials }) => {
+                const total = getTotalScore(official.scores);
+                const avg = Math.round(allOfficials.reduce((s, o) => s + getTotalScore(o.scores), 0) / allOfficials.length);
+                const max = Math.max(...allOfficials.map(o => getTotalScore(o.scores)));
+                const stColor = getLegalStatus(official).color;
+                const bars = [
+                    { label: official.name.split(' ').slice(0, 2).join(' '), value: total, color: stColor },
+                    { label: 'Promedio nacional', value: avg, color: '#6bb3ff' },
+                    { label: 'Caso más severo', value: max, color: '#ff6b6b' },
+                ];
+                return (
+                    <div>
+                        {bars.map((b, i) => (
+                            <div key={i} style={{ marginBottom: '0.75rem' }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', marginBottom: '0.3rem' }}>
+                                    <span style={{ color: 'var(--text-secondary)' }}>{b.label}</span>
+                                    <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 600, color: b.color }}>{b.value}/{getMaxPossible()}</span>
+                                </div>
+                                <div style={{ height: 14, background: 'rgba(255,255,255,0.04)', borderRadius: 8, overflow: 'hidden', boxShadow: 'var(--clay-shadow-inset)' }}>
+                                    <div style={{ height: '100%', width: `${(b.value / getMaxPossible()) * 100}%`, background: `linear-gradient(90deg, ${b.color}cc, ${b.color})`, borderRadius: 8, transition: 'width 0.6s ease' }} />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                );
+            };
+
+            // Visual timeline — horizontal with dots and events
+            const VisualTimeline = ({ official }) => {
+                if (!official.timeline || official.timeline.length === 0) return null;
+                const events = official.timeline;
+                const stColor = getLegalStatus(official).color;
+                return (
+                    <div style={{ position: 'relative', padding: '1rem 0' }}>
+                        <div style={{ position: 'absolute', top: '50%', left: 16, right: 16, height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2, transform: 'translateY(-50%)', boxShadow: 'var(--clay-shadow-inset)' }} />
+                        <div style={{ display: 'flex', justifyContent: 'space-between', position: 'relative', zIndex: 1 }}>
+                            {events.map((evt, i) => (
+                                <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, minWidth: 0 }}>
+                                    <div style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)', fontWeight: 600, color: stColor, marginBottom: '0.35rem' }}>{evt.year}</div>
+                                    <div style={{ width: 14, height: 14, borderRadius: '50%', background: i === events.length - 1 ? stColor : 'var(--bg-elevated)', border: `2px solid ${stColor}`, boxShadow: i === events.length - 1 ? `0 0 10px ${stColor}66` : 'var(--clay-shadow-sm)', flexShrink: 0 }} />
+                                    <div style={{ fontSize: '0.62rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '0.35rem', lineHeight: 1.35, maxWidth: 90, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{evt.event}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 );
             };
 
@@ -3593,6 +3722,10 @@
                                     <RadarChart official={o} />
                                 </div>
                                 <div className="search-profile-panel">
+                                    <h4>Distribución del índice</h4>
+                                    <DonutChart official={o} />
+                                </div>
+                                <div className="search-profile-panel">
                                     <h4>Desglose por categoría</h4>
                                     {SCORING_CRITERIA.map(c => {
                                         const val = o.scores[c.id];
@@ -3609,17 +3742,16 @@
                                         );
                                     })}
                                 </div>
+                                <div className="search-profile-panel">
+                                    <h4>Comparativa nacional</h4>
+                                    <ComparisonBars official={o} allOfficials={sorted} />
+                                </div>
                             </div>
 
                             {o.timeline && o.timeline.length > 0 && (
-                                <div className="search-profile-panel" style={{ marginBottom: '1.25rem' }}>
-                                    <h4>Línea de tiempo</h4>
-                                    {o.timeline.map((evt, i) => (
-                                        <div className="sp-timeline-item" key={i}>
-                                            <span className="sp-timeline-year">{evt.year}</span>
-                                            <span className="sp-timeline-desc">{evt.event}</span>
-                                        </div>
-                                    ))}
+                                <div className="search-profile-panel" style={{ marginBottom: '1.5rem' }}>
+                                    <h4>Cronología</h4>
+                                    <VisualTimeline official={o} />
                                 </div>
                             )}
 
@@ -4240,7 +4372,7 @@
             const strength = getSourceStrengthHex(official.sources.length);
 
             // Background
-            ctx.fillStyle = '#06090F';
+            ctx.fillStyle = '#1a1a2e';
             ctx.fillRect(0, 0, W, H);
 
             // Top accent glow bar
