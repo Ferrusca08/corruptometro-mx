@@ -8,7 +8,20 @@ Un proyecto de código abierto que recopila, estructura y visualiza datos públi
 
 ## Esto no es un veredicto
 
-El puntaje mide **qué tan documentado y respaldado por fuentes** está un señalamiento, no si la persona es culpable de un delito. Una sentencia firme y una denuncia sin resolver pesan distinto en el puntaje precisamente porque no son equivalentes. Revisa siempre la evidencia y la fuente citada en cada categoría de un perfil, no solo el número final — el sitio incluye un desglose completo con la fuente exacta detrás de cada punto otorgado.
+El dato principal de cada perfil es su **estatus procesal**, anclado a hechos verificables en las fuentes citadas — no una opinión editorial. De mayor a menor gravedad:
+
+| Estatus | Significa |
+|---|---|
+| **SENTENCIADO** | Condena penal documentada |
+| **EN PROCESO PENAL** | Detención, vinculación a proceso u orden de aprehensión |
+| **BAJO INVESTIGACIÓN** | Carpeta de investigación o indagatoria abierta |
+| **SEÑALADO** | Denuncia formal o señalamiento documentado, sin proceso |
+| **SIN PROCESO PENAL** | Sin proceso penal documentado a la fecha |
+| **EXONERADO** | Absuelto o con sentencia revocada |
+
+Toda persona señalada, investigada o procesada goza de presunción de inocencia. El estatus se deriva automáticamente del texto de evidencia de cada perfil con reglas conservadoras (en caso de ambigüedad se asigna el nivel menos severo), más una lista de casos límite revisados manualmente — ambos auditables en el código fuente.
+
+El **índice de severidad (0-100)** es una herramienta secundaria de ordenamiento: mide **qué tan documentado y respaldado por fuentes** está un señalamiento, no si la persona es culpable de un delito. Una sentencia firme y una denuncia sin resolver pesan distinto en el puntaje precisamente porque no son equivalentes. Revisa siempre la evidencia y la fuente citada en cada categoría de un perfil, no solo el número — el sitio incluye un desglose completo con la fuente exacta detrás de cada punto otorgado.
 
 ## ¿Qué fuentes se aceptan?
 

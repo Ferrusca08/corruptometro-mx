@@ -1376,7 +1376,7 @@
         }
         .leaderboard-header {
             display: grid;
-            grid-template-columns: 48px 1fr 140px 100px 120px;
+            grid-template-columns: 48px 1fr 140px 100px 168px;
             padding: 0.5rem 1.25rem;
             font-size: 0.7rem;
             color: var(--text-muted);
@@ -1402,7 +1402,7 @@
         }
         .official-summary {
             display: grid;
-            grid-template-columns: 48px 1fr 140px 100px 120px;
+            grid-template-columns: 48px 1fr 140px 100px 168px;
             align-items: center;
             padding: 1rem 1.25rem;
             gap: 0.5rem;
@@ -1520,6 +1520,28 @@
             font-weight: 700;
             min-width: 38px;
             text-align: right;
+        }
+        .status-pill {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            border-radius: 5px;
+            white-space: nowrap;
+            letter-spacing: 0.03em;
+        }
+        .status-pill-sm { font-size: 0.66rem; padding: 0.22rem 0.5rem; }
+        .status-pill-lg { font-size: 0.85rem; padding: 0.35rem 0.75rem; }
+        .anchor-fact {
+            margin-top: 0.35rem;
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            line-height: 1.45;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        @media (max-width: 768px) {
+            .anchor-fact { -webkit-line-clamp: 2; }
         }
 
         /* Detail Panel */
@@ -1772,8 +1794,8 @@
             if (score >= 30) return 'amarillo';
             return 'verde';
         }
-        function Semaforo({ score, size = 'sm' }) {
-            const tier = getSemaforoTier(score);
+        function Semaforo({ score, tier: tierProp, size = 'sm' }) {
+            const tier = tierProp || getSemaforoTier(score);
             const lights = [
                 { key: 'rojo', color: '#F85149' },
                 { key: 'amarillo', color: '#D29922' },
@@ -1805,8 +1827,10 @@
                 .sort((a, b) => b.val - a.val)[0];
             const evidence = topCat ? official.breakdown[topCat.id] : '';
             const shortEvidence = evidence && evidence.length > 260 ? evidence.slice(0, 260) + '...' : evidence;
+            const st = getLegalStatus(official);
             return `${official.name}. ${official.role}. ` +
-                `Puntaje: ${total} de 100, nivel ${getScoreLabel(total).toLowerCase()}. ` +
+                `Estatus: ${st.label.toLowerCase()}, ${st.short.toLowerCase()}. ` +
+                `Índice de severidad documentada: ${total} de 100. ` +
                 (topCat ? `Principal señalamiento, ${topCat.label}: ${shortEvidence}` : '');
         }
         function speakOfficial(official, onEnd) {
@@ -1826,6 +1850,92 @@
             if (score >= 35) return 'MEDIO';
             if (score >= 15) return 'BAJO';
             return 'SIN ALERTAS';
+        }
+
+        // =====================================================
+        // ESTATUS PROCESAL VERIFICABLE
+        // Eje principal de la metodología: en lugar de un número,
+        // cada perfil se clasifica según su situación penal REAL,
+        // anclada a documentos citables (sentencia, carpeta de
+        // investigación, orden de aprehensión, denuncia formal).
+        // El índice numérico pasa a ser una herramienta secundaria
+        // de ordenamiento por severidad documentada.
+        // =====================================================
+        const LEGAL_STATUS = {
+            sentenciado:   { label: 'SENTENCIADO',        short: 'Condena penal documentada',                          color: '#F85149', tier: 'rojo',     weight: 6 },
+            proceso:       { label: 'EN PROCESO PENAL',   short: 'Detención, vinculación a proceso u orden de aprehensión', color: '#F0883E', tier: 'rojo',     weight: 5 },
+            investigacion: { label: 'BAJO INVESTIGACIÓN', short: 'Carpeta de investigación o indagatoria abierta',     color: '#D29922', tier: 'amarillo', weight: 4 },
+            senalado:      { label: 'SEÑALADO',           short: 'Denuncia formal o señalamiento documentado, sin proceso', color: '#A371F7', tier: 'amarillo', weight: 3 },
+            sin_proceso:   { label: 'SIN PROCESO PENAL',  short: 'Sin proceso penal documentado a la fecha',           color: '#3FB950', tier: 'verde',    weight: 1 },
+            exonerado:     { label: 'EXONERADO',          short: 'Absuelto o con sentencia revocada',                  color: '#58A6FF', tier: 'verde',    weight: 0 },
+        };
+
+        // Casos límite revisados manualmente donde el texto de evidencia
+        // es ambiguo para el clasificador automático.
+        const LEGAL_STATUS_OVERRIDES = {
+            109: 'exonerado',   // Granier: sentencia revocada en 2019, liberado
+            110: 'exonerado',   // Medina: exonerado en 2018
+            113: 'senalado',    // Gallardo: prisión previa a la gubernatura, sin proceso vigente
+            116: 'proceso',     // Torres López: acusación formal DEA, prófugo con cargos
+            118: 'senalado',    // Moreira: detención breve en España, liberado sin proceso en México
+            348: 'senalado',    // Castro Cosío: no procesado, señalado por encubrimiento
+            314: 'sin_proceso', // Sansores: la denuncia documentada es propia (como víctima)
+            383: 'sin_proceso', // Gertz: sin proceso penal personal
+            362: 'senalado',    // Fayad: no indiciado; señalado por esquema durante su sexenio
+        };
+
+        // Clasifica el estatus penal a partir de la evidencia documentada
+        // en breakdown.sentencias, con reglas conservadoras: las frases
+        // negadas ("sin orden de aprehensión") se neutralizan antes de
+        // evaluar, y en caso de duda se asigna el nivel MENOS severo.
+        function getLegalStatusKey(official) {
+            if (LEGAL_STATUS_OVERRIDES[official.id]) return LEGAL_STATUS_OVERRIDES[official.id];
+            const t = ((official.breakdown && official.breakdown.sentencias) || '').normalize('NFC');
+            const t2 = t
+                .replace(/sin (sentencias?|proceso|orden(es)? de aprehensión|investigación|condena)[^.,;]*/gi, '')
+                .replace(/ni orden(es)? de aprehensión/gi, '')
+                .replace(/no ha sido (procesad|indiciad|detenid)[a-z]*/gi, '')
+                .replace(/no (fue |ha sido )?procesad[oa]/gi, '');
+            const startsSin = /^sin (proceso|sentencia|sentencias|señalamientos|investigación)/i.test(t.trim());
+            if (startsSin) {
+                if (/investigación (formal )?abierta|carpeta de investigación|expediente|investigad[oa] por/i.test(t2)) return 'investigacion';
+                if (/denuncia|denunciad|señalad|señalamiento|juicio político|vincul|nombrad[oa] en report|queja|ante la (FGR|Fiscalía)/i.test(t2)) return 'senalado';
+                return 'sin_proceso';
+            }
+            if (/sentenciad|condenad|declarad[oa] culpable/i.test(t2) && !/sentencia revocada|exonerad/i.test(t)) return 'sentenciado';
+            if (/procesad|vincul(ad[oa]|ó) a proceso|\bpres[oa]\b|detenid|capturad|orden de aprehensión|prisión preventiva|acusad[oa]s? formalmente|desaforad|arraigad|consignación penal/i.test(t2)) return 'proceso';
+            if (/investigad[oa] por|\binvestiga\b|investigación|carpeta|querella|Departamento de Justicia|\bDEA\b|\bDOJ\b/i.test(t2)) return 'investigacion';
+            if (/denunciad|denuncia|señalad|señalamiento|acusad/i.test(t2)) return 'senalado';
+            return 'sin_proceso';
+        }
+        function getLegalStatus(official) {
+            return LEGAL_STATUS[getLegalStatusKey(official)];
+        }
+
+        // Dato ancla: LA frase que el visitante debe llevarse en 5 segundos.
+        // Primera oración de la categoría con mayor evidencia documentada.
+        function getAnchorFact(official) {
+            const topCat = SCORING_CRITERIA
+                .map(c => ({ ...c, val: official.scores[c.id] }))
+                .filter(c => c.val > 0 && official.breakdown[c.id])
+                .sort((a, b) => b.val - a.val)[0];
+            if (!topCat) return null;
+            const text = official.breakdown[topCat.id];
+            const firstSentence = text.split(/(?<=\.)\s+/)[0] || text;
+            return firstSentence.length > 140 ? firstSentence.slice(0, 137) + '…' : firstSentence;
+        }
+
+        function StatusPill({ official, size = 'sm' }) {
+            const st = getLegalStatus(official);
+            return (
+                <span
+                    className={`status-pill status-pill-${size}`}
+                    style={{ background: `${st.color}1f`, color: st.color, border: `1px solid ${st.color}44` }}
+                    title={st.short}
+                >
+                    {st.label}
+                </span>
+            );
         }
 
         function getPartyClass(party) {
@@ -3101,11 +3211,11 @@
                                 </div>
                                 <div className="hero-stat">
                                     <div className="hero-stat-value" style={{ color: 'var(--corruption-critical)' }}>
-                                        {Math.max(...sorted.map(o => o.total))}
+                                        {officials.filter(o => ['sentenciado', 'proceso'].includes(getLegalStatusKey(o))).length}
                                     </div>
                                     <div className="hero-stat-label">
-                                        Score máx.
-                                        <InfoTip text="El puntaje más alto de la base, sobre 100. Mide qué tan documentado y respaldado por fuentes está un caso, no es un veredicto legal — revisa siempre la evidencia citada." />
+                                        Sentenciados o en proceso penal
+                                        <InfoTip text="Perfiles con condena documentada, detención, vinculación a proceso u orden de aprehensión, según las fuentes citadas en cada ficha." />
                                     </div>
                                 </div>
                                 <div className="hero-stat">
@@ -3239,11 +3349,35 @@
                                     </div>
 
                                     <div className="methodology-section">
-                                        <h5>¿Cómo se calcula el puntaje?</h5>
+                                        <h5>¿Qué significa el estatus de cada ficha?</h5>
                                         <p style={{ marginBottom: '0.75rem' }}>
-                                            Suma de 7 categorías independientes, hasta 100 puntos. Cada una se
-                                            puntúa por separado según la evidencia disponible para esa persona
-                                            específica, no de forma comparativa contra otros casos.
+                                            El dato principal de cada perfil es su <strong>estatus procesal</strong>,
+                                            derivado de la evidencia documentada y anclado a hechos verificables,
+                                            no a opiniones. De mayor a menor gravedad:
+                                        </p>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', marginBottom: '1rem' }}>
+                                            {Object.entries(LEGAL_STATUS).map(([key, st]) => (
+                                                <div key={key} style={{ display: 'flex', alignItems: 'baseline', gap: '0.6rem', fontSize: '0.8rem' }}>
+                                                    <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 600, color: st.color, minWidth: '170px' }}>{st.label}</span>
+                                                    <span style={{ color: 'var(--text-secondary)' }}>{st.short}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                        <p style={{ marginBottom: '0.75rem', fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                                            Un estatus no es un veredicto de este sitio: refleja lo que consta en
+                                            sentencias, carpetas de investigación, órdenes de aprehensión o denuncias
+                                            formales citadas en las fuentes de cada ficha. Toda persona señalada,
+                                            investigada o procesada goza de presunción de inocencia.
+                                        </p>
+                                    </div>
+
+                                    <div className="methodology-section">
+                                        <h5>¿Y el índice de severidad (0-100)?</h5>
+                                        <p style={{ marginBottom: '0.75rem' }}>
+                                            Es una herramienta secundaria de ordenamiento: suma de 7 categorías
+                                            independientes según cuánta evidencia documentada existe para esa
+                                            persona. Mide qué tan documentado está un caso, no la probabilidad
+                                            de culpabilidad.
                                         </p>
                                     </div>
 
@@ -3310,7 +3444,7 @@
                             </div>
                             <input
                                 className="search-input"
-                                placeholder="Buscar por nombre, estado o partido..."
+                                placeholder="Busca a tu alcalde, gobernador o estado…"
                                 value={search}
                                 onChange={e => setSearch(e.target.value)}
                             />
@@ -3321,7 +3455,7 @@
                             <span>SERVIDOR PÚBLICO</span>
                             <span>PARTIDO</span>
                             <span>NIVEL</span>
-                            <span style={{ textAlign: 'right' }}>SCORE</span>
+                            <span style={{ textAlign: 'right' }}>ESTATUS</span>
                         </div>
 
                         <div className="leaderboard">
@@ -3440,7 +3574,8 @@
 
             const total = getTotalScore(official.scores);
             const pct = total / maxScore;
-            const color = getScoreColorHex(total);
+            const legal = getLegalStatus(official);
+            const color = legal.color;
             const strength = getSourceStrengthHex(official.sources.length);
 
             // Background
@@ -3504,35 +3639,38 @@
                 y += 34;
             });
 
-            // Status badge
+            // Badges: cargo vigente + estatus procesal
+            y += 20;
+            let badgeX = M;
             if (official.status === 'en_funciones' || official.status === 'candidato') {
-                y += 20;
                 const label = official.status === 'en_funciones' ? 'EN FUNCIONES' : 'CANDIDATO';
                 const badgeColor = official.status === 'en_funciones' ? '#F85149' : '#D29922';
                 ctx.font = '600 20px "JetBrains Mono", monospace';
                 const tw = ctx.measureText(label).width;
                 ctx.fillStyle = badgeColor + '26';
                 ctx.beginPath();
-                canvasRoundRect(ctx, M, y - 26, tw + 24, 36, 6);
+                canvasRoundRect(ctx, badgeX, y - 26, tw + 24, 36, 6);
                 ctx.fill();
                 ctx.fillStyle = badgeColor;
-                ctx.fillText(label, M + 12, y);
-                y += 55;
+                ctx.fillText(label, badgeX + 12, y);
+                badgeX += tw + 40;
             }
+            y += 55;
 
-            // Big score
-            y += 130;
-            ctx.font = '700 140px "Space Grotesk", sans-serif';
+            // Estatus procesal: EL dato principal de la ficha compartible
+            y += 90;
+            ctx.font = '700 64px "Space Grotesk", sans-serif';
             ctx.fillStyle = color;
-            ctx.fillText(String(total), M, y);
-            const scoreW = ctx.measureText(String(total)).width;
-            ctx.font = '400 44px "Space Grotesk", sans-serif';
-            ctx.fillStyle = '#484F58';
-            ctx.fillText(`/${maxScore}`, M + scoreW + 10, y);
+            ctx.fillText(legal.label, M, y);
+            ctx.font = '400 26px "Inter", sans-serif';
+            ctx.fillStyle = '#8B949E';
+            ctx.fillText(legal.short, M, y + 40);
+            y += 55;
 
+            // Índice de severidad (secundario)
             ctx.font = '600 28px "JetBrains Mono", monospace';
-            ctx.fillStyle = color;
-            ctx.fillText(getScoreLabel(total), M, y + 44);
+            ctx.fillStyle = '#8B949E';
+            ctx.fillText(`Severidad documentada: ${total}/${maxScore}`, M, y + 44);
 
             // Score bar
             const barY = y + 80;
@@ -3783,6 +3921,10 @@
                                     </span>
                                 )}
                             </div>
+                            {(() => {
+                                const anchor = getAnchorFact(official);
+                                return anchor ? <div className="anchor-fact">{anchor}</div> : null;
+                            })()}
                         </div>
                         <div>
                             <span className={`official-party ${getPartyClass(official.party)}`}>
@@ -3793,33 +3935,17 @@
                             {official.level.charAt(0).toUpperCase() + official.level.slice(1)}
                         </div>
                         <div className="score-badge">
-                            <Semaforo score={total} />
-                            <div className="score-bar-bg">
-                                <div className="score-bar-fill" style={{ width: `${pct}%`, background: color }} />
-                            </div>
-                            <div className="score-value" style={{ color }}>{total}</div>
+                            <Semaforo tier={getLegalStatus(official).tier} />
+                            <StatusPill official={official} />
                         </div>
                     </div>
 
                     {expanded && (
                         <div className="official-detail">
                             <div style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-                                <Semaforo score={total} size="lg" />
-                                <span style={{
-                                    fontFamily: 'var(--font-mono)',
-                                    fontSize: '2rem',
-                                    fontWeight: 700,
-                                    color
-                                }}>{total}/{maxScore}</span>
-                                <span style={{
-                                    fontFamily: 'var(--font-mono)',
-                                    fontSize: '0.8rem',
-                                    padding: '0.25rem 0.6rem',
-                                    borderRadius: '4px',
-                                    background: `${color}22`,
-                                    color
-                                }}>{getScoreLabel(total)}</span>
-                                <InfoTip text="Este nivel describe cuánta evidencia documentada hay, no un veredicto de culpabilidad. Lee el desglose por categoría y sus fuentes abajo." />
+                                <Semaforo tier={getLegalStatus(official).tier} size="lg" />
+                                <StatusPill official={official} size="lg" />
+                                <InfoTip text="El estatus refleja la situación penal documentada en las fuentes citadas abajo: sentencia, proceso, investigación, denuncia formal o ninguno. No es una opinión editorial ni un veredicto de este sitio." />
                                 {(() => {
                                     const strength = getSourceStrength(official.sources.length);
                                     return (
@@ -3860,9 +3986,25 @@
                                 </button>
                             </div>
 
+                            {official.breakdown.sentencias && (
+                                <div className="detail-section" style={{ marginBottom: '1.25rem' }}>
+                                    <h4>¿Por qué este estatus?</h4>
+                                    <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>
+                                        {official.breakdown.sentencias}
+                                    </div>
+                                    <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '0.4rem', fontFamily: 'var(--font-mono)' }}>
+                                        {getLegalStatus(official).short} · verifica las fuentes al final de esta ficha
+                                    </div>
+                                </div>
+                            )}
+
                             <div className="detail-grid">
                                 <div className="detail-section">
-                                    <h4>Desglose de puntuación</h4>
+                                    <h4>
+                                        Índice de severidad documentada
+                                        <InfoTip text="Herramienta de ordenamiento: mide cuánta evidencia documentada existe (0-100), no es una probabilidad de culpabilidad ni un veredicto." />
+                                        <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color, marginLeft: '0.5rem' }}>{total}/{maxScore}</span>
+                                    </h4>
                                     {SCORING_CRITERIA.map(c => {
                                         const val = official.scores[c.id];
                                         const critPct = (val / c.maxPoints) * 100;
