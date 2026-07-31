@@ -79,10 +79,11 @@
             padding: 1.25rem 2rem;
             position: sticky;
             top: 0;
-            background: rgba(26, 26, 46, 0.82);
-            backdrop-filter: blur(20px);
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(28px) saturate(1.4);
+            -webkit-backdrop-filter: blur(28px) saturate(1.4);
             z-index: 100;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.45), inset 0 -1px 0 rgba(255,255,255,0.04);
         }
         .header-inner {
             max-width: 1280px;
@@ -120,6 +121,33 @@
             color: var(--text-muted);
             font-family: var(--font-mono);
         }
+        .nav-actions { display: flex; align-items: center; gap: 0.5rem; }
+        .nav-btn {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-family: var(--font-display);
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 0.5rem 1.1rem;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            box-shadow: var(--clay-shadow-sm);
+        }
+        .nav-btn:hover {
+            color: var(--text-primary);
+            transform: translateY(-1px);
+            box-shadow: 6px 6px 20px rgba(0,0,0,0.4), -3px -3px 10px rgba(255,255,255,0.05);
+        }
+        .nav-btn.active {
+            background: linear-gradient(135deg, rgba(255,107,107,0.15), rgba(255,162,107,0.1));
+            border-color: rgba(255,107,107,0.3);
+            color: #ff6b6b;
+        }
 
         /* Main content */
         .main-content {
@@ -141,6 +169,10 @@
             letter-spacing: -0.04em;
             line-height: 1.15;
             margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary), #9d9dbd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .hero p {
             color: var(--text-secondary);
@@ -157,6 +189,11 @@
         .hero-stat {
             display: flex;
             flex-direction: column;
+            background: var(--bg-elevated);
+            padding: 1rem 1.25rem;
+            border-radius: var(--clay-radius);
+            box-shadow: var(--clay-shadow);
+            border: 1px solid var(--border);
         }
         .hero-stat-value {
             font-family: var(--font-display);
@@ -311,9 +348,10 @@
             color: var(--text-primary);
         }
         .filter-btn.active {
-            background: var(--bg-elevated);
-            border-color: var(--corruption-critical);
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,162,107,0.05));
+            border-color: rgba(255,107,107,0.4);
             color: var(--text-primary);
+            box-shadow: 0 4px 14px rgba(255,107,107,0.15), var(--clay-shadow-sm);
         }
         .filter-group-label {
             font-size: 0.65rem;
@@ -493,10 +531,11 @@
             color: var(--text-primary);
         }
         .page-btn.active {
-            background: var(--corruption-critical);
-            border-color: var(--corruption-critical);
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            border-color: transparent;
             color: white;
             font-weight: 600;
+            box-shadow: 0 4px 14px rgba(255,107,107,0.3);
         }
         .page-btn:disabled {
             opacity: 0.35;
@@ -539,9 +578,10 @@
             color: var(--text-primary);
         }
         .view-toggle-btn.active {
-            background: var(--bg-elevated);
-            border-color: var(--corruption-critical);
+            background: linear-gradient(135deg, rgba(255,107,107,0.12), rgba(255,162,107,0.06));
+            border-color: rgba(255,107,107,0.4);
             color: var(--text-primary);
+            box-shadow: 0 4px 14px rgba(255,107,107,0.15), var(--clay-shadow-sm);
         }
         .timeline-national {
             background: var(--bg-card);
@@ -998,14 +1038,15 @@
         }
         .newsletter-input:focus { border-color: var(--corruption-critical); }
         .newsletter-btn {
-            background: var(--corruption-critical);
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
             color: white;
             border: none;
             font-family: var(--font-display);
             font-size: 0.82rem;
             font-weight: 600;
-            padding: 0 1.1rem;
-            border-radius: 7px;
+            padding: 0 1.2rem;
+            border-radius: 14px;
+            box-shadow: var(--clay-shadow-sm);
             cursor: pointer;
             white-space: nowrap;
         }
@@ -1783,11 +1824,12 @@
             font-size: clamp(2rem, 5vw, 3.2rem);
             font-weight: 700;
             letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #F85149, #F0883E, #D29922);
+            background: linear-gradient(135deg, #ff6b6b, #ffa26b, #ffd06b, #6bb3ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 0.5rem;
+            filter: drop-shadow(0 2px 12px rgba(255,107,107,0.25));
         }
         .search-landing-brand p {
             color: var(--text-muted);
@@ -3867,6 +3909,8 @@
             const [activeView, setActiveView] = React.useState('leaderboard');
             const [storyOpen, setStoryOpen] = React.useState(false);
             const [storyStart, setStoryStart] = React.useState(0);
+            const [currentView, setCurrentViewRaw] = React.useState('search');
+            const setCurrentView = (v) => { setCurrentViewRaw(v); window.scrollTo({ top: 0, behavior: 'smooth' }); };
             const PAGE_SIZE = 20;
 
             const sorted = [...officials]
@@ -3936,10 +3980,7 @@
                 openStoriesFrom(sorted[randomIdx].id);
             };
 
-            const restRef = React.useRef(null);
-            const scrollToRest = () => {
-                if (restRef.current) restRef.current.scrollIntoView({ behavior: 'smooth' });
-            };
+
 
             return (
                 <React.Fragment>
@@ -3951,21 +3992,29 @@
                         />
                     )}
 
-                    <SearchLanding officials={officials} sorted={sorted} onScrollPast={scrollToRest} />
-
-                    <div ref={restRef}>
                     <header className="site-header">
                         <div className="header-inner">
-                            <div className="logo">
+                            <div className="logo" style={{ cursor: 'pointer' }} onClick={() => setCurrentView('search')}>
                                 <div className="logo-icon"><Icon name="scale" size={16} style={{ color: '#fff' }} /></div>
                                 Corruptómetro<span>MX</span>
                             </div>
-                            <div className="header-meta">
-                                DATOS PÚBLICOS · FUENTES VERIFICABLES · SIN OPINIONES
+                            <div className="nav-actions">
+                                <button className={`nav-btn ${currentView === 'search' ? 'active' : ''}`} onClick={() => setCurrentView('search')}>
+                                    <Icon name="search" size={14} /> Buscar
+                                </button>
+                                <button className={`nav-btn ${currentView === 'leaderboard' ? 'active' : ''}`} onClick={() => setCurrentView('leaderboard')}>
+                                    <Icon name="bar-chart" size={14} /> Leaderboard
+                                </button>
                             </div>
                         </div>
                     </header>
 
+                    {currentView === 'search' && (
+                        <SearchLanding officials={officials} sorted={sorted} onScrollPast={() => setCurrentView('leaderboard')} />
+                    )}
+
+                    {currentView === 'leaderboard' && (
+                    <React.Fragment>
                     <main className="main-content">
                         <section className="hero">
                             <h1>La corrupción tiene nombre, cargo y expediente.</h1>
@@ -4310,7 +4359,8 @@
                             basada en hechos documentados, no una opinión editorial.
                         </div>
                     </footer>
-                    </div>
+                    </React.Fragment>
+                    )}
                 </React.Fragment>
             );
         }
