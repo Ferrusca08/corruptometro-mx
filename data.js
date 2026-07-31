@@ -53,6 +53,7 @@ const SCORING_CRITERIA = [
 const officials = [
   {
     "id": 101,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Javier_Duarte_de_Ochoa.jpg/200px-Javier_Duarte_de_Ochoa.jpg",
     "name": "Javier Duarte de Ochoa",
     "role": "Exgobernador de Veracruz (2010-2016)",
     "party": "PRI",
@@ -118,6 +119,7 @@ const officials = [
   },
   {
     "id": 102,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/7/75/Anthony_Wayne_and_Chihuahua_Governor_C%C3%A9sar_Duarte_J%C3%A1quez_%28cropped%29.jpg",
     "name": "César Duarte Jáquez",
     "role": "Exgobernador de Chihuahua (2010-2016)",
     "party": "PRI",
@@ -175,6 +177,7 @@ const officials = [
   },
   {
     "id": 103,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Gobernador_Roberto_Borge_Angulo.jpg/200px-Gobernador_Roberto_Borge_Angulo.jpg",
     "name": "Roberto Borge Angulo",
     "role": "Exgobernador de Quintana Roo (2011-2016)",
     "party": "PRI",
@@ -224,6 +227,7 @@ const officials = [
   },
   {
     "id": 104,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Tomas_Yarrington.jpg/200px-Tomas_Yarrington.jpg",
     "name": "Tomás Yarrington Ruvalcaba",
     "role": "Exgobernador de Tamaulipas (1999-2005)",
     "party": "PRI",
@@ -273,6 +277,7 @@ const officials = [
   },
   {
     "id": 105,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Eugenio_Hernandez_Flores.jpg",
     "name": "Eugenio Hernández Flores",
     "role": "Exgobernador de Tamaulipas (2005-2010)",
     "party": "PRI",
@@ -318,6 +323,7 @@ const officials = [
   },
   {
     "id": 106,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Robertosandoval2.jpg/200px-Robertosandoval2.jpg",
     "name": "Roberto Sandoval Castañeda",
     "role": "Exgobernador de Nayarit (2011-2017)",
     "party": "PRI",
@@ -371,6 +377,7 @@ const officials = [
   },
   {
     "id": 107,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/MarioMarinTorres_%28cropped%29.jpg/200px-MarioMarinTorres_%28cropped%29.jpg",
     "name": "Mario Marín Torres",
     "role": "Exgobernador de Puebla (2005-2011)",
     "party": "PRI",
@@ -424,6 +431,7 @@ const officials = [
   },
   {
     "id": 108,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Reuni%C3%B3n_con_el_Gobernador_Electo_de_Nuevo_Le%C3%B3n%2C_Jaime_Rodr%C3%ADguez.jpg/200px-Reuni%C3%B3n_con_el_Gobernador_Electo_de_Nuevo_Le%C3%B3n%2C_Jaime_Rodr%C3%ADguez.jpg",
     "name": "Jaime Rodríguez Calderón \"El Bronco\"",
     "role": "Exgobernador de Nuevo León (2015-2021)",
     "party": "Independiente",
@@ -473,6 +481,7 @@ const officials = [
   },
   {
     "id": 109,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Andres_Granier.jpg/200px-Andres_Granier.jpg",
     "name": "Andrés Granier Melo",
     "role": "Exgobernador de Tabasco (2007-2012)",
     "party": "PRI",
@@ -522,6 +531,7 @@ const officials = [
   },
   {
     "id": 110,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Rodrigo_Medina_de_la_Cruz_Gobernador.jpg/200px-Rodrigo_Medina_de_la_Cruz_Gobernador.jpg",
     "name": "Rodrigo Medina de la Cruz",
     "role": "Exgobernador de Nuevo León (2009-2015)",
     "party": "PRI",
@@ -571,6 +581,7 @@ const officials = [
   },
   {
     "id": 111,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/8/84/Mario_Ernesto_Villanueva_Madrid.jpg",
     "name": "Mario Villanueva Madrid",
     "role": "Exgobernador de Quintana Roo (1993-1999)",
     "party": "PRI",
@@ -620,6 +631,7 @@ const officials = [
   },
   {
     "id": 112,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Rub%C3%A9n_Rocha_Moya_en_julio_de_2024.jpg/200px-Rub%C3%A9n_Rocha_Moya_en_julio_de_2024.jpg",
     "name": "Rubén Rocha Moya",
     "role": "Gobernador de Sinaloa (2021-presente)",
     "party": "MORENA",
@@ -669,6 +681,7 @@ const officials = [
   },
   {
     "id": 113,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Rgc_foto_%28cropped%29.jpg/200px-Rgc_foto_%28cropped%29.jpg",
     "name": "Ricardo Gallardo Cardona",
     "role": "Gobernador de San Luis Potosí (2021-presente)",
     "party": "PVEM",
@@ -804,6 +817,7 @@ const officials = [
   },
   {
     "id": 116,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Jorge_Juan_Torres_Lopez.jpg/200px-Jorge_Juan_Torres_Lopez.jpg",
     "name": "Jorge Torres López",
     "role": "Exgobernador interino de Coahuila (2011)",
     "party": "PRI",
@@ -1396,6 +1410,7 @@ const officials = [
   },
   {
     "id": 301,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Genaro_Garc%C3%ADa_Luna_2.jpg/200px-Genaro_Garc%C3%ADa_Luna_2.jpg",
     "name": "Genaro García Luna",
     "role": "Exsecretario de Seguridad Pública Federal (2006-2012)",
     "party": "PAN",
@@ -1461,6 +1476,7 @@ const officials = [
   },
   {
     "id": 302,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/EmilioLozoya_%28cropped%29.jpg/200px-EmilioLozoya_%28cropped%29.jpg",
     "name": "Emilio Lozoya Austin",
     "role": "Exdirector de Pemex (2012-2016)",
     "party": "PRI",
@@ -1603,6 +1619,7 @@ const officials = [
   },
   {
     "id": 304,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Rosario-Robles.jpg/200px-Rosario-Robles.jpg",
     "name": "Rosario Robles Berlanga",
     "role": "Exsecretaria de Desarrollo Social y SEDATU (2012-2018)",
     "party": "PRI",
@@ -1656,6 +1673,7 @@ const officials = [
   },
   {
     "id": 117,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/8/87/Guillermo_Padr%C3%A9s_El%C3%ADas.jpg",
     "name": "Guillermo Padrés Elías",
     "role": "Exgobernador de Sonora (2009-2015)",
     "party": "PAN",
@@ -1701,6 +1719,7 @@ const officials = [
   },
   {
     "id": 118,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/f/fd/HumbertoMoreiraValdes.jpg",
     "name": "Humberto Moreira Valdés",
     "role": "Exgobernador de Coahuila (2005-2011) / Expresidente del PRI",
     "party": "PRI",
@@ -1799,6 +1818,7 @@ const officials = [
   },
   {
     "id": 120,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Silvano_Aureoles_%28cropped%29.jpg/200px-Silvano_Aureoles_%28cropped%29.jpg",
     "name": "Silvano Aureoles Conejo",
     "role": "Exgobernador de Michoacán (2015-2021)",
     "party": "PRD",
@@ -2208,6 +2228,7 @@ const officials = [
   },
   {
     "id": 121,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Cuauhtemoc_Blanco_2.jpg/200px-Cuauhtemoc_Blanco_2.jpg",
     "name": "Cuauhtémoc Blanco Bravo",
     "role": "Exgobernador de Morelos (2018-2024)",
     "party": "MORENA",
@@ -2695,6 +2716,7 @@ const officials = [
   },
   {
     "id": 305,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Ad%C3%A1n_Augusto_L%C3%B3pez_en_Morelia.jpg/200px-Ad%C3%A1n_Augusto_L%C3%B3pez_en_Morelia.jpg",
     "name": "Adán Augusto López Hernández",
     "role": "Senador de la República / Exgobernador de Tabasco (2019-2021)",
     "party": "MORENA",
@@ -2760,6 +2782,7 @@ const officials = [
   },
   {
     "id": 306,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/4/49/Garcia-Cabeza-de-Vaca-Francisco-Javier-240x300.jpg",
     "name": "Francisco Javier García Cabeza de Vaca",
     "role": "Exgobernador de Tamaulipas (2016-2022) / Funcionario en América del Norte",
     "party": "PAN",
@@ -2813,6 +2836,7 @@ const officials = [
   },
   {
     "id": 307,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Marina_del_Pilar_%282018%29.jpg/200px-Marina_del_Pilar_%282018%29.jpg",
     "name": "Marina del Pilar Ávila Olmeda",
     "role": "Gobernadora de Baja California (2021-presente)",
     "party": "MORENA",
@@ -2862,6 +2886,7 @@ const officials = [
   },
   {
     "id": 308,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Senador_Am%C3%A9rico_Villarreal_Anaya_en_el_pleno.jpg/200px-Senador_Am%C3%A9rico_Villarreal_Anaya_en_el_pleno.jpg",
     "name": "Américo Villarreal Anaya",
     "role": "Gobernador de Tamaulipas (2022-presente)",
     "party": "MORENA",
@@ -2952,6 +2977,7 @@ const officials = [
   },
   {
     "id": 310,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/David_Monreal.jpg/200px-David_Monreal.jpg",
     "name": "David Monreal Ávila",
     "role": "Gobernador de Zacatecas (2021-presente)",
     "party": "MORENA",
@@ -3009,6 +3035,7 @@ const officials = [
   },
   {
     "id": 311,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Alfonso_Durazo_Monta%C3%B1o_%28retrato%29.jpg",
     "name": "Alfonso Durazo Montaño",
     "role": "Gobernador de Sonora (2021-presente)",
     "party": "MORENA",
@@ -3054,6 +3081,7 @@ const officials = [
   },
   {
     "id": 312,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Rub%C3%A9n_Rocha_Moya_en_julio_de_2024.jpg/200px-Rub%C3%A9n_Rocha_Moya_en_julio_de_2024.jpg",
     "name": "Rubén Rocha Moya",
     "role": "Gobernador de Sinaloa (2021-presente, con licencia)",
     "party": "MORENA",
@@ -3111,6 +3139,7 @@ const officials = [
   },
   {
     "id": 313,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Ricardo_Monreal_%C3%81vila_en_2021.jpg/200px-Ricardo_Monreal_%C3%81vila_en_2021.jpg",
     "name": "Ricardo Monreal Ávila",
     "role": "Coordinador de Morena en la Cámara de Diputados / Exalcalde de Cuauhtémoc, CDMX",
     "party": "MORENA",
@@ -3168,6 +3197,7 @@ const officials = [
   },
   {
     "id": 314,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Layda_Sansores_1_%28cropped%29.jpg/200px-Layda_Sansores_1_%28cropped%29.jpg",
     "name": "Layda Sansores San Román",
     "role": "Gobernadora de Campeche (2021-presente)",
     "party": "MORENA",
@@ -3278,6 +3308,7 @@ const officials = [
   },
   {
     "id": 316,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Clara_Brugada_Molina.jpg/200px-Clara_Brugada_Molina.jpg",
     "name": "Clara Brugada Molina",
     "role": "Jefa de Gobierno de la Ciudad de México (2024-presente)",
     "party": "MORENA",
@@ -3372,6 +3403,7 @@ const officials = [
   },
   {
     "id": 318,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Alessandra_Rojo_de_la_Vega_en_el_Front%C3%B3n_M%C3%A9xico.jpg/200px-Alessandra_Rojo_de_la_Vega_en_el_Front%C3%B3n_M%C3%A9xico.jpg",
     "name": "Alessandra Rojo de la Vega",
     "role": "Alcaldesa de Cuauhtémoc, CDMX",
     "party": "PVEM",
@@ -3454,6 +3486,7 @@ const officials = [
   },
   {
     "id": 320,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Giovani_2024.jpg/200px-Giovani_2024.jpg",
     "name": "Giovani Gutiérrez",
     "role": "Alcalde de Coyoacán, CDMX",
     "party": "MORENA",
@@ -3659,6 +3692,7 @@ const officials = [
   },
   {
     "id": 325,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/4/43/AMLO_II_%288854371%29_%28cropped%29.jpg",
     "name": "Andrés Manuel \"Andy\" López Beltrán",
     "role": "Hijo del expresidente AMLO / Figura política de Morena",
     "party": "MORENA",
@@ -3745,6 +3779,7 @@ const officials = [
   },
   {
     "id": 327,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Samuel_Garc%C3%ADa_en_2022_-_cropped.jpg/200px-Samuel_Garc%C3%ADa_en_2022_-_cropped.jpg",
     "name": "Samuel García Sepúlveda",
     "role": "Gobernador de Nuevo León (2021-presente)",
     "party": "MC",
@@ -3802,6 +3837,7 @@ const officials = [
   },
   {
     "id": 328,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Mariana_Rodr%C3%ADguez.jpg/200px-Mariana_Rodr%C3%ADguez.jpg",
     "name": "Mariana Rodríguez Cantú",
     "role": "Esposa del Gobernador de Nuevo León / Figura pública con recursos públicos asignados",
     "party": "MC",
@@ -3843,6 +3879,7 @@ const officials = [
   },
   {
     "id": 329,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Evelyn_Salgado.jpg/200px-Evelyn_Salgado.jpg",
     "name": "Evelyn Salgado Pineda",
     "role": "Gobernadora de Guerrero (2021-presente)",
     "party": "MORENA",
@@ -3953,6 +3990,7 @@ const officials = [
   },
   {
     "id": 331,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/F%C3%A9lix_Salgado_Macedonio.jpg/200px-F%C3%A9lix_Salgado_Macedonio.jpg",
     "name": "Félix Salgado Macedonio",
     "role": "Senador de la República / Padre de la gobernadora de Guerrero",
     "party": "MORENA",
@@ -4002,6 +4040,7 @@ const officials = [
   },
   {
     "id": 332,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Gobernador_Rutilio_Escand%C3%B3n.jpg/200px-Gobernador_Rutilio_Escand%C3%B3n.jpg",
     "name": "Rutilio Escandón Cadenas",
     "role": "Cónsul General de México en Miami / Exgobernador de Chiapas (2018-2024)",
     "party": "MORENA",
@@ -4063,6 +4102,7 @@ const officials = [
   },
   {
     "id": 333,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Jose_Cruz_at_2014_SABR_Convention.jpg/200px-Jose_Cruz_at_2014_SABR_Convention.jpg",
     "name": "José \"Pepe\" Cruz",
     "role": "Senador de la República",
     "party": "MORENA",
@@ -4280,6 +4320,7 @@ const officials = [
   },
   {
     "id": 338,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Ismael_Burgue%C3%B1o_Ruiz.jpg/200px-Ismael_Burgue%C3%B1o_Ruiz.jpg",
     "name": "Ismael Burgueño Ruiz",
     "role": "Presidente Municipal de Tijuana, Baja California",
     "party": "MORENA",
@@ -4337,6 +4378,7 @@ const officials = [
   },
   {
     "id": 339,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Montserrat_Caballero.jpg/200px-Montserrat_Caballero.jpg",
     "name": "Montserrat Caballero Ramírez",
     "role": "Exalcaldesa de Tijuana, Baja California",
     "party": "MORENA",
@@ -4431,6 +4473,7 @@ const officials = [
   },
   {
     "id": 341,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lic._Javier_Lamarque_Cano.jpg/200px-Lic._Javier_Lamarque_Cano.jpg",
     "name": "Javier Lamarque Cano",
     "role": "Presidente Municipal de Cajeme, Sonora (con licencia)",
     "party": "MORENA",
@@ -4480,6 +4523,7 @@ const officials = [
   },
   {
     "id": 342,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Portrait_of_Alejandra_Guti%C3%A9rrez_Campos.png",
     "name": "Alejandra Gutiérrez Campos",
     "role": "Presidenta Municipal de León, Guanajuato",
     "party": "MC (antes PAN)",
@@ -4586,6 +4630,7 @@ const officials = [
   },
   {
     "id": 344,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/1/13/Miguel_Angel_Navarro_%28cropped%29.jpg",
     "name": "Miguel Ángel Navarro Quintero",
     "role": "Gobernador de Nayarit (2023-presente)",
     "party": "MORENA",
@@ -4651,6 +4696,7 @@ const officials = [
   },
   {
     "id": 345,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Enrique_Inzunza_C%C3%A1zarez.jpg/200px-Enrique_Inzunza_C%C3%A1zarez.jpg",
     "name": "Enrique Inzunza Cázarez",
     "role": "Senador de la República / Exsecretario General de Gobierno de Sinaloa",
     "party": "MORENA",
@@ -4708,6 +4754,7 @@ const officials = [
   },
   {
     "id": 346,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Juan_de_Dios_G%C3%A1mez_Mend%C3%ADvil.png/200px-Juan_de_Dios_G%C3%A1mez_Mend%C3%ADvil.png",
     "name": "Juan de Dios Gámez Mendívil",
     "role": "Presidente Municipal de Culiacán, Sinaloa (con licencia)",
     "party": "MORENA",
@@ -4794,6 +4841,7 @@ const officials = [
   },
   {
     "id": 348,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/V%C3%ADctor_Castro_%28gobierno_de_Baja_California_Sur%29.jpg/200px-V%C3%ADctor_Castro_%28gobierno_de_Baja_California_Sur%29.jpg",
     "name": "Víctor Manuel Castro Cosío",
     "role": "Gobernador de Baja California Sur (2021-presente)",
     "party": "MORENA",
@@ -4843,6 +4891,7 @@ const officials = [
   },
   {
     "id": 349,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Indira_Vizca%C3%ADno_Silva.jpg/200px-Indira_Vizca%C3%ADno_Silva.jpg",
     "name": "Indira Vizcaíno Silva",
     "role": "Gobernadora de Colima (2021-2027)",
     "party": "MORENA",
@@ -4900,6 +4949,7 @@ const officials = [
   },
   {
     "id": 350,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Salom%C3%B3n_Jara_Cruz.jpg",
     "name": "Salomón Jara Cruz",
     "role": "Gobernador de Oaxaca (2022-2028)",
     "party": "MORENA",
@@ -4961,6 +5011,7 @@ const officials = [
   },
   {
     "id": 351,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Ruth_Gonz%C3%A1lez_de_Gallardo.jpg/200px-Ruth_Gonz%C3%A1lez_de_Gallardo.jpg",
     "name": "Ruth Miriam González Silva",
     "role": "Senadora de la República / Esposa del Gobernador de San Luis Potosí",
     "party": "PVEM",
@@ -5026,6 +5077,7 @@ const officials = [
   },
   {
     "id": 352,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alfredo_Ram%C3%ADrez_Bedolla.jpg/200px-Alfredo_Ram%C3%ADrez_Bedolla.jpg",
     "name": "Alfredo Ramírez Bedolla",
     "role": "Gobernador de Michoacán (2021-presente)",
     "party": "MORENA",
@@ -5087,6 +5139,7 @@ const officials = [
   },
   {
     "id": 353,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Mara_Lezama_Gobernadora_de_Quintana_Roo.jpg/200px-Mara_Lezama_Gobernadora_de_Quintana_Roo.jpg",
     "name": "Mara Lezama Espinosa",
     "role": "Gobernadora de Quintana Roo (2022-presente)",
     "party": "MORENA",
@@ -5144,6 +5197,7 @@ const officials = [
   },
   {
     "id": 354,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Senador_Javier_May_Rodr%C3%ADguez.jpg/200px-Senador_Javier_May_Rodr%C3%ADguez.jpg",
     "name": "Javier May Rodríguez",
     "role": "Gobernador de Tabasco (2024-presente)",
     "party": "MORENA",
@@ -5189,6 +5243,7 @@ const officials = [
   },
   {
     "id": 355,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Lorena_Cuellar_Gobernadora_%28cropped%29.jpg/200px-Lorena_Cuellar_Gobernadora_%28cropped%29.jpg",
     "name": "Lorena Cuéllar Cisneros",
     "role": "Gobernadora de Tlaxcala (2021-presente)",
     "party": "MORENA",
@@ -5238,6 +5293,7 @@ const officials = [
   },
   {
     "id": 356,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Delfina_G%C3%B3mez.jpg/200px-Delfina_G%C3%B3mez.jpg",
     "name": "Delfina Gómez Álvarez",
     "role": "Gobernadora del Estado de México (2023-presente)",
     "party": "MORENA",
@@ -5307,6 +5363,7 @@ const officials = [
   },
   {
     "id": 357,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Norma_Roc%C3%ADo_Nahle_Garc%C3%ADa.jpg/200px-Norma_Roc%C3%ADo_Nahle_Garc%C3%ADa.jpg",
     "name": "Rocío Nahle García",
     "role": "Gobernadora de Veracruz (2024-presente)",
     "party": "MORENA",
@@ -5584,6 +5641,7 @@ const officials = [
   },
   {
     "id": 362,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Omar_Fayad.jpg/200px-Omar_Fayad.jpg",
     "name": "Omar Fayad Meneses",
     "role": "Embajador de México en Noruega / Exgobernador de Hidalgo (2016-2022)",
     "party": "PRI (expulsado, cercano a MORENA)",
@@ -6069,6 +6127,7 @@ const officials = [
   },
   {
     "id": 371,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Eruviel_gobernador.jpg/200px-Eruviel_gobernador.jpg",
     "name": "Eruviel Ávila Villegas",
     "role": "Diputado Federal (LXVI Legislatura) / Exgobernador del Estado de México (2011-2017)",
     "party": "PVEM (exPRI)",
@@ -6138,6 +6197,7 @@ const officials = [
   },
   {
     "id": 372,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Enrique_Vargas.jpg/200px-Enrique_Vargas.jpg",
     "name": "Enrique Vargas del Villar",
     "role": "Expresidente Municipal de Huixquilucan, Estado de México",
     "party": "PAN",
@@ -6342,6 +6402,7 @@ const officials = [
   },
   {
     "id": 376,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Ernesto_Ruffo.jpg/200px-Ernesto_Ruffo.jpg",
     "name": "Ernesto Ruffo Appel",
     "role": "Exgobernador de Baja California (1989-1995, primer gobernador de oposición en la historia de México)",
     "party": "PAN",

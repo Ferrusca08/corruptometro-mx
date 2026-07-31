@@ -1814,10 +1814,11 @@
             justify-content: center;
             padding: 2rem 1.5rem 3rem;
             position: relative;
+            background: radial-gradient(ellipse at 50% 40%, rgba(107,179,255,0.06) 0%, transparent 60%);
         }
         .search-landing-brand {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
         .search-landing-brand h1 {
             font-family: var(--font-display);
@@ -1840,32 +1841,37 @@
         .search-landing-box {
             position: relative;
             width: 100%;
-            max-width: 580px;
+            max-width: 640px;
         }
         .search-landing-input {
             width: 100%;
-            padding: 1.15rem 1.35rem 1.15rem 3.2rem;
-            font-size: 1.08rem;
+            padding: 1.3rem 1.5rem 1.3rem 3.5rem;
+            font-size: 1.15rem;
             font-family: var(--font-body);
             background: var(--bg-elevated);
-            border: 1px solid var(--border);
-            border-radius: 28px;
+            border: 1.5px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
             color: var(--text-primary);
             outline: none;
-            transition: all 0.25s;
-            box-shadow: var(--clay-shadow);
+            transition: all 0.3s;
+            box-shadow: var(--clay-shadow), 0 0 0 0 rgba(107,179,255,0);
+        }
+        .search-landing-input::placeholder {
+            color: var(--text-muted);
+            font-weight: 400;
         }
         .search-landing-input:focus {
-            border-color: rgba(107, 179, 255, 0.4);
-            box-shadow: 8px 8px 24px rgba(0,0,0,0.4), -4px -4px 14px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.08), 0 0 0 3px rgba(107, 179, 255, 0.1);
+            border-color: rgba(107, 179, 255, 0.35);
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.45), -5px -5px 16px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.08), 0 0 30px rgba(107, 179, 255, 0.08);
         }
         .search-landing-icon {
             position: absolute;
-            left: 1.05rem;
+            left: 1.25rem;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--text-muted);
+            color: var(--text-secondary);
             pointer-events: none;
+            filter: drop-shadow(0 0 6px rgba(107,179,255,0.3));
         }
         .search-dropdown {
             position: absolute;
@@ -3715,7 +3721,10 @@
                             </button>
 
                             <div className="search-profile-header">
-                                <div className="search-profile-avatar" style={{ background: st.color }}>
+                                {o.photo ? (
+                                    <img src={o.photo} alt={o.name} className="search-profile-avatar" style={{ objectFit: 'cover' }} onError={e => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }} />
+                                ) : null}
+                                <div className="search-profile-avatar" style={{ background: st.color, display: o.photo ? 'none' : 'flex' }}>
                                     {getInitials(o.name)}
                                 </div>
                                 <div className="search-profile-identity">
@@ -3810,7 +3819,7 @@
                     </div>
 
                     <div className="search-landing-box">
-                        <span className="search-landing-icon"><Icon name="search" size={18} /></span>
+                        <span className="search-landing-icon"><Icon name="search" size={22} /></span>
                         <input
                             ref={inputRef}
                             className="search-landing-input"
@@ -3832,7 +3841,10 @@
                                             onClick={() => selectOfficial(o)}
                                             onMouseEnter={() => setActiveIdx(idx)}
                                         >
-                                            <div className="search-dropdown-avatar" style={{ background: st.color }}>
+                                            {o.photo ? (
+                                                <img src={o.photo} alt="" className="search-dropdown-avatar" style={{ objectFit: 'cover' }} onError={e => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }} />
+                                            ) : null}
+                                            <div className="search-dropdown-avatar" style={{ background: st.color, display: o.photo ? 'none' : 'flex' }}>
                                                 {getInitials(o.name)}
                                             </div>
                                             <div className="search-dropdown-info">
@@ -3861,6 +3873,17 @@
                     </div>
 
                     <div className="search-landing-hint">
+                        <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                                <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#ff6b6b', display: 'inline-block', boxShadow: '0 0 6px #ff6b6b66' }} />
+                                {officials.filter(o => ['sentenciado', 'proceso'].includes(getLegalStatusKey(o))).length} sentenciados o en proceso
+                            </span>
+                            <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                                <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#ffd06b', display: 'inline-block', boxShadow: '0 0 6px #ffd06b66' }} />
+                                {officials.filter(o => ['investigacion', 'senalado'].includes(getLegalStatusKey(o))).length} investigados o señalados
+                            </span>
+                            <span>{officials.length} perfiles documentados</span>
+                        </div>
                         {randomOfficial && (
                             <span>
                                 Prueba con{' '}
@@ -3869,7 +3892,6 @@
                                 </button>
                             </span>
                         )}
-                        {' · '}{officials.length} funcionarios documentados
                     </div>
 
                     <button className="search-scroll-arrow" onClick={onScrollPast} aria-label="Explorar todos">
