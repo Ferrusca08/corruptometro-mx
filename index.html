@@ -3534,6 +3534,41 @@
                 return name.slice(0, 2).toUpperCase();
             };
 
+            // Gradient based on status color for avatar background
+            const getAvatarGradient = (official) => {
+                const st = getLegalStatus(official);
+                return `linear-gradient(135deg, ${st.color}dd, ${st.color}66)`;
+            };
+
+            // Photo-aware avatar component
+            function OfficialAvatar({ official, size = 80, className = '' }) {
+                const [imgFailed, setImgFailed] = React.useState(false);
+                const st = getLegalStatus(official);
+                const sizeStyle = { width: size, height: size, minWidth: size, minHeight: size };
+                const fontSize = size > 60 ? size * 0.22 : size * 0.28;
+
+                if (official.photo && !imgFailed) {
+                    return (
+                        <img
+                            src={official.photo}
+                            alt={official.name}
+                            className={className || 'search-profile-avatar'}
+                            style={{ ...sizeStyle, objectFit: 'cover', borderRadius: '50%', boxShadow: 'var(--clay-shadow)', border: `2px solid ${st.color}44` }}
+                            onError={() => setImgFailed(true)}
+                        />
+                    );
+                }
+
+                return (
+                    <div
+                        className={className || 'search-profile-avatar'}
+                        style={{ ...sizeStyle, background: getAvatarGradient(official), display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize, color: '#fff', boxShadow: 'var(--clay-shadow)', border: `2px solid ${st.color}44` }}
+                    >
+                        {getInitials(official.name)}
+                    </div>
+                );
+            }
+
             const selectOfficial = (o) => {
                 setSelected(o);
                 setQuery(o.name);
@@ -3721,12 +3756,7 @@
                             </button>
 
                             <div className="search-profile-header">
-                                {o.photo ? (
-                                    <img src={o.photo} alt={o.name} className="search-profile-avatar" style={{ objectFit: 'cover' }} onError={e => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }} />
-                                ) : null}
-                                <div className="search-profile-avatar" style={{ background: st.color, display: o.photo ? 'none' : 'flex' }}>
-                                    {getInitials(o.name)}
-                                </div>
+                                <OfficialAvatar official={o} size={80} />
                                 <div className="search-profile-identity">
                                     <div className="search-profile-name">{o.name}</div>
                                     <div className="search-profile-role">
@@ -3841,12 +3871,7 @@
                                             onClick={() => selectOfficial(o)}
                                             onMouseEnter={() => setActiveIdx(idx)}
                                         >
-                                            {o.photo ? (
-                                                <img src={o.photo} alt="" className="search-dropdown-avatar" style={{ objectFit: 'cover' }} onError={e => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }} />
-                                            ) : null}
-                                            <div className="search-dropdown-avatar" style={{ background: st.color, display: o.photo ? 'none' : 'flex' }}>
-                                                {getInitials(o.name)}
-                                            </div>
+                                            <OfficialAvatar official={o} size={42} />
                                             <div className="search-dropdown-info">
                                                 <div className="search-dropdown-name">{o.name}</div>
                                                 <div className="search-dropdown-meta">

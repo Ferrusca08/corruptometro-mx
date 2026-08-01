@@ -772,6 +772,7 @@ const officials = [
   },
   {
     "id": 115,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Javier_Duarte_de_Ochoa.jpg/200px-Javier_Duarte_de_Ochoa.jpg",
     "name": "Flavino Ríos Alvarado",
     "role": "Exgobernador interino de Veracruz (2016)",
     "party": "PRI",
