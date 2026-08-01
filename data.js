@@ -727,7 +727,6 @@ const officials = [
   },
   {
     "id": 114,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Carlos_Trist%C3%A1n_-_2009_-_Reunion_con_Gobernador%2C_Luis_Armando_Reynoso_Femat.jpg/200px-Carlos_Trist%C3%A1n_-_2009_-_Reunion_con_Gobernador%2C_Luis_Armando_Reynoso_Femat.jpg",
     "name": "Luis Armando Reynoso Femat",
     "role": "Exgobernador de Aguascalientes (2004-2010)",
     "party": "PAN",
@@ -773,7 +772,6 @@ const officials = [
   },
   {
     "id": 115,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Javier_Duarte_de_Ochoa.jpg/200px-Javier_Duarte_de_Ochoa.jpg",
     "name": "Flavino Ríos Alvarado",
     "role": "Exgobernador interino de Veracruz (2016)",
     "party": "PRI",
@@ -1241,7 +1239,6 @@ const officials = [
   },
   {
     "id": 1,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Coacalco%2C_2022-2024.png/200px-Coacalco%2C_2022-2024.png",
     "name": "David Sánchez Isidoro",
     "role": "Presidente Municipal de Coacalco (4 periodos)",
     "party": "PRI",
@@ -3741,7 +3738,6 @@ const officials = [
   },
   {
     "id": 326,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Grupo_Popular_en_la_Asamblea_de_Madrid_(21968249331).jpg/200px-Grupo_Popular_en_la_Asamblea_de_Madrid_(21968249331).jpg",
     "name": "Gonzalo Alfonso López Beltrán",
     "role": "Hijo del expresidente AMLO / Figura política de Morena",
     "party": "MORENA",
@@ -5568,7 +5564,6 @@ const officials = [
   },
   {
     "id": 361,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Regione_economicas_Chiapas.jpg/200px-Regione_economicas_Chiapas.jpg",
     "name": "Juan José Sabines Guerrero",
     "role": "Cónsul General de México en Orlando, Florida / Exgobernador de Chiapas (2006-2012)",
     "party": "PRI (transitó a MORENA)",
@@ -6567,7 +6562,7 @@ officials.push(
 
 
 officials.push(
-    {id:383,name:'Alejandro Gertz Manero',role:'Embajador de México en el Reino Unido / Exfiscal General de la República (2019-2025)',party:'Sin partido',state:'Federal',level:'federal',active:true,status:'en_funciones',lastVerified:'2026-07-20',
+    {id:383,photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Gertz_Manero_%28cropped%29.jpg/200px-Gertz_Manero_%28cropped%29.jpg',name:'Alejandro Gertz Manero',role:'Embajador de México en el Reino Unido / Exfiscal General de la República (2019-2025)',party:'Sin partido',state:'Federal',level:'federal',active:true,status:'en_funciones',lastVerified:'2026-07-20',
     scores:{sentencias:5,fiscalizacion:14,funcionarios:12,deuda:5,denuncias:15,evasion:9,nepotismo:3},
     breakdown:{sentencias:'Sin proceso penal personal, pero la SCJN revirtió directamente una de sus acciones institucionales más señaladas: canceló en marzo de 2022 la orden de aprehensión y ordenó la libertad de Alejandra Cuevas Morán, encarcelada desde 2020 por la muerte de su hermano Federico, al considerar la imputación "sin fundamento legal".',
     fiscalizacion:'Señalamientos periodísticos de propiedades de alto valor no declaradas en España, que lo llevaron a comparecer ante el Senado en marzo de 2022 sin recibir cuestionamientos directos de la Junta de Coordinación Política que lo arropó.',
