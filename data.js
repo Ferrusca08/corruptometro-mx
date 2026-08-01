@@ -727,6 +727,7 @@ const officials = [
   },
   {
     "id": 114,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Carlos_Trist%C3%A1n_-_2009_-_Reunion_con_Gobernador%2C_Luis_Armando_Reynoso_Femat.jpg/200px-Carlos_Trist%C3%A1n_-_2009_-_Reunion_con_Gobernador%2C_Luis_Armando_Reynoso_Femat.jpg",
     "name": "Luis Armando Reynoso Femat",
     "role": "Exgobernador de Aguascalientes (2004-2010)",
     "party": "PAN",
@@ -1240,6 +1241,7 @@ const officials = [
   },
   {
     "id": 1,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Coacalco%2C_2022-2024.png/200px-Coacalco%2C_2022-2024.png",
     "name": "David Sánchez Isidoro",
     "role": "Presidente Municipal de Coacalco (4 periodos)",
     "party": "PRI",
@@ -3739,6 +3741,7 @@ const officials = [
   },
   {
     "id": 326,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Grupo_Popular_en_la_Asamblea_de_Madrid_(21968249331).jpg/200px-Grupo_Popular_en_la_Asamblea_de_Madrid_(21968249331).jpg",
     "name": "Gonzalo Alfonso López Beltrán",
     "role": "Hijo del expresidente AMLO / Figura política de Morena",
     "party": "MORENA",
@@ -5565,6 +5568,7 @@ const officials = [
   },
   {
     "id": 361,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Regione_economicas_Chiapas.jpg/200px-Regione_economicas_Chiapas.jpg",
     "name": "Juan José Sabines Guerrero",
     "role": "Cónsul General de México en Orlando, Florida / Exgobernador de Chiapas (2006-2012)",
     "party": "PRI (transitó a MORENA)",
@@ -5912,6 +5916,7 @@ const officials = [
   },
   {
     "id": 367,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Fernando_Gustavo_Flores_Fern%C3%A1ndez.jpg/200px-Fernando_Gustavo_Flores_Fern%C3%A1ndez.jpg",
     "name": "Fernando Gustavo Flores Fernández",
     "role": "Presidente Municipal de Metepec, Estado de México",
     "party": "Sin dato",
@@ -6075,6 +6080,7 @@ const officials = [
   },
   {
     "id": 370,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/ECATEPEC_PRESIDENTE.jpg/200px-ECATEPEC_PRESIDENTE.jpg",
     "name": "Fernando Vilchis Contreras",
     "role": "Expresidente Municipal de Ecatepec de Morelos, Estado de México",
     "party": "Sin dato",
