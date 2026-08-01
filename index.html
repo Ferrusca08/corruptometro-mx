@@ -908,6 +908,14 @@
         @media (max-width: 480px) {
             .story-score { font-size: 3.5rem; }
             .story-name { font-size: 1.4rem; }
+            .featured-row {
+                grid-template-columns: 1fr;
+            }
+            .surprise-btn, .stories-btn {
+                flex-direction: row;
+                padding: 0.6rem 1rem;
+                justify-content: center;
+            }
         }
 
         /* Featured banner (Caso del día / Sorpréndeme) */
@@ -1743,26 +1751,90 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .main-content { padding: 1rem; }
-            .site-header { padding: 1rem; }
+            .main-content { padding: 0.75rem; }
+            .site-header { padding: 0.65rem 0.85rem; }
+
+            /* Navbar: logo + botones en una línea */
+            .header-inner { gap: 0.5rem; flex-wrap: nowrap; }
+            .logo { font-size: 1.05rem; gap: 0.4rem; }
+            .logo-icon { width: 26px; height: 26px; border-radius: 8px; }
+            .nav-actions { gap: 0.3rem; }
+            .nav-btn { font-size: 0.72rem; padding: 0.4rem 0.7rem; border-radius: 10px; gap: 0.3rem; }
+
+            /* Hero compacto */
+            .hero { padding: 1.25rem 0 0.75rem; }
+            .hero h1 { font-size: 1.4rem !important; margin-bottom: 0.5rem; }
+            .hero p { font-size: 0.78rem; margin-bottom: 0; }
+
+            /* Stats en grid 2x3 compacto */
+            .hero-stats {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.65rem;
+                margin-top: 1rem;
+            }
+            .hero-stat {
+                padding: 0.7rem 0.85rem;
+                border-radius: 14px;
+            }
+            .hero-stat-value { font-size: 1.4rem; }
+            .hero-stat-label { font-size: 0.62rem; }
+
+            /* Featured / caso del día */
+            .featured-row { gap: 0.65rem; }
+            .featured-card { padding: 0.85rem; border-radius: 14px; }
+            .featured-details h3 { font-size: 0.88rem; }
+            .featured-details p { font-size: 0.7rem; }
+
+            /* Botones Sorpréndeme / Historias */
+            .surprise-btn, .stories-btn {
+                padding: 0.65rem 1rem;
+                font-size: 0.78rem;
+                border-radius: 12px;
+            }
+
+            /* Mapa */
+            .map-section { padding: 1rem; border-radius: 14px; }
+
+            /* Cards de funcionarios */
             .leaderboard-header { display: none; }
+            .official-card { border-radius: 12px; }
             .official-summary {
                 grid-template-columns: 36px 1fr;
                 grid-template-rows: auto auto;
                 gap: 0.5rem;
+                padding: 0.75rem;
             }
-            .official-party, .score-badge {
-                grid-column: 2;
-            }
-            .hero-stats { gap: 1.5rem; }
-            .detail-grid {
-                grid-template-columns: 1fr;
-            }
+            .official-party, .score-badge { grid-column: 2; }
+            .official-detail { padding: 1rem; }
+            .detail-grid { grid-template-columns: 1fr; }
+
+            /* Filtros */
             .filters {
                 flex-direction: column;
                 align-items: stretch;
+                gap: 0.5rem;
             }
             .search-input { min-width: auto; }
+            .filter-row { gap: 0.35rem; }
+            .filter-btn { font-size: 0.72rem; padding: 0.4rem 0.7rem; border-radius: 10px; }
+
+            /* Metodología */
+            .methodology { padding: 1.25rem; border-radius: 14px; }
+            .methodology-grid { grid-template-columns: 1fr; gap: 0.6rem; }
+
+            /* Timeline nacional */
+            .timeline-national { padding: 1.25rem; border-radius: 14px; }
+
+            /* Newsletter */
+            .newsletter-box { padding: 1.25rem; border-radius: 14px; }
+
+            /* Footer */
+            .site-footer { padding: 1.25rem; }
+            .footer-disclaimer { border-radius: 12px; font-size: 0.68rem; }
+
+            /* Paginación */
+            .page-btn { min-width: 32px; height: 32px; font-size: 0.72rem; border-radius: 8px; }
         }
 
         /* Contribution CTA */
@@ -2040,6 +2112,17 @@
             }
             .search-profile-header { flex-direction: column; align-items: center; text-align: center; }
             .search-profile-badges { justify-content: center; }
+            .search-profile-name { font-size: 1.25rem; }
+            .search-profile-role { font-size: 0.8rem; }
+            .search-profile-panel { padding: 1rem; border-radius: 14px; }
+            .search-profile-why { padding: 1rem; border-radius: 14px; }
+            .search-landing { padding: 1.5rem 1rem 2.5rem; }
+            .search-landing-brand h1 { font-size: 1.8rem !important; }
+            .search-landing-brand p { font-size: 0.8rem; }
+            .search-landing-input { font-size: 1rem; padding: 1.1rem 1.2rem 1.1rem 2.8rem; }
+            .search-landing-hint { font-size: 0.7rem; }
+            .search-landing-box { max-width: 100%; }
+            .sp-bar-label { width: 110px; font-size: 0.75rem; }
         }
         .search-profile-panel {
             background: var(--bg-elevated);
