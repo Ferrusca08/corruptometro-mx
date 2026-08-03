@@ -4215,46 +4215,62 @@
             const TOTAL_QUESTIONS = 7;
 
             const questions = React.useMemo(() => {
-                const pool = officials.filter(o =>
-                    o.breakdown.sentencias &&
-                    !o.name.includes('"N"') &&
-                    o.name !== 'Alejandro N.' &&
-                    !o.name.includes('Red de nómina')
-                );
-                const shuffled = [...pool].sort(() => Math.random() - 0.5);
-                return shuffled.slice(0, TOTAL_QUESTIONS).map(o => {
-                    const correctKey = getLegalStatusKey(o);
-                    const correctSt = LEGAL_STATUS[correctKey];
-                    const anchor = getAnchorFact(o);
-                    const allKeys = ['sentenciado', 'proceso', 'investigacion', 'senalado', 'sin_proceso'];
-                    const wrongKeys = allKeys.filter(k => k !== correctKey).sort(() => Math.random() - 0.5).slice(0, 3);
-                    const options = [correctKey, ...wrongKeys].sort(() => Math.random() - 0.5);
-                    return { official: o, correctKey, anchor, options };
-                });
-            }, [officials]);
+                try {
+                    const pool = officials.filter(o =>
+                        o.breakdown && o.breakdown.sentencias &&
+                        o.name.indexOf('"N"') === -1 &&
+                        o.name !== 'Alejandro N.' &&
+                        o.name.indexOf('Red de nómina') === -1
+                    );
+                    if (pool.length < TOTAL_QUESTIONS) return [];
+                    const shuffled = pool.slice().sort(function() { return Math.random() - 0.5; });
+                    return shuffled.slice(0, TOTAL_QUESTIONS).map(function(o) {
+                        var correctKey = getLegalStatusKey(o);
+                        var anchor = getAnchorFact(o);
+                        var allKeys = ['sentenciado', 'proceso', 'investigacion', 'senalado', 'sin_proceso'];
+                        var wrongKeys = allKeys.filter(function(k) { return k !== correctKey; }).sort(function() { return Math.random() - 0.5; }).slice(0, 3);
+                        var options = [correctKey].concat(wrongKeys).sort(function() { return Math.random() - 0.5; });
+                        return { official: o, correctKey: correctKey, anchor: anchor, options: options };
+                    });
+                } catch(e) {
+                    console.error('Quiz generation error:', e);
+                    return [];
+                }
+            }, []);
 
             const [current, setCurrent] = React.useState(0);
             const [score, setScore] = React.useState(0);
             const [answered, setAnswered] = React.useState(null);
             const [finished, setFinished] = React.useState(false);
 
-            const q = questions[current];
+            if (questions.length === 0) {
+                return (
+                    <section className="quiz-container">
+                        <div className="quiz-card">
+                            <div className="quiz-question">No se pudieron generar preguntas</div>
+                            <button className="quiz-next-btn" onClick={onExit}>Volver</button>
+                        </div>
+                    </section>
+                );
+            }
 
-            const handleAnswer = (key) => {
+            var q = questions[current];
+
+            var handleAnswer = function(key) {
                 if (answered) return;
                 setAnswered(key);
-                if (key === q.correctKey) setScore(s => s + 1);
+                if (key === q.correctKey) setScore(function(s) { return s + 1; });
             };
 
-            const handleNext = () => {
+            var handleNext = function() {
                 if (current + 1 >= TOTAL_QUESTIONS) { setFinished(true); return; }
-                setCurrent(c => c + 1);
+                setCurrent(function(c) { return c + 1; });
                 setAnswered(null);
             };
 
             if (finished) {
-                const pct = Math.round((score / TOTAL_QUESTIONS) * 100);
-                const msg = pct >= 85 ? '¡Impresionante! Conoces la realidad de la corrupción en México.' :
+                var pct = Math.round((score / TOTAL_QUESTIONS) * 100);
+                var msg = pct >= 85 ? '¡Impresionante! Conoces la realidad de la corrupción en México.' :
                             pct >= 57 ? 'Buen conocimiento, pero hay casos que te sorprenderían.' :
                             'La corrupción es más profunda de lo que parece. Explora los perfiles.';
                 return (
@@ -4266,7 +4282,7 @@
                             </div>
                             <div style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', marginBottom: '1rem', lineHeight: 1.6 }}>{msg}</div>
                             <div style={{ display: 'flex', gap: '0.6rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                                <button className="quiz-next-btn" onClick={() => { setCurrent(0); setScore(0); setAnswered(null); setFinished(false); }}>
+                                <button className="quiz-next-btn" onClick={onExit}>
                                     Jugar de nuevo
                                 </button>
                                 <button className="quiz-next-btn" style={{ background: 'var(--bg-card)' }} onClick={onExit}>
@@ -4284,7 +4300,7 @@
                         <div className="quiz-progress">
                             PREGUNTA {current + 1} DE {TOTAL_QUESTIONS}
                             <div className="quiz-progress-bar">
-                                <div className="quiz-progress-fill" style={{ width: `${((current + 1) / TOTAL_QUESTIONS) * 100}%` }} />
+                                <div className="quiz-progress-fill" style={{ width: ((current + 1) / TOTAL_QUESTIONS * 100) + '%' }} />
                             </div>
                         </div>
 
@@ -4296,21 +4312,21 @@
                             {q.official.role}
                         </div>
 
-                        {q.anchor && <div className="quiz-fact">"{q.anchor}"</div>}
+                        {q.anchor && <div className="quiz-fact">{q.anchor}</div>}
 
                         <div className="quiz-question">¿Cuál es su estatus procesal?</div>
 
                         <div className="quiz-options">
-                            {q.options.map(key => {
-                                const st = LEGAL_STATUS[key];
-                                let cls = 'quiz-option';
+                            {q.options.map(function(key) {
+                                var st = LEGAL_STATUS[key];
+                                var cls = 'quiz-option';
                                 if (answered) {
                                     cls += ' answered';
                                     if (key === q.correctKey) cls += ' correct';
                                     else if (key === answered) cls += ' wrong';
                                 }
                                 return (
-                                    <button key={key} className={cls} onClick={() => handleAnswer(key)}>
+                                    <button key={key} className={cls} onClick={function() { handleAnswer(key); }}>
                                         {st.label}
                                         {answered && key === q.correctKey && ' ✓'}
                                     </button>
@@ -4320,10 +4336,10 @@
 
                         {answered && (
                             <div className="quiz-result">
-                                {answered === q.correctKey ? '✓ ¡Correcto!' : `✗ La respuesta era: ${LEGAL_STATUS[q.correctKey].label}`}
+                                {answered === q.correctKey ? '✓ ¡Correcto!' : '✗ La respuesta era: ' + LEGAL_STATUS[q.correctKey].label}
                                 {q.official.breakdown.sentencias && (
                                     <div style={{ marginTop: '0.5rem', fontSize: '0.78rem' }}>
-                                        {q.official.breakdown.sentencias.slice(0, 180)}{q.official.breakdown.sentencias.length > 180 ? '…' : ''}
+                                        {q.official.breakdown.sentencias.length > 180 ? q.official.breakdown.sentencias.slice(0, 180) + '…' : q.official.breakdown.sentencias}
                                     </div>
                                 )}
                             </div>
