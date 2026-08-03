@@ -6577,7 +6577,7 @@ officials.push(
 
 
 officials.push(
-    {id:384,name:'Jaime Bonilla Valdez',role:'Exgobernador de Baja California (2019-2021)',party:'PT (antes MORENA)',state:'Baja California',level:'estatal',active:false,status:'ex_funcionario',lastVerified:'2026-07-20',
+    {id:384,photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Jaime_Bonilla_Valdez.jpg/200px-Jaime_Bonilla_Valdez.jpg',name:'Jaime Bonilla Valdez',role:'Exgobernador de Baja California (2019-2021)',party:'PT (antes MORENA)',state:'Baja California',level:'estatal',active:false,status:'ex_funcionario',lastVerified:'2026-07-20',
     scores:{sentencias:15,fiscalizacion:12,funcionarios:5,deuda:10,denuncias:10,evasion:8,nepotismo:3},
     breakdown:{sentencias:'Un juez lo vinculó a proceso en marzo de 2026 por su probable responsabilidad en los delitos de peculado, abuso de autoridad y uso indebido de atribuciones durante su gestión como gobernador, derivado del caso "Next Energy".',
     fiscalizacion:'Fue denunciado ante la FGR apenas un mes después de asumir el cargo, en diciembre de 2019, por corrupción y cohecho, luego de que funcionarios de su gobierno pidieran presuntamente dinero a proveedores a cambio de contratos estatales.',
