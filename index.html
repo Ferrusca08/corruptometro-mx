@@ -3702,12 +3702,6 @@
             }
         };
 
-        // Random suggestion
-        const randomOfficial = React.useMemo(() => {
-            const highProfile = sorted.filter(o => getTotalScore(o.scores) >= 55);
-            return highProfile[Math.floor(Math.random() * highProfile.length)];
-        }, [sorted]);
-
         // Radar chart SVG for 7 categories — LARGE
         const RadarChart = ({ official }) => {
             const cats = SCORING_CRITERIA;
@@ -3872,6 +3866,12 @@
 
             const showDropdown = query.length >= 2 && suggestions.length > 0 && !selected;
             const noResults = query.length >= 2 && suggestions.length === 0 && !selected;
+
+            // Random suggestion
+            const randomOfficial = React.useMemo(function() {
+                var highProfile = sorted.filter(function(o) { return getTotalScore(o.scores) >= 55; });
+                return highProfile[Math.floor(Math.random() * highProfile.length)];
+            }, []);
 
             // ---- RENDER ----
             if (selected) {
