@@ -2678,6 +2678,14 @@
                             <path d="M19 12H5M12 5l-7 7 7 7" />
                         </svg>
                     );
+                case 'help-circle':
+                    return (
+                        <svg {...common}>
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" />
+                            <line x1="12" y1="17" x2="12.01" y2="17" />
+                        </svg>
+                    );
                 case 'map-pin':
                     return (
                         <svg {...common}>
@@ -4462,7 +4470,7 @@
                                     <Icon name="search" size={14} /> Buscar
                                 </button>
                                 <button className={`nav-btn ${currentView === 'quiz' ? 'active' : ''}`} onClick={() => setCurrentView('quiz')}>
-                                    ⚡ Quiz
+                                    <Icon name="help-circle" size={14} /> Quiz
                                 </button>
                                 <button className={`nav-btn ${currentView === 'leaderboard' ? 'active' : ''}`} onClick={() => setCurrentView('leaderboard')}>
                                     <Icon name="bar-chart" size={14} /> Leaderboard
