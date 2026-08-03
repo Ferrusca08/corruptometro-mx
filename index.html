@@ -3632,7 +3632,223 @@
         // con gráficos en-situ. El usuario encuentra a su
         // funcionario en <5 segundos y obtiene todo sin scroll.
         // =====================================================
-        function SearchLanding({ officials, sorted, onScrollPast }) {
+        const getInitials = (name) => {
+            const parts = name.split(/\s+/).filter(p => !/^["(]/.test(p) && p.length > 1);
+            if (parts.length >= 2) return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+            return name.slice(0, 2).toUpperCase();
+        };
+
+        // Gradient based on status color for avatar background
+        const getAvatarGradient = (official) => {
+            const st = getLegalStatus(official);
+            return `linear-gradient(135deg, ${st.color}dd, ${st.color}66)`;
+        };
+
+        // Photo-aware avatar component
+        function OfficialAvatar({ official, size = 80, className = '' }) {
+            const [imgFailed, setImgFailed] = React.useState(false);
+            const st = getLegalStatus(official);
+            const sizeStyle = { width: size, height: size, minWidth: size, minHeight: size };
+            const fontSize = size > 60 ? size * 0.22 : size * 0.28;
+
+            if (official.photo && !imgFailed) {
+                return (
+                    <img
+                        src={official.photo}
+                        alt={official.name}
+                        className={className || 'search-profile-avatar'}
+                        style={{ ...sizeStyle, objectFit: 'cover', borderRadius: '50%', boxShadow: 'var(--clay-shadow)', border: `2px solid ${st.color}44` }}
+                        onError={() => setImgFailed(true)}
+                    />
+                );
+            }
+
+            return (
+                <div
+                    className={className || 'search-profile-avatar'}
+                    style={{ ...sizeStyle, background: getAvatarGradient(official), display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize, color: '#fff', boxShadow: 'var(--clay-shadow)', border: `2px solid ${st.color}44` }}
+                >
+                    {getInitials(official.name)}
+                </div>
+            );
+        }
+
+        const selectOfficial = (o) => {
+            setSelected(o);
+            setQuery(o.name);
+            setActiveIdx(-1);
+        };
+
+        const clearSelection = () => {
+            setSelected(null);
+            setQuery('');
+            setActiveIdx(-1);
+            setTimeout(() => inputRef.current && inputRef.current.focus(), 50);
+        };
+
+        const handleKeyDown = (e) => {
+            if (!showDropdown) return;
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                setActiveIdx(prev => Math.min(prev + 1, suggestions.length - 1));
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                setActiveIdx(prev => Math.max(prev - 1, 0));
+            } else if (e.key === 'Enter' && activeIdx >= 0) {
+                e.preventDefault();
+                selectOfficial(suggestions[activeIdx]);
+            } else if (e.key === 'Escape') {
+                setQuery('');
+            }
+        };
+
+        // Random suggestion
+        const randomOfficial = React.useMemo(() => {
+            const highProfile = sorted.filter(o => getTotalScore(o.scores) >= 55);
+            return highProfile[Math.floor(Math.random() * highProfile.length)];
+        }, [sorted]);
+
+        // Radar chart SVG for 7 categories — LARGE
+        const RadarChart = ({ official }) => {
+            const cats = SCORING_CRITERIA;
+            const n = cats.length;
+            const cx = 200, cy = 195, R = 130;
+            const angleOffset = -Math.PI / 2;
+            const getPoint = (i, r) => {
+                const angle = (2 * Math.PI * i / n) + angleOffset;
+                return [cx + r * Math.cos(angle), cy + r * Math.sin(angle)];
+            };
+            const rings = [0.25, 0.5, 0.75, 1];
+            const values = cats.map(c => official.scores[c.id] / c.maxPoints);
+            const dataPoints = values.map((v, i) => getPoint(i, R * Math.max(v, 0.03)));
+            const stColor = getLegalStatus(official).color;
+
+            // Short but readable labels — no truncation
+            const shortLabels = [
+                'Sentencias', 'Fiscalización', 'Funcionarios',
+                'Deuda / daño', 'Denuncias', 'Evasión', 'Nepotismo'
+            ];
+
+            return (
+                <svg viewBox="0 0 400 400" style={{ width: '100%', maxWidth: '400px', margin: '0 auto', display: 'block' }}>
+                    <defs>
+                        <radialGradient id="radarGlow">
+                            <stop offset="0%" stopColor={stColor} stopOpacity="0.3" />
+                            <stop offset="100%" stopColor={stColor} stopOpacity="0.02" />
+                        </radialGradient>
+                    </defs>
+                    {rings.map((r, i) => {
+                        const pts = Array.from({ length: n }, (_, j) => getPoint(j, R * r));
+                        return <polygon key={i} points={pts.map(p => p.join(',')).join(' ')} fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth="1" />;
+                    })}
+                    {cats.map((_, i) => {
+                        const [x, y] = getPoint(i, R);
+                        return <line key={i} x1={cx} y1={cy} x2={x} y2={y} stroke="rgba(255,255,255,0.05)" strokeWidth="1" />;
+                    })}
+                    <polygon points={dataPoints.map(p => p.join(',')).join(' ')} fill="url(#radarGlow)" stroke={stColor} strokeWidth="2.5" />
+                    {dataPoints.map((p, i) => (
+                        <circle key={i} cx={p[0]} cy={p[1]} r="5" fill={stColor} style={{ filter: `drop-shadow(0 0 6px ${stColor})` }} />
+                    ))}
+                    {cats.map((c, i) => {
+                        const [x, y] = getPoint(i, R + 36);
+                        const val = official.scores[c.id];
+                        return (
+                            <React.Fragment key={i}>
+                                <text x={x} y={y - 7} textAnchor="middle" dominantBaseline="middle" fontSize="12" fontWeight="600" fill="var(--text-secondary)" fontFamily="var(--font-body)">{shortLabels[i]}</text>
+                                <text x={x} y={y + 9} textAnchor="middle" dominantBaseline="middle" fontSize="11" fontWeight="700" fill={stColor} fontFamily="var(--font-mono)">{val}/{c.maxPoints}</text>
+                            </React.Fragment>
+                        );
+                    })}
+                </svg>
+            );
+        };
+
+        // Peso de cada categoría en el índice total — reemplaza el donut
+        const WeightBreakdown = ({ official }) => {
+            const cats = SCORING_CRITERIA.map(c => ({ ...c, val: official.scores[c.id] }));
+            const total = cats.reduce((s, c) => s + c.val, 0);
+            if (total === 0) return null;
+            const colors = ['#ff6b6b', '#ffa26b', '#ffd06b', '#6bffb8', '#6bb3ff', '#a36bff', '#ff6bb3'];
+            const maxPossible = getMaxPossible();
+
+            return (
+                <div>
+                    <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginBottom: '1rem', lineHeight: 1.5 }}>
+                        Cada categoría aporta puntos al índice de severidad. Las barras muestran cuánto pesa cada una en el total de <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'var(--text-primary)' }}>{total}/{maxPossible}</span>.
+                    </div>
+                    {cats.map((c, i) => {
+                        const pct = total > 0 ? Math.round((c.val / total) * 100) : 0;
+                        const fillPct = (c.val / c.maxPoints) * 100;
+                        return (
+                            <div key={c.id} style={{ marginBottom: '0.7rem' }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.25rem' }}>
+                                    <span style={{ fontSize: '0.82rem', color: 'var(--text-primary)', fontWeight: 500 }}>{c.label}</span>
+                                    <span style={{ fontSize: '0.78rem', fontFamily: 'var(--font-mono)', color: colors[i] }}>
+                                        {c.val}/{c.maxPoints} <span style={{ color: 'var(--text-muted)', fontSize: '0.7rem' }}>({pct}% del total)</span>
+                                    </span>
+                                </div>
+                                <div style={{ height: 10, background: 'rgba(255,255,255,0.04)', borderRadius: 6, overflow: 'hidden', boxShadow: 'var(--clay-shadow-inset)' }}>
+                                    <div style={{ height: '100%', width: `${fillPct}%`, background: colors[i], borderRadius: 6, transition: 'width 0.5s' }} />
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            );
+        };
+
+        // Horizontal bars comparison: how this official ranks vs average
+        const ComparisonBars = ({ official, allOfficials }) => {
+            const total = getTotalScore(official.scores);
+            const avg = Math.round(allOfficials.reduce((s, o) => s + getTotalScore(o.scores), 0) / allOfficials.length);
+            const max = Math.max(...allOfficials.map(o => getTotalScore(o.scores)));
+            const stColor = getLegalStatus(official).color;
+            const bars = [
+                { label: official.name.split(' ').slice(0, 2).join(' '), value: total, color: stColor },
+                { label: 'Promedio nacional', value: avg, color: '#6bb3ff' },
+                { label: 'Caso más severo', value: max, color: '#ff6b6b' },
+            ];
+            return (
+                <div>
+                    {bars.map((b, i) => (
+                        <div key={i} style={{ marginBottom: '0.85rem' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.88rem', marginBottom: '0.35rem' }}>
+                                <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>{b.label}</span>
+                                <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: b.color }}>{b.value}/{getMaxPossible()}</span>
+                            </div>
+                            <div style={{ height: 16, background: 'rgba(255,255,255,0.04)', borderRadius: 10, overflow: 'hidden', boxShadow: 'var(--clay-shadow-inset)' }}>
+                                <div style={{ height: '100%', width: `${(b.value / getMaxPossible()) * 100}%`, background: `linear-gradient(90deg, ${b.color}cc, ${b.color})`, borderRadius: 10, transition: 'width 0.6s ease' }} />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            );
+        };
+
+        // Visual timeline — horizontal with dots and events
+        const VisualTimeline = ({ official }) => {
+            if (!official.timeline || official.timeline.length === 0) return null;
+            const events = official.timeline;
+            const stColor = getLegalStatus(official).color;
+            return (
+                <div style={{ position: 'relative', padding: '1rem 0' }}>
+                    <div style={{ position: 'absolute', top: '50%', left: 16, right: 16, height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2, transform: 'translateY(-50%)', boxShadow: 'var(--clay-shadow-inset)' }} />
+                    <div style={{ display: 'flex', justifyContent: 'space-between', position: 'relative', zIndex: 1 }}>
+                        {events.map((evt, i) => (
+                            <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, minWidth: 0 }}>
+                                <div style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)', fontWeight: 600, color: stColor, marginBottom: '0.35rem' }}>{evt.year}</div>
+                                <div style={{ width: 14, height: 14, borderRadius: '50%', background: i === events.length - 1 ? stColor : 'var(--bg-elevated)', border: `2px solid ${stColor}`, boxShadow: i === events.length - 1 ? `0 0 10px ${stColor}66` : 'var(--clay-shadow-sm)', flexShrink: 0 }} />
+                                <div style={{ fontSize: '0.62rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '0.35rem', lineHeight: 1.35, maxWidth: 90, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{evt.event}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            );
+        };
+
+
+
+                function SearchLanding({ officials, sorted, onScrollPast }) {
             const [query, setQuery] = React.useState('');
             const [selected, setSelected] = React.useState(null);
             const [activeIdx, setActiveIdx] = React.useState(-1);
@@ -3656,220 +3872,6 @@
 
             const showDropdown = query.length >= 2 && suggestions.length > 0 && !selected;
             const noResults = query.length >= 2 && suggestions.length === 0 && !selected;
-
-            const getInitials = (name) => {
-                const parts = name.split(/\s+/).filter(p => !/^["(]/.test(p) && p.length > 1);
-                if (parts.length >= 2) return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
-                return name.slice(0, 2).toUpperCase();
-            };
-
-            // Gradient based on status color for avatar background
-            const getAvatarGradient = (official) => {
-                const st = getLegalStatus(official);
-                return `linear-gradient(135deg, ${st.color}dd, ${st.color}66)`;
-            };
-
-            // Photo-aware avatar component
-            function OfficialAvatar({ official, size = 80, className = '' }) {
-                const [imgFailed, setImgFailed] = React.useState(false);
-                const st = getLegalStatus(official);
-                const sizeStyle = { width: size, height: size, minWidth: size, minHeight: size };
-                const fontSize = size > 60 ? size * 0.22 : size * 0.28;
-
-                if (official.photo && !imgFailed) {
-                    return (
-                        <img
-                            src={official.photo}
-                            alt={official.name}
-                            className={className || 'search-profile-avatar'}
-                            style={{ ...sizeStyle, objectFit: 'cover', borderRadius: '50%', boxShadow: 'var(--clay-shadow)', border: `2px solid ${st.color}44` }}
-                            onError={() => setImgFailed(true)}
-                        />
-                    );
-                }
-
-                return (
-                    <div
-                        className={className || 'search-profile-avatar'}
-                        style={{ ...sizeStyle, background: getAvatarGradient(official), display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize, color: '#fff', boxShadow: 'var(--clay-shadow)', border: `2px solid ${st.color}44` }}
-                    >
-                        {getInitials(official.name)}
-                    </div>
-                );
-            }
-
-            const selectOfficial = (o) => {
-                setSelected(o);
-                setQuery(o.name);
-                setActiveIdx(-1);
-            };
-
-            const clearSelection = () => {
-                setSelected(null);
-                setQuery('');
-                setActiveIdx(-1);
-                setTimeout(() => inputRef.current && inputRef.current.focus(), 50);
-            };
-
-            const handleKeyDown = (e) => {
-                if (!showDropdown) return;
-                if (e.key === 'ArrowDown') {
-                    e.preventDefault();
-                    setActiveIdx(prev => Math.min(prev + 1, suggestions.length - 1));
-                } else if (e.key === 'ArrowUp') {
-                    e.preventDefault();
-                    setActiveIdx(prev => Math.max(prev - 1, 0));
-                } else if (e.key === 'Enter' && activeIdx >= 0) {
-                    e.preventDefault();
-                    selectOfficial(suggestions[activeIdx]);
-                } else if (e.key === 'Escape') {
-                    setQuery('');
-                }
-            };
-
-            // Random suggestion
-            const randomOfficial = React.useMemo(() => {
-                const highProfile = sorted.filter(o => getTotalScore(o.scores) >= 55);
-                return highProfile[Math.floor(Math.random() * highProfile.length)];
-            }, [sorted]);
-
-            // Radar chart SVG for 7 categories — LARGE
-            const RadarChart = ({ official }) => {
-                const cats = SCORING_CRITERIA;
-                const n = cats.length;
-                const cx = 200, cy = 195, R = 130;
-                const angleOffset = -Math.PI / 2;
-                const getPoint = (i, r) => {
-                    const angle = (2 * Math.PI * i / n) + angleOffset;
-                    return [cx + r * Math.cos(angle), cy + r * Math.sin(angle)];
-                };
-                const rings = [0.25, 0.5, 0.75, 1];
-                const values = cats.map(c => official.scores[c.id] / c.maxPoints);
-                const dataPoints = values.map((v, i) => getPoint(i, R * Math.max(v, 0.03)));
-                const stColor = getLegalStatus(official).color;
-
-                // Short but readable labels — no truncation
-                const shortLabels = [
-                    'Sentencias', 'Fiscalización', 'Funcionarios',
-                    'Deuda / daño', 'Denuncias', 'Evasión', 'Nepotismo'
-                ];
-
-                return (
-                    <svg viewBox="0 0 400 400" style={{ width: '100%', maxWidth: '400px', margin: '0 auto', display: 'block' }}>
-                        <defs>
-                            <radialGradient id="radarGlow">
-                                <stop offset="0%" stopColor={stColor} stopOpacity="0.3" />
-                                <stop offset="100%" stopColor={stColor} stopOpacity="0.02" />
-                            </radialGradient>
-                        </defs>
-                        {rings.map((r, i) => {
-                            const pts = Array.from({ length: n }, (_, j) => getPoint(j, R * r));
-                            return <polygon key={i} points={pts.map(p => p.join(',')).join(' ')} fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth="1" />;
-                        })}
-                        {cats.map((_, i) => {
-                            const [x, y] = getPoint(i, R);
-                            return <line key={i} x1={cx} y1={cy} x2={x} y2={y} stroke="rgba(255,255,255,0.05)" strokeWidth="1" />;
-                        })}
-                        <polygon points={dataPoints.map(p => p.join(',')).join(' ')} fill="url(#radarGlow)" stroke={stColor} strokeWidth="2.5" />
-                        {dataPoints.map((p, i) => (
-                            <circle key={i} cx={p[0]} cy={p[1]} r="5" fill={stColor} style={{ filter: `drop-shadow(0 0 6px ${stColor})` }} />
-                        ))}
-                        {cats.map((c, i) => {
-                            const [x, y] = getPoint(i, R + 36);
-                            const val = official.scores[c.id];
-                            return (
-                                <React.Fragment key={i}>
-                                    <text x={x} y={y - 7} textAnchor="middle" dominantBaseline="middle" fontSize="12" fontWeight="600" fill="var(--text-secondary)" fontFamily="var(--font-body)">{shortLabels[i]}</text>
-                                    <text x={x} y={y + 9} textAnchor="middle" dominantBaseline="middle" fontSize="11" fontWeight="700" fill={stColor} fontFamily="var(--font-mono)">{val}/{c.maxPoints}</text>
-                                </React.Fragment>
-                            );
-                        })}
-                    </svg>
-                );
-            };
-
-            // Peso de cada categoría en el índice total — reemplaza el donut
-            const WeightBreakdown = ({ official }) => {
-                const cats = SCORING_CRITERIA.map(c => ({ ...c, val: official.scores[c.id] }));
-                const total = cats.reduce((s, c) => s + c.val, 0);
-                if (total === 0) return null;
-                const colors = ['#ff6b6b', '#ffa26b', '#ffd06b', '#6bffb8', '#6bb3ff', '#a36bff', '#ff6bb3'];
-                const maxPossible = getMaxPossible();
-
-                return (
-                    <div>
-                        <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginBottom: '1rem', lineHeight: 1.5 }}>
-                            Cada categoría aporta puntos al índice de severidad. Las barras muestran cuánto pesa cada una en el total de <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'var(--text-primary)' }}>{total}/{maxPossible}</span>.
-                        </div>
-                        {cats.map((c, i) => {
-                            const pct = total > 0 ? Math.round((c.val / total) * 100) : 0;
-                            const fillPct = (c.val / c.maxPoints) * 100;
-                            return (
-                                <div key={c.id} style={{ marginBottom: '0.7rem' }}>
-                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.25rem' }}>
-                                        <span style={{ fontSize: '0.82rem', color: 'var(--text-primary)', fontWeight: 500 }}>{c.label}</span>
-                                        <span style={{ fontSize: '0.78rem', fontFamily: 'var(--font-mono)', color: colors[i] }}>
-                                            {c.val}/{c.maxPoints} <span style={{ color: 'var(--text-muted)', fontSize: '0.7rem' }}>({pct}% del total)</span>
-                                        </span>
-                                    </div>
-                                    <div style={{ height: 10, background: 'rgba(255,255,255,0.04)', borderRadius: 6, overflow: 'hidden', boxShadow: 'var(--clay-shadow-inset)' }}>
-                                        <div style={{ height: '100%', width: `${fillPct}%`, background: colors[i], borderRadius: 6, transition: 'width 0.5s' }} />
-                                    </div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                );
-            };
-
-            // Horizontal bars comparison: how this official ranks vs average
-            const ComparisonBars = ({ official, allOfficials }) => {
-                const total = getTotalScore(official.scores);
-                const avg = Math.round(allOfficials.reduce((s, o) => s + getTotalScore(o.scores), 0) / allOfficials.length);
-                const max = Math.max(...allOfficials.map(o => getTotalScore(o.scores)));
-                const stColor = getLegalStatus(official).color;
-                const bars = [
-                    { label: official.name.split(' ').slice(0, 2).join(' '), value: total, color: stColor },
-                    { label: 'Promedio nacional', value: avg, color: '#6bb3ff' },
-                    { label: 'Caso más severo', value: max, color: '#ff6b6b' },
-                ];
-                return (
-                    <div>
-                        {bars.map((b, i) => (
-                            <div key={i} style={{ marginBottom: '0.85rem' }}>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.88rem', marginBottom: '0.35rem' }}>
-                                    <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>{b.label}</span>
-                                    <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, color: b.color }}>{b.value}/{getMaxPossible()}</span>
-                                </div>
-                                <div style={{ height: 16, background: 'rgba(255,255,255,0.04)', borderRadius: 10, overflow: 'hidden', boxShadow: 'var(--clay-shadow-inset)' }}>
-                                    <div style={{ height: '100%', width: `${(b.value / getMaxPossible()) * 100}%`, background: `linear-gradient(90deg, ${b.color}cc, ${b.color})`, borderRadius: 10, transition: 'width 0.6s ease' }} />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                );
-            };
-
-            // Visual timeline — horizontal with dots and events
-            const VisualTimeline = ({ official }) => {
-                if (!official.timeline || official.timeline.length === 0) return null;
-                const events = official.timeline;
-                const stColor = getLegalStatus(official).color;
-                return (
-                    <div style={{ position: 'relative', padding: '1rem 0' }}>
-                        <div style={{ position: 'absolute', top: '50%', left: 16, right: 16, height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2, transform: 'translateY(-50%)', boxShadow: 'var(--clay-shadow-inset)' }} />
-                        <div style={{ display: 'flex', justifyContent: 'space-between', position: 'relative', zIndex: 1 }}>
-                            {events.map((evt, i) => (
-                                <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, minWidth: 0 }}>
-                                    <div style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)', fontWeight: 600, color: stColor, marginBottom: '0.35rem' }}>{evt.year}</div>
-                                    <div style={{ width: 14, height: 14, borderRadius: '50%', background: i === events.length - 1 ? stColor : 'var(--bg-elevated)', border: `2px solid ${stColor}`, boxShadow: i === events.length - 1 ? `0 0 10px ${stColor}66` : 'var(--clay-shadow-sm)', flexShrink: 0 }} />
-                                    <div style={{ fontSize: '0.62rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '0.35rem', lineHeight: 1.35, maxWidth: 90, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>{evt.event}</div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                );
-            };
 
             // ---- RENDER ----
             if (selected) {
