@@ -2211,6 +2211,46 @@
             transition: border-color 0.15s;
         }
         .search-profile-cta button:hover { border-color: var(--accent); color: var(--text-primary); }
+
+        /* TICKER */
+        .ticker-wrap { overflow: hidden; background: linear-gradient(90deg, rgba(255,107,107,0.08), rgba(255,162,107,0.06), rgba(107,179,255,0.06)); border-bottom: 1px solid var(--border); padding: 0.45rem 0; white-space: nowrap; }
+        .ticker-track { display: inline-flex; animation: tickerScroll 40s linear infinite; }
+        .ticker-track:hover { animation-play-state: paused; }
+        .ticker-item { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0 2rem; font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-secondary); }
+        .ticker-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+        .ticker-val { font-weight: 700; }
+        @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* GEO SELECTOR */
+        .geo-section { width: 100%; max-width: 640px; margin-top: 1.75rem; }
+        .geo-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px; padding: 0.85rem 1.25rem; font-family: var(--font-display); font-size: 0.92rem; font-weight: 600; color: var(--text-primary); cursor: pointer; box-shadow: var(--clay-shadow-sm); transition: all 0.2s; }
+        .geo-btn:hover { border-color: rgba(107,179,255,0.3); transform: translateY(-1px); box-shadow: var(--clay-shadow); }
+        .geo-select { width: 100%; margin-top: 0.75rem; padding: 0.75rem 1rem; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 14px; font-family: var(--font-body); font-size: 0.88rem; color: var(--text-primary); appearance: none; box-shadow: var(--clay-shadow-inset); cursor: pointer; outline: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%239d9dbd' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; }
+        .geo-results { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem; }
+        .geo-card { display: flex; align-items: center; gap: 0.85rem; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 14px; padding: 0.85rem 1rem; cursor: pointer; box-shadow: var(--clay-shadow-sm); transition: all 0.15s; }
+        .geo-card:hover { border-color: rgba(107,179,255,0.3); transform: translateY(-1px); }
+        .geo-card-info { flex: 1; min-width: 0; }
+        .geo-card-name { font-weight: 600; font-size: 0.88rem; color: var(--text-primary); }
+        .geo-card-role { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.15rem; }
+
+        /* QUIZ */
+        .quiz-container { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem 1.5rem; }
+        .quiz-card { width: 100%; max-width: 520px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--clay-radius); box-shadow: var(--clay-shadow); padding: 2rem; text-align: center; }
+        .quiz-progress { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+        .quiz-progress-bar { height: 4px; background: rgba(255,255,255,0.06); border-radius: 2px; margin-top: 0.5rem; overflow: hidden; }
+        .quiz-progress-fill { height: 100%; background: linear-gradient(90deg, #ff6b6b, #6bb3ff); border-radius: 2px; transition: width 0.3s; }
+        .quiz-fact { font-size: 1rem; color: var(--text-primary); line-height: 1.65; margin: 1.5rem 0; padding: 1.25rem; background: rgba(255,255,255,0.03); border-radius: 14px; box-shadow: var(--clay-shadow-inset); }
+        .quiz-question { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1.25rem; }
+        .quiz-options { display: flex; flex-direction: column; gap: 0.6rem; }
+        .quiz-option { padding: 0.85rem 1rem; border-radius: 14px; background: var(--bg-card); border: 1.5px solid var(--border); font-family: var(--font-body); font-size: 0.88rem; color: var(--text-secondary); cursor: pointer; box-shadow: var(--clay-shadow-sm); transition: all 0.15s; text-align: left; }
+        .quiz-option:hover:not(.answered) { border-color: rgba(107,179,255,0.4); color: var(--text-primary); transform: translateY(-1px); }
+        .quiz-option.correct { border-color: #6bffb8; background: rgba(107,255,184,0.08); color: #6bffb8; }
+        .quiz-option.wrong { border-color: #ff6b6b; background: rgba(255,107,107,0.08); color: #ff6b6b; }
+        .quiz-option.reveal { border-color: #6bffb8; opacity: 0.7; }
+        .quiz-result { margin-top: 1rem; padding: 1rem; border-radius: 14px; font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary); background: rgba(255,255,255,0.03); }
+        .quiz-next-btn { margin-top: 1.25rem; padding: 0.75rem 2rem; background: linear-gradient(135deg, #ff6b6b, #ff8e53); border: none; border-radius: 14px; font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; color: white; cursor: pointer; box-shadow: var(--clay-shadow-sm); }
+        .quiz-score-final { font-family: var(--font-display); font-size: 3rem; font-weight: 700; margin: 1rem 0 0.5rem; }
+
         .search-scroll-arrow {
             position: absolute;
             bottom: 2rem;
@@ -2637,6 +2677,13 @@
                     return (
                         <svg {...common}>
                             <path d="M19 12H5M12 5l-7 7 7 7" />
+                        </svg>
+                    );
+                case 'map-pin':
+                    return (
+                        <svg {...common}>
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                            <circle cx="12" cy="9" r="2.5" fill="none" />
                         </svg>
                     );
                 case 'chevron-down':
@@ -4002,9 +4049,290 @@
                         )}
                     </div>
 
+                    <GeoLocator officials={officials} onSelect={selectOfficial} />
+
                     <button className="search-scroll-arrow" onClick={onScrollPast} aria-label="Explorar todos">
                         <Icon name="chevron-down" size={24} />
                     </button>
+                </section>
+            );
+        }
+
+        // =====================================================
+        // TICKER — franja animada de datos impactantes
+        // =====================================================
+        function Ticker({ officials }) {
+            const stats = React.useMemo(() => {
+                const sentProc = officials.filter(o => ['sentenciado', 'proceso'].includes(getLegalStatusKey(o))).length;
+                const enFunciones = officials.filter(o => o.status === 'en_funciones').length;
+                const estados = [...new Set(officials.map(o => o.state))].length;
+                const critico = officials.filter(o => getTotalScore(o.scores) >= 75).length;
+                const topState = Object.entries(officials.reduce((m, o) => { m[o.state] = (m[o.state]||0)+1; return m; }, {})).sort((a,b) => b[1]-a[1])[0];
+                const exgob = officials.filter(o => o.role.toLowerCase().includes('exgobernador')).length;
+                return [
+                    { text: `${sentProc} funcionarios sentenciados o en proceso penal`, color: '#ff6b6b' },
+                    { text: `${enFunciones} siguen en funciones con señalamientos`, color: '#ffa26b' },
+                    { text: `${estados} estados con casos documentados`, color: '#6bb3ff' },
+                    { text: `${critico} perfiles en nivel crítico de severidad`, color: '#ffd06b' },
+                    { text: `${topState[0]}: ${topState[1]} funcionarios documentados`, color: '#a36bff' },
+                    { text: `${exgob} exgobernadores con proceso o sentencia`, color: '#ff6bb3' },
+                ];
+            }, [officials]);
+
+            return (
+                <div className="ticker-wrap">
+                    <div className="ticker-track">
+                        {[...stats, ...stats].map((s, i) => (
+                            <span className="ticker-item" key={i}>
+                                <span className="ticker-dot" style={{ background: s.color, boxShadow: `0 0 6px ${s.color}66` }} />
+                                <span>{s.text}</span>
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            );
+        }
+
+        // =====================================================
+        // GEO LOCATOR — "¿Quién gobierna donde vivo?"
+        // =====================================================
+        function GeoLocator({ officials, onSelect }) {
+            const [selectedState, setSelectedState] = React.useState('');
+            const [showSelect, setShowSelect] = React.useState(false);
+
+            const states = React.useMemo(() => {
+                const s = [...new Set(officials.map(o => o.state))].filter(s => s !== 'Federal').sort();
+                return s;
+            }, [officials]);
+
+            const results = React.useMemo(() => {
+                if (!selectedState) return [];
+                return officials
+                    .filter(o => o.state === selectedState)
+                    .sort((a, b) => getTotalScore(b.scores) - getTotalScore(a.scores));
+            }, [selectedState, officials]);
+
+            const handleGeolocate = () => {
+                if (!navigator.geolocation) { setShowSelect(true); return; }
+                navigator.geolocation.getCurrentPosition(
+                    (pos) => {
+                        const { latitude, longitude } = pos.coords;
+                        // Approximate state from coordinates using bounding boxes
+                        const stateMap = [
+                            ['Baja California', 30, 33, -118, -114],
+                            ['Baja California Sur', 23, 28, -115, -109],
+                            ['Sonora', 27, 33, -115, -108],
+                            ['Chihuahua', 26, 32, -109, -104],
+                            ['Coahuila', 24, 30, -104, -100],
+                            ['Nuevo León', 23, 28, -101, -99],
+                            ['Tamaulipas', 22, 27, -100, -97],
+                            ['Sinaloa', 22, 27, -109, -105],
+                            ['Durango', 22, 27, -107, -103],
+                            ['Nayarit', 20, 23, -106, -104],
+                            ['Jalisco', 19, 23, -106, -102],
+                            ['Aguascalientes', 21, 23, -103, -102],
+                            ['Zacatecas', 21, 25, -104, -101],
+                            ['San Luis Potosí', 21, 25, -102, -99],
+                            ['Guanajuato', 20, 22, -102, -100],
+                            ['Querétaro', 20, 22, -101, -99],
+                            ['Hidalgo', 19, 21, -100, -98],
+                            ['Colima', 18, 20, -105, -103],
+                            ['Michoacán', 17, 20, -104, -100],
+                            ['Estado de México', 18, 20, -100, -98],
+                            ['Ciudad de México', 19.1, 19.6, -99.4, -98.9],
+                            ['Tlaxcala', 19, 20, -99, -97],
+                            ['Puebla', 17, 20, -99, -97],
+                            ['Morelos', 18, 19, -100, -98],
+                            ['Guerrero', 16, 18, -102, -98],
+                            ['Oaxaca', 15, 18, -98, -95],
+                            ['Veracruz', 17, 22, -98, -94],
+                            ['Tabasco', 17, 19, -94, -91],
+                            ['Chiapas', 14, 18, -94, -90],
+                            ['Campeche', 17, 20, -92, -89],
+                            ['Yucatán', 19, 22, -91, -87],
+                            ['Quintana Roo', 18, 22, -89, -86],
+                        ];
+                        let found = null;
+                        for (const [name, latMin, latMax, lonMin, lonMax] of stateMap) {
+                            if (latitude >= latMin && latitude <= latMax && longitude >= lonMin && longitude <= lonMax) {
+                                found = name; break;
+                            }
+                        }
+                        if (found && states.includes(found)) { setSelectedState(found); setShowSelect(true); }
+                        else { setShowSelect(true); }
+                    },
+                    () => setShowSelect(true)
+                );
+            };
+
+            return (
+                <div className="geo-section">
+                    <button className="geo-btn" onClick={handleGeolocate}>
+                        <Icon name="map-pin" size={18} /> ¿Quién gobierna donde vivo?
+                    </button>
+
+                    {showSelect && (
+                        <select
+                            className="geo-select"
+                            value={selectedState}
+                            onChange={e => setSelectedState(e.target.value)}
+                        >
+                            <option value="">Selecciona tu estado...</option>
+                            {states.map(s => <option key={s} value={s}>{s}</option>)}
+                        </select>
+                    )}
+
+                    {results.length > 0 && (
+                        <div className="geo-results">
+                            <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
+                                {results.length} funcionario{results.length > 1 ? 's' : ''} documentado{results.length > 1 ? 's' : ''} en {selectedState}
+                            </div>
+                            {results.map(o => {
+                                const st = getLegalStatus(o);
+                                return (
+                                    <div className="geo-card" key={o.id} onClick={() => onSelect(o)}>
+                                        <OfficialAvatar official={o} size={42} />
+                                        <div className="geo-card-info">
+                                            <div className="geo-card-name">{o.name}</div>
+                                            <div className="geo-card-role">{o.role}</div>
+                                        </div>
+                                        <StatusPill official={o} size="sm" />
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        // =====================================================
+        // QUIZ — "¿Adivina el estatus?"
+        // =====================================================
+        function QuizView({ officials, onExit }) {
+            const TOTAL_QUESTIONS = 7;
+
+            const questions = React.useMemo(() => {
+                const pool = officials.filter(o =>
+                    o.breakdown.sentencias &&
+                    !o.name.includes('"N"') &&
+                    o.name !== 'Alejandro N.' &&
+                    !o.name.includes('Red de nómina')
+                );
+                const shuffled = [...pool].sort(() => Math.random() - 0.5);
+                return shuffled.slice(0, TOTAL_QUESTIONS).map(o => {
+                    const correctKey = getLegalStatusKey(o);
+                    const correctSt = LEGAL_STATUS[correctKey];
+                    const anchor = getAnchorFact(o);
+                    const allKeys = ['sentenciado', 'proceso', 'investigacion', 'senalado', 'sin_proceso'];
+                    const wrongKeys = allKeys.filter(k => k !== correctKey).sort(() => Math.random() - 0.5).slice(0, 3);
+                    const options = [correctKey, ...wrongKeys].sort(() => Math.random() - 0.5);
+                    return { official: o, correctKey, anchor, options };
+                });
+            }, [officials]);
+
+            const [current, setCurrent] = React.useState(0);
+            const [score, setScore] = React.useState(0);
+            const [answered, setAnswered] = React.useState(null);
+            const [finished, setFinished] = React.useState(false);
+
+            const q = questions[current];
+
+            const handleAnswer = (key) => {
+                if (answered) return;
+                setAnswered(key);
+                if (key === q.correctKey) setScore(s => s + 1);
+            };
+
+            const handleNext = () => {
+                if (current + 1 >= TOTAL_QUESTIONS) { setFinished(true); return; }
+                setCurrent(c => c + 1);
+                setAnswered(null);
+            };
+
+            if (finished) {
+                const pct = Math.round((score / TOTAL_QUESTIONS) * 100);
+                const msg = pct >= 85 ? '¡Impresionante! Conoces la realidad de la corrupción en México.' :
+                            pct >= 57 ? 'Buen conocimiento, pero hay casos que te sorprenderían.' :
+                            'La corrupción es más profunda de lo que parece. Explora los perfiles.';
+                return (
+                    <section className="quiz-container">
+                        <div className="quiz-card">
+                            <div style={{ fontSize: '0.78rem', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>RESULTADO</div>
+                            <div className="quiz-score-final" style={{ background: 'linear-gradient(135deg, #ff6b6b, #6bb3ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                                {score}/{TOTAL_QUESTIONS}
+                            </div>
+                            <div style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', marginBottom: '1rem', lineHeight: 1.6 }}>{msg}</div>
+                            <div style={{ display: 'flex', gap: '0.6rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                                <button className="quiz-next-btn" onClick={() => { setCurrent(0); setScore(0); setAnswered(null); setFinished(false); }}>
+                                    Jugar de nuevo
+                                </button>
+                                <button className="quiz-next-btn" style={{ background: 'var(--bg-card)' }} onClick={onExit}>
+                                    Volver a buscar
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                );
+            }
+
+            return (
+                <section className="quiz-container">
+                    <div className="quiz-card">
+                        <div className="quiz-progress">
+                            PREGUNTA {current + 1} DE {TOTAL_QUESTIONS}
+                            <div className="quiz-progress-bar">
+                                <div className="quiz-progress-fill" style={{ width: `${((current + 1) / TOTAL_QUESTIONS) * 100}%` }} />
+                            </div>
+                        </div>
+
+                        <OfficialAvatar official={q.official} size={64} />
+                        <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 700, marginTop: '0.75rem', color: 'var(--text-primary)' }}>
+                            {q.official.name}
+                        </div>
+                        <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>
+                            {q.official.role}
+                        </div>
+
+                        {q.anchor && <div className="quiz-fact">"{q.anchor}"</div>}
+
+                        <div className="quiz-question">¿Cuál es su estatus procesal?</div>
+
+                        <div className="quiz-options">
+                            {q.options.map(key => {
+                                const st = LEGAL_STATUS[key];
+                                let cls = 'quiz-option';
+                                if (answered) {
+                                    cls += ' answered';
+                                    if (key === q.correctKey) cls += ' correct';
+                                    else if (key === answered) cls += ' wrong';
+                                }
+                                return (
+                                    <button key={key} className={cls} onClick={() => handleAnswer(key)}>
+                                        {st.label}
+                                        {answered && key === q.correctKey && ' ✓'}
+                                    </button>
+                                );
+                            })}
+                        </div>
+
+                        {answered && (
+                            <div className="quiz-result">
+                                {answered === q.correctKey ? '✓ ¡Correcto!' : `✗ La respuesta era: ${LEGAL_STATUS[q.correctKey].label}`}
+                                {q.official.breakdown.sentencias && (
+                                    <div style={{ marginTop: '0.5rem', fontSize: '0.78rem' }}>
+                                        {q.official.breakdown.sentencias.slice(0, 180)}{q.official.breakdown.sentencias.length > 180 ? '…' : ''}
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
+                        {answered && (
+                            <button className="quiz-next-btn" onClick={handleNext}>
+                                {current + 1 >= TOTAL_QUESTIONS ? 'Ver resultado' : 'Siguiente →'}
+                            </button>
+                        )}
+                    </div>
                 </section>
             );
         }
@@ -4113,12 +4441,21 @@
                                 <button className={`nav-btn ${currentView === 'search' ? 'active' : ''}`} onClick={() => setCurrentView('search')}>
                                     <Icon name="search" size={14} /> Buscar
                                 </button>
+                                <button className={`nav-btn ${currentView === 'quiz' ? 'active' : ''}`} onClick={() => setCurrentView('quiz')}>
+                                    ⚡ Quiz
+                                </button>
                                 <button className={`nav-btn ${currentView === 'leaderboard' ? 'active' : ''}`} onClick={() => setCurrentView('leaderboard')}>
                                     <Icon name="bar-chart" size={14} /> Leaderboard
                                 </button>
                             </div>
                         </div>
                     </header>
+
+                    <Ticker officials={officials} />
+
+                    {currentView === 'quiz' && (
+                        <QuizView officials={sorted} onExit={() => setCurrentView('search')} />
+                    )}
 
                     {currentView === 'search' && (
                         <SearchLanding officials={officials} sorted={sorted} onScrollPast={() => setCurrentView('leaderboard')} />
