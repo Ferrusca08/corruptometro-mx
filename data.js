@@ -6468,6 +6468,43 @@ const officials = [
       }
     ]
   }
+
+,{
+    "id": 391,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Avatar_kuri_01_(cropped).jpg/200px-Avatar_kuri_01_(cropped).jpg",
+    "name": "Mauricio Kuri Gonz\u00e1lez",
+    "role": "Gobernador de Quer\u00e9taro (2021-2027)",
+    "party": "PAN",
+    "state": "Quer\u00e9taro",
+    "level": "estatal",
+    "active": true,
+    "status": "en_funciones",
+    "lastVerified": "2026-07-31",
+    "scores": {"sentencias":0,"fiscalizacion":3,"funcionarios":2,"deuda":2,"denuncias":5,"evasion":3,"nepotismo":2},
+    "breakdown": {
+        "sentencias": "Sin proceso penal. No hay sentencia, imputaci\u00f3n ni carpeta de investigaci\u00f3n abierta contra Kuri Gonz\u00e1lez a julio de 2026.",
+        "fiscalizacion": "La ASF ha emitido observaciones menores a la administraci\u00f3n estatal. Sin hallazgos de desv\u00edo documentado a nivel personal.",
+        "funcionarios": "Reestructuraci\u00f3n de gabinete en mayo-junio 2026. Sin destituciones por corrupci\u00f3n documentadas.",
+        "deuda": "Incremento moderado de deuda p\u00fablica estatal durante su administraci\u00f3n. Sin se\u00f1alamientos de uso indebido.",
+        "denuncias": "La Silla Rota document\u00f3 se\u00f1alamientos de vinculaci\u00f3n entre Kuri y Caja Libertad, investigada por delincuencia organizada y operaciones con recursos de procedencia il\u00edcita. La revista Proceso (2021) document\u00f3 relaciones de amistad y negocios con Francisco Javier Rodr\u00edguez Borgio, identificado como el Zar de los Casinos e investigado por lavado de dinero. Al 31 de julio de 2026 no se identific\u00f3 proceso legal abierto contra Kuri derivado de estos se\u00f1alamientos.",
+        "evasion": "Discrepancias en su formaci\u00f3n acad\u00e9mica: unas fuentes lo registran con Ingenier\u00eda Industrial (An\u00e1huac) y MBA (IPADE), el portal del PAN Senado lo registra como licenciado en Derecho.",
+        "nepotismo": "Sin se\u00f1alamientos documentados de nepotismo directo a julio de 2026."
+    },
+    "timeline": [
+        {"year":"2015","event":"Presidente municipal de Corregidora"},
+        {"year":"2018","event":"Senador por Quer\u00e9taro"},
+        {"year":"2021","event":"Asume gubernatura de Quer\u00e9taro"},
+        {"year":"2021","event":"Proceso documenta v\u00ednculos con Rodr\u00edguez Borgio"},
+        {"year":"2026","event":"La Silla Rota publica v\u00ednculo con Caja Libertad"},
+        {"year":"2026","event":"Veta Ley de Identidad de G\u00e9nero"}
+    ],
+    "sources": [
+        {"label":"Proceso \u2014 V\u00ednculos con Rodr\u00edguez Borgio (2021)","url":"https://www.proceso.com.mx"},
+        {"label":"La Silla Rota \u2014 Vinculaci\u00f3n con Caja Libertad","url":"https://lasillarota.com"},
+        {"label":"Cultura Colectiva \u2014 Perfil jul 2026","url":"https://news.culturacolectiva.com/noticias/mexico/gobierno-mexico/quien-es-mauricio-kuri/"},
+        {"label":"Wikipedia \u2014 Mauricio Kuri","url":"https://en.wikipedia.org/wiki/Mauricio_Kuri"}
+    ]
+}
 ];
 
 const NATIONAL_STATS = {
